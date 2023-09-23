@@ -1,0 +1,17 @@
+author: 'Chen Buyi' # 作者名称
+author_avatar: '/image/avatar.webp' # 作者头像
+author_text: '姓陈，号布衣' # 作者信息
+social: # 社交链接
+# background: 'https://api.paugram.com/wallpaper?source=gh' # 主题背景
+menu: # 页眉菜单项目
+  '关于': '/2021/about/'
+  '订阅': '/2021/rss/'
+  'Github': 'https://github.com/chenbuyi2019'
+  '微博': 'https://m.weibo.cn/u/5977985000'
+friendslink:
+  'AceSheep': 'https://blog.acesheep.com/'
+  '技术宅的结界': 'https://www.0xaa55.com/'
+  'Sonic853': 'https://blog.853lab.com/'
+config:
+  copyright: false # 复制的时候弹出保留原站链接说明
+  night: false # 自动切换夜间模式

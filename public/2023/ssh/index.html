@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     
+    <meta charset="UTF-8">
+    <title>使用 VSCode+SSH 实现Windows远程写代码 - 陈布衣的博客</title>
+    <link rel="shortcut icon" href="/static/img/icon.png">
+    <link rel="icon" href="/static/img/icon.png" sizes="192x192"/>
+    
+<link rel="stylesheet" href="/static/kico.css">
+<link rel="stylesheet" href="/static/hingle.css">
+
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1"/>
+    <meta property="og:site_name" content="陈布衣的博客">
+    <meta property="og:title" content="使用 VSCode+SSH 实现Windows远程写代码"/>
+    
+    <link rel="alternate" type="application/rss+xml" title="陈布衣的博客" href="/rss.xml" />
+    <link rel="alternate" type="application/atom+xml" title="陈布衣的博客" href="/atom.xml" />
+    <link rel="alternate" type="application/json" title="陈布衣的博客" href="/feed.json" />
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+  <body>
+    <header>
+    <div class="head-title">
+        <h4>陈布衣的博客</h4>
+    </div>
+    <div class="head-action">
+        <div class="toggle-btn"></div>
+        <div class="light-btn"></div>
+        <div class="search-btn" style="display: none;"></div>
+    </div>
+    <form class="head-search" method="post">
+        <input type="text" name="s" placeholder="搜索什么？">
+    </form>
+    <nav class="head-menu">
+        <a href="/">首页</a>
+        
+            <a href="/2021/about/">关于</a>
+        
+            <a href="/2021/rss/">订阅</a>
+        
+            <a target="_blank" rel="noopener" href="https://github.com/chenbuyi2019">Github</a>
+        
+            <a target="_blank" rel="noopener" href="https://m.weibo.cn/u/5977985000">微博</a>
+        
+    </nav>
+</header>
+
+    <main>
+    <div class="wrap min">
+        <section class="post-title">
+            <h2>使用 VSCode+SSH 实现Windows远程写代码</h2>
+            <div class="post-meta">
+                <time class="date">2023 年 08 月 14 日</time>
+            
+            </div>
+        </section>
+        <article class="post-content">
+            <p>我的情况：经常要在远程 Windows 上执行修改 LUA 的操作。我自己又没有好的宽带，使用 RDP 经常会和其他人起冲突。   </p>
+<p>解决方案：在服务器上安装 OpenSSH 然后在本地用 vscode 远程进去进行写代码。   </p>
+<h1 id="在服务器安装-OpenSSH"><a href="#在服务器安装-OpenSSH" class="headerlink" title="在服务器安装 OpenSSH"></a>在服务器安装 OpenSSH</h1><p>先下载<a target="_blank" rel="noopener" href="https://github.com/PowerShell/Win32-OpenSSH/releases">Win32-OpenSSH 的 MSI 安装包</a>，然后安装到服务器。<br>（直接下最新版就行，我找不到它的正式版 release）   </p>
+<h2 id="如果服务器是-Administrator-用户"><a href="#如果服务器是-Administrator-用户" class="headerlink" title="如果服务器是 Administrator 用户"></a>如果服务器是 Administrator 用户</h2><p>如果服务器运行的是<strong>真高级管理员</strong> <code>Administrator</code> 用户，<br>就这样操作：    </p>
+<p>在服务端上找到文件夹 <code>C:\ProgramData\ssh\</code><br>建立一个空白文件 <code>administrators_authorized_keys</code> ，在里面填上一行自己的公钥。<br>如果需要多个公钥就一行一个。   </p>
+<h2 id="如果服务器是普通的管理员用户"><a href="#如果服务器是普通的管理员用户" class="headerlink" title="如果服务器是普通的管理员用户"></a>如果服务器是普通的管理员用户</h2><p>还是找到 <code>C:\ProgramData\ssh\sshd_config</code> 配置文件<br>在里面注释掉最后两行：   </p>
+<pre><code>#Match Group administrators
+#       AuthorizedKeysFile __PROGRAMDATA__/ssh/administrators_authorized_keys
+</code></pre>
+<p>其次是去 <code>C:\Users\用户名\.ssh</code> 文件夹，新建一个空白文件叫 <code>authorized_keys</code> ，在里面填上一行自己的公钥。<br>如果需要多个公钥就一行一个。   </p>
+<h2 id="禁用密码登录"><a href="#禁用密码登录" class="headerlink" title="禁用密码登录"></a>禁用密码登录</h2><p>如果需要彻底禁用密码登录 ，需要修改配置文件 <code>C:\ProgramData\ssh\sshd_config</code> 。<br>里面找到并修改设置为 <code>PasswordAuthentication no</code> 。   </p>
+<p>如果没有禁用密码访问，可能每次连接的时候都要输入服务端上对应用户的 Windows 登录密码。    </p>
+<h1 id="重启服务"><a href="#重启服务" class="headerlink" title="重启服务"></a>重启服务</h1><p>接下来用服务端的任务管理器重启 <code>sshd</code> 服务。<br>每次修改配置之后都应该重启一次服务。   </p>
+<h1 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h1><p>在自己的电脑上运行命令行指令： <code>ssh username@ip</code><br>需要加端口就是 <code>ssh username@ip -p1234</code><br>username 指的是目标服务器上的用户，比如 <code>Administrator</code> 或者 <code>abc</code> ，不是本机用户名。   </p>
+<p>如果连接成功，则可以进入下一步。   </p>
+<h1 id="VSCode-Remote"><a href="#VSCode-Remote" class="headerlink" title="VSCode Remote"></a>VSCode Remote</h1><p>安装 vscode 扩展：<code>ms-vscode-remote.remote-ssh</code><br>安装之后点击 vscode 左下角的按钮，就可以 <code>Connect To Host</code> 了。<br>他默认读取的是 <code>C:\Users\用户名\.ssh\config</code> 这个配置文件。<br>可以在里面给你的连接起备注名。   </p>
+<p>连接之后如果需要经常重新打开指定的文件夹，可以 <code>Save Workspace As </code> 然后选择 <code>To Local</code> 。<br>这样从本地就可以直接双击打开 <code>.code-workspace</code> 文件进入远程环境了。   </p>
+<p>连接完成之后， vscode 会在远程服务器安装 code-server 作为一个后台辅助。<br>也就意味着可以安装vscode扩展到服务器上，并且扩展数据还是保存在服务器上的。   </p>
+<h1 id="系统要求"><a href="#系统要求" class="headerlink" title="系统要求"></a>系统要求</h1><p>VSCode Remote 需要 <code>Windows 10 / Server 2016/2019 (1803+) </code> 。<br>老版本上的 windows 无法安装 code server ，但是部分版本依然可以安装 Win32-OpenSSH 。   </p>
+<h1 id="垃圾"><a href="#垃圾" class="headerlink" title="垃圾"></a>垃圾</h1><p>vscode 有时候会抽风，在服务器电脑里留下大量重复的垃圾文件，可能占据C盘十几GB。<br>检测一下C盘的 <code>C:\Users\用户名\.vscode-server\bin</code> 文件夹。<br>code server 会把老版本全部留在里面。   </p>
+<p>以及 <code>C:\Users\用户名\AppData\Local\Temp</code> 文件夹。<br>code server 会把老版本、以及时不时抽风重装的文件全部留在里面，以七八个字母加一个小数点再加三个字母作为文件夹名字。<br>比如 <code>jy4wbtpz.qef</code> ，里面你能找到 <code>node.exe</code> 。   </p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>如果遇到其他麻烦，请参阅： </p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows-server/administration/openssh/openssh_server_configuration">微软官网说明</a> </li>
+<li><a target="_blank" rel="noopener" href="https://github.com/PowerShell/Win32-OpenSSH/wiki">Github wiki</a>   </li>
+<li><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh">VSCode 扩展说明</a></li>
+</ul>
+<p>或者也可以开启 ssh 的日志。<br>找到 <code>sshd_config</code> 的 <code># Logging</code> 下面两行，改成这样：   </p>
+<pre><code>SyslogFacility LOCAL0
+LogLevel DEBUG3
+</code></pre>
+<p>日志会输出在 <code>C:\ProgramData\ssh\logs</code> 里面。<br>问题解决了之后最好把日志注释掉，不然浪费C盘空间。   
+ </p>
+
+        </article>
+        <section class="post-near">
+            <ul>
+                
+                    <li>上一篇: <a href="/2023/year2/">离家出走2.5年的感慨</a></li>
+                
+                
+                    <li>下一篇: <a href="/2023/india/">小小说：印度草药的故事</a></li>
+                
+            </ul>
+        </section>
+        
+            <section class="post-tags">
+            <a class="-none-link" href="/tags/code/" rel="tag">code</a><a class="-none-link" href="/tags/ssh/" rel="tag">ssh</a>
+            </section>
+        
+    
+        <section class="post-author">
+        
+            <figure class="author-avatar">
+                <img src="/image/avatar.webp" alt="Chen Buyi" />
+            </figure>
+        
+            <div class="author-info">
+                <h4>Chen Buyi</h4>
+                <p>姓陈，号布衣</p>
+            </div>
+        </section>
+    
+    </div>
+    <link href="/lib/framer.min.css" rel="stylesheet">
+    <script src="/lib/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</main>
+
+    <footer>
+    <div class="buttons">
+        <a class="to-top" href="#"></a>
+    </div>
+    <div class="wrap min">
+        <section class="widget">
+            <div class="row">
+                <div class="col-m-4">
+                    <h3 class="title-recent">友情链接：</h3>
+                    
+                        <a target="_blank" rel="noopener" href="https://blog.acesheep.com/">AceSheep</a>
+                        <br>
+                    
+                        <a target="_blank" rel="noopener" href="https://www.0xaa55.com/">技术宅的结界</a>
+                        <br>
+                    
+                        <a target="_blank" rel="noopener" href="https://blog.853lab.com/">Sonic853</a>
+                        <br>
+                    
+                </div>
+                <div class="col-m-4">
+                    <h3 class="title-date">时光机：</h3>
+                    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">August 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
+                </div>
+                <div class="col-m-4">
+                    <h3 class="title-tags">标签云：</h3>
+                    <a href="/tags/code/" style="font-size: 16.67px;">code</a> <a href="/tags/gmod/" style="font-size: 10px;">gmod</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/%E5%85%B3%E4%BA%8E/" style="font-size: 10px;">关于</a> <a href="/tags/%E5%AD%A6%E6%A0%A1/" style="font-size: 10px;">学校</a> <a href="/tags/%E5%AE%B6%E5%BA%AD/" style="font-size: 20px;">家庭</a> <a href="/tags/%E5%B0%8F%E5%B0%8F%E8%AF%B4/" style="font-size: 20px;">小小说</a> <a href="/tags/%E7%89%A2%E9%AA%9A/" style="font-size: 13.33px;">牢骚</a>
+                </div>
+            </div>
+        </section>
+        <section class="sub-footer">
+            <p>© 2023 <a href="/">陈布衣的博客</a>. All Rights Reserved. Theme By <a href="https://github.com/Dreamer-Paul/Hingle" target="_blank" rel="nofollow">Hingle</a>.</p>
+        </section>
+    </div>
+</footer>
+
+
+<script src="/static/kico.js"></script>
+<script src="/static/hingle.js"></script>
+
+
+<script>var hingle = new Paul_Hingle({"copyright":false,"night":false});</script>
+
+  </body>
+</html>
