@@ -5,16 +5,49 @@
         <link>http://buyi.dev</link>
         <description></description>
         <language>zh</language>
-        <pubDate>Mon, 04 Sep 2023 11:49:43 +0800</pubDate>
-        <lastBuildDate>Mon, 04 Sep 2023 11:49:43 +0800</lastBuildDate>
-        <category>牢骚</category>
-        <category>家庭</category>
+        <pubDate>Mon, 25 Sep 2023 21:04:05 +0800</pubDate>
+        <lastBuildDate>Mon, 25 Sep 2023 21:04:05 +0800</lastBuildDate>
         <category>关于</category>
         <category>code</category>
-        <category>gmod</category>
+        <category>牢骚</category>
+        <category>家庭</category>
         <category>小小说</category>
+        <category>gmod</category>
         <category>ssh</category>
         <category>学校</category>
+        <item>
+            <guid isPermalink="true">http://buyi.dev/2023/deathinuniversity/</guid>
+            <title>死在大学里</title>
+            <link>http://buyi.dev/2023/deathinuniversity/</link>
+            <category>小小说</category>
+            <pubDate>Mon, 25 Sep 2023 21:04:05 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;A 已经大学毕业几年了，不知道为什么，今天A醒来发现自己在一个陌生的环境里。&lt;br&gt;这里是一所大学，A知道这所大学在他居住的城市里，A决定离开这里然后回家。   &lt;/p&gt;
+&lt;p&gt;A 沿着大路走到了大学门口，但是保安拦住了他。   &lt;/p&gt;
+&lt;p&gt;保安：“你是老师还是学生？你的身份卡呢？”    &lt;/p&gt;
+&lt;p&gt;A ：“我是社会人士，我没有身份卡。”   &lt;/p&gt;
+&lt;p&gt;保安：“胡说，我们这里每个人都有身份卡或校牌，没有校长邀请也根本不会有任何社会人士，你没有就不准出去，而且现在是上课期间，赶快回到你的教室。”   &lt;/p&gt;
+&lt;p&gt;A ：“大学居然还有这种出门要身份卡的道理？这是什么狗屁大学！”   &lt;/p&gt;
+&lt;p&gt;保安给了A一拳，然后把A拽到了主任室。   &lt;/p&gt;
+&lt;p&gt;学校的一个什么高官来了，对A说：“我是梁主任，你好好交代一下你做了什么。”    &lt;/p&gt;
+&lt;p&gt;A：“我说了我是社会人士，我不知道为什么我来到了大学里面，我也没有身份卡。”    &lt;/p&gt;
+&lt;p&gt;梁：“我们大学严格执行封闭式管理，连外卖和快递都进不来。我认识全校每个教职工，你不是老师，你只能是学生。”   &lt;/p&gt;
+&lt;p&gt;A：“我说了我是学校外面来的，我不是里面的学生。”    &lt;/p&gt;
+&lt;p&gt;梁挥挥手，叫保安把A又打了一顿。   &lt;/p&gt;
+&lt;p&gt;梁：“我再给你一次机会，你不说你是哪个班的学生的话我就打断你的腿。全城的人都知道我们大学的管理不是好惹的。”    &lt;/p&gt;
+&lt;p&gt;A： “你敢不敢报警，叫警察来查查我是不是学生。”   &lt;/p&gt;
+&lt;p&gt;梁：“你还想报警？弄坏了大学的名声你负责的起吗？”    &lt;/p&gt;
+&lt;p&gt;梁把A的照片发到了班主任群里，问这是哪个班的。同时把A锁在了禁闭室里。   &lt;/p&gt;
+&lt;p&gt;第二天梁才回来，没有一个班主任表示认识照片这个人。也没有一个班主任表示有学生走失。   &lt;/p&gt;
+&lt;p&gt;这下梁慌了，赶快打开禁闭室的门，发现A已经昏过去了，可能是冻的也可能是饿的。   &lt;/p&gt;
+&lt;p&gt;梁又赶快把门重新锁上，然后去找校长，说明了情况。   &lt;/p&gt;
+&lt;p&gt;校长：“你干脆就把他彻底杀了，尸体随便分尸或者泡盐酸或者捐了做标本。”   &lt;/p&gt;
+&lt;p&gt;梁：“为什么啊，这么着急就把他杀了？”    &lt;/p&gt;
+&lt;p&gt;校长：“他要是个学生或者学生家长，我们捏着他的毕业证。可他是个社会人士，你有他的软肋吗？他出去把我们做的事情说给电视台怎么办？”   &lt;/p&gt;
+&lt;p&gt;梁：“校长，那这..”   &lt;/p&gt;
+&lt;p&gt;校长：“梁主任，我们的前程重要还是这个无名氏重要啊？全校的监控你爱删多少删多少，都不是事。”   &lt;/p&gt;
+&lt;p&gt;就这样，A失踪了。A 的家人去寻找过A，但是没有人知道A到底在哪里。    &lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://buyi.dev/2023/gmodswepsound/</guid>
             <title>GMod LUA 武器自动发射子弹的问题</title>
@@ -127,26 +160,6 @@ LogLevel DEBUG3
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://buyi.dev/2023/india/</guid>
-            <title>小小说：印度草药的故事</title>
-            <link>http://buyi.dev/2023/india/</link>
-            <category>小小说</category>
-            <pubDate>Sun, 18 Jun 2023 00:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;小明今天生病了，一直发热加咳嗽。   &lt;/p&gt;
-&lt;p&gt;小明的母亲就出去为他买药。    &lt;/p&gt;
-&lt;p&gt;母亲出去了不久，一个印度人就来到了小明家的门口。原来是小明的邻居，一个来打工的印度人，之前和小明也有认识。   &lt;/p&gt;
-&lt;p&gt;印度人敲敲门，“是我”。 &lt;/p&gt;
-&lt;p&gt;小明开门了。    &lt;/p&gt;
-&lt;p&gt;印度人说：“我听你一直在咳嗽，我手里有一些草药，是我们印度人世代都使用的配方，你拿去用开水煮开然后喝了就可以了。”    &lt;/p&gt;
-&lt;p&gt;小明表示了感谢，收下了印度草药。   &lt;/p&gt;
-&lt;p&gt;可是小明也只能继续等他母亲回家，因为小明还小，无法自己煮药。    &lt;/p&gt;
-&lt;p&gt;小明的母亲回来了，小明就和母亲说了印度人来拜访的事。    &lt;/p&gt;
-&lt;p&gt;小明的母亲看了看手里拿的中草药，再看了看印度人给的印度草药。&lt;br&gt;就把印度草药扔进了垃圾桶。   &lt;/p&gt;
-&lt;p&gt;小明问母亲为什么要丢掉它。   &lt;/p&gt;
-&lt;p&gt;小明的母亲说：“他们印度草药只能糊弄他们自己人，是帮不了我们的。我们的五千年中医博大精深，不管什么病，不管中国人外国人都是可以治好的。”   &lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
             <guid isPermalink="true">http://buyi.dev/2023/hit/</guid>
             <title>小小说：是女朋友就分手</title>
             <link>http://buyi.dev/2023/hit/</link>
@@ -165,6 +178,26 @@ LogLevel DEBUG3
 &lt;p&gt;B：“你这人怎么这样啊，你懂不懂什么叫孝顺啊？父母都是为你好你不知道吗？”&lt;/p&gt;
 &lt;p&gt;A：“难道你的意思是，我女朋友对我这样我就应该分手？我父母对我这样我就应该忍着挨着？那假如我是父母有一方是再婚呢？ 不是亲生的也该忍着？”&lt;/p&gt;
 &lt;p&gt;B：“不孝子就是不孝子，别狡辩了。”   &lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://buyi.dev/2023/india/</guid>
+            <title>小小说：印度草药的故事</title>
+            <link>http://buyi.dev/2023/india/</link>
+            <category>小小说</category>
+            <pubDate>Sun, 18 Jun 2023 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;小明今天生病了，一直发热加咳嗽。   &lt;/p&gt;
+&lt;p&gt;小明的母亲就出去为他买药。    &lt;/p&gt;
+&lt;p&gt;母亲出去了不久，一个印度人就来到了小明家的门口。原来是小明的邻居，一个来打工的印度人，之前和小明也有认识。   &lt;/p&gt;
+&lt;p&gt;印度人敲敲门，“是我”。 &lt;/p&gt;
+&lt;p&gt;小明开门了。    &lt;/p&gt;
+&lt;p&gt;印度人说：“我听你一直在咳嗽，我手里有一些草药，是我们印度人世代都使用的配方，你拿去用开水煮开然后喝了就可以了。”    &lt;/p&gt;
+&lt;p&gt;小明表示了感谢，收下了印度草药。   &lt;/p&gt;
+&lt;p&gt;可是小明也只能继续等他母亲回家，因为小明还小，无法自己煮药。    &lt;/p&gt;
+&lt;p&gt;小明的母亲回来了，小明就和母亲说了印度人来拜访的事。    &lt;/p&gt;
+&lt;p&gt;小明的母亲看了看手里拿的中草药，再看了看印度人给的印度草药。&lt;br&gt;就把印度草药扔进了垃圾桶。   &lt;/p&gt;
+&lt;p&gt;小明问母亲为什么要丢掉它。   &lt;/p&gt;
+&lt;p&gt;小明的母亲说：“他们印度草药只能糊弄他们自己人，是帮不了我们的。我们的五千年中医博大精深，不管什么病，不管中国人外国人都是可以治好的。”   &lt;/p&gt;
  ]]></description>
         </item>
         <item>
