@@ -14,4 +14,4 @@ friendslink:
   'Sonic853': 'https://blog.853lab.com/'
 config:
   copyright: false # 复制的时候弹出保留原站链接说明
-  night: true # 自动切换夜间模式
+  night: false  # 自动切换夜间模式

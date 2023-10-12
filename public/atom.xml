@@ -9,10 +9,10 @@
     <category term="关于" />
     <category term="code" />
     <category term="小小说" />
-    <category term="gmod" />
     <category term="学校" />
-    <category term="ssh" />
+    <category term="gmod" />
     <category term=".net" />
+    <category term="ssh" />
     <entry>
         <id>http://buyi.dev/2023/pinfolder/</id>
         <title>工具软件： PinFolder</title>
