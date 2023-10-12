@@ -5,16 +5,31 @@
         <link>http://buyi.dev</link>
         <description></description>
         <language>zh</language>
-        <pubDate>Mon, 25 Sep 2023 21:04:05 +0800</pubDate>
-        <lastBuildDate>Mon, 25 Sep 2023 21:04:05 +0800</lastBuildDate>
+        <pubDate>Thu, 12 Oct 2023 09:26:53 +0800</pubDate>
+        <lastBuildDate>Thu, 12 Oct 2023 09:26:53 +0800</lastBuildDate>
         <category>牢骚</category>
         <category>家庭</category>
         <category>关于</category>
         <category>code</category>
         <category>小小说</category>
-        <category>学校</category>
         <category>gmod</category>
+        <category>学校</category>
         <category>ssh</category>
+        <category>.net</category>
+        <item>
+            <guid isPermalink="true">http://buyi.dev/2023/pinfolder/</guid>
+            <title>工具软件： PinFolder</title>
+            <link>http://buyi.dev/2023/pinfolder/</link>
+            <category>code</category>
+            <category>.net</category>
+            <pubDate>Thu, 12 Oct 2023 09:26:53 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;一个自制的工具软件。功能是用一个小图标把一个文件夹常驻列在任务栏里。&lt;br&gt;在 Windows 10 及之前的 Windows 版本里，任务栏是有工具栏功能的，可以把文件夹直接固定在任务栏里方便点开。&lt;br&gt;微软在 win11 里把这个功能砍掉了。    &lt;/p&gt;
+&lt;p&gt;所以布衣自己做了一个。&lt;br&gt;这个也是布衣的第一个能用的 WPF 作品。   &lt;/p&gt;
+&lt;p&gt;环境依赖： &lt;a href=&#34;https://dotnet.microsoft.com/zh-cn/download/dotnet/6.0&#34;&gt;.NET 6 Desktop&lt;/a&gt;   &lt;/p&gt;
+&lt;p&gt;源码及 Release： &lt;a href=&#34;https://github.com/chenbuyi2019/PinFolder&#34;&gt;点我&lt;/a&gt;    &lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://z1.ax1x.com/2023/10/12/piSMRsS.png&#34;&gt;&lt;br&gt;&lt;img src=&#34;https://z1.ax1x.com/2023/10/12/piSMhZQ.png&#34;&gt;   &lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://buyi.dev/2023/deathinuniversity/</guid>
             <title>小小说：死在大学里</title>

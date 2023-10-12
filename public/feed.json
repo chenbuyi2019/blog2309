@@ -5,6 +5,17 @@
     "home_page_url": "http://buyi.dev",
     "items": [
         {
+            "id": "http://buyi.dev/2023/pinfolder/",
+            "url": "http://buyi.dev/2023/pinfolder/",
+            "title": "工具软件： PinFolder",
+            "date_published": "2023-10-12T01:26:53.000Z",
+            "content_html": "<p>一个自制的工具软件。功能是用一个小图标把一个文件夹常驻列在任务栏里。<br>在 Windows 10 及之前的 Windows 版本里，任务栏是有工具栏功能的，可以把文件夹直接固定在任务栏里方便点开。<br>微软在 win11 里把这个功能砍掉了。    </p>\n<p>所以布衣自己做了一个。<br>这个也是布衣的第一个能用的 WPF 作品。   </p>\n<p>环境依赖： <a href=\"https://dotnet.microsoft.com/zh-cn/download/dotnet/6.0\">.NET 6 Desktop</a>   </p>\n<p>源码及 Release： <a href=\"https://github.com/chenbuyi2019/PinFolder\">点我</a>    </p>\n<p><img src=\"https://z1.ax1x.com/2023/10/12/piSMRsS.png\"><br><img src=\"https://z1.ax1x.com/2023/10/12/piSMhZQ.png\">   </p>\n",
+            "tags": [
+                "code",
+                ".net"
+            ]
+        },
+        {
             "id": "http://buyi.dev/2023/deathinuniversity/",
             "url": "http://buyi.dev/2023/deathinuniversity/",
             "title": "小小说：死在大学里",
