@@ -3,7 +3,7 @@
   <head>
      
     <meta charset="UTF-8">
-    <title>关于我 - 陈布衣的博客</title>
+    <title>从QQ空间网页导出QQ好友列表 - 陈布衣的博客</title>
     <link rel="shortcut icon" href="/static/img/icon.png">
     <link rel="icon" href="/static/img/icon.png" sizes="192x192"/>
     
@@ -15,7 +15,7 @@
 
     <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1"/>
     <meta property="og:site_name" content="陈布衣的博客">
-    <meta property="og:title" content="关于我"/>
+    <meta property="og:title" content="从QQ空间网页导出QQ好友列表"/>
     
     <link rel="alternate" type="application/rss+xml" title="陈布衣的博客" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="陈布衣的博客" href="/atom.xml" />
@@ -52,48 +52,36 @@
     <main>
     <div class="wrap min">
         <section class="post-title">
-            <h2>关于我</h2>
+            <h2>从QQ空间网页导出QQ好友列表</h2>
             <div class="post-meta">
-                <time class="date">2021 年 01 月 01 日</time>
+                <time class="date">2023 年 10 月 18 日</time>
             
             </div>
         </section>
         <article class="post-content">
-            <p>我是陈布衣，陈是姓，布衣是号。<br>欢迎参观本博客，虽然没有多少有价值的内容。   </p>
-<p>联系我，请发 email 到：<br>chenbuyi2019艾特outlook.com</p>
-<h1 id="简史"><a href="#简史" class="headerlink" title="简史"></a>简史</h1><p>2001年，在浙江省出生。<br>2013年，注册 Steam 。<br>2019年，优异的高考成绩进入杭州的本科大学，然后退学，后来确诊抑郁症。<br>2020年，尝试自杀，药物中毒，没有留下后遗症。<br>2021年，离家出走，拉黑血亲。定居在云南省昆明市。   </p>
-<h1 id="我的作品"><a href="#我的作品" class="headerlink" title="我的作品"></a>我的作品</h1><ul>
-<li><a target="_blank" rel="noopener" href="https://chenbuyi2019.github.io/steam-id/">在线 Steam ID 数字转换</a></li>
-<li><a target="_blank" rel="noopener" href="https://chenbuyi2019.github.io/ics-gen/">iCalendar(ics) 年度日程批量生成</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/chenbuyi2019/Buyi-Tools">布衣的工具箱</a></li>
-</ul>
-<p>以及其他的你能看见的我发在这个网站的牢骚文章。<br>还有我在B站发的一些有的没的<a target="_blank" rel="noopener" href="https://space.bilibili.com/4523834/video">视频</a>。   </p>
-<h1 id="我的设备"><a href="#我的设备" class="headerlink" title="我的设备"></a>我的设备</h1><p>布衣现在使用的是神舟笔记本 战神S8 。   </p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://valid.x86.fr/azs1u6">Intel Core i7 12650H</a></li>
-<li>DDR4 8GB 3200Mhz 两根</li>
-<li><a target="_blank" rel="noopener" href="https://www.3dmark.com/3dm/99857307">NVIDIA RTX 4060 8GB</a></li>
-<li>15.6 英寸 IPS屏幕 1920x1080 144hz</li>
-<li>NVME SSD 两块 500GB + 1000GB</li>
-<li>Windows 11 Home</li>
-</ul>
-<h1 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h1><p><img src="/image/avatar.webp" alt="头像">   </p>
-<p><img src="/image/dress.webp" alt="女装">   </p>
+            <p>以前我都是用QQ邮箱网页版来导出QQ好友列表做备份的。（把全部的好友添加到邮箱通讯录，然后导出邮箱通讯录即可）<br>然而我今天发现这个不好使了。他们断开了QQ邮箱网页版和QQ好友列表的关联。下面这个窗口不断弹出。  </p>
+<p><img src="https://z1.ax1x.com/2023/10/18/piPvObV.png">  </p>
+<p>我想到了另外一个老古董，QQ空间。经过一番鼓捣，找到了具体的XHR请求网址。<br>首先到网页版登录<a target="_blank" rel="noopener" href="https://i.qq.com/">QQ空间</a>，<br>如果你没有开通QQ空间也没有关系，也可以登录而不开通，里面也是可以看见别人的说说、相册的。<br>你甚至可以不开通空间的情况下自己发说说，就是别人看不见。<br>登录进来之后按F12进入开发者工具，找到 Network 区域准备抓包。  </p>
+<p><img src="https://z1.ax1x.com/2023/10/18/piPvvUU.png">   </p>
+<p>接下来点击好友动态，准备发一条说说。点一下 @ 符号，好友列表就从下面冒出来了。<br>在 Network 里搜索一条请求，文件名叫 <code>friend_show_qqfriends.cgi</code>    </p>
+<p><img src="https://z1.ax1x.com/2023/10/18/piPvx5F.png">   </p>
+<p>把它的返回内容保存为 .json 文件，就是你的QQ好友列表了。（虽然不是完美的 json ，需要麻烦手动去掉头尾的 callback js 语句）<br>里面的 items 的 uin 数字就是QQ号了。<br>这个功能可能也就QQ空间这种腾讯一直不更新的能做到了。   </p>
+<p>我今天一开始想到的是腾讯文档，他可以选择分享给指定QQ好友，<br>然后也会有一个好友列表，然而它数据里的 QQ UIN 是另外一种算法的数字。不是我们日常使用的QQ号，是经过了某种算法或单纯随机的新的数编号。   </p>
 
         </article>
         <section class="post-near">
             <ul>
                 
-                    <li>上一篇: <a href="/2021/rss/">订阅</a></li>
+                    <li>上一篇: 看完啦 (つд⊂)</li>
                 
                 
-                    <li>下一篇: 看完啦 (つд⊂)</li>
+                    <li>下一篇: <a href="/2023/pinfolder/">工具软件： PinFolder</a></li>
                 
             </ul>
         </section>
         
             <section class="post-tags">
-            <a class="-none-link" href="/tags/%E5%85%B3%E4%BA%8E/" rel="tag">关于</a>
+            <a class="-none-link" href="/tags/code/" rel="tag">code</a>
             </section>
         
     

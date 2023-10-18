@@ -5,17 +5,33 @@
         <link>http://buyi.dev</link>
         <description></description>
         <language>zh</language>
-        <pubDate>Thu, 12 Oct 2023 09:26:53 +0800</pubDate>
-        <lastBuildDate>Thu, 12 Oct 2023 09:26:53 +0800</lastBuildDate>
+        <pubDate>Wed, 18 Oct 2023 20:22:07 +0800</pubDate>
+        <lastBuildDate>Wed, 18 Oct 2023 20:22:07 +0800</lastBuildDate>
         <category>牢骚</category>
         <category>家庭</category>
         <category>关于</category>
-        <category>code</category>
         <category>小小说</category>
-        <category>学校</category>
+        <category>code</category>
         <category>gmod</category>
         <category>.net</category>
         <category>ssh</category>
+        <category>学校</category>
+        <item>
+            <guid isPermalink="true">http://buyi.dev/2023/exportqq/</guid>
+            <title>从QQ空间网页导出QQ好友列表</title>
+            <link>http://buyi.dev/2023/exportqq/</link>
+            <category>code</category>
+            <pubDate>Wed, 18 Oct 2023 20:22:07 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;以前我都是用QQ邮箱网页版来导出QQ好友列表做备份的。（把全部的好友添加到邮箱通讯录，然后导出邮箱通讯录即可）&lt;br&gt;然而我今天发现这个不好使了。他们断开了QQ邮箱网页版和QQ好友列表的关联。下面这个窗口不断弹出。  &lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://z1.ax1x.com/2023/10/18/piPvObV.png&#34;&gt;  &lt;/p&gt;
+&lt;p&gt;我想到了另外一个老古董，QQ空间。经过一番鼓捣，找到了具体的XHR请求网址。&lt;br&gt;首先到网页版登录&lt;a href=&#34;https://i.qq.com/&#34;&gt;QQ空间&lt;/a&gt;，&lt;br&gt;如果你没有开通QQ空间也没有关系，也可以登录而不开通，里面也是可以看见别人的说说、相册的。&lt;br&gt;你甚至可以不开通空间的情况下自己发说说，就是别人看不见。&lt;br&gt;登录进来之后按F12进入开发者工具，找到 Network 区域准备抓包。  &lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://z1.ax1x.com/2023/10/18/piPvvUU.png&#34;&gt;   &lt;/p&gt;
+&lt;p&gt;接下来点击好友动态，准备发一条说说。点一下 @ 符号，好友列表就从下面冒出来了。&lt;br&gt;在 Network 里搜索一条请求，文件名叫 &lt;code&gt;friend_show_qqfriends.cgi&lt;/code&gt;    &lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://z1.ax1x.com/2023/10/18/piPvx5F.png&#34;&gt;   &lt;/p&gt;
+&lt;p&gt;把它的返回内容保存为 .json 文件，就是你的QQ好友列表了。（虽然不是完美的 json ，需要麻烦手动去掉头尾的 callback js 语句）&lt;br&gt;里面的 items 的 uin 数字就是QQ号了。&lt;br&gt;这个功能可能也就QQ空间这种腾讯一直不更新的能做到了。   &lt;/p&gt;
+&lt;p&gt;我今天一开始想到的是腾讯文档，他可以选择分享给指定QQ好友，&lt;br&gt;然后也会有一个好友列表，然而它数据里的 QQ UIN 是另外一种算法的数字。不是我们日常使用的QQ号，是经过了某种算法或单纯随机的新的数编号。   &lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://buyi.dev/2023/pinfolder/</guid>
             <title>工具软件： PinFolder</title>
