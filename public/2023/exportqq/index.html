@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     
+    <meta charset="UTF-8">
+    <title>从QQ空间网页导出QQ好友列表 - 陈布衣的博客</title>
+    <link rel="shortcut icon" href="/static/img/icon.png">
+    <link rel="icon" href="/static/img/icon.png" sizes="192x192"/>
+    
+<link rel="stylesheet" href="/static/kico.css">
+<link rel="stylesheet" href="/static/hingle.css">
+
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1"/>
+    <meta property="og:site_name" content="陈布衣的博客">
+    <meta property="og:title" content="从QQ空间网页导出QQ好友列表"/>
+    
+    <link rel="alternate" type="application/rss+xml" title="陈布衣的博客" href="/rss.xml" />
+    <link rel="alternate" type="application/atom+xml" title="陈布衣的博客" href="/atom.xml" />
+    <link rel="alternate" type="application/json" title="陈布衣的博客" href="/feed.json" />
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+  <body>
+    <header>
+    <div class="head-title">
+        <h4>陈布衣的博客</h4>
+    </div>
+    <div class="head-action">
+        <div class="toggle-btn"></div>
+        <div class="light-btn"></div>
+        <div class="search-btn" style="display: none;"></div>
+    </div>
+    <form class="head-search" method="post">
+        <input type="text" name="s" placeholder="搜索什么？">
+    </form>
+    <nav class="head-menu">
+        <a href="/">首页</a>
+        
+            <a href="/2021/about/">关于</a>
+        
+            <a href="/2021/rss/">订阅</a>
+        
+            <a target="_blank" rel="noopener" href="https://github.com/chenbuyi2019">Github</a>
+        
+            <a target="_blank" rel="noopener" href="https://m.weibo.cn/u/5977985000">微博</a>
+        
+    </nav>
+</header>
+
+    <main>
+    <div class="wrap min">
+        <section class="post-title">
+            <h2>从QQ空间网页导出QQ好友列表</h2>
+            <div class="post-meta">
+                <time class="date">2023 年 10 月 18 日</time>
+            
+            </div>
+        </section>
+        <article class="post-content">
+            <p>以前我都是用QQ邮箱网页版来导出QQ好友列表做备份的。（把全部的好友添加到邮箱通讯录，然后导出邮箱通讯录即可）<br>然而我今天发现这个不好使了。他们断开了QQ邮箱网页版和QQ好友列表的关联。下面这个窗口不断弹出。  </p>
+<p><img src="https://z1.ax1x.com/2023/10/18/piPvObV.png">  </p>
+<p>我想到了另外一个老古董，QQ空间。经过一番鼓捣，找到了具体的XHR请求网址。<br>首先到网页版登录<a target="_blank" rel="noopener" href="https://i.qq.com/">QQ空间</a>，<br>如果你没有开通QQ空间也没有关系，也可以登录而不开通，里面也是可以看见别人的说说、相册的。<br>你甚至可以不开通空间的情况下自己发说说，就是别人看不见。<br>登录进来之后按F12进入开发者工具，找到 Network 区域准备抓包。  </p>
+<p><img src="https://z1.ax1x.com/2023/10/18/piPvvUU.png">   </p>
+<p>接下来点击好友动态，准备发一条说说。点一下 @ 符号，好友列表就从下面冒出来了。<br>在 Network 里搜索一条请求，文件名叫 <code>friend_show_qqfriends.cgi</code>    </p>
+<p><img src="https://z1.ax1x.com/2023/10/18/piPvx5F.png">   </p>
+<p>把它的返回内容保存为 .json 文件，就是你的QQ好友列表了。（虽然不是完美的 json ，需要麻烦手动去掉头尾的 callback js 语句）<br>里面的 items 的 uin 数字就是QQ号了。<br>这个功能可能也就QQ空间这种腾讯一直不更新的能做到了。   </p>
+<p>我今天一开始想到的是腾讯文档，他可以选择分享给指定QQ好友，<br>然后也会有一个好友列表，然而它数据里的 QQ UIN 是另外一种算法的数字。不是我们日常使用的QQ号，是经过了某种算法或单纯随机的新的数编号。   </p>
+
+        </article>
+        <section class="post-near">
+            <ul>
+                
+                    <li>上一篇: 看完啦 (つд⊂)</li>
+                
+                
+                    <li>下一篇: <a href="/2023/pinfolder/">工具软件： PinFolder</a></li>
+                
+            </ul>
+        </section>
+        
+            <section class="post-tags">
+            <a class="-none-link" href="/tags/code/" rel="tag">code</a>
+            </section>
+        
+    
+        <section class="post-author">
+        
+            <figure class="author-avatar">
+                <img src="/image/avatar.jpg" alt="Chen Buyi" />
+            </figure>
+        
+            <div class="author-info">
+                <h4>Chen Buyi</h4>
+                <p>姓陈，号布衣</p>
+            </div>
+        </section>
+    
+    </div>
+    <link href="/lib/framer.min.css" rel="stylesheet">
+    <script src="/lib/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</main>
+
+    <footer>
+    <div class="buttons">
+        <a class="to-top" href="#"></a>
+    </div>
+    <div class="wrap min">
+        <section class="widget">
+            <div class="row">
+                <div class="col-m-4">
+                    <h3 class="title-recent">友情链接：</h3>
+                    
+                        <a target="_blank" rel="noopener" href="https://blog.acesheep.com/">AceSheep</a>
+                        <br>
+                    
+                        <a target="_blank" rel="noopener" href="https://www.0xaa55.com/">技术宅的结界</a>
+                        <br>
+                    
+                        <a target="_blank" rel="noopener" href="https://blog.853lab.com/">Sonic853</a>
+                        <br>
+                    
+                </div>
+                <div class="col-m-4">
+                    <h3 class="title-date">时光机：</h3>
+                    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">October 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">August 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
+                </div>
+                <div class="col-m-4">
+                    <h3 class="title-tags">标签云：</h3>
+                    <a href="/tags/net/" style="font-size: 10px;">.net</a> <a href="/tags/code/" style="font-size: 16.67px;">code</a> <a href="/tags/gmod/" style="font-size: 10px;">gmod</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/%E5%85%B3%E4%BA%8E/" style="font-size: 10px;">关于</a> <a href="/tags/%E5%AD%A6%E6%A0%A1/" style="font-size: 10px;">学校</a> <a href="/tags/%E5%AE%B6%E5%BA%AD/" style="font-size: 16.67px;">家庭</a> <a href="/tags/%E5%B0%8F%E5%B0%8F%E8%AF%B4/" style="font-size: 20px;">小小说</a> <a href="/tags/%E7%89%A2%E9%AA%9A/" style="font-size: 13.33px;">牢骚</a>
+                </div>
+            </div>
+        </section>
+        <section class="sub-footer">
+            <p>© 2023 <a href="/">陈布衣的博客</a>. All Rights Reserved. Theme By <a href="https://github.com/Dreamer-Paul/Hingle" target="_blank" rel="nofollow">Hingle</a>.</p>
+        </section>
+    </div>
+</footer>
+
+
+<script src="/static/kico.js"></script>
+<script src="/static/hingle.js"></script>
+
+
+<script>var hingle = new Paul_Hingle({"copyright":false,"night":false});</script>
+
+  </body>
+</html>

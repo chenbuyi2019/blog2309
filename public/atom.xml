@@ -1,0 +1,337 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://buyi.dev</id>
+    <title>陈布衣的博客</title>
+    <link href="http://buyi.dev" />
+    <updated>2023-10-18T12:22:07.000Z</updated>
+    <category term="关于" />
+    <category term="小小说" />
+    <category term="学校" />
+    <category term="家庭" />
+    <category term="牢骚" />
+    <category term="code" />
+    <category term="gmod" />
+    <category term=".net" />
+    <category term="ssh" />
+    <entry>
+        <id>http://buyi.dev/2023/exportqq/</id>
+        <title>从QQ空间网页导出QQ好友列表</title>
+        <link rel="alternate" href="http://buyi.dev/2023/exportqq/"/>
+        <content type="html">&lt;p&gt;以前我都是用QQ邮箱网页版来导出QQ好友列表做备份的。（把全部的好友添加到邮箱通讯录，然后导出邮箱通讯录即可）&lt;br&gt;然而我今天发现这个不好使了。他们断开了QQ邮箱网页版和QQ好友列表的关联。下面这个窗口不断弹出。  &lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://z1.ax1x.com/2023/10/18/piPvObV.png&#34;&gt;  &lt;/p&gt;
+&lt;p&gt;我想到了另外一个老古董，QQ空间。经过一番鼓捣，找到了具体的XHR请求网址。&lt;br&gt;首先到网页版登录&lt;a href=&#34;https://i.qq.com/&#34;&gt;QQ空间&lt;/a&gt;，&lt;br&gt;如果你没有开通QQ空间也没有关系，也可以登录而不开通，里面也是可以看见别人的说说、相册的。&lt;br&gt;你甚至可以不开通空间的情况下自己发说说，就是别人看不见。&lt;br&gt;登录进来之后按F12进入开发者工具，找到 Network 区域准备抓包。  &lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://z1.ax1x.com/2023/10/18/piPvvUU.png&#34;&gt;   &lt;/p&gt;
+&lt;p&gt;接下来点击好友动态，准备发一条说说。点一下 @ 符号，好友列表就从下面冒出来了。&lt;br&gt;在 Network 里搜索一条请求，文件名叫 &lt;code&gt;friend_show_qqfriends.cgi&lt;/code&gt;    &lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://z1.ax1x.com/2023/10/18/piPvx5F.png&#34;&gt;   &lt;/p&gt;
+&lt;p&gt;把它的返回内容保存为 .json 文件，就是你的QQ好友列表了。（虽然不是完美的 json ，需要麻烦手动去掉头尾的 callback js 语句）&lt;br&gt;里面的 items 的 uin 数字就是QQ号了。&lt;br&gt;这个功能可能也就QQ空间这种腾讯一直不更新的能做到了。   &lt;/p&gt;
+&lt;p&gt;我今天一开始想到的是腾讯文档，他可以选择分享给指定QQ好友，&lt;br&gt;然后也会有一个好友列表，然而它数据里的 QQ UIN 是另外一种算法的数字。不是我们日常使用的QQ号，是经过了某种算法或单纯随机的新的数编号。   &lt;/p&gt;
+</content>
+        <category term="code" />
+        <updated>2023-10-18T12:22:07.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://buyi.dev/2023/pinfolder/</id>
+        <title>工具软件： PinFolder</title>
+        <link rel="alternate" href="http://buyi.dev/2023/pinfolder/"/>
+        <content type="html">&lt;p&gt;一个自制的工具软件。功能是用一个小图标把一个文件夹常驻列在任务栏里。&lt;br&gt;在 Windows 10 及之前的 Windows 版本里，任务栏是有工具栏功能的，可以把文件夹直接固定在任务栏里方便点开。&lt;br&gt;微软在 win11 里把这个功能砍掉了。    &lt;/p&gt;
+&lt;p&gt;所以布衣自己做了一个。&lt;br&gt;这个也是布衣的第一个能用的 WPF 作品。   &lt;/p&gt;
+&lt;p&gt;环境依赖： &lt;a href=&#34;https://dotnet.microsoft.com/zh-cn/download/dotnet/6.0&#34;&gt;.NET 6 Desktop&lt;/a&gt;   &lt;/p&gt;
+&lt;p&gt;源码及 Release： &lt;a href=&#34;https://github.com/chenbuyi2019/PinFolder&#34;&gt;点我&lt;/a&gt;    &lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://z1.ax1x.com/2023/10/12/piSMRsS.png&#34;&gt;&lt;br&gt;&lt;img src=&#34;https://z1.ax1x.com/2023/10/12/piSMhZQ.png&#34;&gt;   &lt;/p&gt;
+</content>
+        <category term="code" />
+        <category term=".net" />
+        <updated>2023-10-12T01:26:53.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://buyi.dev/2023/deathinuniversity/</id>
+        <title>小小说：死在大学里</title>
+        <link rel="alternate" href="http://buyi.dev/2023/deathinuniversity/"/>
+        <content type="html">&lt;p&gt;A 已经大学毕业几年了，不知道为什么，今天A醒来发现自己在一个陌生的环境里。&lt;br&gt;这里是一所大学，A知道这所大学在他居住的城市里，A决定离开这里然后回家。   &lt;/p&gt;
+&lt;p&gt;A 沿着大路走到了大学门口，但是保安拦住了他。   &lt;/p&gt;
+&lt;p&gt;保安：“你是老师还是学生？你的身份卡呢？”    &lt;/p&gt;
+&lt;p&gt;A ：“我是社会人士，我没有身份卡。”   &lt;/p&gt;
+&lt;p&gt;保安：“胡说，我们这里每个人都有身份卡或校牌，没有校长邀请也根本不会有任何社会人士，你没有就不准出去，而且现在是上课期间，赶快回到你的教室。”   &lt;/p&gt;
+&lt;p&gt;A ：“大学居然还有这种出门要身份卡的道理？这是什么狗屁大学！”   &lt;/p&gt;
+&lt;p&gt;保安给了A一拳，然后把A拽到了主任室。   &lt;/p&gt;
+&lt;p&gt;学校的一个什么高官来了，对A说：“我是梁主任，你好好交代一下你做了什么。”    &lt;/p&gt;
+&lt;p&gt;A：“我说了我是社会人士，我不知道为什么我来到了大学里面，我也没有身份卡。”    &lt;/p&gt;
+&lt;p&gt;梁：“我们大学严格执行封闭式管理，连外卖和快递都进不来。我认识全校每个教职工，你不是老师，你只能是学生。”   &lt;/p&gt;
+&lt;p&gt;A：“我说了我是学校外面来的，我不是里面的学生。”    &lt;/p&gt;
+&lt;p&gt;梁挥挥手，叫保安把A又打了一顿。   &lt;/p&gt;
+&lt;p&gt;梁：“我再给你一次机会，你不说你是哪个班的学生的话我就打断你的腿。全城的人都知道我们大学的管理不是好惹的。”    &lt;/p&gt;
+&lt;p&gt;A： “你敢不敢报警，叫警察来查查我是不是学生。”   &lt;/p&gt;
+&lt;p&gt;梁：“你还想报警？弄坏了大学的名声你负责的起吗？”    &lt;/p&gt;
+&lt;p&gt;梁把A的照片发到了班主任群里，问这是哪个班的。同时把A锁在了禁闭室里。   &lt;/p&gt;
+&lt;p&gt;第二天梁才回来，没有一个班主任表示认识照片这个人。也没有一个班主任表示有学生走失。   &lt;/p&gt;
+&lt;p&gt;这下梁慌了，赶快打开禁闭室的门，发现A已经昏过去了，可能是冻的也可能是饿的。   &lt;/p&gt;
+&lt;p&gt;梁又赶快把门重新锁上，然后去找校长，说明了情况。   &lt;/p&gt;
+&lt;p&gt;校长：“你干脆就把他彻底杀了，尸体随便分尸或者泡盐酸或者捐了做标本。”   &lt;/p&gt;
+&lt;p&gt;梁：“为什么啊，这么着急就把他杀了？”    &lt;/p&gt;
+&lt;p&gt;校长：“他要是个学生或者学生家长，我们捏着他的毕业证。可他是个社会人士，你有他的软肋吗？他出去把我们做的事情说给电视台怎么办？”   &lt;/p&gt;
+&lt;p&gt;梁：“校长，那这..”   &lt;/p&gt;
+&lt;p&gt;校长：“梁主任，我们的前程重要还是这个无名氏重要啊？全校的监控你爱删多少删多少，都不是事。”   &lt;/p&gt;
+&lt;p&gt;就这样，A失踪了。A 的家人去寻找过A，但是没有人知道A到底在哪里。    &lt;/p&gt;
+</content>
+        <category term="小小说" />
+        <updated>2023-09-25T13:04:05.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://buyi.dev/2023/gmodswepsound/</id>
+        <title>GMod LUA 武器自动发射子弹的问题</title>
+        <link rel="alternate" href="http://buyi.dev/2023/gmodswepsound/"/>
+        <content type="html">&lt;p&gt;我发现我自己写的 LUA 脚本武器 SWEP 有个通病，就是按下左键或者右键能听到ti的一声（HL2没弹药的音效）。&lt;br&gt;如果写了 &lt;code&gt;AmmoType&lt;/code&gt; 并且我不实际发射弹药，也会看见和听见一颗 AR2 子弹射出去，但是没有任何伤害。   &lt;/p&gt;
+&lt;p&gt;以前我的尝试都没有成功，今天我终于找到了异常的根源。   &lt;/p&gt;
+&lt;p&gt;原因就是我只在 &lt;code&gt;SERVER&lt;/code&gt; 里添置了 &lt;code&gt;SWEP:PrimaryAttack()&lt;/code&gt; ，没有在 &lt;code&gt;CLIENT&lt;/code&gt; 里添置 &lt;code&gt;SWEP:PrimaryAttack()&lt;/code&gt; 。&lt;br&gt;如果不写 &lt;code&gt;SWEP:PrimaryAttack()&lt;/code&gt; ， GMod 就会自动按照默认设计，发射一颗子弹（仅仅是客户端的子弹，服务器根本不知道你射了）。同理还有 &lt;code&gt;SWEP:SecondaryAttack()&lt;/code&gt;。   &lt;/p&gt;
+&lt;p&gt;为什么今天发现了问题呢，是因为我在 &lt;code&gt;SHARED&lt;/code&gt; 加了一个 hook ，然后发现只有我的 &lt;code&gt;CLIENT&lt;/code&gt; 在报告发射。   &lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;lua&#34;&gt;hook.Add(
+    &amp;quot;EntityFireBullets&amp;quot;,
+    &amp;quot;abcdefgh12354895714896&amp;quot;,
+    function(ent, data)
+        if not IsValid(ent) then return end
+        print(ent, &amp;quot;发射了子弹&amp;quot;)
+    end
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;为什么以前没有发现，是因为以前我都是 &lt;code&gt;SWEP.Primary.ClipSize = -1&lt;/code&gt;。&lt;br&gt;以前我的子弹数量都是 -1 ，压根没有子弹，就只能听到HL2没弹药的音效。&lt;br&gt;然后我还tm不知道在哪里关这个音效。   &lt;/p&gt;
+&lt;p&gt;为什么别人家的武器都没有这个事情呢。&lt;br&gt;是因为别人都喜欢直接写在 &lt;code&gt;shared.lua&lt;/code&gt; 里面。   &lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;lua&#34;&gt;function SWEP:PrimaryAttack()
+    if CLIENT then return end
+end
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;可不叫离谱吗。   &lt;/p&gt;
+&lt;p&gt;气死我了。&lt;br&gt;所以特此写下本文。    &lt;/p&gt;
+</content>
+        <category term="code" />
+        <category term="gmod" />
+        <updated>2023-09-04T03:49:43.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://buyi.dev/2023/year2/</id>
+        <title>离家出走2.5年的感慨</title>
+        <link rel="alternate" href="http://buyi.dev/2023/year2/"/>
+        <content type="html">&lt;h1 id=&#34;前言&#34;&gt;&lt;a href=&#34;#前言&#34; class=&#34;headerlink&#34; title=&#34;前言&#34;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;下文中的父母也可指代别的家庭长辈或监护人。   &lt;/p&gt;
+&lt;p&gt;如果你真心觉得晚辈是应该无条件服从长辈的，全天下的父母都是好的，&lt;br&gt;包括赵姬（秦始皇的母亲）和嫪毐私通、谋反也是正确的、合理合情的，&lt;br&gt;请关闭本网页，不要往下看了。   &lt;/p&gt;
+&lt;h1 id=&#34;阶段性胜利&#34;&gt;&lt;a href=&#34;#阶段性胜利&#34; class=&#34;headerlink&#34; title=&#34;阶段性胜利&#34;&gt;&lt;/a&gt;阶段性胜利&lt;/h1&gt;&lt;p&gt;昨天是2023年八月18日，是一个特别的日子。&lt;br&gt;昨天是我成功取到了银行一年期定期存款利息的日子。标志着我已经能够守住存款一年了。&lt;br&gt;而拿到利息的那一部分存款，是我一年前的财富大头，现在仅仅占我总财富的一小部分。&lt;br&gt;后续我把财富分开存放了，一部分在理财，一部分在存折里。   &lt;/p&gt;
+&lt;p&gt;这不是个整数纪念日，离家出走是2021年1月的事情了，大学退学也是2019年11月的事情了。&lt;br&gt;但是依然值得纪念。   &lt;/p&gt;
+&lt;p&gt;我把存折的金额数字透露给大家看，我觉得也没什么，因为不管和我熟悉不熟悉，你都不会觉得我的钱应该无理由的送给你、借给你。&lt;br&gt;例外的情况就两种。&lt;br&gt;第一种，贼人，ta看谁有钱了，ta就想偷，就想骗。&lt;br&gt;第二种，长辈，ta觉得你有钱了，给ta钱花是理所应当，天经地义。   &lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s1.ax1x.com/2023/08/19/pP3RrZD.jpg&#34;&gt;&lt;br&gt;&lt;img src=&#34;https://s1.ax1x.com/2023/08/19/pP3W1SI.jpg&#34;&gt;   &lt;/p&gt;
+&lt;h1 id=&#34;君子不立于危墙之下&#34;&gt;&lt;a href=&#34;#君子不立于危墙之下&#34; class=&#34;headerlink&#34; title=&#34;君子不立于危墙之下&#34;&gt;&lt;/a&gt;君子不立于危墙之下&lt;/h1&gt;&lt;p&gt;离家出走是因为对我来说，家庭、血缘、亲人，就是一堵危墙。   &lt;/p&gt;
+&lt;p&gt;他们随时有让你人身自由受限、财富大量流失的能力。并且他们这么做也不会受到法律的严惩。&lt;br&gt;相比一个街头混混，打了你两下或者偷了你钱包，那起码都是进看守所的。   &lt;/p&gt;
+&lt;p&gt;你父母能把你打一顿还无罪。我不行，哪怕我有免费的大律师我都不敢。&lt;br&gt;你父母能吸光你的钱拿去赌博或者投资或者买房。我不行，哪怕我和你恋爱了几年取了你好多钱，离婚都得判我大部分还给你。&lt;br&gt;你父母能让你进网瘾矫正机构。我不行，哪怕我付给网瘾矫正机构十倍的费用，他们也不敢收非监护人送来的人。是因为有你监护人撑腰，所以这些矫正机构才敢对你动粗。&lt;br&gt;你父母能让你活着一天都不开心，天天说打击你、讥讽你的话。我不行，我天天说这样的话，你已经把我拉黑了。但是你未必有胆子拉黑你父母。&lt;br&gt;你父母能逼你自杀还没事。我不行，我逼你自杀了你父母要来起诉我，利用你的死亡从我身上挣钱和“主持公道”。   &lt;/p&gt;
+&lt;p&gt;你朋友做了出格的事情，你就应该果断地和ta划清界限。&lt;br&gt;可不管你父母做出多么出格的事情，你父母都还是你父母。所以他们才敢肆无忌惮啊。   &lt;/p&gt;
+&lt;p&gt;在这样的民间习惯、法治环境下，父母不是危墙是什么？&lt;br&gt;他们是你身边最不可控的、最不好摆脱的一个因素。   &lt;/p&gt;
+&lt;p&gt;家庭环境可以有很高的上限，也可以有很低的下限。&lt;br&gt;本质上就是个一个环节内的小皇帝，你过的好不好全看他们是不是一代明君。&lt;br&gt;但是恰恰你也知道，历史上明君的数量少于昏君的数量。&lt;br&gt;我的家庭其实并没有对我特别特别坏，只是中规中矩的普通家长。&lt;br&gt;但是呢，我就是见不惯，加上我被气出了抑郁症。&lt;br&gt;后面我搬出去租房住了，打工自力更生养活自己，结交了可靠的朋友。&lt;br&gt;我才明白，原来血亲不是什么必需品，家庭是可有可无的。   &lt;/p&gt;
+&lt;p&gt;我现在基本不说我要回家，我只说我回的是“安全屋”。&lt;br&gt;没有家人的地方，能叫家吗？&lt;br&gt;有家人的地方，能叫安全吗？   &lt;/p&gt;
+&lt;p&gt;如果你和某人在一起每天都不开心，天天犯抑郁，但是你一离开ta你就开心，离开一天开心一天，离开一年开心一年。&lt;br&gt;我就问你，是不是这个人把你搞抑郁的？&lt;br&gt;更不用说我经常做到关于自己家庭的噩梦，他们可能会来昆明夺走我拥有的一切。   &lt;/p&gt;
+&lt;h1 id=&#34;门槛&#34;&gt;&lt;a href=&#34;#门槛&#34; class=&#34;headerlink&#34; title=&#34;门槛&#34;&gt;&lt;/a&gt;门槛&lt;/h1&gt;&lt;p&gt;我们能不能提高家庭的下限？可以。&lt;br&gt;道路交通上，最没有安全意识的，是哪一类人？&lt;br&gt;是行人和非机动车驾驶员（自行车、电动车）。&lt;br&gt;乱加塞、乱变道、逆行、闯红灯，甚至还有敢酒后骑电动车的。&lt;br&gt;为什么，因为他们不需要考试，也没有多少针对他们的重罚。他们对交通法规的理解仅限于红灯停绿灯行，复杂一点的，他们要么不认识，要么就根本不把法律法规当一回事。    &lt;/p&gt;
+&lt;p&gt;当然，现在生育率这么低了，夫妻考试之后才能生育小孩的话，怕是直接跌到零。还可能会催生出新的行业，叫生育考试培训。  &lt;/p&gt;
+&lt;h1 id=&#34;放弃幻想&#34;&gt;&lt;a href=&#34;#放弃幻想&#34; class=&#34;headerlink&#34; title=&#34;放弃幻想&#34;&gt;&lt;/a&gt;放弃幻想&lt;/h1&gt;&lt;p&gt;一个人从小都被父母虐待，这并不是最可怜的。&lt;br&gt;最可怜的是，是ta觉得自己做的还不够好，还不够孝顺。   &lt;/p&gt;
+&lt;p&gt;一个人的理想（或者事业、爱好）一直都被父母打压，这并不是最可怜的。&lt;br&gt;最可怜的是，ta还觉得是自己的父母是好的。把得到父母的认可，作为自己的毕生追求。   &lt;/p&gt;
+&lt;p&gt;我不是鼓励你现在就拉黑你的血亲，我希望你可以认清自己和身边的人。&lt;br&gt;当然我更不鼓励你待在血亲身边靠啃老，或者赖在朋友身边当寄生虫来维持生活。   &lt;/p&gt;
+&lt;h1 id=&#34;建议&#34;&gt;&lt;a href=&#34;#建议&#34; class=&#34;headerlink&#34; title=&#34;建议&#34;&gt;&lt;/a&gt;建议&lt;/h1&gt;&lt;p&gt;（这段话来自我2023年6月27日发的微博）&lt;br&gt;我的建议，如果你对你的家庭各种不满，你就做足了准备搬出去住。&lt;br&gt;住的越远越好。而且要做到当断则断，不要软弱。&lt;br&gt;运气好，他们尊重你，不打扰你。&lt;br&gt;运气中，他们发消息滋扰你，劝你，骗你回家。&lt;br&gt;运气差，他们跨省甚至跨国派人找你，因为他们绝不想让自己的摇钱树跑了。   &lt;/p&gt;
+&lt;p&gt;当然，一切的前提是，你是个有意志力、毅力的成年人。&lt;br&gt;没有足够力量的人和未成年人还受着家暴，那对不起，任何人都极大概率帮不了你。  &lt;/p&gt;
+&lt;h1 id=&#34;摘录&#34;&gt;&lt;a href=&#34;#摘录&#34; class=&#34;headerlink&#34; title=&#34;摘录&#34;&gt;&lt;/a&gt;摘录&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://m.weibo.cn/status/NcQp6mkFY&#34;&gt;23岁女子称长期遭家暴起诉母亲，法院判证据不足&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV1wP411r7t8&#34;&gt;up主自己攒钱买的 xbox 被父母砸毁&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://m.weibo.cn/status/N76fA8zq9&#34;&gt;男童遭家人棍打后从五楼跳下，伤势严重。警方表示家务事不管&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://m.weibo.cn/status/N38yGbIhT&#34;&gt;被抛弃的女生长大后被亲生父母找到：你弟弟有女朋友了。 女生拒绝回家，坚持住在养父母家里，被亲生父母骂没良心&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://m.weibo.cn/status/MzP2JtfyN&#34;&gt;豫章书院吴某豹称打学生前会先问家长：家长同意才会打&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://m.weibo.cn/status/MtSPmyXnX&#34;&gt;16岁少女被父母以26万彩礼许人，在高速服务区偷偷报警求救&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;微博&#34;&gt;&lt;a href=&#34;#微博&#34; class=&#34;headerlink&#34; title=&#34;微博&#34;&gt;&lt;/a&gt;微博&lt;/h1&gt;&lt;p&gt;本文有在微博同步发布： &lt;a href=&#34;https://m.weibo.cn/status/Nfhzx7ubH&#34;&gt;点我&lt;/a&gt;&lt;br&gt;你可以在那边发表评论。   &lt;/p&gt;
+</content>
+        <category term="家庭" />
+        <category term="牢骚" />
+        <updated>2023-08-18T16:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://buyi.dev/2023/ssh/</id>
+        <title>使用 VSCode+SSH 实现Windows远程写代码</title>
+        <link rel="alternate" href="http://buyi.dev/2023/ssh/"/>
+        <content type="html">&lt;p&gt;我的情况：经常要在远程 Windows 上执行修改 LUA 的操作。我自己又没有好的宽带，使用 RDP 经常会和其他人起冲突。   &lt;/p&gt;
+&lt;p&gt;解决方案：在服务器上安装 OpenSSH 然后在本地用 vscode 远程进去进行写代码。   &lt;/p&gt;
+&lt;h1 id=&#34;在服务器安装-OpenSSH&#34;&gt;&lt;a href=&#34;#在服务器安装-OpenSSH&#34; class=&#34;headerlink&#34; title=&#34;在服务器安装 OpenSSH&#34;&gt;&lt;/a&gt;在服务器安装 OpenSSH&lt;/h1&gt;&lt;p&gt;先下载&lt;a href=&#34;https://github.com/PowerShell/Win32-OpenSSH/releases&#34;&gt;Win32-OpenSSH 的 MSI 安装包&lt;/a&gt;，然后安装到服务器。&lt;br&gt;（直接下最新版就行，我找不到它的正式版 release）   &lt;/p&gt;
+&lt;h2 id=&#34;如果服务器是-Administrator-用户&#34;&gt;&lt;a href=&#34;#如果服务器是-Administrator-用户&#34; class=&#34;headerlink&#34; title=&#34;如果服务器是 Administrator 用户&#34;&gt;&lt;/a&gt;如果服务器是 Administrator 用户&lt;/h2&gt;&lt;p&gt;如果服务器运行的是&lt;strong&gt;真高级管理员&lt;/strong&gt; &lt;code&gt;Administrator&lt;/code&gt; 用户，&lt;br&gt;就这样操作：    &lt;/p&gt;
+&lt;p&gt;在服务端上找到文件夹 &lt;code&gt;C:\ProgramData\ssh\&lt;/code&gt;&lt;br&gt;建立一个空白文件 &lt;code&gt;administrators_authorized_keys&lt;/code&gt; ，在里面填上一行自己的公钥。&lt;br&gt;如果需要多个公钥就一行一个。   &lt;/p&gt;
+&lt;h2 id=&#34;如果服务器是普通的管理员用户&#34;&gt;&lt;a href=&#34;#如果服务器是普通的管理员用户&#34; class=&#34;headerlink&#34; title=&#34;如果服务器是普通的管理员用户&#34;&gt;&lt;/a&gt;如果服务器是普通的管理员用户&lt;/h2&gt;&lt;p&gt;还是找到 &lt;code&gt;C:\ProgramData\ssh\sshd_config&lt;/code&gt; 配置文件&lt;br&gt;在里面注释掉最后两行：   &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#Match Group administrators
+#       AuthorizedKeysFile __PROGRAMDATA__/ssh/administrators_authorized_keys
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其次是去 &lt;code&gt;C:\Users\用户名\.ssh&lt;/code&gt; 文件夹，新建一个空白文件叫 &lt;code&gt;authorized_keys&lt;/code&gt; ，在里面填上一行自己的公钥。&lt;br&gt;如果需要多个公钥就一行一个。   &lt;/p&gt;
+&lt;h2 id=&#34;禁用密码登录&#34;&gt;&lt;a href=&#34;#禁用密码登录&#34; class=&#34;headerlink&#34; title=&#34;禁用密码登录&#34;&gt;&lt;/a&gt;禁用密码登录&lt;/h2&gt;&lt;p&gt;如果需要彻底禁用密码登录 ，需要修改配置文件 &lt;code&gt;C:\ProgramData\ssh\sshd_config&lt;/code&gt; 。&lt;br&gt;里面找到并修改设置为 &lt;code&gt;PasswordAuthentication no&lt;/code&gt; 。   &lt;/p&gt;
+&lt;p&gt;如果没有禁用密码访问，可能每次连接的时候都要输入服务端上对应用户的 Windows 登录密码。    &lt;/p&gt;
+&lt;h1 id=&#34;重启服务&#34;&gt;&lt;a href=&#34;#重启服务&#34; class=&#34;headerlink&#34; title=&#34;重启服务&#34;&gt;&lt;/a&gt;重启服务&lt;/h1&gt;&lt;p&gt;接下来用服务端的任务管理器重启 &lt;code&gt;sshd&lt;/code&gt; 服务。&lt;br&gt;每次修改配置之后都应该重启一次服务。   &lt;/p&gt;
+&lt;h1 id=&#34;连接&#34;&gt;&lt;a href=&#34;#连接&#34; class=&#34;headerlink&#34; title=&#34;连接&#34;&gt;&lt;/a&gt;连接&lt;/h1&gt;&lt;p&gt;在自己的电脑上运行命令行指令： &lt;code&gt;ssh username@ip&lt;/code&gt;&lt;br&gt;需要加端口就是 &lt;code&gt;ssh username@ip -p1234&lt;/code&gt;&lt;br&gt;username 指的是目标服务器上的用户，比如 &lt;code&gt;Administrator&lt;/code&gt; 或者 &lt;code&gt;abc&lt;/code&gt; ，不是本机用户名。   &lt;/p&gt;
+&lt;p&gt;如果连接成功，则可以进入下一步。   &lt;/p&gt;
+&lt;h1 id=&#34;VSCode-Remote&#34;&gt;&lt;a href=&#34;#VSCode-Remote&#34; class=&#34;headerlink&#34; title=&#34;VSCode Remote&#34;&gt;&lt;/a&gt;VSCode Remote&lt;/h1&gt;&lt;p&gt;安装 vscode 扩展：&lt;code&gt;ms-vscode-remote.remote-ssh&lt;/code&gt;&lt;br&gt;安装之后点击 vscode 左下角的按钮，就可以 &lt;code&gt;Connect To Host&lt;/code&gt; 了。&lt;br&gt;他默认读取的是 &lt;code&gt;C:\Users\用户名\.ssh\config&lt;/code&gt; 这个配置文件。&lt;br&gt;可以在里面给你的连接起备注名。   &lt;/p&gt;
+&lt;p&gt;连接之后如果需要经常重新打开指定的文件夹，可以 &lt;code&gt;Save Workspace As &lt;/code&gt; 然后选择 &lt;code&gt;To Local&lt;/code&gt; 。&lt;br&gt;这样从本地就可以直接双击打开 &lt;code&gt;.code-workspace&lt;/code&gt; 文件进入远程环境了。   &lt;/p&gt;
+&lt;p&gt;连接完成之后， vscode 会在远程服务器安装 code-server 作为一个后台辅助。&lt;br&gt;也就意味着可以安装vscode扩展到服务器上，并且扩展数据还是保存在服务器上的。   &lt;/p&gt;
+&lt;h1 id=&#34;系统要求&#34;&gt;&lt;a href=&#34;#系统要求&#34; class=&#34;headerlink&#34; title=&#34;系统要求&#34;&gt;&lt;/a&gt;系统要求&lt;/h1&gt;&lt;p&gt;VSCode Remote 需要 &lt;code&gt;Windows 10 / Server 2016/2019 (1803+) &lt;/code&gt; 。&lt;br&gt;老版本上的 windows 无法安装 code server ，但是部分版本依然可以安装 Win32-OpenSSH 。   &lt;/p&gt;
+&lt;h1 id=&#34;垃圾&#34;&gt;&lt;a href=&#34;#垃圾&#34; class=&#34;headerlink&#34; title=&#34;垃圾&#34;&gt;&lt;/a&gt;垃圾&lt;/h1&gt;&lt;p&gt;vscode 有时候会抽风，在服务器电脑里留下大量重复的垃圾文件，可能占据C盘十几GB。&lt;br&gt;检测一下C盘的 &lt;code&gt;C:\Users\用户名\.vscode-server\bin&lt;/code&gt; 文件夹。&lt;br&gt;code server 会把老版本全部留在里面。   &lt;/p&gt;
+&lt;p&gt;以及 &lt;code&gt;C:\Users\用户名\AppData\Local\Temp&lt;/code&gt; 文件夹。&lt;br&gt;code server 会把老版本、以及时不时抽风重装的文件全部留在里面，以七八个字母加一个小数点再加三个字母作为文件夹名字。&lt;br&gt;比如 &lt;code&gt;jy4wbtpz.qef&lt;/code&gt; ，里面你能找到 &lt;code&gt;node.exe&lt;/code&gt; 。   &lt;/p&gt;
+&lt;h1 id=&#34;其他&#34;&gt;&lt;a href=&#34;#其他&#34; class=&#34;headerlink&#34; title=&#34;其他&#34;&gt;&lt;/a&gt;其他&lt;/h1&gt;&lt;p&gt;如果遇到其他麻烦，请参阅： &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://learn.microsoft.com/zh-cn/windows-server/administration/openssh/openssh_server_configuration&#34;&gt;微软官网说明&lt;/a&gt; &lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/PowerShell/Win32-OpenSSH/wiki&#34;&gt;Github wiki&lt;/a&gt;   &lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh&#34;&gt;VSCode 扩展说明&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;或者也可以开启 ssh 的日志。&lt;br&gt;找到 &lt;code&gt;sshd_config&lt;/code&gt; 的 &lt;code&gt;# Logging&lt;/code&gt; 下面两行，改成这样：   &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;SyslogFacility LOCAL0
+LogLevel DEBUG3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;日志会输出在 &lt;code&gt;C:\ProgramData\ssh\logs&lt;/code&gt; 里面。&lt;br&gt;问题解决了之后最好把日志注释掉，不然浪费C盘空间。   
+ &lt;/p&gt;
+</content>
+        <category term="code" />
+        <category term="ssh" />
+        <updated>2023-08-13T16:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://buyi.dev/2023/india/</id>
+        <title>小小说：印度草药的故事</title>
+        <link rel="alternate" href="http://buyi.dev/2023/india/"/>
+        <content type="html">&lt;p&gt;小明今天生病了，一直发热加咳嗽。   &lt;/p&gt;
+&lt;p&gt;小明的母亲就出去为他买药。    &lt;/p&gt;
+&lt;p&gt;母亲出去了不久，一个印度人就来到了小明家的门口。原来是小明的邻居，一个来打工的印度人，之前和小明也有认识。   &lt;/p&gt;
+&lt;p&gt;印度人敲敲门，“是我”。 &lt;/p&gt;
+&lt;p&gt;小明开门了。    &lt;/p&gt;
+&lt;p&gt;印度人说：“我听你一直在咳嗽，我手里有一些草药，是我们印度人世代都使用的配方，你拿去用开水煮开然后喝了就可以了。”    &lt;/p&gt;
+&lt;p&gt;小明表示了感谢，收下了印度草药。   &lt;/p&gt;
+&lt;p&gt;可是小明也只能继续等他母亲回家，因为小明还小，无法自己煮药。    &lt;/p&gt;
+&lt;p&gt;小明的母亲回来了，小明就和母亲说了印度人来拜访的事。    &lt;/p&gt;
+&lt;p&gt;小明的母亲看了看手里拿的中草药，再看了看印度人给的印度草药。&lt;br&gt;就把印度草药扔进了垃圾桶。   &lt;/p&gt;
+&lt;p&gt;小明问母亲为什么要丢掉它。   &lt;/p&gt;
+&lt;p&gt;小明的母亲说：“他们印度草药只能糊弄他们自己人，是帮不了我们的。我们的五千年中医博大精深，不管什么病，不管中国人外国人都是可以治好的。”   &lt;/p&gt;
+</content>
+        <category term="小小说" />
+        <updated>2023-06-17T16:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://buyi.dev/2023/hit/</id>
+        <title>小小说：是女朋友就分手</title>
+        <link rel="alternate" href="http://buyi.dev/2023/hit/"/>
+        <content type="html">&lt;p&gt;A：“我和你说，我感觉我受我女朋友欺负很久了。”   &lt;/p&gt;
+&lt;p&gt;B：“怎么了？”   &lt;/p&gt;
+&lt;p&gt;A：“她说为了我的健康和未来，不许我出去吃，只能吃她做的饭菜。不让我玩游戏，也不让我买主机。为了以后有个更好的家庭，要我把一切收入交给她管理。”&lt;/p&gt;
+&lt;p&gt;B：“这还好吧？”&lt;/p&gt;
+&lt;p&gt;A：“只要我反对她，她就说我没出息，她为我做的努力就全白费了。她说她都是为我好。甚至好几次要我下跪，还拿拖鞋打我。”  &lt;/p&gt;
+&lt;p&gt;B：“怎么这么暴力啊，都到这地步了还不分手吗”    &lt;/p&gt;
+&lt;p&gt;A：“是啊，我也在想分手。 我告诉你个更严重的你想听吗？”  &lt;/p&gt;
+&lt;p&gt;B：“你说。我听着。”&lt;/p&gt;
+&lt;p&gt;A：“其实我刚才说的是我父母，是他们这么对我的。”&lt;/p&gt;
+&lt;p&gt;B：“你这人怎么这样啊，你懂不懂什么叫孝顺啊？父母都是为你好你不知道吗？”&lt;/p&gt;
+&lt;p&gt;A：“难道你的意思是，我女朋友对我这样我就应该分手？我父母对我这样我就应该忍着挨着？那假如我是父母有一方是再婚呢？ 不是亲生的也该忍着？”&lt;/p&gt;
+&lt;p&gt;B：“不孝子就是不孝子，别狡辩了。”   &lt;/p&gt;
+</content>
+        <category term="小小说" />
+        <category term="家庭" />
+        <updated>2023-06-17T16:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://buyi.dev/2022/fail/</id>
+        <title>小小说：他被车撞了所以他毕业了</title>
+        <link rel="alternate" href="http://buyi.dev/2022/fail/"/>
+        <content type="html">&lt;p&gt;一个本科生，以很慢的速度跑过了终点线，气喘吁吁。   &lt;/p&gt;
+&lt;p&gt;他的体育老师走过来告诉他：“对不起，你不能毕业了。估计是要留级了。”    &lt;/p&gt;
+&lt;p&gt;本科生问：“为什么？”    &lt;/p&gt;
+&lt;p&gt;老师说：“因为你体育不及格，期末考试太差，不符合毕业的底线要求。”    &lt;/p&gt;
+&lt;p&gt;本科生看见了另外一个本科生，他没有参加跑步以及其他的体育考试项目。本科生指着他，说：“他呢？他都没有参加考试。”    &lt;/p&gt;
+&lt;p&gt;老师说：“他申请了免测，他之前被车撞伤了。他直接体育就及格了。”    &lt;/p&gt;
+&lt;p&gt;“撞伤？我看他现在活蹦乱跳的，这不是作弊吗！”    &lt;/p&gt;
+&lt;p&gt;“只要提交材料的那一天他被车撞伤了，有医院证明就行，我不管他现在是活的是死的。你给我冷静一点。”    &lt;/p&gt;
+&lt;p&gt;本科生愤怒地说：“我哪个科目比他差？他被车撞了所以他毕业了，我没被车撞所以我不能毕业！”   &lt;/p&gt;
+&lt;p&gt;他昏过去了，因为他实在是太累了。   &lt;/p&gt;
+</content>
+        <category term="小小说" />
+        <category term="学校" />
+        <updated>2022-06-06T16:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://buyi.dev/2022/dsdf/</id>
+        <title>小小说：大是大非前谈努力</title>
+        <link rel="alternate" href="http://buyi.dev/2022/dsdf/"/>
+        <content type="html">&lt;p&gt;有个年轻人在一个小公司里面上班。   &lt;/p&gt;
+&lt;p&gt;有一天，他的母亲和几个大叔突然一起出现在他公司的门口。&lt;br&gt;他母亲一眼就望见了他，年轻人也看见了他的母亲，那几个大叔里有认识的舅舅，也有不认识的。   &lt;/p&gt;
+&lt;p&gt;几个大叔直接奔到年轻人身边，掐住他的脖子，拉住他的手。&lt;br&gt;老板赶紧跑过来问：“怎么回事？你们是谁？来这干什么？”    &lt;/p&gt;
+&lt;p&gt;他母亲高声说道：“这是我儿子某某某！他不听我的话，一个人出来鬼混！翅膀硬了要飞了，连亲妈亲爸都不管了！”   &lt;/p&gt;
+&lt;p&gt;老板说：“可是他在这里一直表现的很好，工作很努力啊。”    &lt;/p&gt;
+&lt;p&gt;年轻人的母亲瞪了回去，喊着：“在大是大非前谈什么努力！不孝子的努力，就是将来的卖国贼！跟我回去，好好教育一下，工资不用结了！”    &lt;/p&gt;
+</content>
+        <category term="小小说" />
+        <category term="家庭" />
+        <updated>2022-06-04T16:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://buyi.dev/2022/son/</id>
+        <title>小小说：你这个没出息的狗儿子</title>
+        <link rel="alternate" href="http://buyi.dev/2022/son/"/>
+        <content type="html">&lt;p&gt;一位父亲带着他的儿子去逛街。   &lt;/p&gt;
+&lt;p&gt;走到了游乐园旁，儿子指着高大的摩天轮说：“爸爸，我想玩摩天轮。”    &lt;/p&gt;
+&lt;p&gt;父亲却说：“不行，摩天轮太危险了，不能玩摩天轮。”     &lt;/p&gt;
+&lt;p&gt;之后，他们走到了科技馆的墙外，父亲指着墙上的宇航员画像，说：“你以后长大了想不想做航天员？”    &lt;/p&gt;
+&lt;p&gt;儿子说：“不想，因为做航天员太危险了。”    &lt;/p&gt;
+&lt;p&gt;父亲想都没想就骂了回去：“我没你这个没出息的狗儿子！你不会说几句好话让我开心一下吗！”    &lt;/p&gt;
+</content>
+        <category term="小小说" />
+        <category term="家庭" />
+        <updated>2022-06-03T16:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://buyi.dev/2021/a210825/</id>
+        <title>斥血缘书</title>
+        <link rel="alternate" href="http://buyi.dev/2021/a210825/"/>
+        <content type="html">&lt;p&gt;下面我说的父母指的是我自己的血缘，没有冒犯诸位及诸位家人的意思。&lt;br&gt;这篇打油诗最初是我在2021年08月15日编写的。    &lt;/p&gt;
+&lt;h2 id=&#34;熙熙攘攘，皆为利往&#34;&gt;&lt;a href=&#34;#熙熙攘攘，皆为利往&#34; class=&#34;headerlink&#34; title=&#34;熙熙攘攘，皆为利往&#34;&gt;&lt;/a&gt;熙熙攘攘，皆为利往&lt;/h2&gt;&lt;p&gt;血缘繁殖，生下我，只为自己的老年有钱可花。&lt;br&gt;每日无不强调生下我时那计划生育的超生罚款，便知你等心里唯有钱财。&lt;br&gt;读书十二年，只知你出钱出力，不知我抑郁欲亡。   &lt;/p&gt;
+&lt;h2 id=&#34;甲之蜜糖，乙之砒霜&#34;&gt;&lt;a href=&#34;#甲之蜜糖，乙之砒霜&#34; class=&#34;headerlink&#34; title=&#34;甲之蜜糖，乙之砒霜&#34;&gt;&lt;/a&gt;甲之蜜糖，乙之砒霜&lt;/h2&gt;&lt;p&gt;凡我在家，就见不得我独自坐着躺着。&lt;br&gt;一为饲鸡，二为洗碟，三为除尘，四为洗衣。&lt;br&gt;我不得吃外来之食，哪怕我自己购之。&lt;br&gt;我不得住外面的房，哪怕我自己租之。&lt;br&gt;我不得买外面之物，哪怕我自己需之。   &lt;/p&gt;
+&lt;h2 id=&#34;孔雀东南飞，五里一徘徊&#34;&gt;&lt;a href=&#34;#孔雀东南飞，五里一徘徊&#34; class=&#34;headerlink&#34; title=&#34;孔雀东南飞，五里一徘徊&#34;&gt;&lt;/a&gt;孔雀东南飞，五里一徘徊&lt;/h2&gt;&lt;p&gt;我自有爱好，我自有自尊，我自有所求。&lt;br&gt;我痛恨应试，我痛恨世俗，我痛恨特权。&lt;br&gt;而血缘者，视我爱好为下流，欲断我腿，视我主观为草芥，欲斩我耳。  &lt;/p&gt;
+&lt;h2 id=&#34;总结&#34;&gt;&lt;a href=&#34;#总结&#34; class=&#34;headerlink&#34; title=&#34;总结&#34;&gt;&lt;/a&gt;总结&lt;/h2&gt;&lt;p&gt;我在外生活愈久，我拉黑血缘就越正当。&lt;br&gt;而他们若再与我产生任何联系，皆视为想拿我的钱。&lt;br&gt;过年也不回去了，葬礼也不回去了。&lt;br&gt;感谢南昌、郑州、北京、嘉兴、昆明等每一个帮助过我的人。   &lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/08/25/hEoXqA.png&#34;&gt;   &lt;/p&gt;
+</content>
+        <category term="家庭" />
+        <category term="牢骚" />
+        <updated>2021-08-25T03:42:31.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://buyi.dev/2021/rss/</id>
+        <title>订阅</title>
+        <link rel="alternate" href="http://buyi.dev/2021/rss/"/>
+        <content type="html">&lt;p&gt;本博客支持以下订阅：   &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/rss.xml&#34;&gt;RSS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/atom.xml&#34;&gt;Atom&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/feed.json&#34;&gt;JSON Feed&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="code" />
+        <updated>2021-01-02T04:30:37.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://buyi.dev/2021/about/</id>
+        <title>关于我</title>
+        <link rel="alternate" href="http://buyi.dev/2021/about/"/>
+        <content type="html">&lt;p&gt;我是陈布衣，陈是姓，布衣是号。&lt;br&gt;欢迎参观本博客，虽然没有多少有价值的内容。   &lt;/p&gt;
+&lt;p&gt;联系我，请发 email 到：&lt;br&gt;chenbuyi2019艾特outlook.com&lt;/p&gt;
+&lt;h1 id=&#34;简史&#34;&gt;&lt;a href=&#34;#简史&#34; class=&#34;headerlink&#34; title=&#34;简史&#34;&gt;&lt;/a&gt;简史&lt;/h1&gt;&lt;p&gt;2001年，在浙江省出生。&lt;br&gt;2013年，注册 Steam 。&lt;br&gt;2019年，优异的高考成绩进入杭州的本科大学，然后退学，后来确诊抑郁症。&lt;br&gt;2020年，尝试自杀，药物中毒，没有留下后遗症。&lt;br&gt;2021年，离家出走，拉黑血亲。定居在云南省昆明市。   &lt;/p&gt;
+&lt;h1 id=&#34;我的作品&#34;&gt;&lt;a href=&#34;#我的作品&#34; class=&#34;headerlink&#34; title=&#34;我的作品&#34;&gt;&lt;/a&gt;我的作品&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://chenbuyi2019.github.io/steam-id/&#34;&gt;在线 Steam ID 数字转换&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://chenbuyi2019.github.io/ics-gen/&#34;&gt;iCalendar(ics) 年度日程批量生成&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/chenbuyi2019/Buyi-Tools&#34;&gt;布衣的工具箱&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以及其他的你能看见的我发在这个网站的牢骚文章。&lt;br&gt;还有我在B站发的一些有的没的&lt;a href=&#34;https://space.bilibili.com/4523834/video&#34;&gt;视频&lt;/a&gt;。   &lt;/p&gt;
+&lt;h1 id=&#34;我的设备&#34;&gt;&lt;a href=&#34;#我的设备&#34; class=&#34;headerlink&#34; title=&#34;我的设备&#34;&gt;&lt;/a&gt;我的设备&lt;/h1&gt;&lt;p&gt;布衣现在使用的是神舟笔记本 战神S8 。   &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://valid.x86.fr/azs1u6&#34;&gt;Intel Core i7 12650H&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;DDR4 8GB 3200Mhz 两根&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.3dmark.com/3dm/99857307&#34;&gt;NVIDIA RTX 4060 8GB&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;15.6 英寸 IPS屏幕 1920x1080 144hz&lt;/li&gt;
+&lt;li&gt;NVME SSD 两块 500GB + 1000GB&lt;/li&gt;
+&lt;li&gt;Windows 11 Home&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;图片&#34;&gt;&lt;a href=&#34;#图片&#34; class=&#34;headerlink&#34; title=&#34;图片&#34;&gt;&lt;/a&gt;图片&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;/image/avatar.jpg&#34; alt=&#34;头像&#34;&gt;   &lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/image/dress.webp&#34; alt=&#34;女装&#34;&gt;   &lt;/p&gt;
+</content>
+        <category term="关于" />
+        <updated>2021-01-01T04:30:37.000Z</updated>
+    </entry>
+</feed>
