@@ -5,17 +5,56 @@
         <link>http://buyi.dev</link>
         <description></description>
         <language>zh</language>
-        <pubDate>Wed, 18 Oct 2023 20:22:07 +0800</pubDate>
-        <lastBuildDate>Wed, 18 Oct 2023 20:22:07 +0800</lastBuildDate>
-        <category>小小说</category>
+        <pubDate>Sat, 11 Nov 2023 20:05:56 +0800</pubDate>
+        <lastBuildDate>Sat, 11 Nov 2023 20:05:56 +0800</lastBuildDate>
+        <category>牢骚</category>
         <category>家庭</category>
         <category>关于</category>
-        <category>牢骚</category>
-        <category>学校</category>
         <category>code</category>
-        <category>gmod</category>
+        <category>小小说</category>
+        <category>学校</category>
         <category>.net</category>
+        <category>gmod</category>
         <category>ssh</category>
+        <item>
+            <guid isPermalink="true">http://buyi.dev/2023/copyincmd/</guid>
+            <title>在 CMD 里复制文件夹</title>
+            <link>http://buyi.dev/2023/copyincmd/</link>
+            <category>code</category>
+            <category>.net</category>
+            <pubDate>Sat, 11 Nov 2023 20:05:56 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;要把一个文件夹及里面的子文件、子文件夹、子文件夹里的子文件、子文件夹全部复制到另外一个地方。&lt;br&gt;用 cmd 要怎么实现？    &lt;/p&gt;
+&lt;p&gt;第一反应是 &lt;code&gt;copy&lt;/code&gt; ，然而它只能复制文件夹里的文件，不能复制文件夹里的文件夹。   &lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;cmd&#34;&gt;&amp;gt;copy t1/* t2 /y
+The syntax of the command is incorrect.
+
+&amp;gt;copy t1\* t2&amp;quot; /y
+t1\a.txt
+        1 file(s) copied.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;经过一番搜索，正确的做法是：   &lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;cmd&#34;&gt;&amp;gt;xcopy t1 t2 /y/c/s/e
+t1\a.txt
+t1\t9\New Text Document - Copy (2).txt
+t1\t9\New Text Document - Copy (3).txt
+t1\t9\New Text Document - Copy.txt
+t1\t9\New Text Document.txt
+t1\t9 - Copy\New Text Document - Copy (2).txt
+t1\t9 - Copy\New Text Document - Copy (3).txt
+t1\t9 - Copy\New Text Document - Copy.txt
+t1\t9 - Copy\New Text Document.txt
+9 File(s) copied
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;/s&lt;/code&gt; 参数是复制目录和子目录，除非它们是空的。&lt;br&gt;&lt;code&gt;/e&lt;/code&gt; 复制所有子目录，即使它们是空的。    &lt;/p&gt;
+&lt;p&gt;xcopy 的微软官方文档：&lt;a href=&#34;https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/xcopy&#34;&gt;点我&lt;/a&gt;   &lt;/p&gt;
+&lt;p&gt;而且 cmd 还有一个不一样的地方，就是很多cmd指令只承认 &lt;code&gt;\&lt;/code&gt; 字符作为路径分隔符，它不承认 &lt;code&gt;/&lt;/code&gt; 字符。   &lt;/p&gt;
+&lt;p&gt;为什么我要用 cmd 复制个文件夹呢，因为我发现 .NET C# 的 &lt;code&gt;System.IO&lt;/code&gt; 里没有复制文件夹的功能（但是它居然有 Move 整个文件夹的功能）。&lt;br&gt;官方是给了个&lt;a href=&#34;https://learn.microsoft.com/zh-cn/dotnet/standard/io/how-to-copy-directories&#34;&gt;示例函数&lt;/a&gt;来做这个事情。&lt;br&gt;我以为用 cmd 能简单一些，结果也这么多麻烦事情。   &lt;/p&gt;
+&lt;p&gt;但是 .NET VB 可真就简单多了。&lt;br&gt;&lt;code&gt;Microsoft.VisualBasic.FileIO&lt;/code&gt; 里就有直接复制整个文件夹的功能：&lt;code&gt;FileSystem.CopyDirectory(src,dest)&lt;/code&gt;   &lt;/p&gt;
+&lt;p&gt;Powershell 也简单：   &lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;powershell&#34;&gt;Copy-Item .\t1\* .\t2 -Recurse -Force
+&lt;/code&gt;&lt;/pre&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://buyi.dev/2023/exportqq/</guid>
             <title>从QQ空间网页导出QQ好友列表</title>
@@ -113,8 +152,8 @@ end
             <guid isPermalink="true">http://buyi.dev/2023/year2/</guid>
             <title>离家出走2.5年的感慨</title>
             <link>http://buyi.dev/2023/year2/</link>
-            <category>家庭</category>
             <category>牢骚</category>
+            <category>家庭</category>
             <pubDate>Sat, 19 Aug 2023 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;前言&#34;&gt;&lt;a href=&#34;#前言&#34; class=&#34;headerlink&#34; title=&#34;前言&#34;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;下文中的父母也可指代别的家庭长辈或监护人。   &lt;/p&gt;
 &lt;p&gt;如果你真心觉得晚辈是应该无条件服从长辈的，全天下的父母都是好的，&lt;br&gt;包括赵姬（秦始皇的母亲）和嫪毐私通、谋反也是正确的、合理合情的，&lt;br&gt;请关闭本网页，不要往下看了。   &lt;/p&gt;
@@ -191,6 +230,27 @@ LogLevel DEBUG3
  ]]></description>
         </item>
         <item>
+            <guid isPermalink="true">http://buyi.dev/2023/hit/</guid>
+            <title>小小说：是女朋友就分手</title>
+            <link>http://buyi.dev/2023/hit/</link>
+            <category>家庭</category>
+            <category>小小说</category>
+            <pubDate>Sun, 18 Jun 2023 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;A：“我和你说，我感觉我受我女朋友欺负很久了。”   &lt;/p&gt;
+&lt;p&gt;B：“怎么了？”   &lt;/p&gt;
+&lt;p&gt;A：“她说为了我的健康和未来，不许我出去吃，只能吃她做的饭菜。不让我玩游戏，也不让我买主机。为了以后有个更好的家庭，要我把一切收入交给她管理。”&lt;/p&gt;
+&lt;p&gt;B：“这还好吧？”&lt;/p&gt;
+&lt;p&gt;A：“只要我反对她，她就说我没出息，她为我做的努力就全白费了。她说她都是为我好。甚至好几次要我下跪，还拿拖鞋打我。”  &lt;/p&gt;
+&lt;p&gt;B：“怎么这么暴力啊，都到这地步了还不分手吗”    &lt;/p&gt;
+&lt;p&gt;A：“是啊，我也在想分手。 我告诉你个更严重的你想听吗？”  &lt;/p&gt;
+&lt;p&gt;B：“你说。我听着。”&lt;/p&gt;
+&lt;p&gt;A：“其实我刚才说的是我父母，是他们这么对我的。”&lt;/p&gt;
+&lt;p&gt;B：“你这人怎么这样啊，你懂不懂什么叫孝顺啊？父母都是为你好你不知道吗？”&lt;/p&gt;
+&lt;p&gt;A：“难道你的意思是，我女朋友对我这样我就应该分手？我父母对我这样我就应该忍着挨着？那假如我是父母有一方是再婚呢？ 不是亲生的也该忍着？”&lt;/p&gt;
+&lt;p&gt;B：“不孝子就是不孝子，别狡辩了。”   &lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
             <guid isPermalink="true">http://buyi.dev/2023/india/</guid>
             <title>小小说：印度草药的故事</title>
             <link>http://buyi.dev/2023/india/</link>
@@ -208,27 +268,6 @@ LogLevel DEBUG3
 &lt;p&gt;小明的母亲看了看手里拿的中草药，再看了看印度人给的印度草药。&lt;br&gt;就把印度草药扔进了垃圾桶。   &lt;/p&gt;
 &lt;p&gt;小明问母亲为什么要丢掉它。   &lt;/p&gt;
 &lt;p&gt;小明的母亲说：“他们印度草药只能糊弄他们自己人，是帮不了我们的。我们的五千年中医博大精深，不管什么病，不管中国人外国人都是可以治好的。”   &lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://buyi.dev/2023/hit/</guid>
-            <title>小小说：是女朋友就分手</title>
-            <link>http://buyi.dev/2023/hit/</link>
-            <category>小小说</category>
-            <category>家庭</category>
-            <pubDate>Sun, 18 Jun 2023 00:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;A：“我和你说，我感觉我受我女朋友欺负很久了。”   &lt;/p&gt;
-&lt;p&gt;B：“怎么了？”   &lt;/p&gt;
-&lt;p&gt;A：“她说为了我的健康和未来，不许我出去吃，只能吃她做的饭菜。不让我玩游戏，也不让我买主机。为了以后有个更好的家庭，要我把一切收入交给她管理。”&lt;/p&gt;
-&lt;p&gt;B：“这还好吧？”&lt;/p&gt;
-&lt;p&gt;A：“只要我反对她，她就说我没出息，她为我做的努力就全白费了。她说她都是为我好。甚至好几次要我下跪，还拿拖鞋打我。”  &lt;/p&gt;
-&lt;p&gt;B：“怎么这么暴力啊，都到这地步了还不分手吗”    &lt;/p&gt;
-&lt;p&gt;A：“是啊，我也在想分手。 我告诉你个更严重的你想听吗？”  &lt;/p&gt;
-&lt;p&gt;B：“你说。我听着。”&lt;/p&gt;
-&lt;p&gt;A：“其实我刚才说的是我父母，是他们这么对我的。”&lt;/p&gt;
-&lt;p&gt;B：“你这人怎么这样啊，你懂不懂什么叫孝顺啊？父母都是为你好你不知道吗？”&lt;/p&gt;
-&lt;p&gt;A：“难道你的意思是，我女朋友对我这样我就应该分手？我父母对我这样我就应该忍着挨着？那假如我是父母有一方是再婚呢？ 不是亲生的也该忍着？”&lt;/p&gt;
-&lt;p&gt;B：“不孝子就是不孝子，别狡辩了。”   &lt;/p&gt;
  ]]></description>
         </item>
         <item>
@@ -254,8 +293,8 @@ LogLevel DEBUG3
             <guid isPermalink="true">http://buyi.dev/2022/dsdf/</guid>
             <title>小小说：大是大非前谈努力</title>
             <link>http://buyi.dev/2022/dsdf/</link>
-            <category>小小说</category>
             <category>家庭</category>
+            <category>小小说</category>
             <pubDate>Sun, 05 Jun 2022 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;有个年轻人在一个小公司里面上班。   &lt;/p&gt;
 &lt;p&gt;有一天，他的母亲和几个大叔突然一起出现在他公司的门口。&lt;br&gt;他母亲一眼就望见了他，年轻人也看见了他的母亲，那几个大叔里有认识的舅舅，也有不认识的。   &lt;/p&gt;
@@ -269,8 +308,8 @@ LogLevel DEBUG3
             <guid isPermalink="true">http://buyi.dev/2022/son/</guid>
             <title>小小说：你这个没出息的狗儿子</title>
             <link>http://buyi.dev/2022/son/</link>
-            <category>小小说</category>
             <category>家庭</category>
+            <category>小小说</category>
             <pubDate>Sat, 04 Jun 2022 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;一位父亲带着他的儿子去逛街。   &lt;/p&gt;
 &lt;p&gt;走到了游乐园旁，儿子指着高大的摩天轮说：“爸爸，我想玩摩天轮。”    &lt;/p&gt;
@@ -284,8 +323,8 @@ LogLevel DEBUG3
             <guid isPermalink="true">http://buyi.dev/2021/a210825/</guid>
             <title>斥血缘书</title>
             <link>http://buyi.dev/2021/a210825/</link>
-            <category>家庭</category>
             <category>牢骚</category>
+            <category>家庭</category>
             <pubDate>Wed, 25 Aug 2021 11:42:31 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;下面我说的父母指的是我自己的血缘，没有冒犯诸位及诸位家人的意思。&lt;br&gt;这篇打油诗最初是我在2021年08月15日编写的。    &lt;/p&gt;
 &lt;h2 id=&#34;熙熙攘攘，皆为利往&#34;&gt;&lt;a href=&#34;#熙熙攘攘，皆为利往&#34; class=&#34;headerlink&#34; title=&#34;熙熙攘攘，皆为利往&#34;&gt;&lt;/a&gt;熙熙攘攘，皆为利往&lt;/h2&gt;&lt;p&gt;血缘繁殖，生下我，只为自己的老年有钱可花。&lt;br&gt;每日无不强调生下我时那计划生育的超生罚款，便知你等心里唯有钱财。&lt;br&gt;读书十二年，只知你出钱出力，不知我抑郁欲亡。   &lt;/p&gt;

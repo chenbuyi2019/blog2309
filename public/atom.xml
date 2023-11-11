@@ -3,16 +3,55 @@
     <id>http://buyi.dev</id>
     <title>陈布衣的博客</title>
     <link href="http://buyi.dev" />
-    <updated>2023-10-18T12:22:07.000Z</updated>
-    <category term="小小说" />
+    <updated>2023-11-11T12:05:56.000Z</updated>
+    <category term="牢骚" />
     <category term="家庭" />
     <category term="关于" />
-    <category term="牢骚" />
-    <category term="学校" />
     <category term="code" />
-    <category term="gmod" />
+    <category term="小小说" />
+    <category term="学校" />
     <category term=".net" />
+    <category term="gmod" />
     <category term="ssh" />
+    <entry>
+        <id>http://buyi.dev/2023/copyincmd/</id>
+        <title>在 CMD 里复制文件夹</title>
+        <link rel="alternate" href="http://buyi.dev/2023/copyincmd/"/>
+        <content type="html">&lt;p&gt;要把一个文件夹及里面的子文件、子文件夹、子文件夹里的子文件、子文件夹全部复制到另外一个地方。&lt;br&gt;用 cmd 要怎么实现？    &lt;/p&gt;
+&lt;p&gt;第一反应是 &lt;code&gt;copy&lt;/code&gt; ，然而它只能复制文件夹里的文件，不能复制文件夹里的文件夹。   &lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;cmd&#34;&gt;&amp;gt;copy t1/* t2 /y
+The syntax of the command is incorrect.
+
+&amp;gt;copy t1\* t2&amp;quot; /y
+t1\a.txt
+        1 file(s) copied.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;经过一番搜索，正确的做法是：   &lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;cmd&#34;&gt;&amp;gt;xcopy t1 t2 /y/c/s/e
+t1\a.txt
+t1\t9\New Text Document - Copy (2).txt
+t1\t9\New Text Document - Copy (3).txt
+t1\t9\New Text Document - Copy.txt
+t1\t9\New Text Document.txt
+t1\t9 - Copy\New Text Document - Copy (2).txt
+t1\t9 - Copy\New Text Document - Copy (3).txt
+t1\t9 - Copy\New Text Document - Copy.txt
+t1\t9 - Copy\New Text Document.txt
+9 File(s) copied
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;/s&lt;/code&gt; 参数是复制目录和子目录，除非它们是空的。&lt;br&gt;&lt;code&gt;/e&lt;/code&gt; 复制所有子目录，即使它们是空的。    &lt;/p&gt;
+&lt;p&gt;xcopy 的微软官方文档：&lt;a href=&#34;https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/xcopy&#34;&gt;点我&lt;/a&gt;   &lt;/p&gt;
+&lt;p&gt;而且 cmd 还有一个不一样的地方，就是很多cmd指令只承认 &lt;code&gt;\&lt;/code&gt; 字符作为路径分隔符，它不承认 &lt;code&gt;/&lt;/code&gt; 字符。   &lt;/p&gt;
+&lt;p&gt;为什么我要用 cmd 复制个文件夹呢，因为我发现 .NET C# 的 &lt;code&gt;System.IO&lt;/code&gt; 里没有复制文件夹的功能（但是它居然有 Move 整个文件夹的功能）。&lt;br&gt;官方是给了个&lt;a href=&#34;https://learn.microsoft.com/zh-cn/dotnet/standard/io/how-to-copy-directories&#34;&gt;示例函数&lt;/a&gt;来做这个事情。&lt;br&gt;我以为用 cmd 能简单一些，结果也这么多麻烦事情。   &lt;/p&gt;
+&lt;p&gt;但是 .NET VB 可真就简单多了。&lt;br&gt;&lt;code&gt;Microsoft.VisualBasic.FileIO&lt;/code&gt; 里就有直接复制整个文件夹的功能：&lt;code&gt;FileSystem.CopyDirectory(src,dest)&lt;/code&gt;   &lt;/p&gt;
+&lt;p&gt;Powershell 也简单：   &lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;powershell&#34;&gt;Copy-Item .\t1\* .\t2 -Recurse -Force
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+        <category term="code" />
+        <category term=".net" />
+        <updated>2023-11-11T12:05:56.000Z</updated>
+    </entry>
     <entry>
         <id>http://buyi.dev/2023/exportqq/</id>
         <title>从QQ空间网页导出QQ好友列表</title>
@@ -141,8 +180,8 @@ end
 &lt;/ul&gt;
 &lt;h1 id=&#34;微博&#34;&gt;&lt;a href=&#34;#微博&#34; class=&#34;headerlink&#34; title=&#34;微博&#34;&gt;&lt;/a&gt;微博&lt;/h1&gt;&lt;p&gt;本文有在微博同步发布： &lt;a href=&#34;https://m.weibo.cn/status/Nfhzx7ubH&#34;&gt;点我&lt;/a&gt;&lt;br&gt;你可以在那边发表评论。   &lt;/p&gt;
 </content>
-        <category term="家庭" />
         <category term="牢骚" />
+        <category term="家庭" />
         <updated>2023-08-18T16:00:00.000Z</updated>
     </entry>
     <entry>
@@ -188,6 +227,27 @@ LogLevel DEBUG3
         <updated>2023-08-13T16:00:00.000Z</updated>
     </entry>
     <entry>
+        <id>http://buyi.dev/2023/hit/</id>
+        <title>小小说：是女朋友就分手</title>
+        <link rel="alternate" href="http://buyi.dev/2023/hit/"/>
+        <content type="html">&lt;p&gt;A：“我和你说，我感觉我受我女朋友欺负很久了。”   &lt;/p&gt;
+&lt;p&gt;B：“怎么了？”   &lt;/p&gt;
+&lt;p&gt;A：“她说为了我的健康和未来，不许我出去吃，只能吃她做的饭菜。不让我玩游戏，也不让我买主机。为了以后有个更好的家庭，要我把一切收入交给她管理。”&lt;/p&gt;
+&lt;p&gt;B：“这还好吧？”&lt;/p&gt;
+&lt;p&gt;A：“只要我反对她，她就说我没出息，她为我做的努力就全白费了。她说她都是为我好。甚至好几次要我下跪，还拿拖鞋打我。”  &lt;/p&gt;
+&lt;p&gt;B：“怎么这么暴力啊，都到这地步了还不分手吗”    &lt;/p&gt;
+&lt;p&gt;A：“是啊，我也在想分手。 我告诉你个更严重的你想听吗？”  &lt;/p&gt;
+&lt;p&gt;B：“你说。我听着。”&lt;/p&gt;
+&lt;p&gt;A：“其实我刚才说的是我父母，是他们这么对我的。”&lt;/p&gt;
+&lt;p&gt;B：“你这人怎么这样啊，你懂不懂什么叫孝顺啊？父母都是为你好你不知道吗？”&lt;/p&gt;
+&lt;p&gt;A：“难道你的意思是，我女朋友对我这样我就应该分手？我父母对我这样我就应该忍着挨着？那假如我是父母有一方是再婚呢？ 不是亲生的也该忍着？”&lt;/p&gt;
+&lt;p&gt;B：“不孝子就是不孝子，别狡辩了。”   &lt;/p&gt;
+</content>
+        <category term="家庭" />
+        <category term="小小说" />
+        <updated>2023-06-17T16:00:00.000Z</updated>
+    </entry>
+    <entry>
         <id>http://buyi.dev/2023/india/</id>
         <title>小小说：印度草药的故事</title>
         <link rel="alternate" href="http://buyi.dev/2023/india/"/>
@@ -205,27 +265,6 @@ LogLevel DEBUG3
 &lt;p&gt;小明的母亲说：“他们印度草药只能糊弄他们自己人，是帮不了我们的。我们的五千年中医博大精深，不管什么病，不管中国人外国人都是可以治好的。”   &lt;/p&gt;
 </content>
         <category term="小小说" />
-        <updated>2023-06-17T16:00:00.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://buyi.dev/2023/hit/</id>
-        <title>小小说：是女朋友就分手</title>
-        <link rel="alternate" href="http://buyi.dev/2023/hit/"/>
-        <content type="html">&lt;p&gt;A：“我和你说，我感觉我受我女朋友欺负很久了。”   &lt;/p&gt;
-&lt;p&gt;B：“怎么了？”   &lt;/p&gt;
-&lt;p&gt;A：“她说为了我的健康和未来，不许我出去吃，只能吃她做的饭菜。不让我玩游戏，也不让我买主机。为了以后有个更好的家庭，要我把一切收入交给她管理。”&lt;/p&gt;
-&lt;p&gt;B：“这还好吧？”&lt;/p&gt;
-&lt;p&gt;A：“只要我反对她，她就说我没出息，她为我做的努力就全白费了。她说她都是为我好。甚至好几次要我下跪，还拿拖鞋打我。”  &lt;/p&gt;
-&lt;p&gt;B：“怎么这么暴力啊，都到这地步了还不分手吗”    &lt;/p&gt;
-&lt;p&gt;A：“是啊，我也在想分手。 我告诉你个更严重的你想听吗？”  &lt;/p&gt;
-&lt;p&gt;B：“你说。我听着。”&lt;/p&gt;
-&lt;p&gt;A：“其实我刚才说的是我父母，是他们这么对我的。”&lt;/p&gt;
-&lt;p&gt;B：“你这人怎么这样啊，你懂不懂什么叫孝顺啊？父母都是为你好你不知道吗？”&lt;/p&gt;
-&lt;p&gt;A：“难道你的意思是，我女朋友对我这样我就应该分手？我父母对我这样我就应该忍着挨着？那假如我是父母有一方是再婚呢？ 不是亲生的也该忍着？”&lt;/p&gt;
-&lt;p&gt;B：“不孝子就是不孝子，别狡辩了。”   &lt;/p&gt;
-</content>
-        <category term="小小说" />
-        <category term="家庭" />
         <updated>2023-06-17T16:00:00.000Z</updated>
     </entry>
     <entry>
@@ -258,8 +297,8 @@ LogLevel DEBUG3
 &lt;p&gt;老板说：“可是他在这里一直表现的很好，工作很努力啊。”    &lt;/p&gt;
 &lt;p&gt;年轻人的母亲瞪了回去，喊着：“在大是大非前谈什么努力！不孝子的努力，就是将来的卖国贼！跟我回去，好好教育一下，工资不用结了！”    &lt;/p&gt;
 </content>
-        <category term="小小说" />
         <category term="家庭" />
+        <category term="小小说" />
         <updated>2022-06-04T16:00:00.000Z</updated>
     </entry>
     <entry>
@@ -273,8 +312,8 @@ LogLevel DEBUG3
 &lt;p&gt;儿子说：“不想，因为做航天员太危险了。”    &lt;/p&gt;
 &lt;p&gt;父亲想都没想就骂了回去：“我没你这个没出息的狗儿子！你不会说几句好话让我开心一下吗！”    &lt;/p&gt;
 </content>
-        <category term="小小说" />
         <category term="家庭" />
+        <category term="小小说" />
         <updated>2022-06-03T16:00:00.000Z</updated>
     </entry>
     <entry>
@@ -288,8 +327,8 @@ LogLevel DEBUG3
 &lt;h2 id=&#34;总结&#34;&gt;&lt;a href=&#34;#总结&#34; class=&#34;headerlink&#34; title=&#34;总结&#34;&gt;&lt;/a&gt;总结&lt;/h2&gt;&lt;p&gt;我在外生活愈久，我拉黑血缘就越正当。&lt;br&gt;而他们若再与我产生任何联系，皆视为想拿我的钱。&lt;br&gt;过年也不回去了，葬礼也不回去了。&lt;br&gt;感谢南昌、郑州、北京、嘉兴、昆明等每一个帮助过我的人。   &lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/08/25/hEoXqA.png&#34;&gt;   &lt;/p&gt;
 </content>
-        <category term="家庭" />
         <category term="牢骚" />
+        <category term="家庭" />
         <updated>2021-08-25T03:42:31.000Z</updated>
     </entry>
     <entry>
