@@ -3,7 +3,7 @@
     <id>http://buyi.dev</id>
     <title>陈布衣的博客</title>
     <link href="http://buyi.dev" />
-    <updated>2023-11-11T12:05:56.000Z</updated>
+    <updated>2023-12-17T06:06:23.000Z</updated>
     <category term="牢骚" />
     <category term="家庭" />
     <category term="关于" />
@@ -12,7 +12,70 @@
     <category term="学校" />
     <category term=".net" />
     <category term="gmod" />
+    <category term="MYSQL" />
     <category term="ssh" />
+    <entry>
+        <id>http://buyi.dev/2023/mysqlsteamid/</id>
+        <title>Mysql 函数实现的 Steam id64/id32 转好友编码</title>
+        <link rel="alternate" href="http://buyi.dev/2023/mysqlsteamid/"/>
+        <content type="html">&lt;p&gt;直接上代码：   &lt;/p&gt;
+&lt;h1 id=&#34;定义&#34;&gt;&lt;a href=&#34;#定义&#34; class=&#34;headerlink&#34; title=&#34;定义&#34;&gt;&lt;/a&gt;定义&lt;/h1&gt;&lt;pre&gt;&lt;code class=&#34;sql&#34;&gt;delimiter $$
+CREATE function `GetSteamId3FromId32`(str CHAR(50)) returns bigint DETERMINISTIC
+COMMENT &amp;#39;把 STEAM_0:1:2 的格式转换为好友代码&amp;#39;
+BEGIN
+    declare middleStr CHAR(5);
+    declare rightStr CHAR(20);
+    declare num1 int;
+    declare num2 int;
+    if CHAR_LENGTH(str) &amp;lt; 3 then
+        return 0;
+    end if;
+    set rightStr = SUBSTRING_INDEX(str, &amp;quot;:&amp;quot;, -1);
+    set middleStr = MID(str, CHAR_LENGTH(str) - CHAR_LENGTH(rightStr)- 1, 1);
+    set num1 = CAST(rightStr as SIGNED);
+    set num2 = CAST(middleStr as SIGNED);
+    RETURN num1 * 2 + num2;
+END $$
+delimiter ;
+
+delimiter $$
+CREATE function `GetSteamId3FromId64`(old bigint) returns bigint DETERMINISTIC
+COMMENT &amp;#39;把17位steam id64的数字转换为好友代码&amp;#39;
+BEGIN
+    declare num bigint;
+    if old &amp;lt; 76000000000000000 then
+        return 0;
+    end if;
+    set num = old &amp;lt;&amp;lt; 32;
+    set num = num &amp;gt;&amp;gt; 32;
+    if num &amp;lt; 1 then
+        return 0;
+    end if;
+    return num;
+END $$
+delimiter ;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;使用&#34;&gt;&lt;a href=&#34;#使用&#34; class=&#34;headerlink&#34; title=&#34;使用&#34;&gt;&lt;/a&gt;使用&lt;/h1&gt;&lt;pre&gt;&lt;code class=&#34;sql&#34;&gt;-- 第1个例子，我自己的 steam id
+select GetSteamId3FromId32(&amp;quot;STEAM_0:1:69600329&amp;quot;) as `a`,
+  GetSteamId3FromId32(&amp;quot;abcd1:69600329&amp;quot;) as `b`, 
+  GetSteamId3FromId32(&amp;quot;1:69600329&amp;quot;) as `c`,
+  GetSteamId3FromId64(76561198099466387) as `d`,
+  GetSteamId3FromId64(&amp;quot;76561198099466387&amp;quot;) as `e`;
+
+-- 第2个例子，批量转换
+SELECT `authid`, GetSteamId3FromId32(`authid`) AS `fcode` 
+  FROM `xxx` LIMIT 10;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://s11.ax1x.com/2023/12/17/pi5J4eJ.png&#34;&gt;   &lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s11.ax1x.com/2023/12/17/pi5JfL4.png&#34;&gt;   &lt;/p&gt;
+&lt;h1 id=&#34;卸载&#34;&gt;&lt;a href=&#34;#卸载&#34; class=&#34;headerlink&#34; title=&#34;卸载&#34;&gt;&lt;/a&gt;卸载&lt;/h1&gt;&lt;pre&gt;&lt;code class=&#34;sql&#34;&gt;drop function if exists `GetSteamId3FromId32`;
+drop function if exists `GetSteamId3FromId64`;
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+        <category term="code" />
+        <category term="MYSQL" />
+        <updated>2023-12-17T06:06:23.000Z</updated>
+    </entry>
     <entry>
         <id>http://buyi.dev/2023/copyincmd/</id>
         <title>在 CMD 里复制文件夹</title>
@@ -344,33 +407,5 @@ LogLevel DEBUG3
 </content>
         <category term="code" />
         <updated>2021-01-02T04:30:37.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://buyi.dev/2021/about/</id>
-        <title>关于我</title>
-        <link rel="alternate" href="http://buyi.dev/2021/about/"/>
-        <content type="html">&lt;p&gt;我是陈布衣，陈是姓，布衣是号。&lt;br&gt;欢迎参观本博客，虽然没有多少有价值的内容。   &lt;/p&gt;
-&lt;p&gt;联系我，请发 email 到：&lt;br&gt;chenbuyi2019艾特outlook.com&lt;/p&gt;
-&lt;h1 id=&#34;简史&#34;&gt;&lt;a href=&#34;#简史&#34; class=&#34;headerlink&#34; title=&#34;简史&#34;&gt;&lt;/a&gt;简史&lt;/h1&gt;&lt;p&gt;2001年，在浙江省出生。&lt;br&gt;2013年，注册 Steam 。&lt;br&gt;2019年，优异的高考成绩进入杭州的本科大学，然后退学，后来确诊抑郁症。&lt;br&gt;2020年，尝试自杀，药物中毒，没有留下后遗症。&lt;br&gt;2021年，离家出走，拉黑血亲。定居在云南省昆明市。   &lt;/p&gt;
-&lt;h1 id=&#34;我的作品&#34;&gt;&lt;a href=&#34;#我的作品&#34; class=&#34;headerlink&#34; title=&#34;我的作品&#34;&gt;&lt;/a&gt;我的作品&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://chenbuyi2019.github.io/steam-id/&#34;&gt;在线 Steam ID 数字转换&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://chenbuyi2019.github.io/ics-gen/&#34;&gt;iCalendar(ics) 年度日程批量生成&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/chenbuyi2019/Buyi-Tools&#34;&gt;布衣的工具箱&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;以及其他的你能看见的我发在这个网站的牢骚文章。&lt;br&gt;还有我在B站发的一些有的没的&lt;a href=&#34;https://space.bilibili.com/4523834/video&#34;&gt;视频&lt;/a&gt;。   &lt;/p&gt;
-&lt;h1 id=&#34;我的设备&#34;&gt;&lt;a href=&#34;#我的设备&#34; class=&#34;headerlink&#34; title=&#34;我的设备&#34;&gt;&lt;/a&gt;我的设备&lt;/h1&gt;&lt;p&gt;布衣现在使用的是神舟笔记本 战神S8 。   &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://valid.x86.fr/azs1u6&#34;&gt;Intel Core i7 12650H&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;DDR4 8GB 3200Mhz 两根&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.3dmark.com/3dm/99857307&#34;&gt;NVIDIA RTX 4060 8GB&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;15.6 英寸 IPS屏幕 1920x1080 144hz&lt;/li&gt;
-&lt;li&gt;NVME SSD 两块 500GB + 1000GB&lt;/li&gt;
-&lt;li&gt;Windows 11 Home&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;图片&#34;&gt;&lt;a href=&#34;#图片&#34; class=&#34;headerlink&#34; title=&#34;图片&#34;&gt;&lt;/a&gt;图片&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;/image/avatar.jpg&#34; alt=&#34;头像&#34;&gt;   &lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/image/dress.webp&#34; alt=&#34;女装&#34;&gt;   &lt;/p&gt;
-</content>
-        <category term="关于" />
-        <updated>2021-01-01T04:30:37.000Z</updated>
     </entry>
 </feed>

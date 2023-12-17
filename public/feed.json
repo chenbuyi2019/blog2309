@@ -5,6 +5,17 @@
     "home_page_url": "http://buyi.dev",
     "items": [
         {
+            "id": "http://buyi.dev/2023/mysqlsteamid/",
+            "url": "http://buyi.dev/2023/mysqlsteamid/",
+            "title": "Mysql 函数实现的 Steam id64/id32 转好友编码",
+            "date_published": "2023-12-17T06:06:23.000Z",
+            "content_html": "<p>直接上代码：   </p>\n<h1 id=\"定义\"><a href=\"#定义\" class=\"headerlink\" title=\"定义\"></a>定义</h1><pre><code class=\"sql\">delimiter $$\nCREATE function `GetSteamId3FromId32`(str CHAR(50)) returns bigint DETERMINISTIC\nCOMMENT &#39;把 STEAM_0:1:2 的格式转换为好友代码&#39;\nBEGIN\n    declare middleStr CHAR(5);\n    declare rightStr CHAR(20);\n    declare num1 int;\n    declare num2 int;\n    if CHAR_LENGTH(str) &lt; 3 then\n        return 0;\n    end if;\n    set rightStr = SUBSTRING_INDEX(str, &quot;:&quot;, -1);\n    set middleStr = MID(str, CHAR_LENGTH(str) - CHAR_LENGTH(rightStr)- 1, 1);\n    set num1 = CAST(rightStr as SIGNED);\n    set num2 = CAST(middleStr as SIGNED);\n    RETURN num1 * 2 + num2;\nEND $$\ndelimiter ;\n\ndelimiter $$\nCREATE function `GetSteamId3FromId64`(old bigint) returns bigint DETERMINISTIC\nCOMMENT &#39;把17位steam id64的数字转换为好友代码&#39;\nBEGIN\n    declare num bigint;\n    if old &lt; 76000000000000000 then\n        return 0;\n    end if;\n    set num = old &lt;&lt; 32;\n    set num = num &gt;&gt; 32;\n    if num &lt; 1 then\n        return 0;\n    end if;\n    return num;\nEND $$\ndelimiter ;\n</code></pre>\n<h1 id=\"使用\"><a href=\"#使用\" class=\"headerlink\" title=\"使用\"></a>使用</h1><pre><code class=\"sql\">-- 第1个例子，我自己的 steam id\nselect GetSteamId3FromId32(&quot;STEAM_0:1:69600329&quot;) as `a`,\n  GetSteamId3FromId32(&quot;abcd1:69600329&quot;) as `b`, \n  GetSteamId3FromId32(&quot;1:69600329&quot;) as `c`,\n  GetSteamId3FromId64(76561198099466387) as `d`,\n  GetSteamId3FromId64(&quot;76561198099466387&quot;) as `e`;\n\n-- 第2个例子，批量转换\nSELECT `authid`, GetSteamId3FromId32(`authid`) AS `fcode` \n  FROM `xxx` LIMIT 10;\n</code></pre>\n<p><img src=\"https://s11.ax1x.com/2023/12/17/pi5J4eJ.png\">   </p>\n<p><img src=\"https://s11.ax1x.com/2023/12/17/pi5JfL4.png\">   </p>\n<h1 id=\"卸载\"><a href=\"#卸载\" class=\"headerlink\" title=\"卸载\"></a>卸载</h1><pre><code class=\"sql\">drop function if exists `GetSteamId3FromId32`;\ndrop function if exists `GetSteamId3FromId64`;\n</code></pre>\n",
+            "tags": [
+                "code",
+                "MYSQL"
+            ]
+        },
+        {
             "id": "http://buyi.dev/2023/copyincmd/",
             "url": "http://buyi.dev/2023/copyincmd/",
             "title": "在 CMD 里复制文件夹",
@@ -152,16 +163,6 @@
             "content_html": "<p>本博客支持以下订阅：   </p>\n<ul>\n<li><a href=\"/rss.xml\">RSS</a></li>\n<li><a href=\"/atom.xml\">Atom</a></li>\n<li><a href=\"/feed.json\">JSON Feed</a></li>\n</ul>\n",
             "tags": [
                 "code"
-            ]
-        },
-        {
-            "id": "http://buyi.dev/2021/about/",
-            "url": "http://buyi.dev/2021/about/",
-            "title": "关于我",
-            "date_published": "2021-01-01T04:30:37.000Z",
-            "content_html": "<p>我是陈布衣，陈是姓，布衣是号。<br>欢迎参观本博客，虽然没有多少有价值的内容。   </p>\n<p>联系我，请发 email 到：<br>chenbuyi2019艾特outlook.com</p>\n<h1 id=\"简史\"><a href=\"#简史\" class=\"headerlink\" title=\"简史\"></a>简史</h1><p>2001年，在浙江省出生。<br>2013年，注册 Steam 。<br>2019年，优异的高考成绩进入杭州的本科大学，然后退学，后来确诊抑郁症。<br>2020年，尝试自杀，药物中毒，没有留下后遗症。<br>2021年，离家出走，拉黑血亲。定居在云南省昆明市。   </p>\n<h1 id=\"我的作品\"><a href=\"#我的作品\" class=\"headerlink\" title=\"我的作品\"></a>我的作品</h1><ul>\n<li><a href=\"https://chenbuyi2019.github.io/steam-id/\">在线 Steam ID 数字转换</a></li>\n<li><a href=\"https://chenbuyi2019.github.io/ics-gen/\">iCalendar(ics) 年度日程批量生成</a></li>\n<li><a href=\"https://github.com/chenbuyi2019/Buyi-Tools\">布衣的工具箱</a></li>\n</ul>\n<p>以及其他的你能看见的我发在这个网站的牢骚文章。<br>还有我在B站发的一些有的没的<a href=\"https://space.bilibili.com/4523834/video\">视频</a>。   </p>\n<h1 id=\"我的设备\"><a href=\"#我的设备\" class=\"headerlink\" title=\"我的设备\"></a>我的设备</h1><p>布衣现在使用的是神舟笔记本 战神S8 。   </p>\n<ul>\n<li><a href=\"https://valid.x86.fr/azs1u6\">Intel Core i7 12650H</a></li>\n<li>DDR4 8GB 3200Mhz 两根</li>\n<li><a href=\"https://www.3dmark.com/3dm/99857307\">NVIDIA RTX 4060 8GB</a></li>\n<li>15.6 英寸 IPS屏幕 1920x1080 144hz</li>\n<li>NVME SSD 两块 500GB + 1000GB</li>\n<li>Windows 11 Home</li>\n</ul>\n<h1 id=\"图片\"><a href=\"#图片\" class=\"headerlink\" title=\"图片\"></a>图片</h1><p><img src=\"/image/avatar.jpg\" alt=\"头像\">   </p>\n<p><img src=\"/image/dress.webp\" alt=\"女装\">   </p>\n",
-            "tags": [
-                "关于"
             ]
         }
     ]

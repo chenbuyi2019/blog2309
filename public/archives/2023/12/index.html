@@ -3,7 +3,7 @@
   <head>
      
     <meta charset="UTF-8">
-    <title>从QQ空间网页导出QQ好友列表 - 陈布衣的博客</title>
+    <title>2023 年 12 月 - 陈布衣的博客</title>
     <link rel="shortcut icon" href="/static/img/icon.png">
     <link rel="icon" href="/static/img/icon.png" sizes="192x192"/>
     
@@ -15,7 +15,7 @@
 
     <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1"/>
     <meta property="og:site_name" content="陈布衣的博客">
-    <meta property="og:title" content="从QQ空间网页导出QQ好友列表"/>
+    <meta property="og:title" content=""/>
     
     <link rel="alternate" type="application/rss+xml" title="陈布衣的博客" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="陈布衣的博客" href="/atom.xml" />
@@ -51,56 +51,36 @@
 
     <main>
     <div class="wrap min">
-        <section class="post-title">
-            <h2>从QQ空间网页导出QQ好友列表</h2>
-            <div class="post-meta">
-                <time class="date">2023 年 10 月 18 日</time>
+        <section class="home-title">
             
-            </div>
+            <h1>“2023 年 12 月”</h1>
         </section>
-        <article class="post-content">
-            <p>以前我都是用QQ邮箱网页版来导出QQ好友列表做备份的。（把全部的好友添加到邮箱通讯录，然后导出邮箱通讯录即可）<br>然而我今天发现这个不好使了。他们断开了QQ邮箱网页版和QQ好友列表的关联。下面这个窗口不断弹出。  </p>
-<p><img src="https://z1.ax1x.com/2023/10/18/piPvObV.png">  </p>
-<p>我想到了另外一个老古董，QQ空间。经过一番鼓捣，找到了具体的XHR请求网址。<br>首先到网页版登录<a target="_blank" rel="noopener" href="https://i.qq.com/">QQ空间</a>，<br>如果你没有开通QQ空间也没有关系，也可以登录而不开通，里面也是可以看见别人的说说、相册的。<br>你甚至可以不开通空间的情况下自己发说说，就是别人看不见。<br>登录进来之后按F12进入开发者工具，找到 Network 区域准备抓包。  </p>
-<p><img src="https://z1.ax1x.com/2023/10/18/piPvvUU.png">   </p>
-<p>接下来点击好友动态，准备发一条说说。点一下 @ 符号，好友列表就从下面冒出来了。<br>在 Network 里搜索一条请求，文件名叫 <code>friend_show_qqfriends.cgi</code>    </p>
-<p><img src="https://z1.ax1x.com/2023/10/18/piPvx5F.png">   </p>
-<p>把它的返回内容保存为 .json 文件，就是你的QQ好友列表了。（虽然不是完美的 json ，需要麻烦手动去掉头尾的 callback js 语句）<br>里面的 items 的 uin 数字就是QQ号了。<br>这个功能可能也就QQ空间这种腾讯一直不更新的能做到了。   </p>
-<p>我今天一开始想到的是腾讯文档，他可以选择分享给指定QQ好友，<br>然后也会有一个好友列表，然而它数据里的 QQ UIN 是另外一种算法的数字。不是我们日常使用的QQ号，是经过了某种算法或单纯随机的新的数编号。   </p>
-
-        </article>
-        <section class="post-near">
-            <ul>
-                
-                    <li>上一篇: <a href="/2023/copyincmd/">在 CMD 里复制文件夹</a></li>
-                
-                
-                    <li>下一篇: <a href="/2023/pinfolder/">工具软件： PinFolder</a></li>
-                
-            </ul>
-        </section>
-        
-            <section class="post-tags">
-            <a class="-none-link" href="/tags/code/" rel="tag">code</a>
-            </section>
-        
+        <section class="home-posts">
     
-        <section class="post-author">
-        
-            <figure class="author-avatar">
-                <img src="/image/avatar.jpg" alt="Chen Buyi" />
-            </figure>
-        
-            <div class="author-info">
-                <h4>Chen Buyi</h4>
-                <p>姓陈，号布衣</p>
-            </div>
-        </section>
+    <div class="post-item">
+        <h2>
+            <a href="/2023/mysqlsteamid/">Mysql 函数实现的 Steam id64/id32 转好友编码</a>
+        </h2>
     
+        <p>直接上代码：   
+定义delimiter $$
+CREATE function `GetSteamId3FromId32`(str CHAR(50)) returns bigint DETER...</p>
+    
+        <div class="post-meta">
+            <time class="date">2023.12.17</time>
+            
+            
+                <span class="tags"><a class="-none-link" href="/tags/MYSQL/" rel="tag">MYSQL</a>，<a class="-none-link" href="/tags/code/" rel="tag">code</a></span>
+            
+        </div>
     </div>
-    <link href="/lib/framer.min.css" rel="stylesheet">
-    <script src="/lib/highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
+    
+</section>
+
+        <section class="page-navigator">
+            <span class="page-number current">1</span>
+        </section>
+    </div>
 </main>
 
     <footer>
