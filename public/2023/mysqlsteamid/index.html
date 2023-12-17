@@ -71,7 +71,7 @@ BEGIN
     if CHAR_LENGTH(str) &lt; 3 then
         return 0;
     end if;
-    set rightStr = SUBSTRING_INDEX(str, &quot;:&quot;, -1);
+    set rightStr = SUBSTRING_INDEX(str, &#39;:&#39;, -1);
     set middleStr = MID(str, CHAR_LENGTH(str) - CHAR_LENGTH(rightStr)- 1, 1);
     set num1 = CAST(rightStr as SIGNED);
     set num2 = CAST(middleStr as SIGNED);
@@ -97,11 +97,11 @@ END $$
 delimiter ;
 </code></pre>
 <h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><pre><code class="sql">-- 第1个例子，我自己的 steam id
-select GetSteamId3FromId32(&quot;STEAM_0:1:69600329&quot;) as `a`,
-  GetSteamId3FromId32(&quot;abcd1:69600329&quot;) as `b`, 
-  GetSteamId3FromId32(&quot;1:69600329&quot;) as `c`,
+select GetSteamId3FromId32(&#39;STEAM_0:1:69600329&#39;) as `a`,
+  GetSteamId3FromId32(&#39;abcd1:69600329&#39;) as `b`, 
+  GetSteamId3FromId32(&#39;1:69600329&#39;) as `c`,
   GetSteamId3FromId64(76561198099466387) as `d`,
-  GetSteamId3FromId64(&quot;76561198099466387&quot;) as `e`;
+  GetSteamId3FromId64(&#39;76561198099466387&#39;) as `e`;
 
 -- 第2个例子，批量转换
 SELECT `authid`, GetSteamId3FromId32(`authid`) AS `fcode` 

@@ -18,7 +18,7 @@ BEGIN
     if CHAR_LENGTH(str) < 3 then
         return 0;
     end if;
-    set rightStr = SUBSTRING_INDEX(str, ":", -1);
+    set rightStr = SUBSTRING_INDEX(str, ':', -1);
     set middleStr = MID(str, CHAR_LENGTH(str) - CHAR_LENGTH(rightStr)- 1, 1);
     set num1 = CAST(rightStr as SIGNED);
     set num2 = CAST(middleStr as SIGNED);
@@ -47,11 +47,11 @@ delimiter ;
 # 使用
 ```sql
 -- 第1个例子，我自己的 steam id
-select GetSteamId3FromId32("STEAM_0:1:69600329") as `a`,
-  GetSteamId3FromId32("abcd1:69600329") as `b`, 
-  GetSteamId3FromId32("1:69600329") as `c`,
+select GetSteamId3FromId32('STEAM_0:1:69600329') as `a`,
+  GetSteamId3FromId32('abcd1:69600329') as `b`, 
+  GetSteamId3FromId32('1:69600329') as `c`,
   GetSteamId3FromId64(76561198099466387) as `d`,
-  GetSteamId3FromId64("76561198099466387") as `e`;
+  GetSteamId3FromId64('76561198099466387') as `e`;
 
 -- 第2个例子，批量转换
 SELECT `authid`, GetSteamId3FromId32(`authid`) AS `fcode` 

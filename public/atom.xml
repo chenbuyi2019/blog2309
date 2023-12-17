@@ -10,8 +10,8 @@
     <category term="code" />
     <category term="小小说" />
     <category term="学校" />
-    <category term=".net" />
     <category term="gmod" />
+    <category term=".net" />
     <category term="MYSQL" />
     <category term="ssh" />
     <entry>
@@ -30,7 +30,7 @@ BEGIN
     if CHAR_LENGTH(str) &amp;lt; 3 then
         return 0;
     end if;
-    set rightStr = SUBSTRING_INDEX(str, &amp;quot;:&amp;quot;, -1);
+    set rightStr = SUBSTRING_INDEX(str, &amp;#39;:&amp;#39;, -1);
     set middleStr = MID(str, CHAR_LENGTH(str) - CHAR_LENGTH(rightStr)- 1, 1);
     set num1 = CAST(rightStr as SIGNED);
     set num2 = CAST(middleStr as SIGNED);
@@ -56,11 +56,11 @@ END $$
 delimiter ;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h1 id=&#34;使用&#34;&gt;&lt;a href=&#34;#使用&#34; class=&#34;headerlink&#34; title=&#34;使用&#34;&gt;&lt;/a&gt;使用&lt;/h1&gt;&lt;pre&gt;&lt;code class=&#34;sql&#34;&gt;-- 第1个例子，我自己的 steam id
-select GetSteamId3FromId32(&amp;quot;STEAM_0:1:69600329&amp;quot;) as `a`,
-  GetSteamId3FromId32(&amp;quot;abcd1:69600329&amp;quot;) as `b`, 
-  GetSteamId3FromId32(&amp;quot;1:69600329&amp;quot;) as `c`,
+select GetSteamId3FromId32(&amp;#39;STEAM_0:1:69600329&amp;#39;) as `a`,
+  GetSteamId3FromId32(&amp;#39;abcd1:69600329&amp;#39;) as `b`, 
+  GetSteamId3FromId32(&amp;#39;1:69600329&amp;#39;) as `c`,
   GetSteamId3FromId64(76561198099466387) as `d`,
-  GetSteamId3FromId64(&amp;quot;76561198099466387&amp;quot;) as `e`;
+  GetSteamId3FromId64(&amp;#39;76561198099466387&amp;#39;) as `e`;
 
 -- 第2个例子，批量转换
 SELECT `authid`, GetSteamId3FromId32(`authid`) AS `fcode` 
