@@ -7,15 +7,15 @@
         <language>zh</language>
         <pubDate>Thu, 04 Jan 2024 09:12:09 +0800</pubDate>
         <lastBuildDate>Thu, 04 Jan 2024 09:12:09 +0800</lastBuildDate>
-        <category>小小说</category>
-        <category>学校</category>
         <category>家庭</category>
         <category>code</category>
+        <category>关于</category>
+        <category>小小说</category>
+        <category>学校</category>
         <category>.net</category>
         <category>gmod</category>
         <category>MYSQL</category>
         <category>ssh</category>
-        <category>关于</category>
         <item>
             <guid isPermalink="true">http://buyi.dev/2024/parent-rights/</guid>
             <title>父母的黑暗面权力有多大</title>
@@ -26,6 +26,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV1vW4y1P7HQ&#34;&gt;bilibili&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://youtu.be/ekyRwSPSIz0&#34;&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://m.weibo.cn/status/NAiWCA7Xf&#34;&gt;微博&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;p&gt;父母，或者说监护人，他们对你，也就是对被监护人的权力其实大到难以想象。&lt;br&gt;我把他们能做的坏事简单分类了一下，做成今天的这个视频。   &lt;/p&gt;
@@ -360,8 +361,8 @@ LogLevel DEBUG3
             <guid isPermalink="true">http://buyi.dev/2023/hit/</guid>
             <title>小小说：是女朋友就分手</title>
             <link>http://buyi.dev/2023/hit/</link>
-            <category>小小说</category>
             <category>家庭</category>
+            <category>小小说</category>
             <pubDate>Sun, 18 Jun 2023 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;A：“我和你说，我感觉我受我女朋友欺负很久了。”   &lt;/p&gt;
 &lt;p&gt;B：“怎么了？”   &lt;/p&gt;
@@ -420,8 +421,8 @@ LogLevel DEBUG3
             <guid isPermalink="true">http://buyi.dev/2022/dsdf/</guid>
             <title>小小说：大是大非前谈努力</title>
             <link>http://buyi.dev/2022/dsdf/</link>
-            <category>小小说</category>
             <category>家庭</category>
+            <category>小小说</category>
             <pubDate>Sun, 05 Jun 2022 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;有个年轻人在一个小公司里面上班。   &lt;/p&gt;
 &lt;p&gt;有一天，他的母亲和几个大叔突然一起出现在他公司的门口。&lt;br&gt;他母亲一眼就望见了他，年轻人也看见了他的母亲，那几个大叔里有认识的舅舅，也有不认识的。   &lt;/p&gt;
@@ -435,8 +436,8 @@ LogLevel DEBUG3
             <guid isPermalink="true">http://buyi.dev/2022/son/</guid>
             <title>小小说：你这个没出息的狗儿子</title>
             <link>http://buyi.dev/2022/son/</link>
-            <category>小小说</category>
             <category>家庭</category>
+            <category>小小说</category>
             <pubDate>Sat, 04 Jun 2022 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;一位父亲带着他的儿子去逛街。   &lt;/p&gt;
 &lt;p&gt;走到了游乐园旁，儿子指着高大的摩天轮说：“爸爸，我想玩摩天轮。”    &lt;/p&gt;
