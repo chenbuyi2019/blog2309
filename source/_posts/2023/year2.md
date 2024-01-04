@@ -1,7 +1,7 @@
 ---
 title: 离家出走2.5年的感慨
 date: 2023-08-19
-tags: [牢骚,家庭]
+tags: [家庭]
 ---
 # 前言
 下文中的父母也可指代别的家庭长辈或监护人。   
@@ -96,7 +96,7 @@ tags: [牢骚,家庭]
 - [up主自己攒钱买的 xbox 被父母砸毁](https://www.bilibili.com/video/BV1wP411r7t8)
 - [男童遭家人棍打后从五楼跳下，伤势严重。警方表示家务事不管](https://m.weibo.cn/status/N76fA8zq9)
 - [被抛弃的女生长大后被亲生父母找到：你弟弟有女朋友了。 女生拒绝回家，坚持住在养父母家里，被亲生父母骂没良心](https://m.weibo.cn/status/N38yGbIhT)
-- [豫章书院吴某豹称打学生前会先问家长：家长同意才会打](https://m.weibo.cn/status/MzP2JtfyN)
+- [豫章书院吴某豹称打学生前会先问家长：家长同意才会打](https://m.weibo.cn/status/MzOSEbu3c)
 - [16岁少女被父母以26万彩礼许人，在高速服务区偷偷报警求救](https://m.weibo.cn/status/MtSPmyXnX)
 
 # 微博
