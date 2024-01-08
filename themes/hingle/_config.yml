@@ -12,6 +12,7 @@ friendslink:
   'AceSheep': 'https://blog.acesheep.com/'
   '技术宅的结界': 'https://www.0xaa55.com/'
   'Sonic853': 'https://blog.853lab.com/'
+  '紗羽硒璃葉': 'https://blog.luchs514.org/'
 config:
   copyright: false # 复制的时候弹出保留原站链接说明
   night: false  # 自动切换夜间模式
