@@ -5,8 +5,8 @@
     <link href="http://buyi.dev" />
     <updated>2024-01-04T01:12:09.000Z</updated>
     <category term="家庭" />
-    <category term="关于" />
     <category term="code" />
+    <category term="关于" />
     <category term="小小说" />
     <category term="学校" />
     <category term=".net" />
@@ -355,6 +355,26 @@ LogLevel DEBUG3
         <updated>2023-08-13T16:00:00.000Z</updated>
     </entry>
     <entry>
+        <id>http://buyi.dev/2023/india/</id>
+        <title>小小说：印度草药的故事</title>
+        <link rel="alternate" href="http://buyi.dev/2023/india/"/>
+        <content type="html">&lt;p&gt;小明今天生病了，一直发热加咳嗽。   &lt;/p&gt;
+&lt;p&gt;小明的母亲就出去为他买药。    &lt;/p&gt;
+&lt;p&gt;母亲出去了不久，一个印度人就来到了小明家的门口。原来是小明的邻居，一个来打工的印度人，之前和小明也有认识。   &lt;/p&gt;
+&lt;p&gt;印度人敲敲门，“是我”。 &lt;/p&gt;
+&lt;p&gt;小明开门了。    &lt;/p&gt;
+&lt;p&gt;印度人说：“我听你一直在咳嗽，我手里有一些草药，是我们印度人世代都使用的配方，你拿去用开水煮开然后喝了就可以了。”    &lt;/p&gt;
+&lt;p&gt;小明表示了感谢，收下了印度草药。   &lt;/p&gt;
+&lt;p&gt;可是小明也只能继续等他母亲回家，因为小明还小，无法自己煮药。    &lt;/p&gt;
+&lt;p&gt;小明的母亲回来了，小明就和母亲说了印度人来拜访的事。    &lt;/p&gt;
+&lt;p&gt;小明的母亲看了看手里拿的中草药，再看了看印度人给的印度草药。&lt;br&gt;就把印度草药扔进了垃圾桶。   &lt;/p&gt;
+&lt;p&gt;小明问母亲为什么要丢掉它。   &lt;/p&gt;
+&lt;p&gt;小明的母亲说：“他们印度草药只能糊弄他们自己人，是帮不了我们的。我们的五千年中医博大精深，不管什么病，不管中国人外国人都是可以治好的。”   &lt;/p&gt;
+</content>
+        <category term="小小说" />
+        <updated>2023-06-17T16:00:00.000Z</updated>
+    </entry>
+    <entry>
         <id>http://buyi.dev/2023/hit/</id>
         <title>小小说：是女朋友就分手</title>
         <link rel="alternate" href="http://buyi.dev/2023/hit/"/>
@@ -372,26 +392,6 @@ LogLevel DEBUG3
 &lt;p&gt;B：“不孝子就是不孝子，别狡辩了。”   &lt;/p&gt;
 </content>
         <category term="家庭" />
-        <category term="小小说" />
-        <updated>2023-06-17T16:00:00.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://buyi.dev/2023/india/</id>
-        <title>小小说：印度草药的故事</title>
-        <link rel="alternate" href="http://buyi.dev/2023/india/"/>
-        <content type="html">&lt;p&gt;小明今天生病了，一直发热加咳嗽。   &lt;/p&gt;
-&lt;p&gt;小明的母亲就出去为他买药。    &lt;/p&gt;
-&lt;p&gt;母亲出去了不久，一个印度人就来到了小明家的门口。原来是小明的邻居，一个来打工的印度人，之前和小明也有认识。   &lt;/p&gt;
-&lt;p&gt;印度人敲敲门，“是我”。 &lt;/p&gt;
-&lt;p&gt;小明开门了。    &lt;/p&gt;
-&lt;p&gt;印度人说：“我听你一直在咳嗽，我手里有一些草药，是我们印度人世代都使用的配方，你拿去用开水煮开然后喝了就可以了。”    &lt;/p&gt;
-&lt;p&gt;小明表示了感谢，收下了印度草药。   &lt;/p&gt;
-&lt;p&gt;可是小明也只能继续等他母亲回家，因为小明还小，无法自己煮药。    &lt;/p&gt;
-&lt;p&gt;小明的母亲回来了，小明就和母亲说了印度人来拜访的事。    &lt;/p&gt;
-&lt;p&gt;小明的母亲看了看手里拿的中草药，再看了看印度人给的印度草药。&lt;br&gt;就把印度草药扔进了垃圾桶。   &lt;/p&gt;
-&lt;p&gt;小明问母亲为什么要丢掉它。   &lt;/p&gt;
-&lt;p&gt;小明的母亲说：“他们印度草药只能糊弄他们自己人，是帮不了我们的。我们的五千年中医博大精深，不管什么病，不管中国人外国人都是可以治好的。”   &lt;/p&gt;
-</content>
         <category term="小小说" />
         <updated>2023-06-17T16:00:00.000Z</updated>
     </entry>

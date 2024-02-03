@@ -35,6 +35,6 @@ chenbuyi2019艾特outlook.com
 - Windows 11 Home
 
 # 图片
-![头像](/image/avatar.jpg)   
+![头像](/image/avatar3.jpg)   
 
 ![女装](/image/dress.webp)   
