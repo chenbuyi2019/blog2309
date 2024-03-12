@@ -1,5 +1,5 @@
 ---
-title: Collision Group In Counter-Strike 2
+title: Collision Groups In Counter-Strike 2
 date: 2024-03-12 13:39:19
 tags: [cs2]
 ---

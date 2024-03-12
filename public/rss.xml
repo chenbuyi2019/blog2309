@@ -13,13 +13,13 @@
         <category>小小说</category>
         <category>学校</category>
         <category>.net</category>
+        <category>MYSQL</category>
         <category>gmod</category>
         <category>ssh</category>
         <category>cs2</category>
-        <category>MYSQL</category>
         <item>
             <guid isPermalink="true">http://buyi.dev/2024/cs2-collisiongroup/</guid>
-            <title>Collision Group In Counter-Strike 2</title>
+            <title>Collision Groups In Counter-Strike 2</title>
             <link>http://buyi.dev/2024/cs2-collisiongroup/</link>
             <category>cs2</category>
             <pubDate>Tue, 12 Mar 2024 13:39:19 +0800</pubDate>
