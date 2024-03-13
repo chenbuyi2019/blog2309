@@ -5,18 +5,142 @@
         <link>http://buyi.dev</link>
         <description></description>
         <language>zh</language>
-        <pubDate>Tue, 12 Mar 2024 13:39:19 +0800</pubDate>
-        <lastBuildDate>Tue, 12 Mar 2024 13:39:19 +0800</lastBuildDate>
+        <pubDate>Wed, 13 Mar 2024 12:26:06 +0800</pubDate>
+        <lastBuildDate>Wed, 13 Mar 2024 12:26:06 +0800</lastBuildDate>
         <category>家庭</category>
-        <category>关于</category>
         <category>code</category>
+        <category>cs2</category>
         <category>小小说</category>
         <category>学校</category>
+        <category>关于</category>
         <category>.net</category>
-        <category>MYSQL</category>
         <category>gmod</category>
         <category>ssh</category>
-        <category>cs2</category>
+        <category>MYSQL</category>
+        <item>
+            <guid isPermalink="true">http://buyi.dev/2024/cs2-snd/</guid>
+            <title>Counter-Strike 2 音频自定义编写与编译</title>
+            <link>http://buyi.dev/2024/cs2-snd/</link>
+            <category>cs2</category>
+            <pubDate>Wed, 13 Mar 2024 12:26:06 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;文件结构&#34;&gt;&lt;a href=&#34;#文件结构&#34; class=&#34;headerlink&#34; title=&#34;文件结构&#34;&gt;&lt;/a&gt;文件结构&lt;/h1&gt;&lt;p&gt;需要安装 cs2 workshop tools ，然后新建一个空白地图项目，比如叫 &lt;code&gt;xxxx&lt;/code&gt;。&lt;br&gt;源文件放在 &lt;code&gt;common\Counter-Strike Global Offensive\content\csgo_addons\xxxx&lt;/code&gt; 里。&lt;br&gt;其中 &lt;code&gt;soundevents&lt;/code&gt; 文件夹里存放着声音脚本文件 &lt;code&gt;.vsndevts&lt;/code&gt; ，可以用，&lt;br&gt;&lt;code&gt;sounds&lt;/code&gt; 文件夹里放着具体的音频源文件，比如 &lt;code&gt;.mp3 .wav&lt;/code&gt; 。  &lt;/p&gt;
+&lt;p&gt;看起来起源2引擎依然使用的是和以往一样的 44100 hz 的音频文件。  &lt;/p&gt;
+&lt;p&gt;后续编译好的文件会在 &lt;code&gt;common\Counter-Strike Global Offensive\game\csgo_addons\xxxx&lt;/code&gt; 里。  &lt;/p&gt;
+&lt;h1 id=&#34;编写声音脚本-vsndevts&#34;&gt;&lt;a href=&#34;#编写声音脚本-vsndevts&#34; class=&#34;headerlink&#34; title=&#34;编写声音脚本 vsndevts&#34;&gt;&lt;/a&gt;编写声音脚本 vsndevts&lt;/h1&gt;&lt;p&gt;空白地图项目自带一个叫 &lt;code&gt;soundevents_addon.vsndevts&lt;/code&gt; 的声音脚本，里面有飞机音效、鸟叫音效的样例。   &lt;/p&gt;
+&lt;p&gt;如果你是要在自己的地图里使用，那么就不要改文件名，就在 &lt;code&gt;soundevents_addon.vsndevts&lt;/code&gt; 里编写。&lt;br&gt;如果是要在其他插件里自定义调用，就最好复制出来改个文件名，比如 &lt;code&gt;abc.vsndevts&lt;/code&gt;      &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;soundevents_addon.vsndevts&lt;/code&gt; 文件里写了一些说明，有兴趣可以自己看以下。&lt;br&gt;以及可以看看 &lt;a href=&#34;https://developer.valvesoftware.com/wiki/Counter-Strike_2_Workshop_Tools/Addon_Sounds&#34;&gt;Valve 开发者 wiki 里的说明&lt;/a&gt;。   &lt;/p&gt;
+&lt;p&gt;起源2 的大部分地方都是使用音频事件 (Sound Event) 来播放的，音频事件里指定了使用什么文件、什么类型、多少音量、什么音效(DSP)。&lt;br&gt;每个音频事件都有一个名字 (Sound Event Name)，由编写者指定，在地图或实体播放的时候按音频事件的名字进行使用。   &lt;/p&gt;
+&lt;p&gt;以前还能在地图里使用直接的音频文件名播放，现在就别想了。实体连音量都改不了，只能在脚本里预先写好。   &lt;/p&gt;
+&lt;p&gt;一个最简单的音频事件的格式示例：    &lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;&amp;quot;exgze.cheer&amp;quot; =  // 音频事件的名字，尽量以 a.b 或者 a.b.c 来编写
+&amp;#123;
+    type = &amp;quot;csgo_music&amp;quot;  // 类型
+    volume = 1.0     // 音量
+    vsnd_files =   // 使用的文件，如果是多个会在播放的时候随机选其中一个。
+    [
+        &amp;quot;sounds/exg/cheer/1.vsnd&amp;quot;,  // 文件必须是 .vsnd 结尾，不管源文件是什么
+        &amp;quot;sounds/exg/cheer/2.vsnd&amp;quot;  // 因为后面我们会编译，把普通格式变成 .vsnd_c
+    ]
+&amp;#125;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;声音类型有三种：&lt;br&gt;&lt;code&gt;csgo_mega&lt;/code&gt; 常规3D范围音效。站的越近声音越大。&lt;br&gt;&lt;code&gt;csgo_music&lt;/code&gt; 表示对任何人来说播放都是一样的效果。适合播放UI音效、音乐、音乐盒。&lt;br&gt;&lt;code&gt;csgo_3d&lt;/code&gt; wiki 里说这是环境背景音，然而官方vpk里没有一个脚本是使用了这个。&lt;br&gt;而且我发现使用了 &lt;code&gt;csgo_3d&lt;/code&gt; 之后，连 hammer 都不承认它存在了，说明可能是个被放弃的早期版本。   &lt;/p&gt;
+&lt;p&gt;需要注意的是， &lt;code&gt;csgo_music&lt;/code&gt; 使用 &lt;code&gt;vsnd_files&lt;/code&gt; 来表示音频文件列表，&lt;br&gt;而 &lt;code&gt;csgo_mega&lt;/code&gt; 使用 &lt;code&gt;vsnd_files_track_01&lt;/code&gt; 来表示。&lt;br&gt;这个写反了就当没有音频文件了。   &lt;/p&gt;
+&lt;h2 id=&#34;音量&#34;&gt;&lt;a href=&#34;#音量&#34; class=&#34;headerlink&#34; title=&#34;音量&#34;&gt;&lt;/a&gt;音量&lt;/h2&gt;&lt;p&gt;&lt;code&gt;csgo_music&lt;/code&gt; 类型的音量默认受玩家参数 &lt;code&gt;snd_musicvolume&lt;/code&gt; 的控制。&lt;br&gt;这些声音脚本有很多参数的功能是未知的，我也是在摸索，比如我发现我自己写 &lt;code&gt;volume_convar&lt;/code&gt; 就不好使（   &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;volume&lt;/code&gt; 默认是 1 ，可以写比 1 低也可以写比 1 高。（我印象中以前音量都是只能低不能高的）   &lt;/p&gt;
+&lt;h2 id=&#34;声音播放范围&#34;&gt;&lt;a href=&#34;#声音播放范围&#34; class=&#34;headerlink&#34; title=&#34;声音播放范围&#34;&gt;&lt;/a&gt;声音播放范围&lt;/h2&gt;&lt;p&gt;&lt;code&gt;distance_volume_mapping_curve&lt;/code&gt; 指的是距离和音量的映射曲线。&lt;br&gt;需要像下面这样写，其实我也不太懂这个曲线到底是个什么种类的曲线。&lt;br&gt;映射关系的每个元素有6个数字，就只需要改头两个数字，第一个数字是距离，第二个数字是音量。&lt;br&gt;下面的样例代码里表示的是最远到 900 距离开外听见，音量逐步减小。  &lt;/p&gt;
+&lt;p&gt;如果不写这个的话，貌似默认的 &lt;code&gt;csgo_mega&lt;/code&gt; 只有 128 距离那么远。   &lt;/p&gt;
+&lt;p&gt;甚至可以再加入元素使得声音大小起起伏伏（比如站的最近声音小，站中间声音大）。   &lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;&amp;quot;exgze.test10mega&amp;quot; = 
+&amp;#123;
+    type = &amp;quot;csgo_mega&amp;quot;
+    volume = 1.0 // 这里会被当做标准值，后面曲线会乘以这个数
+    vsnd_files_track_01 = &amp;quot;sounds/exg/test10s.vsnd&amp;quot;
+    distance_volume_mapping_curve = 
+    [
+        [
+            0.0, 1.0, // 距离声音原点零距离时，音量为1.0
+             -0.00394, -0.00394, // 后面4个数字是照抄的，不知道什么意思
+            2.0, 3.0,
+        ],
+        [
+            900.0, 0.0, // 距离声音原点距离 900 单位时，音量为零
+             -0.002991, -0.002991,
+            2.0, 3.0,
+        ]
+    ]
+&amp;#125;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;一些官方示例&#34;&gt;&lt;a href=&#34;#一些官方示例&#34; class=&#34;headerlink&#34; title=&#34;一些官方示例&#34;&gt;&lt;/a&gt;一些官方示例&lt;/h2&gt;&lt;p&gt;一个官方的音乐盒的示例：   &lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;Music.MVPPreview.halflife_alyx_01 = 
+&amp;#123;
+    type = &amp;quot;csgo_music&amp;quot;
+    volume = 0.800000
+    volume_convar = &amp;quot;snd_menumusic_volume&amp;quot;  // 这里是说它同时受玩家设置里的音乐音量的控制
+    stop_music = &amp;quot;true&amp;quot;
+    vsnd_files = &amp;quot;sounds/music/halflife_alyx_01/roundmvpanthem_01.vsnd&amp;quot;
+    vsnd_duration = 16.692245  // 音乐长度，我们一般不写，编译的时候会自动进去
+&amp;#125;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;一个官方的示例，人质受伤（精简过，原文有点长）：   &lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;Hostage.Pain = 
+&amp;#123;
+    type = &amp;quot;csgo_mega&amp;quot;
+    volume = 0.899902
+    pitch = 1.000000
+    mixgroup = &amp;quot;VO&amp;quot;
+    block_duration = 0.300000
+    block_distance = 69.000000
+    use_distance_volume_mapping_curve = true
+    reverb_wet = 0.300000
+    display_broadcast = true
+    occlusion_intensity = 0.500000
+    occlusion_frequency_scale = 0.500000
+    vsnd_files_track_01 =
+    [
+        &amp;quot;sounds/vo/hostage/hpain/hpain1.vsnd&amp;quot;,
+        &amp;quot;sounds/vo/hostage/hpain/hpain2.vsnd&amp;quot;,
+        &amp;quot;sounds/vo/hostage/hpain/hpain3.vsnd&amp;quot;
+    ]
+    distance_volume_mapping_curve = 
+    [
+        [
+            81.028969,
+            1.000000,
+            0.000000,
+            0.000000,
+            2.000000,
+            3.000000,
+        ],
+        [
+            211.771500,
+            0.634147,
+            -0.001725,
+            -0.001725,
+            2.000000,
+            3.000000,
+        ],
+        [
+            1100.000000,
+            0.000000,
+            -0.000557,
+            -0.000557,
+            2.000000,
+            3.000000,
+        ]
+    ]
+    vsnd_duration = 0.586757
+&amp;#125;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;编译脚本与声音&#34;&gt;&lt;a href=&#34;#编译脚本与声音&#34; class=&#34;headerlink&#34; title=&#34;编译脚本与声音&#34;&gt;&lt;/a&gt;编译脚本与声音&lt;/h1&gt;&lt;p&gt;在 &lt;code&gt;Asserts Browser&lt;/code&gt; 里搜索你的声音文件和脚本文件。&lt;br&gt;全部选中，按鼠标右键，选择 &lt;code&gt;Full Recompile&lt;/code&gt;。   &lt;/p&gt;
+&lt;p&gt;这样  &lt;code&gt;.vsndevts&lt;/code&gt; 就会变成 &lt;code&gt;.vsndevts_c&lt;/code&gt;文件，&lt;br&gt;&lt;code&gt;.mp3 .wav&lt;/code&gt; 就会变成 &lt;code&gt;.vsnd_c&lt;/code&gt; 文件（内嵌进去）了。&lt;br&gt;编译好的文件会在 &lt;code&gt;common\Counter-Strike Global Offensive\game\csgo_addons\xxxx&lt;/code&gt; 里。  &lt;/p&gt;
+&lt;p&gt;一般来说如果开着 hammer，对 &lt;code&gt;.vsndevts&lt;/code&gt; 的编译是全自动的。   &lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s21.ax1x.com/2024/03/13/pFcGYWV.png&#34;&gt;   &lt;/p&gt;
+&lt;h1 id=&#34;试听&#34;&gt;&lt;a href=&#34;#试听&#34; class=&#34;headerlink&#34; title=&#34;试听&#34;&gt;&lt;/a&gt;试听&lt;/h1&gt;&lt;p&gt;如果要试听，可以把要试听的部分编辑到 &lt;code&gt;soundevents_addon.vsndevts&lt;/code&gt; 里面，&lt;br&gt;然后在 hammer 里加个声音实体，打开 &lt;code&gt;Sound Event Picker&lt;/code&gt; 试听。&lt;br&gt;如果 Picker 里找不到，试试重新编译一次，应该是会每次打开 Picker 的时候刷新的。&lt;br&gt;如果点击了没有声音预览，说明你写的有问题或者音频文件有问题。   &lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s21.ax1x.com/2024/03/13/pFcJgNn.png&#34;&gt;   &lt;/p&gt;
+&lt;h1 id=&#34;实体兼容性&#34;&gt;&lt;a href=&#34;#实体兼容性&#34; class=&#34;headerlink&#34; title=&#34;实体兼容性&#34;&gt;&lt;/a&gt;实体兼容性&lt;/h1&gt;&lt;p&gt;&lt;code&gt;snd_event_point&lt;/code&gt; 和 &lt;code&gt;ambient_generic&lt;/code&gt; 都可以正常播放 mega 和 music 。&lt;br&gt;但是在使用 &lt;code&gt;ambient_generic&lt;/code&gt; 的时候一定要注意正确勾选 &lt;code&gt;Is NOT Looped(32)&lt;/code&gt; （貌似绝大多数情况下都要勾上，不然不播放）    &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ambient_generic&lt;/code&gt; 实体无法干预声音脚本自己的音量和播放范围。   &lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://buyi.dev/2024/cs2-collisiongroup/</guid>
             <title>Collision Groups In Counter-Strike 2</title>
@@ -35,7 +159,7 @@ SolidType: SolidType_t.SOLID_VPHYSICS (6)
 &lt;p&gt;The most strange group is &lt;code&gt;20&lt;/code&gt;, it makes the prop can be eailsy pushed by player.&lt;br&gt;And it only collide with the ground underneath it, players can push the prop through the wall and it usually drop out of the world.   &lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/image/cs2_collision_grop_20.gif&#34;&gt;&lt;/p&gt;
 &lt;p&gt;I was looking at &lt;a href=&#34;https://github.com/roflmuffin/CounterStrikeSharp/blob/main/managed/CounterStrikeSharp.API/Modules/Entities/Constants/CollisionGroup.cs&#34;&gt;CounterStrikeSharp’s CollisionGroup&lt;/a&gt; and I found it was wrong.&lt;br&gt;The correct one should be &lt;a href=&#34;https://github.com/alliedmodders/hl2sdk/blob/cs2/public/const.h&#34;&gt;alliedmodders&amp;#x2F;hl2sdk cs2&lt;/a&gt;   &lt;code&gt;enum Collision_Group_t&lt;/code&gt;.   &lt;/p&gt;
-&lt;p&gt;At least, i thought WEAPON should not collide with player.&lt;br&gt;But CounterStrikeSharp set WEAPON to 11, and hl2sdk-cs2 set WEAPON to 14.   &lt;/p&gt;
+&lt;p&gt;P.S. on 2024 March.13th: CounterStrikeSharp’s CollisionGroup is now fixed in the latest version.   &lt;/p&gt;
  ]]></description>
         </item>
         <item>
@@ -447,25 +571,6 @@ LogLevel DEBUG3
 &lt;p&gt;小明的母亲看了看手里拿的中草药，再看了看印度人给的印度草药。&lt;br&gt;就把印度草药扔进了垃圾桶。   &lt;/p&gt;
 &lt;p&gt;小明问母亲为什么要丢掉它。   &lt;/p&gt;
 &lt;p&gt;小明的母亲说：“他们印度草药只能糊弄他们自己人，是帮不了我们的。我们的五千年中医博大精深，不管什么病，不管中国人外国人都是可以治好的。”   &lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://buyi.dev/2022/fail/</guid>
-            <title>小小说：他被车撞了所以他毕业了</title>
-            <link>http://buyi.dev/2022/fail/</link>
-            <category>小小说</category>
-            <category>学校</category>
-            <pubDate>Tue, 07 Jun 2022 00:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;一个本科生，以很慢的速度跑过了终点线，气喘吁吁。   &lt;/p&gt;
-&lt;p&gt;他的体育老师走过来告诉他：“对不起，你不能毕业了。估计是要留级了。”    &lt;/p&gt;
-&lt;p&gt;本科生问：“为什么？”    &lt;/p&gt;
-&lt;p&gt;老师说：“因为你体育不及格，期末考试太差，不符合毕业的底线要求。”    &lt;/p&gt;
-&lt;p&gt;本科生看见了另外一个本科生，他没有参加跑步以及其他的体育考试项目。本科生指着他，说：“他呢？他都没有参加考试。”    &lt;/p&gt;
-&lt;p&gt;老师说：“他申请了免测，他之前被车撞伤了。他直接体育就及格了。”    &lt;/p&gt;
-&lt;p&gt;“撞伤？我看他现在活蹦乱跳的，这不是作弊吗！”    &lt;/p&gt;
-&lt;p&gt;“只要提交材料的那一天他被车撞伤了，有医院证明就行，我不管他现在是活的是死的。你给我冷静一点。”    &lt;/p&gt;
-&lt;p&gt;本科生愤怒地说：“我哪个科目比他差？他被车撞了所以他毕业了，我没被车撞所以我不能毕业！”   &lt;/p&gt;
-&lt;p&gt;他昏过去了，因为他实在是太累了。   &lt;/p&gt;
  ]]></description>
         </item>
     </channel>

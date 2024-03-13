@@ -31,5 +31,4 @@ And it only collide with the ground underneath it, players can push the prop thr
 I was looking at [CounterStrikeSharp's CollisionGroup](https://github.com/roflmuffin/CounterStrikeSharp/blob/main/managed/CounterStrikeSharp.API/Modules/Entities/Constants/CollisionGroup.cs) and I found it was wrong.   
 The correct one should be [alliedmodders/hl2sdk cs2](https://github.com/alliedmodders/hl2sdk/blob/cs2/public/const.h)   `enum Collision_Group_t`.   
 
-At least, i thought WEAPON should not collide with player.   
-But CounterStrikeSharp set WEAPON to 11, and hl2sdk-cs2 set WEAPON to 14.   
+P.S. on 2024 March.13th: CounterStrikeSharp's CollisionGroup is now fixed in the latest version.   
