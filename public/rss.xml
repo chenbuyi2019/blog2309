@@ -5,18 +5,623 @@
         <link>http://buyi.dev</link>
         <description></description>
         <language>zh</language>
-        <pubDate>Wed, 13 Mar 2024 12:26:06 +0800</pubDate>
-        <lastBuildDate>Wed, 13 Mar 2024 12:26:06 +0800</lastBuildDate>
-        <category>家庭</category>
-        <category>code</category>
-        <category>cs2</category>
+        <pubDate>Wed, 10 Apr 2024 08:56:22 +0800</pubDate>
+        <lastBuildDate>Wed, 10 Apr 2024 08:56:22 +0800</lastBuildDate>
         <category>小小说</category>
-        <category>学校</category>
+        <category>家庭</category>
         <category>关于</category>
+        <category>code</category>
         <category>.net</category>
-        <category>gmod</category>
-        <category>ssh</category>
+        <category>学校</category>
         <category>MYSQL</category>
+        <category>ssh</category>
+        <category>gmod</category>
+        <category>cs2</category>
+        <item>
+            <guid isPermalink="true">http://buyi.dev/2024/cs2-disconnect-reasons/</guid>
+            <title>Counter-Strike 2 玩家离线理由对照表</title>
+            <link>http://buyi.dev/2024/cs2-disconnect-reasons/</link>
+            <category>cs2</category>
+            <pubDate>Wed, 10 Apr 2024 08:56:22 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;注释里的文本大部分来自 &lt;code&gt;csgo/pak01_dir.vpk&lt;/code&gt; 里的 &lt;code&gt;resource/csgo_schinese.txt&lt;/code&gt;&lt;br&gt;参考原文： &lt;a href=&#34;https://github.com/alliedmodders/hl2sdk/blob/cs2/common/network_connection.proto&#34;&gt;hl2sdk-cs2&lt;/a&gt;   &lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;c#&#34;&gt;/// &amp;lt;summary&amp;gt;
+/// 玩家掉线的理由
+/// &amp;lt;/summary&amp;gt;
+public enum PlayerDisconnectReason
+&amp;#123;
+    /// &amp;lt;summary&amp;gt;
+    /// （无弹窗）
+    /// &amp;lt;/summary&amp;gt;
+    INVALID = 0,
+
+    /// &amp;lt;summary&amp;gt;
+    /// （无弹窗）
+    /// &amp;lt;/summary&amp;gt;
+    SHUTDOWN = 1,
+
+    /// &amp;lt;summary&amp;gt;
+    /// （无弹窗，玩家主动离开）
+    /// &amp;lt;/summary&amp;gt;
+    DISCONNECT_BY_USER = 2,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 服务器断开连接。
+    /// &amp;lt;/summary&amp;gt;
+    DISCONNECT_BY_SERVER = 3,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 连接丢失。
+    /// &amp;lt;/summary&amp;gt;
+    LOST = 4,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 溢出错误
+    /// &amp;lt;/summary&amp;gt;
+    OVERFLOW = 5,
+
+    /// &amp;lt;summary&amp;gt;
+    /// STEAM 用户 ID 被封禁
+    /// &amp;lt;/summary&amp;gt;
+    STEAM_BANNED = 6,
+
+    /// &amp;lt;summary&amp;gt;
+    /// STEAM 用户 ID 已在此服务器上使用
+    /// &amp;lt;/summary&amp;gt;
+    STEAM_INUSE = 7,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 来自 STEAM 用户 ID 的工单无效
+    /// &amp;lt;/summary&amp;gt;
+    STEAM_TICKET = 8,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 需要 Steam 以加入游戏。请检查您到 Steam 的连接并重试。
+    /// &amp;lt;/summary&amp;gt;
+    STEAM_LOGON = 9,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 没有 Steam 登录
+    /// &amp;lt;/summary&amp;gt;
+    STEAM_AUTHCANCELLED = 10,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 没有 Steam 登录
+    /// &amp;lt;/summary&amp;gt;
+    STEAM_AUTHALREADYUSED = 11,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 没有 Steam 登录
+    /// &amp;lt;/summary&amp;gt;
+    STEAM_AUTHINVALID = 12,
+
+    /// &amp;lt;summary&amp;gt;
+    /// VAC 已被安全服务器封禁
+    /// &amp;lt;/summary&amp;gt;
+    STEAM_VACBANSTATE = 13,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 此帐户当前正在另一台机器上登录到 Steam。\n请稍后再试。
+    /// &amp;lt;/summary&amp;gt;
+    STEAM_LOGGED_IN_ELSEWHERE = 14,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 您不能在安全服务器上玩游戏的可能原因如下：•您的电脑出现问题，阻止了 VAC 系统。•您无法与 VAC 系统保持稳定连接。•您运行的软件在修改游戏或与 VAC 不兼容。更多信息，请参见 https://support.steampowered.com/kb_article.php?ref=2117-ILZV-2837
+    /// &amp;lt;/summary&amp;gt;
+    STEAM_VAC_CHECK_TIMEDOUT = 15,
+
+    /// &amp;lt;summary&amp;gt;
+    /// Steam 认证失败。您必须连接到 Steam 才能初始化到游戏服务器。
+    /// &amp;lt;/summary&amp;gt;
+    STEAM_DROPPED = 16,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 这个 Steam 帐户并未拥有该游戏。请用正确的 Steam 帐户登录。
+    /// &amp;lt;/summary&amp;gt;
+    STEAM_OWNERSHIP = 17,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 信息数据溢出
+    /// &amp;lt;/summary&amp;gt;
+    SERVERINFO_OVERFLOW = 18,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 
+    /// &amp;lt;/summary&amp;gt;
+    TICKMSG_OVERFLOW = 19,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 
+    /// &amp;lt;/summary&amp;gt;
+    STRINGTABLEMSG_OVERFLOW = 20,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 
+    /// &amp;lt;/summary&amp;gt;
+    DELTAENTMSG_OVERFLOW = 21,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 
+    /// &amp;lt;/summary&amp;gt;
+    TEMPENTMSG_OVERFLOW = 22,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 
+    /// &amp;lt;/summary&amp;gt;
+    SOUNDSMSG_OVERFLOW = 23,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 可靠的快照溢出错误
+    /// &amp;lt;/summary&amp;gt;
+    SNAPSHOTOVERFLOW = 24,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 发送快照时出错
+    /// &amp;lt;/summary&amp;gt;
+    SNAPSHOTERROR = 25,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 可靠的缓冲溢出错误
+    /// &amp;lt;/summary&amp;gt;
+    RELIABLEOVERFLOW = 26,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 客户端增量标记故障
+    /// &amp;lt;/summary&amp;gt;
+    BADDELTATICK = 27,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 没有更多的扩散槽位
+    /// &amp;lt;/summary&amp;gt;
+    NOMORESPLITS = 28,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 无法与游戏服务器建立连接。
+    /// &amp;lt;/summary&amp;gt;
+    TIMEDOUT = 29,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 远程主机关闭了连接。
+    /// &amp;lt;/summary&amp;gt;
+    DISCONNECTED = 30,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 扩散槽位已断开
+    /// &amp;lt;/summary&amp;gt;
+    LEAVINGSPLIT = 31,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 服务器端使用不同的类表。
+    /// &amp;lt;/summary&amp;gt;
+    DIFFERENTCLASSTABLES = 32,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 中继密码错误
+    /// &amp;lt;/summary&amp;gt;
+    BADRELAYPASSWORD = 33,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 观察者密码错误
+    /// &amp;lt;/summary&amp;gt;
+    BADSPECTATORPASSWORD = 34,
+
+    /// &amp;lt;summary&amp;gt;
+    /// SourceTV 服务器仅限本地观察者（C类）
+    /// &amp;lt;/summary&amp;gt;
+    HLTVRESTRICTED = 35,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 比赛不允许观战。
+    /// &amp;lt;/summary&amp;gt;
+    NOSPECTATORS = 36,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 没有可用的 SourceTV 中继站
+    /// &amp;lt;/summary&amp;gt;
+    HLTVUNAVAILABLE = 37,
+
+    /// &amp;lt;summary&amp;gt;
+    /// SourceTV 停止
+    /// &amp;lt;/summary&amp;gt;
+    HLTVSTOP = 38,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 被服务器踢出。
+    /// &amp;lt;/summary&amp;gt;
+    KICKED = 39,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 已加入封禁名单
+    /// &amp;lt;/summary&amp;gt;
+    BANADDED = 40,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 已被踢出并封禁
+    /// &amp;lt;/summary&amp;gt;
+    KICKBANADDED = 41,
+
+    /// &amp;lt;summary&amp;gt;
+    /// SourceTV 无法直接连接至游戏。
+    /// &amp;lt;/summary&amp;gt;
+    HLTVDIRECT = 42,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 纯服务器：客户端加载了额外文件。
+    /// &amp;lt;/summary&amp;gt;
+    PURESERVER_CLIENTEXTRA = 43,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 纯服务器：客户端文件与服务器不匹配。 https://support.steampowered.com/kb_article.php?ref=8285-YOAZ-6049
+    /// &amp;lt;/summary&amp;gt;
+    PURESERVER_MISMATCH = 44,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 解析用户指令错误。
+    /// &amp;lt;/summary&amp;gt;
+    USERCMD = 45,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 连接被游戏拒绝。
+    /// &amp;lt;/summary&amp;gt;
+    REJECTED_BY_GAME = 46,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 解析消息失败。
+    /// &amp;lt;/summary&amp;gt;
+    MESSAGE_PARSE_ERROR = 47,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 消息无效。
+    /// &amp;lt;/summary&amp;gt;
+    INVALID_MESSAGE_ERROR = 48,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 服务器密码错误
+    /// &amp;lt;/summary&amp;gt;
+    BAD_SERVER_PASSWORD = 49,
+
+    /// &amp;lt;summary&amp;gt;
+    /// （这会在客户端留下一个空白的确认窗口）
+    /// &amp;lt;/summary&amp;gt;
+    DIRECT_CONNECT_RESERVATION = 50,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 连接失败
+    /// &amp;lt;/summary&amp;gt;
+    CONNECTION_FAILURE = 51,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 缺少连接对等组
+    /// &amp;lt;/summary&amp;gt;
+    NO_PEER_GROUP_HANDLERS = 52,
+
+    /// &amp;lt;summary&amp;gt;
+    /// （这会在客户端留下一个空白的确认窗口）
+    /// &amp;lt;/summary&amp;gt;
+    RECONNECTION = 53,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 循环关闭。
+    /// &amp;lt;/summary&amp;gt;
+    LOOPSHUTDOWN = 54,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 循环已失效。
+    /// &amp;lt;/summary&amp;gt;
+    LOOPDEACTIVATE = 55,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 游戏由主机结束。
+    /// &amp;lt;/summary&amp;gt;
+    HOST_ENDGAME = 56,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 循环等级加载已生效。
+    /// &amp;lt;/summary&amp;gt;
+    LOOP_LEVELLOAD_ACTIVATE = 57,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 创建服务器失败。
+    /// &amp;lt;/summary&amp;gt;
+    CREATE_SERVER_FAILED = 58,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 关闭游戏。 （玩家quit指令会触发）
+    /// &amp;lt;/summary&amp;gt;
+    EXITING = 59,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 主机空闲中。
+    /// &amp;lt;/summary&amp;gt;
+    REQUEST_HOSTSTATE_IDLE = 60,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 主机是中继站。
+    /// &amp;lt;/summary&amp;gt;
+    REQUEST_HOSTSTATE_HLTVRELAY = 61,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 客户端一致性检查失败。
+    /// &amp;lt;/summary&amp;gt;
+    CLIENT_CONSISTENCY_FAIL = 62,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 客户端地图验证失败。
+    /// &amp;lt;/summary&amp;gt;
+    CLIENT_UNABLE_TO_CRC_MAP = 63,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 您的客户端上缺少所需的地图。
+    /// &amp;lt;/summary&amp;gt;
+    CLIENT_NO_MAP = 64,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 您的地图版本与服务器不同。
+    /// &amp;lt;/summary&amp;gt;
+    CLIENT_DIFFERENT_MAP = 65,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 客户端和服务器必须连接到 Steam。
+    /// &amp;lt;/summary&amp;gt;
+    SERVER_REQUIRES_STEAM = 66,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 服务器连接被 Steam 拒绝。
+    /// &amp;lt;/summary&amp;gt;
+    STEAM_DENY_MISC = 67,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 服务器连接被 VAC 拒绝。
+    /// &amp;lt;/summary&amp;gt;
+    STEAM_DENY_BAD_ANTI_CHEAT = 68,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 从游戏服务器断开。游戏服务器正在关机。
+    /// &amp;lt;/summary&amp;gt;
+    SERVER_SHUTDOWN = 69,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 不兼容回放。
+    /// &amp;lt;/summary&amp;gt;
+    REPLAY_INCOMPATIBLE = 71,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 无法与游戏服务器建立连接。
+    /// &amp;lt;/summary&amp;gt;
+    CONNECT_REQUEST_TIMEDOUT = 72,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 服务器版本不兼容。
+    /// &amp;lt;/summary&amp;gt;
+    SERVER_INCOMPATIBLE = 73,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 连接断开，此前已尝试连接不同地区的多个中继服务器，您的网络连接很可能出现问题。
+    /// &amp;lt;/summary&amp;gt;
+    LOCALPROBLEM_MANYRELAYS = 74,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 游戏服务器与客户端使用的主中继服务器失去连接。
+    /// &amp;lt;/summary&amp;gt;
+    LOCALPROBLEM_HOSTEDSERVERPRIMARYRELAY = 75,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 请检查网络连接。无法从CDN下载网络配置文件。
+    /// &amp;lt;/summary&amp;gt;
+    LOCALPROBLEM_NETWORKCONFIG = 76,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 已断开连接。可能是本地的网络连接出现问题。
+    /// &amp;lt;/summary&amp;gt;
+    LOCALPROBLEM_OTHER = 77,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 游戏已停止从远程主机接收通讯。
+    /// &amp;lt;/summary&amp;gt;
+    REMOTE_TIMEOUT = 79,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 已数次尝试连接，但服务器没有响应。
+    /// &amp;lt;/summary&amp;gt;
+    REMOTE_TIMEOUT_CONNECTING = 80,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 已数次尝试连接，但服务器没有响应。
+    /// &amp;lt;/summary&amp;gt;
+    REMOTE_OTHER = 81,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 远程主机的证书不正确或配置错误。
+    /// &amp;lt;/summary&amp;gt;
+    REMOTE_BADCRYPT = 82,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 远程主机的证书不能用于验证。
+    /// &amp;lt;/summary&amp;gt;
+    REMOTE_CERTNOTTRUSTED = 83,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 已断开连接。出现特殊情况。控制台可能会有更多详情。
+    /// &amp;lt;/summary&amp;gt;
+    UNUSUAL = 84,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 由于内部错误，已断开连接。控制台可能会有更多详情。
+    /// &amp;lt;/summary&amp;gt;
+    INTERNAL_ERROR = 85,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 服务器拒绝了错误的挑战数据包。
+    /// &amp;lt;/summary&amp;gt;
+    REJECT_BADCHALLENGE = 128,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 服务器没有托管游戏大厅。
+    /// &amp;lt;/summary&amp;gt;
+    REJECT_NOLOBBY = 129,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 服务器正在运行背景图。
+    /// &amp;lt;/summary&amp;gt;
+    REJECT_BACKGROUND_MAP = 130,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 服务器正在运行单人游戏。
+    /// &amp;lt;/summary&amp;gt;
+    REJECT_SINGLE_PLAYER = 131,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 服务器正在运行隐藏游戏。
+    /// &amp;lt;/summary&amp;gt;
+    REJECT_HIDDEN_GAME = 132,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 服务器仅限局域网游戏。
+    /// &amp;lt;/summary&amp;gt;
+    REJECT_LANRESTRICT = 133,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 密码错误被服务器拒绝。
+    /// &amp;lt;/summary&amp;gt;
+    REJECT_BADPASSWORD = 134,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 服务器已满。
+    /// &amp;lt;/summary&amp;gt;
+    REJECT_SERVERFULL = 135,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 服务器预留无效。
+    /// &amp;lt;/summary&amp;gt;
+    REJECT_INVALIDRESERVATION = 136,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 网络信道不良被服务器拒绝。
+    /// &amp;lt;/summary&amp;gt;
+    REJECT_FAILEDCHANNEL = 137,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 服务器需要客户端从游戏大厅连接。
+    /// &amp;lt;/summary&amp;gt;
+    REJECT_CONNECT_FROM_LOBBY = 138,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 服务器已预留给游戏大厅。
+    /// &amp;lt;/summary&amp;gt;
+    REJECT_RESERVED_FOR_LOBBY = 139,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 无效游戏序列号被服务器拒绝。
+    /// &amp;lt;/summary&amp;gt;
+    REJECT_INVALIDKEYLENGTH = 140,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 您的客户端已过期。
+    /// &amp;lt;/summary&amp;gt;
+    REJECT_OLDPROTOCOL = 141,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 服务器已过期。
+    /// &amp;lt;/summary&amp;gt;
+    REJECT_NEWPROTOCOL = 142,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 无效连接被服务器拒绝。
+    /// &amp;lt;/summary&amp;gt;
+    REJECT_INVALIDCONNECTION = 143,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 无效的客户端证书被服务器拒绝。
+    /// &amp;lt;/summary&amp;gt;
+    REJECT_INVALIDCERTLEN = 144,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 无效的 Steam 证书被服务器拒绝。
+    /// &amp;lt;/summary&amp;gt;
+    REJECT_INVALIDSTEAMCERTLEN = 145,
+
+    /// &amp;lt;summary&amp;gt;
+    /// Steam 拒绝了您与服务器的连接。
+    /// &amp;lt;/summary&amp;gt;
+    REJECT_STEAM = 146,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 服务器认证已禁用。
+    /// &amp;lt;/summary&amp;gt;
+    REJECT_SERVERAUTHDISABLED = 147,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 游戏序列号验证被服务器拒绝。
+    /// &amp;lt;/summary&amp;gt;
+    REJECT_SERVERCDKEYAUTHINVALID = 148,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 您的客户端不允许加入此服务器。
+    /// &amp;lt;/summary&amp;gt;
+    REJECT_BANNED = 149,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 因杀害了过多队友
+    /// &amp;lt;/summary&amp;gt;
+    KICKED_TEAMKILLING = 150,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 因在开局时击杀了一名队友
+    /// &amp;lt;/summary&amp;gt;
+    KICKED_TK_START = 151,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 帐户处于“不可信”状态
+    /// &amp;lt;/summary&amp;gt;
+    KICKED_UNTRUSTEDACCOUNT = 152,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 帐户被定罪
+    /// &amp;lt;/summary&amp;gt;
+    KICKED_CONVICTEDACCOUNT = 153,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 玩家处于竞技匹配冷却状态
+    /// &amp;lt;/summary&amp;gt;
+    KICKED_COMPETITIVECOOLDOWN = 154,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 因过度攻击队友
+    /// &amp;lt;/summary&amp;gt;
+    KICKED_TEAMHURTING = 155,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 因杀害了过多人质
+    /// &amp;lt;/summary&amp;gt;
+    KICKED_HOSTAGEKILLING = 156,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 已被投票踢出
+    /// &amp;lt;/summary&amp;gt;
+    KICKED_VOTEDOFF = 157,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 玩家处于空闲状态
+    /// &amp;lt;/summary&amp;gt;
+    KICKED_IDLE = 158,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 因自杀次数过多
+    /// &amp;lt;/summary&amp;gt;
+    KICKED_SUICIDE = 159,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 无效的用户登录
+    /// &amp;lt;/summary&amp;gt;
+    KICKED_NOSTEAMLOGIN = 160,
+
+    /// &amp;lt;summary&amp;gt;
+    /// 游戏验证失败
+    /// &amp;lt;/summary&amp;gt;
+    KICKED_NOSTEAMTICKET = 161
+&amp;#125;
+&lt;/code&gt;&lt;/pre&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://buyi.dev/2024/cs2-snd/</guid>
             <title>Counter-Strike 2 音频自定义编写与编译</title>
@@ -45,11 +650,12 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;声音类型有三种：&lt;br&gt;&lt;code&gt;csgo_mega&lt;/code&gt; 常规3D范围音效。站的越近声音越大。&lt;br&gt;&lt;code&gt;csgo_music&lt;/code&gt; 表示对任何人来说播放都是一样的效果。适合播放UI音效、音乐、音乐盒。&lt;br&gt;&lt;code&gt;csgo_3d&lt;/code&gt; wiki 里说这是环境背景音，然而官方vpk里没有一个脚本是使用了这个。&lt;br&gt;而且我发现使用了 &lt;code&gt;csgo_3d&lt;/code&gt; 之后，连 hammer 都不承认它存在了，说明可能是个被放弃的早期版本。   &lt;/p&gt;
 &lt;p&gt;需要注意的是， &lt;code&gt;csgo_music&lt;/code&gt; 使用 &lt;code&gt;vsnd_files&lt;/code&gt; 来表示音频文件列表，&lt;br&gt;而 &lt;code&gt;csgo_mega&lt;/code&gt; 使用 &lt;code&gt;vsnd_files_track_01&lt;/code&gt; 来表示。&lt;br&gt;这个写反了就当没有音频文件了。   &lt;/p&gt;
-&lt;h2 id=&#34;音量&#34;&gt;&lt;a href=&#34;#音量&#34; class=&#34;headerlink&#34; title=&#34;音量&#34;&gt;&lt;/a&gt;音量&lt;/h2&gt;&lt;p&gt;&lt;code&gt;csgo_music&lt;/code&gt; 类型的音量默认受玩家参数 &lt;code&gt;snd_musicvolume&lt;/code&gt; 的控制。&lt;br&gt;这些声音脚本有很多参数的功能是未知的，我也是在摸索，比如我发现我自己写 &lt;code&gt;volume_convar&lt;/code&gt; 就不好使（   &lt;/p&gt;
+&lt;h2 id=&#34;音量&#34;&gt;&lt;a href=&#34;#音量&#34; class=&#34;headerlink&#34; title=&#34;音量&#34;&gt;&lt;/a&gt;音量&lt;/h2&gt;&lt;p&gt;&lt;code&gt;csgo_music&lt;/code&gt; 类型的音量默认受玩家参数 &lt;code&gt;snd_musicvolume&lt;/code&gt; 的控制。&lt;br&gt;这些声音脚本有很多参数的功能是未知的，我也是在摸索，比如我发现我自己写 &lt;code&gt;volume_convar&lt;/code&gt; 就不好使。&lt;br&gt;可能是因为我们调用这些音频都是来自实体，所以都被游戏认为是 music ，而不是 ui 或者别的音频通道了。   &lt;/p&gt;
 &lt;p&gt;&lt;code&gt;volume&lt;/code&gt; 默认是 1 ，可以写比 1 低也可以写比 1 高。（我印象中以前音量都是只能低不能高的）   &lt;/p&gt;
 &lt;h2 id=&#34;声音播放范围&#34;&gt;&lt;a href=&#34;#声音播放范围&#34; class=&#34;headerlink&#34; title=&#34;声音播放范围&#34;&gt;&lt;/a&gt;声音播放范围&lt;/h2&gt;&lt;p&gt;&lt;code&gt;distance_volume_mapping_curve&lt;/code&gt; 指的是距离和音量的映射曲线。&lt;br&gt;需要像下面这样写，其实我也不太懂这个曲线到底是个什么种类的曲线。&lt;br&gt;映射关系的每个元素有6个数字，就只需要改头两个数字，第一个数字是距离，第二个数字是音量。&lt;br&gt;下面的样例代码里表示的是最远到 900 距离开外听见，音量逐步减小。  &lt;/p&gt;
 &lt;p&gt;如果不写这个的话，貌似默认的 &lt;code&gt;csgo_mega&lt;/code&gt; 只有 128 距离那么远。   &lt;/p&gt;
 &lt;p&gt;甚至可以再加入元素使得声音大小起起伏伏（比如站的最近声音小，站中间声音大）。   &lt;/p&gt;
+&lt;p&gt;如果写一个 99999 距离也是 1.0 音量，则表示全图可以听见，但是这个和 music 还是有区别的。&lt;br&gt;玩家听到的声音的左右声道的大小是不一致的，因为他们不一定面向声源。   &lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;&amp;quot;exgze.test10mega&amp;quot; = 
 &amp;#123;
     type = &amp;quot;csgo_mega&amp;quot;
@@ -166,8 +772,8 @@ SolidType: SolidType_t.SOLID_VPHYSICS (6)
             <guid isPermalink="true">http://buyi.dev/2024/notfriend/</guid>
             <title>小小说：要你管！</title>
             <link>http://buyi.dev/2024/notfriend/</link>
-            <category>家庭</category>
             <category>小小说</category>
+            <category>家庭</category>
             <pubDate>Sun, 11 Feb 2024 09:04:56 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;A: 你和你父母更像朋友还是敌人？   &lt;/p&gt;
 &lt;p&gt;B: 更像朋友。   &lt;/p&gt;
@@ -530,27 +1136,6 @@ LogLevel DEBUG3
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;日志会输出在 &lt;code&gt;C:\ProgramData\ssh\logs&lt;/code&gt; 里面。&lt;br&gt;问题解决了之后最好把日志注释掉，不然浪费C盘空间。   
  &lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://buyi.dev/2023/hit/</guid>
-            <title>小小说：是女朋友就分手</title>
-            <link>http://buyi.dev/2023/hit/</link>
-            <category>家庭</category>
-            <category>小小说</category>
-            <pubDate>Sun, 18 Jun 2023 00:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;A：“我和你说，我感觉我受我女朋友欺负很久了。”   &lt;/p&gt;
-&lt;p&gt;B：“怎么了？”   &lt;/p&gt;
-&lt;p&gt;A：“她说为了我的健康和未来，不许我出去吃，只能吃她做的饭菜。不让我玩游戏，也不让我买主机。为了以后有个更好的家庭，要我把一切收入交给她管理。”&lt;/p&gt;
-&lt;p&gt;B：“这还好吧？”&lt;/p&gt;
-&lt;p&gt;A：“只要我反对她，她就说我没出息，她为我做的努力就全白费了。她说她都是为我好。甚至好几次要我下跪，还拿拖鞋打我。”  &lt;/p&gt;
-&lt;p&gt;B：“怎么这么暴力啊，都到这地步了还不分手吗”    &lt;/p&gt;
-&lt;p&gt;A：“是啊，我也在想分手。 我告诉你个更严重的你想听吗？”  &lt;/p&gt;
-&lt;p&gt;B：“你说。我听着。”&lt;/p&gt;
-&lt;p&gt;A：“其实我刚才说的是我父母，是他们这么对我的。”&lt;/p&gt;
-&lt;p&gt;B：“你这人怎么这样啊，你懂不懂什么叫孝顺啊？父母都是为你好你不知道吗？”&lt;/p&gt;
-&lt;p&gt;A：“难道你的意思是，我女朋友对我这样我就应该分手？我父母对我这样我就应该忍着挨着？那假如我是父母有一方是再婚呢？ 不是亲生的也该忍着？”&lt;/p&gt;
-&lt;p&gt;B：“不孝子就是不孝子，别狡辩了。”   &lt;/p&gt;
  ]]></description>
         </item>
         <item>

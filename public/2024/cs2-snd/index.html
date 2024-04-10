@@ -81,11 +81,12 @@
 </code></pre>
 <p>声音类型有三种：<br><code>csgo_mega</code> 常规3D范围音效。站的越近声音越大。<br><code>csgo_music</code> 表示对任何人来说播放都是一样的效果。适合播放UI音效、音乐、音乐盒。<br><code>csgo_3d</code> wiki 里说这是环境背景音，然而官方vpk里没有一个脚本是使用了这个。<br>而且我发现使用了 <code>csgo_3d</code> 之后，连 hammer 都不承认它存在了，说明可能是个被放弃的早期版本。   </p>
 <p>需要注意的是， <code>csgo_music</code> 使用 <code>vsnd_files</code> 来表示音频文件列表，<br>而 <code>csgo_mega</code> 使用 <code>vsnd_files_track_01</code> 来表示。<br>这个写反了就当没有音频文件了。   </p>
-<h2 id="音量"><a href="#音量" class="headerlink" title="音量"></a>音量</h2><p><code>csgo_music</code> 类型的音量默认受玩家参数 <code>snd_musicvolume</code> 的控制。<br>这些声音脚本有很多参数的功能是未知的，我也是在摸索，比如我发现我自己写 <code>volume_convar</code> 就不好使（   </p>
+<h2 id="音量"><a href="#音量" class="headerlink" title="音量"></a>音量</h2><p><code>csgo_music</code> 类型的音量默认受玩家参数 <code>snd_musicvolume</code> 的控制。<br>这些声音脚本有很多参数的功能是未知的，我也是在摸索，比如我发现我自己写 <code>volume_convar</code> 就不好使。<br>可能是因为我们调用这些音频都是来自实体，所以都被游戏认为是 music ，而不是 ui 或者别的音频通道了。   </p>
 <p><code>volume</code> 默认是 1 ，可以写比 1 低也可以写比 1 高。（我印象中以前音量都是只能低不能高的）   </p>
 <h2 id="声音播放范围"><a href="#声音播放范围" class="headerlink" title="声音播放范围"></a>声音播放范围</h2><p><code>distance_volume_mapping_curve</code> 指的是距离和音量的映射曲线。<br>需要像下面这样写，其实我也不太懂这个曲线到底是个什么种类的曲线。<br>映射关系的每个元素有6个数字，就只需要改头两个数字，第一个数字是距离，第二个数字是音量。<br>下面的样例代码里表示的是最远到 900 距离开外听见，音量逐步减小。  </p>
 <p>如果不写这个的话，貌似默认的 <code>csgo_mega</code> 只有 128 距离那么远。   </p>
 <p>甚至可以再加入元素使得声音大小起起伏伏（比如站的最近声音小，站中间声音大）。   </p>
+<p>如果写一个 99999 距离也是 1.0 音量，则表示全图可以听见，但是这个和 music 还是有区别的。<br>玩家听到的声音的左右声道的大小是不一致的，因为他们不一定面向声源。   </p>
 <pre><code class="c++">&quot;exgze.test10mega&quot; = 
 &#123;
     type = &quot;csgo_mega&quot;
@@ -180,7 +181,7 @@
         <section class="post-near">
             <ul>
                 
-                    <li>上一篇: 看完啦 (つд⊂)</li>
+                    <li>上一篇: <a href="/2024/cs2-disconnect-reasons/">Counter-Strike 2 玩家离线理由对照表</a></li>
                 
                 
                     <li>下一篇: <a href="/2024/cs2-collisiongroup/">Collision Groups In Counter-Strike 2</a></li>
@@ -206,7 +207,7 @@
         </section>
     
     </div>
-    <link href="/lib/framer.min.css" rel="stylesheet">
+    <link href="/lib/vs2015.min.css" rel="stylesheet">
     <script src="/lib/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
 </main>
@@ -236,11 +237,11 @@
                 </div>
                 <div class="col-m-4">
                     <h3 class="title-date">时光机：</h3>
-                    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">October 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">August 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
+                    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">October 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">August 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
                 </div>
                 <div class="col-m-4">
                     <h3 class="title-tags">标签云：</h3>
-                    <a href="/tags/net/" style="font-size: 13.33px;">.net</a> <a href="/tags/MYSQL/" style="font-size: 10px;">MYSQL</a> <a href="/tags/code/" style="font-size: 16.67px;">code</a> <a href="/tags/cs2/" style="font-size: 13.33px;">cs2</a> <a href="/tags/gmod/" style="font-size: 10px;">gmod</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/%E5%85%B3%E4%BA%8E/" style="font-size: 10px;">关于</a> <a href="/tags/%E5%AD%A6%E6%A0%A1/" style="font-size: 10px;">学校</a> <a href="/tags/%E5%AE%B6%E5%BA%AD/" style="font-size: 20px;">家庭</a> <a href="/tags/%E5%B0%8F%E5%B0%8F%E8%AF%B4/" style="font-size: 16.67px;">小小说</a>
+                    <a href="/tags/net/" style="font-size: 12.5px;">.net</a> <a href="/tags/MYSQL/" style="font-size: 10px;">MYSQL</a> <a href="/tags/code/" style="font-size: 17.5px;">code</a> <a href="/tags/cs2/" style="font-size: 15px;">cs2</a> <a href="/tags/gmod/" style="font-size: 10px;">gmod</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/%E5%85%B3%E4%BA%8E/" style="font-size: 10px;">关于</a> <a href="/tags/%E5%AD%A6%E6%A0%A1/" style="font-size: 10px;">学校</a> <a href="/tags/%E5%AE%B6%E5%BA%AD/" style="font-size: 20px;">家庭</a> <a href="/tags/%E5%B0%8F%E5%B0%8F%E8%AF%B4/" style="font-size: 17.5px;">小小说</a>
                 </div>
             </div>
         </section>
