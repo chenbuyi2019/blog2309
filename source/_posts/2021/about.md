@@ -19,7 +19,6 @@ chenbuyi2019艾特outlook.com
 # 我的作品
 - [在线 Steam ID 数字转换](https://chenbuyi2019.github.io/steam-id/)
 - [iCalendar(ics) 年度日程批量生成](https://chenbuyi2019.github.io/ics-gen/)
-- [布衣的工具箱](https://github.com/chenbuyi2019/Buyi-Tools)
 
 以及其他的你能看见的我发在这个网站的牢骚文章。   
 还有我在B站发的一些有的没的[视频](https://space.bilibili.com/4523834/video)。   
@@ -34,7 +33,6 @@ chenbuyi2019艾特outlook.com
 - NVME SSD 两块 500GB + 1000GB
 - Windows 11 Home
 
-# 图片
-![头像](/image/avatar3.jpg)   
+# 女装
 
-![女装](/image/dress.webp)   
+![](/image/dress.webp)   
