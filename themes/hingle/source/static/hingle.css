@@ -29,7 +29,7 @@
 body{
     color: #555;
     font-weight: 300;
-    background: #fafafa;
+    background: #fff;
     transition: margin .3s, background .3s;
 }
 
