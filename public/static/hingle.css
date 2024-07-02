@@ -15,7 +15,7 @@
 /* 0 - 全局
 -------------------------------- */
 :root{
-    --blue: #6f9fc7;
+    --blue: #1f3780;
     --light-blue: #9fcff7;
 
     --border: #ddd;
@@ -27,7 +27,7 @@
 }
 
 body{
-    color: #555;
+    color: black;
     font-weight: 300;
     background: #fff;
     transition: margin .3s, background .3s;
@@ -132,11 +132,6 @@ input, textarea, pre, hr, blockquote{
 .dark-theme::-webkit-scrollbar{
     border-color: transparent;
     background: rgba(255, 255, 255, .2);
-}
-
-.dark-theme img{
-    filter: brightness(60%);
-    -webkit-filter: brightness(60%);
 }
 
 .dark-theme pre{
@@ -396,7 +391,6 @@ main img {
 }
 
 .home-title h1{
-    color: #6e8aad;
     color: var(--blue);
 }
 
@@ -508,7 +502,7 @@ main img {
 }
 
 .post-title h2, .page-title h2{
-    color: #6e8aad;
+    color: var(--blue);
     margin-right: .25rem;
     display: inline-block;
 }
@@ -546,7 +540,6 @@ article h1:before,
 article h2:before,
 article h3:before{
     content: "#";
-    color: #6f9fc7;
     color: var(--blue);
     margin-right: .5em;
 }
