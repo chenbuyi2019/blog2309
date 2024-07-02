@@ -5,18 +5,29 @@
         <link>http://buyi.dev</link>
         <description></description>
         <language>zh</language>
-        <pubDate>Wed, 10 Apr 2024 08:56:22 +0800</pubDate>
-        <lastBuildDate>Wed, 10 Apr 2024 08:56:22 +0800</lastBuildDate>
+        <pubDate>Tue, 02 Jul 2024 20:33:35 +0800</pubDate>
+        <lastBuildDate>Tue, 02 Jul 2024 20:33:35 +0800</lastBuildDate>
+        <category>关于</category>
         <category>家庭</category>
-        <category>code</category>
         <category>小小说</category>
+        <category>code</category>
         <category>学校</category>
         <category>.net</category>
-        <category>关于</category>
         <category>gmod</category>
         <category>MYSQL</category>
         <category>ssh</category>
         <category>cs2</category>
+        <item>
+            <guid isPermalink="true">http://buyi.dev/2024/lets-encrypt-dns/</guid>
+            <title>使用 DNS 记录通过 certbot 认证</title>
+            <link>http://buyi.dev/2024/lets-encrypt-dns/</link>
+            <pubDate>Tue, 02 Jul 2024 20:33:35 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;由于我自己写的一些网站都没法直接兼容 Let’s Encrypt &lt;a href=&#34;https://certbot.eff.org/&#34;&gt;certbot&lt;/a&gt; 的普通的认证方式。&lt;br&gt;我更倾向于使用 DNS TXT 认证来完成域名验证过程。&lt;br&gt;好处就是根本不需要一台公网服务器，有台电脑就行。也不用干预正在运行的服务器。&lt;br&gt;坏处就是每次等 DNS 解析有点难等，一旦时机没把握好就得重来。    &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;certbot certonly --preferred-challenges dns -d &amp;quot;*.abcd.com&amp;quot; -d &amp;quot;abcd.com&amp;quot; --manual
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;（其实更多是因为我要申请 *.abcd.com 这样的证书，而我不好直接操作 abcd.com 主页服务器。   &lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://buyi.dev/2024/cs2-disconnect-reasons/</guid>
             <title>Counter-Strike 2 玩家离线理由中文对照表</title>
@@ -1135,27 +1146,6 @@ LogLevel DEBUG3
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;日志会输出在 &lt;code&gt;C:\ProgramData\ssh\logs&lt;/code&gt; 里面。&lt;br&gt;问题解决了之后最好把日志注释掉，不然浪费C盘空间。   
  &lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://buyi.dev/2023/hit/</guid>
-            <title>小小说：是女朋友就分手</title>
-            <link>http://buyi.dev/2023/hit/</link>
-            <category>家庭</category>
-            <category>小小说</category>
-            <pubDate>Sun, 18 Jun 2023 00:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;A：“我和你说，我感觉我受我女朋友欺负很久了。”   &lt;/p&gt;
-&lt;p&gt;B：“怎么了？”   &lt;/p&gt;
-&lt;p&gt;A：“她说为了我的健康和未来，不许我出去吃，只能吃她做的饭菜。不让我玩游戏，也不让我买主机。为了以后有个更好的家庭，要我把一切收入交给她管理。”&lt;/p&gt;
-&lt;p&gt;B：“这还好吧？”&lt;/p&gt;
-&lt;p&gt;A：“只要我反对她，她就说我没出息，她为我做的努力就全白费了。她说她都是为我好。甚至好几次要我下跪，还拿拖鞋打我。”  &lt;/p&gt;
-&lt;p&gt;B：“怎么这么暴力啊，都到这地步了还不分手吗”    &lt;/p&gt;
-&lt;p&gt;A：“是啊，我也在想分手。 我告诉你个更严重的你想听吗？”  &lt;/p&gt;
-&lt;p&gt;B：“你说。我听着。”&lt;/p&gt;
-&lt;p&gt;A：“其实我刚才说的是我父母，是他们这么对我的。”&lt;/p&gt;
-&lt;p&gt;B：“你这人怎么这样啊，你懂不懂什么叫孝顺啊？父母都是为你好你不知道吗？”&lt;/p&gt;
-&lt;p&gt;A：“难道你的意思是，我女朋友对我这样我就应该分手？我父母对我这样我就应该忍着挨着？那假如我是父母有一方是再婚呢？ 不是亲生的也该忍着？”&lt;/p&gt;
-&lt;p&gt;B：“不孝子就是不孝子，别狡辩了。”   &lt;/p&gt;
  ]]></description>
         </item>
     </channel>

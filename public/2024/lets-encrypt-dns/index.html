@@ -3,7 +3,7 @@
   <head>
      
     <meta charset="UTF-8">
-    <title>关于我 - 陈布衣的博客</title>
+    <title>使用 DNS 记录通过 certbot 认证 - 陈布衣的博客</title>
     <link rel="shortcut icon" href="/static/img/icon.png">
     <link rel="icon" href="/static/img/icon.png" sizes="192x192"/>
     
@@ -15,7 +15,7 @@
 
     <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1"/>
     <meta property="og:site_name" content="陈布衣的博客">
-    <meta property="og:title" content="关于我"/>
+    <meta property="og:title" content="使用 DNS 记录通过 certbot 认证"/>
     
     <link rel="alternate" type="application/rss+xml" title="陈布衣的博客" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="陈布衣的博客" href="/atom.xml" />
@@ -52,49 +52,29 @@
     <main>
     <div class="wrap min">
         <section class="post-title">
-            <h2>关于我</h2>
+            <h2>使用 DNS 记录通过 certbot 认证</h2>
             <div class="post-meta">
-                <time class="date">2021 年 01 月 01 日</time>
+                <time class="date">2024 年 07 月 02 日</time>
             
             </div>
         </section>
         <article class="post-content">
-            <p>我是陈布衣，姓陈，号布衣（比如：苏轼，号东坡居士）。<br>欢迎参观本博客，虽然没有多少有价值的内容。   </p>
-<p>联系我，请发 email 到：<br>chenbuyi2019艾特outlook.com</p>
-<p>头像来自： <a target="_blank" rel="noopener" href="https://twitter.com/xinzoruo/status/1767520681732755540">心臓弱眞君</a>    </p>
-<h1 id="简史"><a href="#简史" class="headerlink" title="简史"></a>简史</h1><p>2001年，在浙江省出生。<br>2013年，注册 Steam 。<br>2019年，本科大一退学，后来确诊抑郁症。<br>2021年，离家出走，拉黑血亲。定居在云南省昆明市。   </p>
-<p>现在，是一名光荣的自力更生的昆明市市民。   </p>
-<h1 id="我的作品"><a href="#我的作品" class="headerlink" title="我的作品"></a>我的作品</h1><ul>
-<li><a target="_blank" rel="noopener" href="https://chenbuyi2019.github.io/steam-id/">在线 Steam ID 数字转换</a></li>
-<li><a target="_blank" rel="noopener" href="https://chenbuyi2019.github.io/ics-gen/">iCalendar(ics) 年度日程批量生成</a></li>
-</ul>
-<p>以及其他的你能看见的我发在这个网站的牢骚文章。<br>还有我在B站发的一些有的没的<a target="_blank" rel="noopener" href="https://space.bilibili.com/4523834/video">视频</a>。   </p>
-<h1 id="我的设备"><a href="#我的设备" class="headerlink" title="我的设备"></a>我的设备</h1><p>布衣现在使用的是神舟笔记本 战神S8 。   </p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://valid.x86.fr/azs1u6">Intel Core i7 12650H</a></li>
-<li>DDR4 8GB 3200Mhz 两根</li>
-<li><a target="_blank" rel="noopener" href="https://www.3dmark.com/3dm/99857307">NVIDIA RTX 4060 8GB</a></li>
-<li>15.6 英寸 IPS屏幕 1920x1080 144hz</li>
-<li>NVME SSD 两块 500GB + 1000GB</li>
-<li>Windows 11 Home</li>
-</ul>
-<h1 id="女装"><a href="#女装" class="headerlink" title="女装"></a>女装</h1><p><img src="/image/dress.webp">   </p>
+            <p>由于我自己写的一些网站都没法直接兼容 Let’s Encrypt <a target="_blank" rel="noopener" href="https://certbot.eff.org/">certbot</a> 的普通的认证方式。<br>我更倾向于使用 DNS TXT 认证来完成域名验证过程。<br>好处就是根本不需要一台公网服务器，有台电脑就行。也不用干预正在运行的服务器。<br>坏处就是每次等 DNS 解析有点难等，一旦时机没把握好就得重来。    </p>
+<pre><code>certbot certonly --preferred-challenges dns -d &quot;*.abcd.com&quot; -d &quot;abcd.com&quot; --manual
+</code></pre>
+<p>（其实更多是因为我要申请 *.abcd.com 这样的证书，而我不好直接操作 abcd.com 主页服务器。   </p>
 
         </article>
         <section class="post-near">
             <ul>
                 
-                    <li>上一篇: <a href="/2021/rss/">订阅</a></li>
+                    <li>上一篇: 看完啦 (つд⊂)</li>
                 
                 
-                    <li>下一篇: 看完啦 (つд⊂)</li>
+                    <li>下一篇: <a href="/2024/cs2-disconnect-reasons/">Counter-Strike 2 玩家离线理由中文对照表</a></li>
                 
             </ul>
         </section>
-        
-            <section class="post-tags">
-            <a class="-none-link" href="/tags/%E5%85%B3%E4%BA%8E/" rel="tag">关于</a>
-            </section>
         
     
         <section class="post-author">
