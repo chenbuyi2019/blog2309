@@ -10,15 +10,14 @@ tags: [游戏]
 
 # Grand Theft Auto III - The Definitive Edition
 2024 年 7 月 4 日。  
+
+# Grand Theft Auto 
+2017 年 4 月 7日，通关了 gta5 。   
+2022 年 1 月 29日，通关了 gta4 本体。   
+2022 年 8 月 17日，通关了 The Ballad of Gay Tony 。   
+2022 年 10 月 1日，通关了 The Lost and Damned 。   
+2024 年 7 月 4 日，通关了 gta3 The Definitive Edition 。    
 [微博](https://m.weibo.cn/status/Om1RkzUwy)   
-
-# Grand Theft Auto V  
-2017 年 4 月 7日。   
-
-# Grand Theft Auto IV  
-2022 年 1 月 29日， 通关了本体。   
-2022 年 8 月 17日， 通关了 The Ballad of Gay Tony 。   
-2022 年 10 月 1日， 通关了 The Lost and Damned 。   
 
 # Devil May Cry 5
 2022 年 10月 22日。   
@@ -32,7 +31,7 @@ tags: [游戏]
 # Max Payne 3
 2021 年 10 月 9 日。   
 
-# Red Alert 2
+# Red Alert
 2023 年 7 月 7 日，红色警戒2 本体。   
 [微博](https://m.weibo.cn/status/N8M945xzX)   
 2023 年 7 月 7 日，尤里的复仇 苏军线。   
