@@ -8,9 +8,6 @@ tags: [游戏]
 不求高难度也不求百分百全成就全解锁，能不作弊通关已经很开心了（    
 纯剧情解密类就不算了，可以看攻略作弊的（   
 
-# Grand Theft Auto III - The Definitive Edition
-2024 年 7 月 4 日。  
-
 # Grand Theft Auto 
 2017 年 4 月 7日，通关了 gta5 。   
 2022 年 1 月 29日，通关了 gta4 本体。   
