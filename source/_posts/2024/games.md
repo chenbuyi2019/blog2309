@@ -41,6 +41,7 @@ tags: [游戏]
 
 # Need For Speed
 2024 年 7 月 11 日，极品飞车 9 最高通缉 NFS Most Wanted。   
+[微博](https://m.weibo.cn/status/On4zlaVrf)   
 
 # 不记得具体时间的
 - Minecraft: Java Edition  
