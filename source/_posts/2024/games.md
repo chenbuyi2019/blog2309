@@ -34,6 +34,8 @@ tags: [游戏]
 2023 年 7 月 7 日，尤里的复仇 苏军线。   
 [微博](https://m.weibo.cn/status/N9yHy2Qn7)    
 盟军线没成。   
+2024 年 1 月 24 日，红色警戒1 苏军线。   
+[微博](https://m.weibo.cn/status/NDlcGjaYP)   
 
 # Half-Life 1
 2023 年 1 月 25 日。  
