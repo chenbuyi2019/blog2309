@@ -39,6 +39,9 @@ tags: [游戏]
 2023 年 1 月 25 日。  
 [微博](https://m.weibo.cn/status/MpXEugiJj)   
 
+# Need For Speed
+2024 年 7 月 11 日，极品飞车 9 最高通缉 NFS Most Wanted。   
+
 # 不记得具体时间的
 - Minecraft: Java Edition  
 - Devil May Cry 4   

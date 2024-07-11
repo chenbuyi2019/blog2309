@@ -4,13 +4,13 @@
     <title>陈布衣的博客</title>
     <link href="http://buyi.dev" />
     <updated>2024-07-04T12:07:22.000Z</updated>
-    <category term="关于" />
-    <category term="code" />
-    <category term="家庭" />
     <category term="小小说" />
     <category term="学校" />
+    <category term="家庭" />
+    <category term="关于" />
     <category term="cs2" />
     <category term="游戏" />
+    <category term="code" />
     <category term=".net" />
     <category term="gmod" />
     <category term="MYSQL" />
@@ -27,6 +27,7 @@
 &lt;h1 id=&#34;Max-Payne-3&#34;&gt;&lt;a href=&#34;#Max-Payne-3&#34; class=&#34;headerlink&#34; title=&#34;Max Payne 3&#34;&gt;&lt;/a&gt;Max Payne 3&lt;/h1&gt;&lt;p&gt;2021 年 10 月 9 日。   &lt;/p&gt;
 &lt;h1 id=&#34;Red-Alert&#34;&gt;&lt;a href=&#34;#Red-Alert&#34; class=&#34;headerlink&#34; title=&#34;Red Alert&#34;&gt;&lt;/a&gt;Red Alert&lt;/h1&gt;&lt;p&gt;2023 年 7 月 7 日，红色警戒2 本体。&lt;br&gt;&lt;a href=&#34;https://m.weibo.cn/status/N8M945xzX&#34;&gt;微博&lt;/a&gt;&lt;br&gt;2023 年 7 月 7 日，尤里的复仇 苏军线。&lt;br&gt;&lt;a href=&#34;https://m.weibo.cn/status/N9yHy2Qn7&#34;&gt;微博&lt;/a&gt;&lt;br&gt;盟军线没成。   &lt;/p&gt;
 &lt;h1 id=&#34;Half-Life-1&#34;&gt;&lt;a href=&#34;#Half-Life-1&#34; class=&#34;headerlink&#34; title=&#34;Half-Life 1&#34;&gt;&lt;/a&gt;Half-Life 1&lt;/h1&gt;&lt;p&gt;2023 年 1 月 25 日。&lt;br&gt;&lt;a href=&#34;https://m.weibo.cn/status/MpXEugiJj&#34;&gt;微博&lt;/a&gt;   &lt;/p&gt;
+&lt;h1 id=&#34;Need-For-Speed&#34;&gt;&lt;a href=&#34;#Need-For-Speed&#34; class=&#34;headerlink&#34; title=&#34;Need For Speed&#34;&gt;&lt;/a&gt;Need For Speed&lt;/h1&gt;&lt;p&gt;2024 年 7 月 11 日，极品飞车 9 最高通缉 NFS Most Wanted。   &lt;/p&gt;
 &lt;h1 id=&#34;不记得具体时间的&#34;&gt;&lt;a href=&#34;#不记得具体时间的&#34; class=&#34;headerlink&#34; title=&#34;不记得具体时间的&#34;&gt;&lt;/a&gt;不记得具体时间的&lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;Minecraft: Java Edition  &lt;/li&gt;
 &lt;li&gt;Devil May Cry 4   &lt;/li&gt;
@@ -813,8 +814,8 @@ SolidType: SolidType_t.SOLID_VPHYSICS (6)
 &lt;p&gt;A: 是朋友还不让你和我语音？是朋友还不让你女装？是朋友还要你上交工资？&lt;br&gt;你做任何事情都是要偷偷摸摸的背着朋友的是吧。   &lt;/p&gt;
 &lt;p&gt;B: 要你管！滚。  &lt;/p&gt;
 </content>
-        <category term="家庭" />
         <category term="小小说" />
+        <category term="家庭" />
         <updated>2024-02-11T01:04:56.000Z</updated>
     </entry>
     <entry>
