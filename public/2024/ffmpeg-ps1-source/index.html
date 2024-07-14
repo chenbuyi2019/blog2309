@@ -3,7 +3,7 @@
   <head>
      
     <meta charset="UTF-8">
-    <title>2023 年 10 月 - 陈布衣的博客</title>
+    <title>PowerShell 脚本: ffmpeg 批量压缩音频 - 陈布衣的博客</title>
     <link rel="shortcut icon" href="/static/img/icon.png">
     <link rel="icon" href="/static/img/icon.png" sizes="192x192"/>
     
@@ -15,7 +15,7 @@
 
     <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1"/>
     <meta property="og:site_name" content="陈布衣的博客">
-    <meta property="og:title" content=""/>
+    <meta property="og:title" content="PowerShell 脚本: ffmpeg 批量压缩音频"/>
     
     <link rel="alternate" type="application/rss+xml" title="陈布衣的博客" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="陈布衣的博客" href="/atom.xml" />
@@ -51,50 +51,103 @@
 
     <main>
     <div class="wrap min">
-        <section class="home-title">
+        <section class="post-title">
+            <h2>PowerShell 脚本: ffmpeg 批量压缩音频</h2>
+            <div class="post-meta">
+                <time class="date">2024 年 07 月 14 日</time>
             
-            <h1>“2023 年 10 月”</h1>
+            </div>
         </section>
-        <section class="home-posts">
-    
-    <div class="post-item">
-        <h2>
-            <a href="/2023/exportqq/">从QQ空间网页导出QQ好友列表</a>
-        </h2>
-    
-        <p>以前我都是用QQ邮箱网页版来导出QQ好友列表做备份的。（把全部的好友添加到邮箱通讯录，然后导出邮箱通讯录即可）然而我今天发现这个不好使了。他们断开了QQ邮箱网页版和QQ好友列表的关联。下面这个窗...</p>
-    
-        <div class="post-meta">
-            <time class="date">2023.10.18</time>
-            
-            
-                <span class="tags"><a class="-none-link" href="/tags/code/" rel="tag">code</a></span>
-            
-        </div>
-    </div>
-    
-    <div class="post-item">
-        <h2>
-            <a href="/2023/pinfolder/">工具软件： PinFolder</a>
-        </h2>
-    
-        <p>一个自制的工具软件。功能是用一个小图标把一个文件夹常驻列在任务栏里。在 Windows 10 及之前的 Windows 版本里，任务栏是有工具栏功能的，可以把文件夹直接固定在任务栏里方便点开。微...</p>
-    
-        <div class="post-meta">
-            <time class="date">2023.10.12</time>
-            
-            
-                <span class="tags"><a class="-none-link" href="/tags/net/" rel="tag">.net</a>，<a class="-none-link" href="/tags/code/" rel="tag">code</a></span>
-            
-        </div>
-    </div>
-    
-</section>
+        <article class="post-content">
+            <p>前置需求：   </p>
+<ul>
+<li>在环境 PATH 路径里有 <a target="_blank" rel="noopener" href="https://ffmpeg.org/">ffmpeg</a> 程序  </li>
+<li>使用 <a target="_blank" rel="noopener" href="https://github.com/PowerShell/PowerShell">PowerShell 7+</a>  </li>
+<li>我自己是在 Windows 11 运行， Linux 应该也能跑</li>
+</ul>
+<p>我自己经常会遇到打包在不同文件夹结构里的各式音频文件，<br>需要将它们压缩为统一格式的起源、起源2引擎适用的音频格式。<br>所以写了这个脚本。   </p>
+<p>把需要转换的音频文件放入一个文件夹里，<br>把文件夹路径作为脚本的第一个参数执行。一般就是拖入控制台窗口或者拖到ps1图标上直接执行。<br>压缩好的 MP3 会输出到输入文件夹上层的 compress_xxx 文件夹里。<br>里面的子文件夹结构和文件名会保留下来。   </p>
+<p>不得不说，这一下 shell 语法，一下 c# 语法感觉就是怪。  </p>
+<pre><code class="ps1">$dir = $args[0]
 
-        <section class="page-navigator">
-            <span class="page-number current">1</span>
+$ErrorActionPreference = &#39;Stop&#39;
+
+if (-not (Test-Path $dir -PathType Container)) &#123;
+    Write-Error &quot;你输入的文件夹不存在 $dir&quot;
+&#125;
+
+$dir = [System.IO.Path]::GetFullPath($dir)
+Write-Host &quot;输入文件夹 $dir&quot;
+$tm = Get-Date -Format &quot;HH-mm-ss&quot;
+$dir2 = [System.IO.Path]::Combine($dir, &quot;../&quot;, &quot;compress_$tm&quot;)
+$dir2 = [System.IO.Path]::GetFullPath($dir2)
+Write-Host &quot;输出文件夹 $dir2&quot;
+if (Test-Path $dir2 -PathType Container) &#123;
+    Write-Error &quot;输出文件夹已经存在了，需要更换 $dir2&quot;
+&#125;
+
+$allowedExt = @(&quot;.wav&quot;, &quot;.mp3&quot;, &quot;.m4a&quot;, &quot;.mp4&quot;, &quot;.ogg&quot;)
+
+$inputs = Get-ChildItem $dir -Filter &quot;*&quot; -Recurse
+$count = 0
+
+foreach ($input in $inputs) &#123;  
+    $ext = $input.Extension.ToLower()
+    if (!$allowedExt.Contains($ext)) &#123; continue &#125;
+    $relPath = [System.IO.Path]::GetRelativePath($dir, $input.FullName)
+    $outputFile = [System.IO.Path]::Combine($dir2, $relPath)
+    $outputFile = [System.IO.Path]::ChangeExtension($outputFile, &quot;.mp3&quot;)
+    $dir3 = [System.IO.Path]::GetDirectoryName($OutputFile)
+    if (-not (Test-Path $dir3 -PathType Container)) &#123;
+        New-Item $dir3 -ItemType Directory
+    &#125;
+    Write-Host $outputFile 
+    ffmpeg -i $input.FullName -y -c:a libmp3lame -ar 44100 -b:a 96k $outputFile 
+    if (-not(Test-Path $outputFile -PathType Leaf)) &#123;
+        Write-Error &quot;找不到压缩的音频文件 $outputFile&quot;
+    &#125;
+    $count += 1
+&#125;
+
+Write-Host &quot;工作完成，一共 $count 个文件 &quot;
+Write-Host &quot;输出文件夹 $dir2&quot;
+
+# 批量修改音量： -filter: &quot;volume = 8dB&quot;  
+</code></pre>
+
+        </article>
+        <section class="post-near">
+            <ul>
+                
+                    <li>上一篇: 看完啦 (つд⊂)</li>
+                
+                
+                    <li>下一篇: <a href="/2024/games/">布衣玩通关且没作弊的游戏</a></li>
+                
+            </ul>
         </section>
+        
+            <section class="post-tags">
+            <a class="-none-link" href="/tags/code/" rel="tag">code</a>
+            </section>
+        
+    
+        <section class="post-author">
+        
+            <figure class="author-avatar">
+                <img src="/image/avatar4.jpg" alt="Chen Buyi" />
+            </figure>
+        
+            <div class="author-info">
+                <h4>Chen Buyi</h4>
+                <p>姓陈，号布衣</p>
+            </div>
+        </section>
+    
     </div>
+    <link href="/lib/vs2015.min.css" rel="stylesheet">
+    <script src="/lib/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
 </main>
 
     <footer>
