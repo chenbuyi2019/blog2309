@@ -7,11 +7,11 @@
         <language>zh</language>
         <pubDate>Sun, 14 Jul 2024 21:20:03 +0800</pubDate>
         <lastBuildDate>Sun, 14 Jul 2024 21:20:03 +0800</lastBuildDate>
-        <category>家庭</category>
-        <category>关于</category>
         <category>小小说</category>
-        <category>code</category>
         <category>学校</category>
+        <category>关于</category>
+        <category>家庭</category>
+        <category>code</category>
         <category>cs2</category>
         <category>.net</category>
         <category>游戏</category>
@@ -877,8 +877,8 @@ SolidType: SolidType_t.SOLID_VPHYSICS (6)
             <guid isPermalink="true">http://buyi.dev/2024/notfriend/</guid>
             <title>小小说：要你管！</title>
             <link>http://buyi.dev/2024/notfriend/</link>
-            <category>家庭</category>
             <category>小小说</category>
+            <category>家庭</category>
             <pubDate>Sun, 11 Feb 2024 09:04:56 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;A: 你和你父母更像朋友还是敌人？   &lt;/p&gt;
 &lt;p&gt;B: 更像朋友。   &lt;/p&gt;

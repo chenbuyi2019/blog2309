@@ -4,14 +4,16 @@ author_text: '姓陈，号布衣' # 作者信息
 social: # 社交链接
 # background: 'https://api.paugram.com/wallpaper?source=gh' # 主题背景
 menu: # 页眉菜单项目
-  '关于': '/2021/about/'
   '订阅': '/2021/rss/'
-  'Github': 'https://github.com/chenbuyi2019'
+  '关于': '/2021/about/'
   '微博': 'https://m.weibo.cn/u/5977985000'
+  'Github': 'https://github.com/chenbuyi2019'
+  'B站': 'https://space.bilibili.com/4523834/dynamic'
 friendslink:
   'AceSheep': 'https://blog.acesheep.com/'
   '技术宅的结界': 'https://www.0xaa55.com/'
   'Sonic853': 'https://blog.853lab.com/'
+  'FeiBam': 'https://feibam.club/'
   '紗羽硒璃葉': 'https://blog.luchs514.org/'
 config:
   copyright: false # 复制的时候弹出保留原站链接说明
