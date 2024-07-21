@@ -3,7 +3,7 @@
   <head>
      
     <meta charset="UTF-8">
-    <title>Collision Groups In Counter-Strike 2 - 陈布衣的博客</title>
+    <title>Counter-Strike 2 玩家进服退服时的状态一览 - 陈布衣的博客</title>
     <link rel="shortcut icon" href="/static/img/icon.png">
     <link rel="icon" href="/static/img/icon.png" sizes="192x192"/>
     
@@ -15,7 +15,7 @@
 
     <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1"/>
     <meta property="og:site_name" content="陈布衣的博客">
-    <meta property="og:title" content="Collision Groups In Counter-Strike 2"/>
+    <meta property="og:title" content="Counter-Strike 2 玩家进服退服时的状态一览"/>
     
     <link rel="alternate" type="application/rss+xml" title="陈布衣的博客" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="陈布衣的博客" href="/atom.xml" />
@@ -54,35 +54,194 @@
     <main>
     <div class="wrap min">
         <section class="post-title">
-            <h2>Collision Groups In Counter-Strike 2</h2>
+            <h2>Counter-Strike 2 玩家进服退服时的状态一览</h2>
             <div class="post-meta">
-                <time class="date">2024 年 03 月 12 日</time>
+                <time class="date">2024 年 07 月 21 日</time>
             
             </div>
         </section>
         <article class="post-content">
-            <p>I tested every collision group to see how they behave with player&#x2F;world.  </p>
-<h1 id="Test-setup"><a href="#Test-setup" class="headerlink" title="Test setup:"></a>Test setup:</h1><pre><code class="text">cs2 version: 13995 
-CounterStrikeSharp v193
-Entity: prop_physics_override  CBaseModelEntity
-Model: models/dev/error.vmdl
-SolidType: SolidType_t.SOLID_VPHYSICS (6)
+            <p>本文使用的是 CounterStrikeSharp 和 CS2Fixes 搭配进行的研究。<br>用于确定反恐精英2里玩家进出服务器时候的状态。   </p>
+<p>主要还是因为玩家的状态太迷惑了。<br>从连接服务器到进入服务器，再到完成 steam 验证，再到退出服务器，再到重新连接服务器。<br>（玩家退服之后 Controller 实体还在，就很神奇）   </p>
+<p>合理识别这些玩家状态很重要，因为对状态不正常的玩家进行操作会导致出错甚至崩溃。   </p>
+<style>
+    .green {
+        color: green;
+    }
+    .red {
+        color: red;
+    }
+</style>
+
+<p>注意，下表中的 <code>OnClientAuthorized</code> 的顺序位置仅供参考，因为实际中网络不畅时，玩家验证可能很迟才发生。   </p>
+<table style="font-size:small;">
+    <thead>
+    <tr>
+        <td>情况</td>
+        <td>Controller</td>
+        <td>Connected</td>
+        <td>UserId</td>
+        <td>PrintToConsole</td>
+        <td>PlayerPawn</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>第1次进<br>OnClientConnect</td>
+        <td>null</td>
+        <td>无</td>
+        <td>无</td>
+        <td>不测试</td>
+        <td>null</td>
+    </tr>
+    <tr>
+        <td>第1次进<br>OnClientConnected</td>
+        <td>Valid</td>
+        <td>PlayerConnecting</td>
+        <td>0</td>
+        <td>OK</td>
+        <td>null</td>
+    </tr>
+    <tr>
+        <td>第1次进<br>OnClientAuthorized</td>
+        <td>Valid</td>
+        <td>PlayerConnecting</td>
+        <td>0</td>
+        <td>OK</td>
+        <td>null</td>
+    </tr>
+    <tr>
+        <td>第1次进<br>OnClientPutInServer</td>
+        <td>Valid</td>
+        <td>PlayerConnecting</td>
+        <td>0</td>
+        <td>OK</td>
+        <td>Valid</td>
+    </tr>
+    <tr>
+        <td>第1次进<br>OnClientPutInServer<br>之后第1帧</td>
+        <td>Valid</td>
+        <td class="green">PlayerConnected</td>
+        <td>0</td>
+        <td>OK</td>
+        <td>Valid</td>
+    </tr>
+    <tr>
+        <td>第1次退<br>OnClientDisconnect</td>
+        <td>Valid</td>
+        <td class="green">PlayerConnected</td>
+        <td>0</td>
+        <td>执行，但玩家收不到</td>
+        <td>Valid</td>
+    </tr>
+    <tr>
+        <td>第1次退<br>OnClientDisconnectPost</td>
+        <td>Valid</td>
+        <td>PlayerDisconnected</td>
+        <td>0</td>
+        <td>执行，但玩家收不到</td>
+        <td>Valid</td>
+    </tr>
+    <tr>
+        <td>第1次退<br>OnClientDisconnectPost<br>之后第1帧</td>
+        <td>Valid</td>
+        <td>PlayerDisconnected</td>
+        <td>65535</td>
+        <td>执行后服务端崩溃</td>
+        <td>可能是null</td>
+    </tr>
+    <tr>
+        <td>第2次进<br>OnClientConnect</td>
+        <td>Valid</td>
+        <td>PlayerDisconnected</td>
+        <td>0</td>
+        <td>OK</td>
+        <td>Valid</td>
+    </tr>
+    <tr>
+        <td>第2次进<br>OnClientConnected</td>
+        <td>Valid</td>
+        <td>PlayerReconnecting</td>
+        <td>0</td>
+        <td>OK</td>
+        <td>Valid</td>
+    </tr>
+    <tr>
+        <td>第2次进<br>OnClientAuthorized</td>
+        <td>Valid</td>
+        <td>PlayerReconnecting</td>
+        <td>0</td>
+        <td>OK</td>
+        <td>Valid</td>
+    </tr>
+    <tr>
+        <td>第2次进<br>OnClientPutInServer</td>
+        <td>Valid</td>
+        <td>PlayerReconnecting</td>
+        <td>0</td>
+        <td>OK</td>
+        <td>Valid</td>
+    </tr>
+    <tr>
+        <td>第2次进<br>OnClientPutInServer<br>之后第1帧</td>
+        <td>Valid</td>
+        <td class="green">PlayerConnected</td>
+        <td>0</td>
+        <td>OK</td>
+        <td>Valid</td>
+    </tr>
+    <tr>
+        <td>第2次退<br>OnClientDisconnect</td>
+        <td>Valid</td>
+        <td class="green">PlayerConnected</td>
+        <td>0</td>
+        <td>执行，但玩家收不到</td>
+        <td>Valid</td>
+    </tr>
+    <tr>
+        <td>第2次退<br>OnClientDisconnectPost</td>
+        <td>Valid</td>
+        <td>PlayerDisconnected</td>
+        <td>0</td>
+        <td>执行，但玩家收不到</td>
+        <td>Valid</td>
+    </tr>
+    <tr>
+        <td>第2次退<br>OnClientDisconnectPost<br>之后第1帧</td>
+        <td>Valid</td>
+        <td>PlayerDisconnected</td>
+        <td>65535</td>
+        <td>执行后服务端崩溃</td>
+        <td>可能是null</td>
+    </tr>
+    </tbody>
+</table>
+
+<p><code>PrintToConsole</code> 的服务端崩溃表现为：   </p>
+<pre><code class="cmd">Fatal error. System.AccessViolationException: Attempted to read or write protected memory. This is often an indication that other memory is corrupt.
+
+   at CounterStrikeSharp.API.Core.Helpers.InvokeNative(IntPtr)
+ 
+   at CounterStrikeSharp.API.Core.ScriptContext.InvokeNativeInternal()
+   at CounterStrikeSharp.API.Core.ScriptContext.Invoke()
+   at CounterStrikeSharp.API.Core.NativeAPI.PrintToConsole(Int32, System.String)
+   at CounterStrikeSharp.API.Core.CCSPlayerController.PrintToConsole(System.String)
 </code></pre>
-<h1 id="Test-result"><a href="#Test-result" class="headerlink" title="Test result:"></a>Test result:</h1><p>Collide with player and the world: <code>0, 2, 3, 4, 7, 8, 9, 10, 11, 12, 18, 20, 21, 22, 24</code><br>Collide with player but not the world: <code>5, 6, 14, 16, 19</code><br>Collide with no player and no world: <code>1, 13, 15, 17, 23, 25, 26</code>   </p>
-<p>Maybe the specific group can collide with another specific group. I didnt test that.  </p>
-<p>The most strange group is <code>20</code>, it makes the prop can be eailsy pushed by player.<br>And it only collide with the ground underneath it, players can push the prop through the wall and it usually drop out of the world.   </p>
-<p><img src="/image/cs2_collision_grop_20.gif"></p>
-<p>I was looking at <a target="_blank" rel="noopener" href="https://github.com/roflmuffin/CounterStrikeSharp/blob/main/managed/CounterStrikeSharp.API/Modules/Entities/Constants/CollisionGroup.cs">CounterStrikeSharp’s CollisionGroup</a> and I found it was wrong.<br>The correct one should be <a target="_blank" rel="noopener" href="https://github.com/alliedmodders/hl2sdk/blob/cs2/public/const.h">alliedmodders&#x2F;hl2sdk cs2</a>   <code>enum Collision_Group_t</code>.   </p>
-<p>P.S. on 2024 March.13th: CounterStrikeSharp’s CollisionGroup is now fixed in the latest version.   </p>
+<p>总结：  </p>
+<ol>
+<li>玩家控制器就算是 <code>.IsValid</code> ，依然不可靠，需要检测 <code>.Connected</code> 和 <code>.UserId</code> 。  </li>
+<li><code>.PrintToConsole</code> 需要特别小心的使用，BOT 玩家和离线玩家使用这个函数都会导致崩服。   </li>
+<li><code>OnClientPutInServer</code> 可以在大部分情况下使用，作为玩家进服的检测点，但是里面的玩家状态依然不是 <code>PlayerConnected</code> ，它的下一帧才是。</li>
+</ol>
 
         </article>
         <section class="post-near">
             <ul>
                 
-                    <li>上一篇: <a href="/2024/cs2-snd/">Counter-Strike 2 音频自定义编写与编译</a></li>
+                    <li>上一篇: 看完啦 (つд⊂)</li>
                 
                 
-                    <li>下一篇: <a href="/2024/notfriend/">小小说：要你管！</a></li>
+                    <li>下一篇: <a href="/2024/ffmpeg-ps1-source/">PowerShell 脚本: ffmpeg 批量压缩音频</a></li>
                 
             </ul>
         </section>

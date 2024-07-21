@@ -5,19 +5,199 @@
         <link>http://buyi.dev</link>
         <description></description>
         <language>zh</language>
-        <pubDate>Sun, 14 Jul 2024 21:20:03 +0800</pubDate>
-        <lastBuildDate>Sun, 14 Jul 2024 21:20:03 +0800</lastBuildDate>
-        <category>小小说</category>
-        <category>学校</category>
-        <category>关于</category>
-        <category>家庭</category>
+        <pubDate>Sun, 21 Jul 2024 13:16:06 +0800</pubDate>
+        <lastBuildDate>Sun, 21 Jul 2024 13:16:06 +0800</lastBuildDate>
         <category>code</category>
+        <category>家庭</category>
+        <category>小小说</category>
+        <category>关于</category>
         <category>cs2</category>
         <category>.net</category>
         <category>游戏</category>
+        <category>学校</category>
         <category>gmod</category>
-        <category>MYSQL</category>
         <category>ssh</category>
+        <category>MYSQL</category>
+        <item>
+            <guid isPermalink="true">http://buyi.dev/2024/cs2-player-states/</guid>
+            <title>Counter-Strike 2 玩家进服退服时的状态一览</title>
+            <link>http://buyi.dev/2024/cs2-player-states/</link>
+            <category>cs2</category>
+            <pubDate>Sun, 21 Jul 2024 13:16:06 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;本文使用的是 CounterStrikeSharp 和 CS2Fixes 搭配进行的研究。&lt;br&gt;用于确定反恐精英2里玩家进出服务器时候的状态。   &lt;/p&gt;
+&lt;p&gt;主要还是因为玩家的状态太迷惑了。&lt;br&gt;从连接服务器到进入服务器，再到完成 steam 验证，再到退出服务器，再到重新连接服务器。&lt;br&gt;（玩家退服之后 Controller 实体还在，就很神奇）   &lt;/p&gt;
+&lt;p&gt;合理识别这些玩家状态很重要，因为对状态不正常的玩家进行操作会导致出错甚至崩溃。   &lt;/p&gt;
+&lt;style&gt;
+    .green {
+        color: green;
+    }
+    .red {
+        color: red;
+    }
+&lt;/style&gt;
+
+&lt;p&gt;注意，下表中的 &lt;code&gt;OnClientAuthorized&lt;/code&gt; 的顺序位置仅供参考，因为实际中网络不畅时，玩家验证可能很迟才发生。   &lt;/p&gt;
+&lt;table style=&#34;font-size:small;&#34;&gt;
+    &lt;thead&gt;
+    &lt;tr&gt;
+        &lt;td&gt;情况&lt;/td&gt;
+        &lt;td&gt;Controller&lt;/td&gt;
+        &lt;td&gt;Connected&lt;/td&gt;
+        &lt;td&gt;UserId&lt;/td&gt;
+        &lt;td&gt;PrintToConsole&lt;/td&gt;
+        &lt;td&gt;PlayerPawn&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+    &lt;tr&gt;
+        &lt;td&gt;第1次进&lt;br&gt;OnClientConnect&lt;/td&gt;
+        &lt;td&gt;null&lt;/td&gt;
+        &lt;td&gt;无&lt;/td&gt;
+        &lt;td&gt;无&lt;/td&gt;
+        &lt;td&gt;不测试&lt;/td&gt;
+        &lt;td&gt;null&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;第1次进&lt;br&gt;OnClientConnected&lt;/td&gt;
+        &lt;td&gt;Valid&lt;/td&gt;
+        &lt;td&gt;PlayerConnecting&lt;/td&gt;
+        &lt;td&gt;0&lt;/td&gt;
+        &lt;td&gt;OK&lt;/td&gt;
+        &lt;td&gt;null&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;第1次进&lt;br&gt;OnClientAuthorized&lt;/td&gt;
+        &lt;td&gt;Valid&lt;/td&gt;
+        &lt;td&gt;PlayerConnecting&lt;/td&gt;
+        &lt;td&gt;0&lt;/td&gt;
+        &lt;td&gt;OK&lt;/td&gt;
+        &lt;td&gt;null&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;第1次进&lt;br&gt;OnClientPutInServer&lt;/td&gt;
+        &lt;td&gt;Valid&lt;/td&gt;
+        &lt;td&gt;PlayerConnecting&lt;/td&gt;
+        &lt;td&gt;0&lt;/td&gt;
+        &lt;td&gt;OK&lt;/td&gt;
+        &lt;td&gt;Valid&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;第1次进&lt;br&gt;OnClientPutInServer&lt;br&gt;之后第1帧&lt;/td&gt;
+        &lt;td&gt;Valid&lt;/td&gt;
+        &lt;td class=&#34;green&#34;&gt;PlayerConnected&lt;/td&gt;
+        &lt;td&gt;0&lt;/td&gt;
+        &lt;td&gt;OK&lt;/td&gt;
+        &lt;td&gt;Valid&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;第1次退&lt;br&gt;OnClientDisconnect&lt;/td&gt;
+        &lt;td&gt;Valid&lt;/td&gt;
+        &lt;td class=&#34;green&#34;&gt;PlayerConnected&lt;/td&gt;
+        &lt;td&gt;0&lt;/td&gt;
+        &lt;td&gt;执行，但玩家收不到&lt;/td&gt;
+        &lt;td&gt;Valid&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;第1次退&lt;br&gt;OnClientDisconnectPost&lt;/td&gt;
+        &lt;td&gt;Valid&lt;/td&gt;
+        &lt;td&gt;PlayerDisconnected&lt;/td&gt;
+        &lt;td&gt;0&lt;/td&gt;
+        &lt;td&gt;执行，但玩家收不到&lt;/td&gt;
+        &lt;td&gt;Valid&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;第1次退&lt;br&gt;OnClientDisconnectPost&lt;br&gt;之后第1帧&lt;/td&gt;
+        &lt;td&gt;Valid&lt;/td&gt;
+        &lt;td&gt;PlayerDisconnected&lt;/td&gt;
+        &lt;td&gt;65535&lt;/td&gt;
+        &lt;td&gt;执行后服务端崩溃&lt;/td&gt;
+        &lt;td&gt;可能是null&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;第2次进&lt;br&gt;OnClientConnect&lt;/td&gt;
+        &lt;td&gt;Valid&lt;/td&gt;
+        &lt;td&gt;PlayerDisconnected&lt;/td&gt;
+        &lt;td&gt;0&lt;/td&gt;
+        &lt;td&gt;OK&lt;/td&gt;
+        &lt;td&gt;Valid&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;第2次进&lt;br&gt;OnClientConnected&lt;/td&gt;
+        &lt;td&gt;Valid&lt;/td&gt;
+        &lt;td&gt;PlayerReconnecting&lt;/td&gt;
+        &lt;td&gt;0&lt;/td&gt;
+        &lt;td&gt;OK&lt;/td&gt;
+        &lt;td&gt;Valid&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;第2次进&lt;br&gt;OnClientAuthorized&lt;/td&gt;
+        &lt;td&gt;Valid&lt;/td&gt;
+        &lt;td&gt;PlayerReconnecting&lt;/td&gt;
+        &lt;td&gt;0&lt;/td&gt;
+        &lt;td&gt;OK&lt;/td&gt;
+        &lt;td&gt;Valid&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;第2次进&lt;br&gt;OnClientPutInServer&lt;/td&gt;
+        &lt;td&gt;Valid&lt;/td&gt;
+        &lt;td&gt;PlayerReconnecting&lt;/td&gt;
+        &lt;td&gt;0&lt;/td&gt;
+        &lt;td&gt;OK&lt;/td&gt;
+        &lt;td&gt;Valid&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;第2次进&lt;br&gt;OnClientPutInServer&lt;br&gt;之后第1帧&lt;/td&gt;
+        &lt;td&gt;Valid&lt;/td&gt;
+        &lt;td class=&#34;green&#34;&gt;PlayerConnected&lt;/td&gt;
+        &lt;td&gt;0&lt;/td&gt;
+        &lt;td&gt;OK&lt;/td&gt;
+        &lt;td&gt;Valid&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;第2次退&lt;br&gt;OnClientDisconnect&lt;/td&gt;
+        &lt;td&gt;Valid&lt;/td&gt;
+        &lt;td class=&#34;green&#34;&gt;PlayerConnected&lt;/td&gt;
+        &lt;td&gt;0&lt;/td&gt;
+        &lt;td&gt;执行，但玩家收不到&lt;/td&gt;
+        &lt;td&gt;Valid&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;第2次退&lt;br&gt;OnClientDisconnectPost&lt;/td&gt;
+        &lt;td&gt;Valid&lt;/td&gt;
+        &lt;td&gt;PlayerDisconnected&lt;/td&gt;
+        &lt;td&gt;0&lt;/td&gt;
+        &lt;td&gt;执行，但玩家收不到&lt;/td&gt;
+        &lt;td&gt;Valid&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;第2次退&lt;br&gt;OnClientDisconnectPost&lt;br&gt;之后第1帧&lt;/td&gt;
+        &lt;td&gt;Valid&lt;/td&gt;
+        &lt;td&gt;PlayerDisconnected&lt;/td&gt;
+        &lt;td&gt;65535&lt;/td&gt;
+        &lt;td&gt;执行后服务端崩溃&lt;/td&gt;
+        &lt;td&gt;可能是null&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;code&gt;PrintToConsole&lt;/code&gt; 的服务端崩溃表现为：   &lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;cmd&#34;&gt;Fatal error. System.AccessViolationException: Attempted to read or write protected memory. This is often an indication that other memory is corrupt.
+
+   at CounterStrikeSharp.API.Core.Helpers.InvokeNative(IntPtr)
+ 
+   at CounterStrikeSharp.API.Core.ScriptContext.InvokeNativeInternal()
+   at CounterStrikeSharp.API.Core.ScriptContext.Invoke()
+   at CounterStrikeSharp.API.Core.NativeAPI.PrintToConsole(Int32, System.String)
+   at CounterStrikeSharp.API.Core.CCSPlayerController.PrintToConsole(System.String)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;总结：  &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;玩家控制器就算是 &lt;code&gt;.IsValid&lt;/code&gt; ，依然不可靠，需要检测 &lt;code&gt;.Connected&lt;/code&gt; 和 &lt;code&gt;.UserId&lt;/code&gt; 。  &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.PrintToConsole&lt;/code&gt; 需要特别小心的使用，BOT 玩家和离线玩家使用这个函数都会导致崩服。   &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;OnClientPutInServer&lt;/code&gt; 可以在大部分情况下使用，作为玩家进服的检测点，但是里面的玩家状态依然不是 &lt;code&gt;PlayerConnected&lt;/code&gt; ，它的下一帧才是。&lt;/li&gt;
+&lt;/ol&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://buyi.dev/2024/ffmpeg-ps1-source/</guid>
             <title>PowerShell 脚本: ffmpeg 批量压缩音频</title>
@@ -853,32 +1033,11 @@ Write-Host &amp;quot;输出文件夹 $dir2&amp;quot;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://buyi.dev/2024/cs2-collisiongroup/</guid>
-            <title>Collision Groups In Counter-Strike 2</title>
-            <link>http://buyi.dev/2024/cs2-collisiongroup/</link>
-            <category>cs2</category>
-            <pubDate>Tue, 12 Mar 2024 13:39:19 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;I tested every collision group to see how they behave with player&amp;#x2F;world.  &lt;/p&gt;
-&lt;h1 id=&#34;Test-setup&#34;&gt;&lt;a href=&#34;#Test-setup&#34; class=&#34;headerlink&#34; title=&#34;Test setup:&#34;&gt;&lt;/a&gt;Test setup:&lt;/h1&gt;&lt;pre&gt;&lt;code class=&#34;text&#34;&gt;cs2 version: 13995 
-CounterStrikeSharp v193
-Entity: prop_physics_override  CBaseModelEntity
-Model: models/dev/error.vmdl
-SolidType: SolidType_t.SOLID_VPHYSICS (6)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h1 id=&#34;Test-result&#34;&gt;&lt;a href=&#34;#Test-result&#34; class=&#34;headerlink&#34; title=&#34;Test result:&#34;&gt;&lt;/a&gt;Test result:&lt;/h1&gt;&lt;p&gt;Collide with player and the world: &lt;code&gt;0, 2, 3, 4, 7, 8, 9, 10, 11, 12, 18, 20, 21, 22, 24&lt;/code&gt;&lt;br&gt;Collide with player but not the world: &lt;code&gt;5, 6, 14, 16, 19&lt;/code&gt;&lt;br&gt;Collide with no player and no world: &lt;code&gt;1, 13, 15, 17, 23, 25, 26&lt;/code&gt;   &lt;/p&gt;
-&lt;p&gt;Maybe the specific group can collide with another specific group. I didnt test that.  &lt;/p&gt;
-&lt;p&gt;The most strange group is &lt;code&gt;20&lt;/code&gt;, it makes the prop can be eailsy pushed by player.&lt;br&gt;And it only collide with the ground underneath it, players can push the prop through the wall and it usually drop out of the world.   &lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/image/cs2_collision_grop_20.gif&#34;&gt;&lt;/p&gt;
-&lt;p&gt;I was looking at &lt;a href=&#34;https://github.com/roflmuffin/CounterStrikeSharp/blob/main/managed/CounterStrikeSharp.API/Modules/Entities/Constants/CollisionGroup.cs&#34;&gt;CounterStrikeSharp’s CollisionGroup&lt;/a&gt; and I found it was wrong.&lt;br&gt;The correct one should be &lt;a href=&#34;https://github.com/alliedmodders/hl2sdk/blob/cs2/public/const.h&#34;&gt;alliedmodders&amp;#x2F;hl2sdk cs2&lt;/a&gt;   &lt;code&gt;enum Collision_Group_t&lt;/code&gt;.   &lt;/p&gt;
-&lt;p&gt;P.S. on 2024 March.13th: CounterStrikeSharp’s CollisionGroup is now fixed in the latest version.   &lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
             <guid isPermalink="true">http://buyi.dev/2024/notfriend/</guid>
             <title>小小说：要你管！</title>
             <link>http://buyi.dev/2024/notfriend/</link>
-            <category>小小说</category>
             <category>家庭</category>
+            <category>小小说</category>
             <pubDate>Sun, 11 Feb 2024 09:04:56 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;A: 你和你父母更像朋友还是敌人？   &lt;/p&gt;
 &lt;p&gt;B: 更像朋友。   &lt;/p&gt;
