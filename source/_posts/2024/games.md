@@ -9,12 +9,12 @@ tags: [游戏]
 纯剧情解密类就不算了，可以看攻略作弊的（   
 
 # Grand Theft Auto 
-2017 年 4 月 7日，通关了 gta5 。   
-2022 年 1 月 29日，通关了 gta4 本体。   
+2017 年 4 月 7日，通关了 GTA 5 。   
+2022 年 1 月 29日，通关了 GTA 4 本体。   
 2022 年 8 月 17日，通关了 The Ballad of Gay Tony 。   
 2022 年 10 月 1日，通关了 The Lost and Damned 。   
-2024 年 7 月 4 日，通关了 gta3 The Definitive Edition 。    
-[微博](https://m.weibo.cn/status/Om1RkzUwy)   
+2024 年 7 月 4 日，通关了 GTA III - The Definitive Edition [微博](https://m.weibo.cn/status/Om1RkzUwy) 。    
+2024 年 7 月 30 日，通关了 GTA Vice City – The Definitive Edition [微博](https://m.weibo.cn/status/OpYfvxpV0)  。    
 
 # Devil May Cry 5
 2022 年 10月 22日。   
