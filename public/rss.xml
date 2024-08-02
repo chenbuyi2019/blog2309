@@ -7,17 +7,17 @@
         <language>zh</language>
         <pubDate>Sun, 21 Jul 2024 13:16:06 +0800</pubDate>
         <lastBuildDate>Sun, 21 Jul 2024 13:16:06 +0800</lastBuildDate>
+        <category>家庭</category>
         <category>关于</category>
-        <category>code</category>
         <category>小小说</category>
         <category>学校</category>
-        <category>家庭</category>
-        <category>gmod</category>
+        <category>code</category>
+        <category>cs2</category>
         <category>.net</category>
+        <category>游戏</category>
+        <category>gmod</category>
         <category>MYSQL</category>
         <category>ssh</category>
-        <category>cs2</category>
-        <category>游戏</category>
         <item>
             <guid isPermalink="true">http://buyi.dev/2024/cs2-player-states/</guid>
             <title>Counter-Strike 2 玩家进服退服时的状态一览</title>
@@ -203,8 +203,8 @@
             <title>PowerShell 脚本: ffmpeg 批量压缩音频</title>
             <link>http://buyi.dev/2024/ffmpeg-ps1-source/</link>
             <category>code</category>
-            <category>.net</category>
             <category>cs2</category>
+            <category>.net</category>
             <pubDate>Sun, 14 Jul 2024 21:20:03 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;前置需求：   &lt;/p&gt;
 &lt;ul&gt;
@@ -1025,9 +1025,9 @@ Write-Host &amp;quot;输出文件夹 $dir2&amp;quot;
 &lt;h1 id=&#34;编译脚本与声音&#34;&gt;&lt;a href=&#34;#编译脚本与声音&#34; class=&#34;headerlink&#34; title=&#34;编译脚本与声音&#34;&gt;&lt;/a&gt;编译脚本与声音&lt;/h1&gt;&lt;p&gt;在 &lt;code&gt;Asserts Browser&lt;/code&gt; 里搜索你的声音文件和脚本文件。&lt;br&gt;全部选中，按鼠标右键，选择 &lt;code&gt;Full Recompile&lt;/code&gt;。   &lt;/p&gt;
 &lt;p&gt;这样  &lt;code&gt;.vsndevts&lt;/code&gt; 就会变成 &lt;code&gt;.vsndevts_c&lt;/code&gt;文件，&lt;br&gt;&lt;code&gt;.mp3 .wav&lt;/code&gt; 就会变成 &lt;code&gt;.vsnd_c&lt;/code&gt; 文件（内嵌进去）了。&lt;br&gt;编译好的文件会在 &lt;code&gt;common\Counter-Strike Global Offensive\game\csgo_addons\xxxx&lt;/code&gt; 里。  &lt;/p&gt;
 &lt;p&gt;一般来说如果开着 hammer，对 &lt;code&gt;.vsndevts&lt;/code&gt; 的编译是全自动的。   &lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://s21.ax1x.com/2024/03/13/pFcGYWV.png&#34;&gt;   &lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/image/vsnd1.png&#34;&gt;   &lt;/p&gt;
 &lt;h1 id=&#34;试听&#34;&gt;&lt;a href=&#34;#试听&#34; class=&#34;headerlink&#34; title=&#34;试听&#34;&gt;&lt;/a&gt;试听&lt;/h1&gt;&lt;p&gt;如果要试听，可以把要试听的部分编辑到 &lt;code&gt;soundevents_addon.vsndevts&lt;/code&gt; 里面，&lt;br&gt;然后在 hammer 里加个声音实体，打开 &lt;code&gt;Sound Event Picker&lt;/code&gt; 试听。&lt;br&gt;如果 Picker 里找不到，试试重新编译一次，应该是会每次打开 Picker 的时候刷新的。&lt;br&gt;如果点击了没有声音预览，说明你写的有问题或者音频文件有问题。   &lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://s21.ax1x.com/2024/03/13/pFcJgNn.png&#34;&gt;   &lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/image/vsnd2.png&#34;&gt;   &lt;/p&gt;
 &lt;h1 id=&#34;实体兼容性&#34;&gt;&lt;a href=&#34;#实体兼容性&#34; class=&#34;headerlink&#34; title=&#34;实体兼容性&#34;&gt;&lt;/a&gt;实体兼容性&lt;/h1&gt;&lt;p&gt;&lt;code&gt;snd_event_point&lt;/code&gt; 和 &lt;code&gt;ambient_generic&lt;/code&gt; 都可以正常播放 mega 和 music 。&lt;br&gt;但是在使用 &lt;code&gt;ambient_generic&lt;/code&gt; 的时候一定要注意正确勾选 &lt;code&gt;Is NOT Looped(32)&lt;/code&gt; （貌似绝大多数情况下都要勾上，不然不播放）    &lt;/p&gt;
 &lt;p&gt;&lt;code&gt;ambient_generic&lt;/code&gt; 实体无法干预声音脚本自己的音量和播放范围。   &lt;/p&gt;
  ]]></description>
@@ -1036,8 +1036,8 @@ Write-Host &amp;quot;输出文件夹 $dir2&amp;quot;
             <guid isPermalink="true">http://buyi.dev/2024/notfriend/</guid>
             <title>小小说：要你管！</title>
             <link>http://buyi.dev/2024/notfriend/</link>
-            <category>小小说</category>
             <category>家庭</category>
+            <category>小小说</category>
             <pubDate>Sun, 11 Feb 2024 09:04:56 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;A: 你和你父母更像朋友还是敌人？   &lt;/p&gt;
 &lt;p&gt;B: 更像朋友。   &lt;/p&gt;
@@ -1183,8 +1183,8 @@ select GetSteamId3FromId32(&amp;#39;STEAM_0:1:69600329&amp;#39;) as `a`,
 SELECT `authid`, GetSteamId3FromId32(`authid`) AS `fcode` 
   FROM `xxx` LIMIT 10;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://s11.ax1x.com/2023/12/17/pi5J4eJ.png&#34;&gt;   &lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://s11.ax1x.com/2023/12/17/pi5JfL4.png&#34;&gt;   &lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/image/mysqlsteam1.png&#34;&gt;   &lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/image/mysqlsteam2.png&#34;&gt;   &lt;/p&gt;
 &lt;h1 id=&#34;卸载&#34;&gt;&lt;a href=&#34;#卸载&#34; class=&#34;headerlink&#34; title=&#34;卸载&#34;&gt;&lt;/a&gt;卸载&lt;/h1&gt;&lt;pre&gt;&lt;code class=&#34;sql&#34;&gt;drop function if exists `GetSteamId3FromId32`;
 drop function if exists `GetSteamId3FromId64`;
 &lt;/code&gt;&lt;/pre&gt;
@@ -1236,27 +1236,13 @@ t1\t9 - Copy\New Text Document.txt
             <category>code</category>
             <pubDate>Wed, 18 Oct 2023 20:22:07 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;以前我都是用QQ邮箱网页版来导出QQ好友列表做备份的。（把全部的好友添加到邮箱通讯录，然后导出邮箱通讯录即可）&lt;br&gt;然而我今天发现这个不好使了。他们断开了QQ邮箱网页版和QQ好友列表的关联。下面这个窗口不断弹出。  &lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://z1.ax1x.com/2023/10/18/piPvObV.png&#34;&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/image/qqexport1.png&#34;&gt;  &lt;/p&gt;
 &lt;p&gt;我想到了另外一个老古董，QQ空间。经过一番鼓捣，找到了具体的XHR请求网址。&lt;br&gt;首先到网页版登录&lt;a href=&#34;https://i.qq.com/&#34;&gt;QQ空间&lt;/a&gt;，&lt;br&gt;如果你没有开通QQ空间也没有关系，也可以登录而不开通，里面也是可以看见别人的说说、相册的。&lt;br&gt;你甚至可以不开通空间的情况下自己发说说，就是别人看不见。&lt;br&gt;登录进来之后按F12进入开发者工具，找到 Network 区域准备抓包。  &lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://z1.ax1x.com/2023/10/18/piPvvUU.png&#34;&gt;   &lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/image/qqexport2.png&#34;&gt;   &lt;/p&gt;
 &lt;p&gt;接下来点击好友动态，准备发一条说说。点一下 @ 符号，好友列表就从下面冒出来了。&lt;br&gt;在 Network 里搜索一条请求，文件名叫 &lt;code&gt;friend_show_qqfriends.cgi&lt;/code&gt;    &lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://z1.ax1x.com/2023/10/18/piPvx5F.png&#34;&gt;   &lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/image/qqexport3.png&#34;&gt;   &lt;/p&gt;
 &lt;p&gt;把它的返回内容保存为 .json 文件，就是你的QQ好友列表了。（虽然不是完美的 json ，需要麻烦手动去掉头尾的 callback js 语句）&lt;br&gt;里面的 items 的 uin 数字就是QQ号了。&lt;br&gt;这个功能可能也就QQ空间这种腾讯一直不更新的能做到了。   &lt;/p&gt;
 &lt;p&gt;我今天一开始想到的是腾讯文档，他可以选择分享给指定QQ好友，&lt;br&gt;然后也会有一个好友列表，然而它数据里的 QQ UIN 是另外一种算法的数字。不是我们日常使用的QQ号，是经过了某种算法或单纯随机的新的数编号。   &lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://buyi.dev/2023/pinfolder/</guid>
-            <title>工具软件： PinFolder</title>
-            <link>http://buyi.dev/2023/pinfolder/</link>
-            <category>code</category>
-            <category>.net</category>
-            <pubDate>Thu, 12 Oct 2023 09:26:53 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;一个自制的工具软件。功能是用一个小图标把一个文件夹常驻列在任务栏里。&lt;br&gt;在 Windows 10 及之前的 Windows 版本里，任务栏是有工具栏功能的，可以把文件夹直接固定在任务栏里方便点开。&lt;br&gt;微软在 win11 里把这个功能砍掉了。    &lt;/p&gt;
-&lt;p&gt;所以布衣自己做了一个。&lt;br&gt;这个也是布衣的第一个能用的 WPF 作品。   &lt;/p&gt;
-&lt;p&gt;环境依赖： &lt;a href=&#34;https://dotnet.microsoft.com/zh-cn/download/dotnet/6.0&#34;&gt;.NET 6 Desktop&lt;/a&gt;   &lt;/p&gt;
-&lt;p&gt;源码及 Release： &lt;a href=&#34;https://github.com/chenbuyi2019/PinFolder&#34;&gt;点我&lt;/a&gt;    &lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://z1.ax1x.com/2023/10/12/piSMRsS.png&#34;&gt;&lt;br&gt;&lt;img src=&#34;https://z1.ax1x.com/2023/10/12/piSMhZQ.png&#34;&gt;   &lt;/p&gt;
  ]]></description>
         </item>
         <item>
@@ -1320,6 +1306,44 @@ end
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;可不叫离谱吗。   &lt;/p&gt;
 &lt;p&gt;气死我了。&lt;br&gt;所以特此写下本文。    &lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://buyi.dev/2023/year2/</guid>
+            <title>离家出走2.5年的感慨</title>
+            <link>http://buyi.dev/2023/year2/</link>
+            <category>家庭</category>
+            <pubDate>Sat, 19 Aug 2023 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;前言&#34;&gt;&lt;a href=&#34;#前言&#34; class=&#34;headerlink&#34; title=&#34;前言&#34;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;下文中的父母也可指代别的家庭长辈或监护人。   &lt;/p&gt;
+&lt;p&gt;如果你真心觉得晚辈是应该无条件服从长辈的，全天下的父母都是好的，&lt;br&gt;包括赵姬（秦始皇的母亲）和嫪毐私通、谋反也是正确的、合理合情的，&lt;br&gt;请关闭本网页，不要往下看了。   &lt;/p&gt;
+&lt;h1 id=&#34;阶段性胜利&#34;&gt;&lt;a href=&#34;#阶段性胜利&#34; class=&#34;headerlink&#34; title=&#34;阶段性胜利&#34;&gt;&lt;/a&gt;阶段性胜利&lt;/h1&gt;&lt;p&gt;昨天是2023年八月18日，是一个特别的日子。&lt;br&gt;昨天是我成功取到了银行一年期定期存款利息的日子。标志着我已经能够守住存款一年了。&lt;br&gt;而拿到利息的那一部分存款，是我一年前的财富大头，现在仅仅占我总财富的一小部分。&lt;br&gt;后续我把财富分开存放了，一部分在理财，一部分在存折里。   &lt;/p&gt;
+&lt;p&gt;这不是个整数纪念日，离家出走是2021年1月的事情了，大学退学也是2019年11月的事情了。&lt;br&gt;但是依然值得纪念。   &lt;/p&gt;
+&lt;p&gt;我把存折的金额数字透露给大家看，我觉得也没什么，因为不管和我熟悉不熟悉，你都不会觉得我的钱应该无理由的送给你、借给你。&lt;br&gt;例外的情况就两种。&lt;br&gt;第一种，贼人，ta看谁有钱了，ta就想偷，就想骗。&lt;br&gt;第二种，长辈，ta觉得你有钱了，给ta钱花是理所应当，天经地义。   &lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/image/year2-1.jpg&#34;&gt;&lt;br&gt;&lt;img src=&#34;/image/year2-2.jpg&#34;&gt;   &lt;/p&gt;
+&lt;h1 id=&#34;君子不立于危墙之下&#34;&gt;&lt;a href=&#34;#君子不立于危墙之下&#34; class=&#34;headerlink&#34; title=&#34;君子不立于危墙之下&#34;&gt;&lt;/a&gt;君子不立于危墙之下&lt;/h1&gt;&lt;p&gt;离家出走是因为对我来说，家庭、血缘、亲人，就是一堵危墙。   &lt;/p&gt;
+&lt;p&gt;他们随时有让你人身自由受限、财富大量流失的能力。并且他们这么做也不会受到法律的严惩。&lt;br&gt;相比一个街头混混，打了你两下或者偷了你钱包，那起码都是进看守所的。   &lt;/p&gt;
+&lt;p&gt;你父母能把你打一顿还无罪。我不行，哪怕我有免费的大律师我都不敢。&lt;br&gt;你父母能吸光你的钱拿去赌博或者投资或者买房。我不行，哪怕我和你恋爱了几年取了你好多钱，离婚都得判我大部分还给你。&lt;br&gt;你父母能让你进网瘾矫正机构。我不行，哪怕我付给网瘾矫正机构十倍的费用，他们也不敢收非监护人送来的人。是因为有你监护人撑腰，所以这些矫正机构才敢对你动粗。&lt;br&gt;你父母能让你活着一天都不开心，天天说打击你、讥讽你的话。我不行，我天天说这样的话，你已经把我拉黑了。但是你未必有胆子拉黑你父母。&lt;br&gt;你父母能逼你自杀还没事。我不行，我逼你自杀了你父母要来起诉我，利用你的死亡从我身上挣钱和“主持公道”。   &lt;/p&gt;
+&lt;p&gt;你朋友做了出格的事情，你就应该果断地和ta划清界限。&lt;br&gt;可不管你父母做出多么出格的事情，你父母都还是你父母。所以他们才敢肆无忌惮啊。   &lt;/p&gt;
+&lt;p&gt;在这样的民间习惯、法治环境下，父母不是危墙是什么？&lt;br&gt;他们是你身边最不可控的、最不好摆脱的一个因素。   &lt;/p&gt;
+&lt;p&gt;家庭环境可以有很高的上限，也可以有很低的下限。&lt;br&gt;本质上就是个一个环节内的小皇帝，你过的好不好全看他们是不是一代明君。&lt;br&gt;但是恰恰你也知道，历史上明君的数量少于昏君的数量。&lt;br&gt;我的家庭其实并没有对我特别特别坏，只是中规中矩的普通家长。&lt;br&gt;但是呢，我就是见不惯，加上我被气出了抑郁症。&lt;br&gt;后面我搬出去租房住了，打工自力更生养活自己，结交了可靠的朋友。&lt;br&gt;我才明白，原来血亲不是什么必需品，家庭是可有可无的。   &lt;/p&gt;
+&lt;p&gt;我现在基本不说我要回家，我只说我回的是“安全屋”。&lt;br&gt;没有家人的地方，能叫家吗？&lt;br&gt;有家人的地方，能叫安全吗？   &lt;/p&gt;
+&lt;p&gt;如果你和某人在一起每天都不开心，天天犯抑郁，但是你一离开ta你就开心，离开一天开心一天，离开一年开心一年。&lt;br&gt;我就问你，是不是这个人把你搞抑郁的？&lt;br&gt;更不用说我经常做到关于自己家庭的噩梦，他们可能会来昆明夺走我拥有的一切。   &lt;/p&gt;
+&lt;h1 id=&#34;门槛&#34;&gt;&lt;a href=&#34;#门槛&#34; class=&#34;headerlink&#34; title=&#34;门槛&#34;&gt;&lt;/a&gt;门槛&lt;/h1&gt;&lt;p&gt;我们能不能提高家庭的下限？可以。&lt;br&gt;道路交通上，最没有安全意识的，是哪一类人？&lt;br&gt;是行人和非机动车驾驶员（自行车、电动车）。&lt;br&gt;乱加塞、乱变道、逆行、闯红灯，甚至还有敢酒后骑电动车的。&lt;br&gt;为什么，因为他们不需要考试，也没有多少针对他们的重罚。他们对交通法规的理解仅限于红灯停绿灯行，复杂一点的，他们要么不认识，要么就根本不把法律法规当一回事。    &lt;/p&gt;
+&lt;p&gt;当然，现在生育率这么低了，夫妻考试之后才能生育小孩的话，怕是直接跌到零。还可能会催生出新的行业，叫生育考试培训。  &lt;/p&gt;
+&lt;h1 id=&#34;放弃幻想&#34;&gt;&lt;a href=&#34;#放弃幻想&#34; class=&#34;headerlink&#34; title=&#34;放弃幻想&#34;&gt;&lt;/a&gt;放弃幻想&lt;/h1&gt;&lt;p&gt;一个人从小都被父母虐待，这并不是最可怜的。&lt;br&gt;最可怜的是，是ta觉得自己做的还不够好，还不够孝顺。   &lt;/p&gt;
+&lt;p&gt;一个人的理想（或者事业、爱好）一直都被父母打压，这并不是最可怜的。&lt;br&gt;最可怜的是，ta还觉得是自己的父母是好的。把得到父母的认可，作为自己的毕生追求。   &lt;/p&gt;
+&lt;p&gt;我不是鼓励你现在就拉黑你的血亲，我希望你可以认清自己和身边的人。&lt;br&gt;当然我更不鼓励你待在血亲身边靠啃老，或者赖在朋友身边当寄生虫来维持生活。   &lt;/p&gt;
+&lt;h1 id=&#34;建议&#34;&gt;&lt;a href=&#34;#建议&#34; class=&#34;headerlink&#34; title=&#34;建议&#34;&gt;&lt;/a&gt;建议&lt;/h1&gt;&lt;p&gt;（这段话来自我2023年6月27日发的微博）&lt;br&gt;我的建议，如果你对你的家庭各种不满，你就做足了准备搬出去住。&lt;br&gt;住的越远越好。而且要做到当断则断，不要软弱。&lt;br&gt;运气好，他们尊重你，不打扰你。&lt;br&gt;运气中，他们发消息滋扰你，劝你，骗你回家。&lt;br&gt;运气差，他们跨省甚至跨国派人找你，因为他们绝不想让自己的摇钱树跑了。   &lt;/p&gt;
+&lt;p&gt;当然，一切的前提是，你是个有意志力、毅力的成年人。&lt;br&gt;没有足够力量的人和未成年人还受着家暴，那对不起，任何人都极大概率帮不了你。  &lt;/p&gt;
+&lt;h1 id=&#34;摘录&#34;&gt;&lt;a href=&#34;#摘录&#34; class=&#34;headerlink&#34; title=&#34;摘录&#34;&gt;&lt;/a&gt;摘录&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://m.weibo.cn/status/NcQp6mkFY&#34;&gt;23岁女子称长期遭家暴起诉母亲，法院判证据不足&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV1wP411r7t8&#34;&gt;up主自己攒钱买的 xbox 被父母砸毁&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://m.weibo.cn/status/N76fA8zq9&#34;&gt;男童遭家人棍打后从五楼跳下，伤势严重。警方表示家务事不管&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://m.weibo.cn/status/N38yGbIhT&#34;&gt;被抛弃的女生长大后被亲生父母找到：你弟弟有女朋友了。 女生拒绝回家，坚持住在养父母家里，被亲生父母骂没良心&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://m.weibo.cn/status/MzOSEbu3c&#34;&gt;豫章书院吴某豹称打学生前会先问家长：家长同意才会打&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://m.weibo.cn/status/MtSPmyXnX&#34;&gt;16岁少女被父母以26万彩礼许人，在高速服务区偷偷报警求救&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;微博&#34;&gt;&lt;a href=&#34;#微博&#34; class=&#34;headerlink&#34; title=&#34;微博&#34;&gt;&lt;/a&gt;微博&lt;/h1&gt;&lt;p&gt;本文有在微博同步发布： &lt;a href=&#34;https://m.weibo.cn/status/Nfhzx7ubH&#34;&gt;点我&lt;/a&gt;&lt;br&gt;你可以在那边发表评论。   &lt;/p&gt;
  ]]></description>
         </item>
     </channel>

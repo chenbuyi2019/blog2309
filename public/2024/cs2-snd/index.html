@@ -173,9 +173,9 @@
 <h1 id="编译脚本与声音"><a href="#编译脚本与声音" class="headerlink" title="编译脚本与声音"></a>编译脚本与声音</h1><p>在 <code>Asserts Browser</code> 里搜索你的声音文件和脚本文件。<br>全部选中，按鼠标右键，选择 <code>Full Recompile</code>。   </p>
 <p>这样  <code>.vsndevts</code> 就会变成 <code>.vsndevts_c</code>文件，<br><code>.mp3 .wav</code> 就会变成 <code>.vsnd_c</code> 文件（内嵌进去）了。<br>编译好的文件会在 <code>common\Counter-Strike Global Offensive\game\csgo_addons\xxxx</code> 里。  </p>
 <p>一般来说如果开着 hammer，对 <code>.vsndevts</code> 的编译是全自动的。   </p>
-<p><img src="https://s21.ax1x.com/2024/03/13/pFcGYWV.png">   </p>
+<p><img src="/image/vsnd1.png">   </p>
 <h1 id="试听"><a href="#试听" class="headerlink" title="试听"></a>试听</h1><p>如果要试听，可以把要试听的部分编辑到 <code>soundevents_addon.vsndevts</code> 里面，<br>然后在 hammer 里加个声音实体，打开 <code>Sound Event Picker</code> 试听。<br>如果 Picker 里找不到，试试重新编译一次，应该是会每次打开 Picker 的时候刷新的。<br>如果点击了没有声音预览，说明你写的有问题或者音频文件有问题。   </p>
-<p><img src="https://s21.ax1x.com/2024/03/13/pFcJgNn.png">   </p>
+<p><img src="/image/vsnd2.png">   </p>
 <h1 id="实体兼容性"><a href="#实体兼容性" class="headerlink" title="实体兼容性"></a>实体兼容性</h1><p><code>snd_event_point</code> 和 <code>ambient_generic</code> 都可以正常播放 mega 和 music 。<br>但是在使用 <code>ambient_generic</code> 的时候一定要注意正确勾选 <code>Is NOT Looped(32)</code> （貌似绝大多数情况下都要勾上，不然不播放）    </p>
 <p><code>ambient_generic</code> 实体无法干预声音脚本自己的音量和播放范围。   </p>
 
@@ -246,7 +246,7 @@
                 </div>
                 <div class="col-m-4">
                     <h3 class="title-tags">标签云：</h3>
-                    <a href="/tags/net/" style="font-size: 12.5px;">.net</a> <a href="/tags/MYSQL/" style="font-size: 10px;">MYSQL</a> <a href="/tags/code/" style="font-size: 20px;">code</a> <a href="/tags/cs2/" style="font-size: 15px;">cs2</a> <a href="/tags/gmod/" style="font-size: 10px;">gmod</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/%E5%85%B3%E4%BA%8E/" style="font-size: 10px;">关于</a> <a href="/tags/%E5%AD%A6%E6%A0%A1/" style="font-size: 10px;">学校</a> <a href="/tags/%E5%AE%B6%E5%BA%AD/" style="font-size: 20px;">家庭</a> <a href="/tags/%E5%B0%8F%E5%B0%8F%E8%AF%B4/" style="font-size: 17.5px;">小小说</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 10px;">游戏</a>
+                    <a href="/tags/net/" style="font-size: 12.5px;">.net</a> <a href="/tags/MYSQL/" style="font-size: 10px;">MYSQL</a> <a href="/tags/code/" style="font-size: 17.5px;">code</a> <a href="/tags/cs2/" style="font-size: 15px;">cs2</a> <a href="/tags/gmod/" style="font-size: 10px;">gmod</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/%E5%85%B3%E4%BA%8E/" style="font-size: 10px;">关于</a> <a href="/tags/%E5%AD%A6%E6%A0%A1/" style="font-size: 10px;">学校</a> <a href="/tags/%E5%AE%B6%E5%BA%AD/" style="font-size: 20px;">家庭</a> <a href="/tags/%E5%B0%8F%E5%B0%8F%E8%AF%B4/" style="font-size: 17.5px;">小小说</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 10px;">游戏</a>
                 </div>
             </div>
         </section>
