@@ -1,7 +1,7 @@
 ---
 title: GMod LUA 武器自动发射子弹的问题
 date: 2023-09-04 11:49:43
-tags: [code,gmod]
+tags: [code,gmod,lua]
 ---
 
 我发现我自己写的 LUA 脚本武器 SWEP 有个通病，就是按下左键或者右键能听到ti的一声（HL2没弹药的音效）。   

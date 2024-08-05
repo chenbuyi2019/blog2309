@@ -5,19 +5,61 @@
         <link>http://buyi.dev</link>
         <description></description>
         <language>zh</language>
-        <pubDate>Sun, 21 Jul 2024 13:16:06 +0800</pubDate>
-        <lastBuildDate>Sun, 21 Jul 2024 13:16:06 +0800</lastBuildDate>
+        <pubDate>Mon, 05 Aug 2024 00:00:00 +0800</pubDate>
+        <lastBuildDate>Mon, 05 Aug 2024 00:00:00 +0800</lastBuildDate>
+        <category>关于</category>
         <category>家庭</category>
         <category>code</category>
         <category>小小说</category>
-        <category>关于</category>
-        <category>gmod</category>
-        <category>学校</category>
         <category>.net</category>
-        <category>cs2</category>
-        <category>MYSQL</category>
         <category>ssh</category>
+        <category>MYSQL</category>
+        <category>学校</category>
+        <category>gmod</category>
+        <category>lua</category>
+        <category>cs2</category>
         <category>游戏</category>
+        <item>
+            <guid isPermalink="true">http://buyi.dev/2024/gmod-lua-utf8sub/</guid>
+            <title>GMod Lua utf8.sub 性能问题</title>
+            <link>http://buyi.dev/2024/gmod-lua-utf8sub/</link>
+            <category>gmod</category>
+            <category>lua</category>
+            <pubDate>Mon, 05 Aug 2024 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;我本来在做一个简易的日志输出，日志字符串达到一定长度之后，就把字符串裁切只留下后面一半。&lt;br&gt;我不经意间使用了 &lt;code&gt;utf8.sub()&lt;/code&gt; 来裁，然后我发现游戏过程中莫名其妙就卡顿几十秒，然后就恢复，也不像是我哪里有逻辑死循环。&lt;br&gt;经过反复 &lt;code&gt;print()&lt;/code&gt; 来找卡顿的实际位置，我终于找到了原因，就是这个 log 裁切的问题。  &lt;/p&gt;
+&lt;p&gt;Gmod Wiki 里说 &lt;a href=&#34;https://wiki.facepunch.com/gmod/utf8.sub&#34;&gt;utf8.sub()&lt;/a&gt; 比较吃性能，不要在逐帧运行的部分里使用。&lt;br&gt;可我没想到你这性能问题这么大啊。   &lt;/p&gt;
+&lt;p&gt;下面是测试代码和测试结果：   &lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;lua&#34;&gt;concommand.Add(
+    &amp;quot;test1&amp;quot;,
+    function()
+        local t1 = SysTime()
+        print(&amp;quot;start&amp;quot;)
+        local str1 = &amp;quot;&amp;quot;
+        for i = 1, 199 do
+            str1 = str1 .. &amp;quot;甲甲甲abc abc== 123456123 甲甲甲 abc 123456123甲甲&amp;quot;
+        end
+
+        local t2 = SysTime()
+        print(Format(&amp;quot;拼字符串 用时 %.3f  文本长度: %d %d&amp;quot;, t2 - t1, #str1, utf8.len(str1)))
+        local str2 = string.sub(str1, 9999)
+        local t3 = SysTime()
+        print(Format(&amp;quot;string.sub 用时 %.3f  文本长度: %d&amp;quot;, t3 - t2, #str2))
+        local str3 = utf8.sub(str1, 5000)
+        local t4 = SysTime()
+        print(Format(&amp;quot;utf8.sub 用时 %.3f  文本长度: %d&amp;quot;, t4 - t3, #str3))
+    end
+)
+
+-- 本地单人游戏 intel i7-12650H
+-- start
+-- 拼字符串 用时 0.000  文本长度: 11542 8358
+-- string.sub 用时 0.000  文本长度: 1544
+-- utf8.sub 用时 10.642  文本长度: 4637
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;8358 个字符（11542 字节）的字符串裁掉一半就要花 10 秒。&lt;br&gt;这也 tmd 太慢了吧。   &lt;/p&gt;
+&lt;p&gt;非必要不使用，还是老老实实用 &lt;code&gt;string.sub&lt;/code&gt; 吧，开头有两个乱码字符没什么大不了的（   &lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://buyi.dev/2024/cs2-player-states/</guid>
             <title>Counter-Strike 2 玩家进服退服时的状态一览</title>
@@ -1284,6 +1326,7 @@ t1\t9 - Copy\New Text Document.txt
             <link>http://buyi.dev/2023/gmodswepsound/</link>
             <category>code</category>
             <category>gmod</category>
+            <category>lua</category>
             <pubDate>Mon, 04 Sep 2023 11:49:43 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;我发现我自己写的 LUA 脚本武器 SWEP 有个通病，就是按下左键或者右键能听到ti的一声（HL2没弹药的音效）。&lt;br&gt;如果写了 &lt;code&gt;AmmoType&lt;/code&gt; 并且我不实际发射弹药，也会看见和听见一颗 AR2 子弹射出去，但是没有任何伤害。   &lt;/p&gt;
 &lt;p&gt;以前我的尝试都没有成功，今天我终于找到了异常的根源。   &lt;/p&gt;
@@ -1306,44 +1349,6 @@ end
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;可不叫离谱吗。   &lt;/p&gt;
 &lt;p&gt;气死我了。&lt;br&gt;所以特此写下本文。    &lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://buyi.dev/2023/year2/</guid>
-            <title>离家出走2.5年的感慨</title>
-            <link>http://buyi.dev/2023/year2/</link>
-            <category>家庭</category>
-            <pubDate>Sat, 19 Aug 2023 00:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;前言&#34;&gt;&lt;a href=&#34;#前言&#34; class=&#34;headerlink&#34; title=&#34;前言&#34;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;下文中的父母也可指代别的家庭长辈或监护人。   &lt;/p&gt;
-&lt;p&gt;如果你真心觉得晚辈是应该无条件服从长辈的，全天下的父母都是好的，&lt;br&gt;包括赵姬（秦始皇的母亲）和嫪毐私通、谋反也是正确的、合理合情的，&lt;br&gt;请关闭本网页，不要往下看了。   &lt;/p&gt;
-&lt;h1 id=&#34;阶段性胜利&#34;&gt;&lt;a href=&#34;#阶段性胜利&#34; class=&#34;headerlink&#34; title=&#34;阶段性胜利&#34;&gt;&lt;/a&gt;阶段性胜利&lt;/h1&gt;&lt;p&gt;昨天是2023年八月18日，是一个特别的日子。&lt;br&gt;昨天是我成功取到了银行一年期定期存款利息的日子。标志着我已经能够守住存款一年了。&lt;br&gt;而拿到利息的那一部分存款，是我一年前的财富大头，现在仅仅占我总财富的一小部分。&lt;br&gt;后续我把财富分开存放了，一部分在理财，一部分在存折里。   &lt;/p&gt;
-&lt;p&gt;这不是个整数纪念日，离家出走是2021年1月的事情了，大学退学也是2019年11月的事情了。&lt;br&gt;但是依然值得纪念。   &lt;/p&gt;
-&lt;p&gt;我把存折的金额数字透露给大家看，我觉得也没什么，因为不管和我熟悉不熟悉，你都不会觉得我的钱应该无理由的送给你、借给你。&lt;br&gt;例外的情况就两种。&lt;br&gt;第一种，贼人，ta看谁有钱了，ta就想偷，就想骗。&lt;br&gt;第二种，长辈，ta觉得你有钱了，给ta钱花是理所应当，天经地义。   &lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/image/year2-1.jpg&#34;&gt;&lt;br&gt;&lt;img src=&#34;/image/year2-2.jpg&#34;&gt;   &lt;/p&gt;
-&lt;h1 id=&#34;君子不立于危墙之下&#34;&gt;&lt;a href=&#34;#君子不立于危墙之下&#34; class=&#34;headerlink&#34; title=&#34;君子不立于危墙之下&#34;&gt;&lt;/a&gt;君子不立于危墙之下&lt;/h1&gt;&lt;p&gt;离家出走是因为对我来说，家庭、血缘、亲人，就是一堵危墙。   &lt;/p&gt;
-&lt;p&gt;他们随时有让你人身自由受限、财富大量流失的能力。并且他们这么做也不会受到法律的严惩。&lt;br&gt;相比一个街头混混，打了你两下或者偷了你钱包，那起码都是进看守所的。   &lt;/p&gt;
-&lt;p&gt;你父母能把你打一顿还无罪。我不行，哪怕我有免费的大律师我都不敢。&lt;br&gt;你父母能吸光你的钱拿去赌博或者投资或者买房。我不行，哪怕我和你恋爱了几年取了你好多钱，离婚都得判我大部分还给你。&lt;br&gt;你父母能让你进网瘾矫正机构。我不行，哪怕我付给网瘾矫正机构十倍的费用，他们也不敢收非监护人送来的人。是因为有你监护人撑腰，所以这些矫正机构才敢对你动粗。&lt;br&gt;你父母能让你活着一天都不开心，天天说打击你、讥讽你的话。我不行，我天天说这样的话，你已经把我拉黑了。但是你未必有胆子拉黑你父母。&lt;br&gt;你父母能逼你自杀还没事。我不行，我逼你自杀了你父母要来起诉我，利用你的死亡从我身上挣钱和“主持公道”。   &lt;/p&gt;
-&lt;p&gt;你朋友做了出格的事情，你就应该果断地和ta划清界限。&lt;br&gt;可不管你父母做出多么出格的事情，你父母都还是你父母。所以他们才敢肆无忌惮啊。   &lt;/p&gt;
-&lt;p&gt;在这样的民间习惯、法治环境下，父母不是危墙是什么？&lt;br&gt;他们是你身边最不可控的、最不好摆脱的一个因素。   &lt;/p&gt;
-&lt;p&gt;家庭环境可以有很高的上限，也可以有很低的下限。&lt;br&gt;本质上就是个一个环节内的小皇帝，你过的好不好全看他们是不是一代明君。&lt;br&gt;但是恰恰你也知道，历史上明君的数量少于昏君的数量。&lt;br&gt;我的家庭其实并没有对我特别特别坏，只是中规中矩的普通家长。&lt;br&gt;但是呢，我就是见不惯，加上我被气出了抑郁症。&lt;br&gt;后面我搬出去租房住了，打工自力更生养活自己，结交了可靠的朋友。&lt;br&gt;我才明白，原来血亲不是什么必需品，家庭是可有可无的。   &lt;/p&gt;
-&lt;p&gt;我现在基本不说我要回家，我只说我回的是“安全屋”。&lt;br&gt;没有家人的地方，能叫家吗？&lt;br&gt;有家人的地方，能叫安全吗？   &lt;/p&gt;
-&lt;p&gt;如果你和某人在一起每天都不开心，天天犯抑郁，但是你一离开ta你就开心，离开一天开心一天，离开一年开心一年。&lt;br&gt;我就问你，是不是这个人把你搞抑郁的？&lt;br&gt;更不用说我经常做到关于自己家庭的噩梦，他们可能会来昆明夺走我拥有的一切。   &lt;/p&gt;
-&lt;h1 id=&#34;门槛&#34;&gt;&lt;a href=&#34;#门槛&#34; class=&#34;headerlink&#34; title=&#34;门槛&#34;&gt;&lt;/a&gt;门槛&lt;/h1&gt;&lt;p&gt;我们能不能提高家庭的下限？可以。&lt;br&gt;道路交通上，最没有安全意识的，是哪一类人？&lt;br&gt;是行人和非机动车驾驶员（自行车、电动车）。&lt;br&gt;乱加塞、乱变道、逆行、闯红灯，甚至还有敢酒后骑电动车的。&lt;br&gt;为什么，因为他们不需要考试，也没有多少针对他们的重罚。他们对交通法规的理解仅限于红灯停绿灯行，复杂一点的，他们要么不认识，要么就根本不把法律法规当一回事。    &lt;/p&gt;
-&lt;p&gt;当然，现在生育率这么低了，夫妻考试之后才能生育小孩的话，怕是直接跌到零。还可能会催生出新的行业，叫生育考试培训。  &lt;/p&gt;
-&lt;h1 id=&#34;放弃幻想&#34;&gt;&lt;a href=&#34;#放弃幻想&#34; class=&#34;headerlink&#34; title=&#34;放弃幻想&#34;&gt;&lt;/a&gt;放弃幻想&lt;/h1&gt;&lt;p&gt;一个人从小都被父母虐待，这并不是最可怜的。&lt;br&gt;最可怜的是，是ta觉得自己做的还不够好，还不够孝顺。   &lt;/p&gt;
-&lt;p&gt;一个人的理想（或者事业、爱好）一直都被父母打压，这并不是最可怜的。&lt;br&gt;最可怜的是，ta还觉得是自己的父母是好的。把得到父母的认可，作为自己的毕生追求。   &lt;/p&gt;
-&lt;p&gt;我不是鼓励你现在就拉黑你的血亲，我希望你可以认清自己和身边的人。&lt;br&gt;当然我更不鼓励你待在血亲身边靠啃老，或者赖在朋友身边当寄生虫来维持生活。   &lt;/p&gt;
-&lt;h1 id=&#34;建议&#34;&gt;&lt;a href=&#34;#建议&#34; class=&#34;headerlink&#34; title=&#34;建议&#34;&gt;&lt;/a&gt;建议&lt;/h1&gt;&lt;p&gt;（这段话来自我2023年6月27日发的微博）&lt;br&gt;我的建议，如果你对你的家庭各种不满，你就做足了准备搬出去住。&lt;br&gt;住的越远越好。而且要做到当断则断，不要软弱。&lt;br&gt;运气好，他们尊重你，不打扰你。&lt;br&gt;运气中，他们发消息滋扰你，劝你，骗你回家。&lt;br&gt;运气差，他们跨省甚至跨国派人找你，因为他们绝不想让自己的摇钱树跑了。   &lt;/p&gt;
-&lt;p&gt;当然，一切的前提是，你是个有意志力、毅力的成年人。&lt;br&gt;没有足够力量的人和未成年人还受着家暴，那对不起，任何人都极大概率帮不了你。  &lt;/p&gt;
-&lt;h1 id=&#34;摘录&#34;&gt;&lt;a href=&#34;#摘录&#34; class=&#34;headerlink&#34; title=&#34;摘录&#34;&gt;&lt;/a&gt;摘录&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://m.weibo.cn/status/NcQp6mkFY&#34;&gt;23岁女子称长期遭家暴起诉母亲，法院判证据不足&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV1wP411r7t8&#34;&gt;up主自己攒钱买的 xbox 被父母砸毁&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://m.weibo.cn/status/N76fA8zq9&#34;&gt;男童遭家人棍打后从五楼跳下，伤势严重。警方表示家务事不管&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://m.weibo.cn/status/N38yGbIhT&#34;&gt;被抛弃的女生长大后被亲生父母找到：你弟弟有女朋友了。 女生拒绝回家，坚持住在养父母家里，被亲生父母骂没良心&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://m.weibo.cn/status/MzOSEbu3c&#34;&gt;豫章书院吴某豹称打学生前会先问家长：家长同意才会打&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://m.weibo.cn/status/MtSPmyXnX&#34;&gt;16岁少女被父母以26万彩礼许人，在高速服务区偷偷报警求救&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;微博&#34;&gt;&lt;a href=&#34;#微博&#34; class=&#34;headerlink&#34; title=&#34;微博&#34;&gt;&lt;/a&gt;微博&lt;/h1&gt;&lt;p&gt;本文有在微博同步发布： &lt;a href=&#34;https://m.weibo.cn/status/Nfhzx7ubH&#34;&gt;点我&lt;/a&gt;&lt;br&gt;你可以在那边发表评论。   &lt;/p&gt;
  ]]></description>
         </item>
     </channel>
