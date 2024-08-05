@@ -92,7 +92,7 @@
 -- utf8.sub 用时 10.642  文本长度: 4637
 </code></pre>
 <p>8358 个字符（11542 字节）的字符串裁掉一半就要花 10 秒。<br>这也 tmd 太慢了吧。   </p>
-<p>非必要不使用，还是老老实实用 <code>string.sub</code> 吧，开头有两个乱码字符没什么大不了的（   </p>
+<p><code>string.sub()</code> 是像切割 byte[] 一样切割字符串， <code>utf8.sub()</code> 是先把字符串拆成一个个 utf8 字符，然后再组。<br>非必要不使用，还是老老实实用 <code>string.sub</code> 吧，开头有两个乱码字符没什么大不了的（   </p>
 
         </article>
         <section class="post-near">

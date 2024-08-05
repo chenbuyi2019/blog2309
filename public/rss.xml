@@ -7,16 +7,16 @@
         <language>zh</language>
         <pubDate>Mon, 05 Aug 2024 00:00:00 +0800</pubDate>
         <lastBuildDate>Mon, 05 Aug 2024 00:00:00 +0800</lastBuildDate>
-        <category>关于</category>
         <category>家庭</category>
+        <category>关于</category>
         <category>code</category>
         <category>小小说</category>
-        <category>.net</category>
-        <category>ssh</category>
-        <category>MYSQL</category>
         <category>学校</category>
+        <category>.net</category>
         <category>gmod</category>
         <category>lua</category>
+        <category>MYSQL</category>
+        <category>ssh</category>
         <category>cs2</category>
         <category>游戏</category>
         <item>
@@ -57,7 +57,7 @@
 -- utf8.sub 用时 10.642  文本长度: 4637
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;8358 个字符（11542 字节）的字符串裁掉一半就要花 10 秒。&lt;br&gt;这也 tmd 太慢了吧。   &lt;/p&gt;
-&lt;p&gt;非必要不使用，还是老老实实用 &lt;code&gt;string.sub&lt;/code&gt; 吧，开头有两个乱码字符没什么大不了的（   &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;string.sub()&lt;/code&gt; 是像切割 byte[] 一样切割字符串， &lt;code&gt;utf8.sub()&lt;/code&gt; 是先把字符串拆成一个个 utf8 字符，然后再组。&lt;br&gt;非必要不使用，还是老老实实用 &lt;code&gt;string.sub&lt;/code&gt; 吧，开头有两个乱码字符没什么大不了的（   &lt;/p&gt;
  ]]></description>
         </item>
         <item>
