@@ -29,13 +29,10 @@ tags: [游戏]
 2021 年 10 月 9 日。   
 
 # Red Alert
-2023 年 7 月 7 日，红色警戒2 本体。   
-[微博](https://m.weibo.cn/status/N8M945xzX)   
-2023 年 7 月 7 日，尤里的复仇 苏军线。   
-[微博](https://m.weibo.cn/status/N9yHy2Qn7)    
-盟军线没成。   
-2024 年 1 月 24 日，红色警戒1 苏军线。   
-[微博](https://m.weibo.cn/status/NDlcGjaYP)   
+2023 年 7 月 7 日，红色警戒2 本体 [微博](https://m.weibo.cn/status/N8M945xzX)    
+2023 年 7 月 7 日，尤里的复仇 苏军线 [微博](https://m.weibo.cn/status/N9yHy2Qn7)   
+2024 年 1 月 24 日，红色警戒1 苏军线  [微博](https://m.weibo.cn/status/NDlcGjaYP)   
+2023 年 7 月 7 日，尤里的复仇 盟军线 [微博](https://m.weibo.cn/status/OrdHv3p2N)   
 
 # Half-Life 1
 2023 年 1 月 25 日。  
