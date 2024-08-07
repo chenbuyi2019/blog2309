@@ -4,18 +4,18 @@
     <title>陈布衣的博客</title>
     <link href="http://buyi.dev" />
     <updated>2024-08-04T16:00:00.000Z</updated>
-    <category term="小小说" />
     <category term="家庭" />
-    <category term="学校" />
-    <category term="cs2" />
     <category term="code" />
+    <category term=".net" />
+    <category term="小小说" />
     <category term="关于" />
     <category term="gmod" />
     <category term="lua" />
-    <category term="游戏" />
-    <category term=".net" />
-    <category term="ssh" />
     <category term="MYSQL" />
+    <category term="ssh" />
+    <category term="学校" />
+    <category term="cs2" />
+    <category term="游戏" />
     <entry>
         <id>http://buyi.dev/2024/gmod-lua-utf8sub/</id>
         <title>GMod Lua utf8.sub 性能问题</title>
@@ -297,9 +297,9 @@ Write-Host &amp;quot;输出文件夹 $dir2&amp;quot;
 # 批量修改音量： -filter: &amp;quot;volume = 8dB&amp;quot;  
 &lt;/code&gt;&lt;/pre&gt;
 </content>
-        <category term="cs2" />
         <category term="code" />
         <category term=".net" />
+        <category term="cs2" />
         <updated>2024-07-14T13:20:03.000Z</updated>
     </entry>
     <entry>
@@ -312,7 +312,8 @@ Write-Host &amp;quot;输出文件夹 $dir2&amp;quot;
 &lt;h1 id=&#34;ICEY&#34;&gt;&lt;a href=&#34;#ICEY&#34; class=&#34;headerlink&#34; title=&#34;ICEY&#34;&gt;&lt;/a&gt;ICEY&lt;/h1&gt;&lt;p&gt;2017 年 8 月 2 日。   &lt;/p&gt;
 &lt;h1 id=&#34;Homefront&#34;&gt;&lt;a href=&#34;#Homefront&#34; class=&#34;headerlink&#34; title=&#34;Homefront&#34;&gt;&lt;/a&gt;Homefront&lt;/h1&gt;&lt;p&gt;2021 年 9 月 20 日。  &lt;/p&gt;
 &lt;h1 id=&#34;Max-Payne-3&#34;&gt;&lt;a href=&#34;#Max-Payne-3&#34; class=&#34;headerlink&#34; title=&#34;Max Payne 3&#34;&gt;&lt;/a&gt;Max Payne 3&lt;/h1&gt;&lt;p&gt;2021 年 10 月 9 日。   &lt;/p&gt;
-&lt;h1 id=&#34;Red-Alert&#34;&gt;&lt;a href=&#34;#Red-Alert&#34; class=&#34;headerlink&#34; title=&#34;Red Alert&#34;&gt;&lt;/a&gt;Red Alert&lt;/h1&gt;&lt;p&gt;2023 年 7 月 7 日，红色警戒2 本体 &lt;a href=&#34;https://m.weibo.cn/status/N8M945xzX&#34;&gt;微博&lt;/a&gt;&lt;br&gt;2023 年 7 月 7 日，尤里的复仇 苏军线 &lt;a href=&#34;https://m.weibo.cn/status/N9yHy2Qn7&#34;&gt;微博&lt;/a&gt;&lt;br&gt;2024 年 1 月 24 日，红色警戒1 苏军线  &lt;a href=&#34;https://m.weibo.cn/status/NDlcGjaYP&#34;&gt;微博&lt;/a&gt;&lt;br&gt;2023 年 7 月 7 日，尤里的复仇 盟军线 &lt;a href=&#34;https://m.weibo.cn/status/OrdHv3p2N&#34;&gt;微博&lt;/a&gt;   &lt;/p&gt;
+&lt;h1 id=&#34;Red-Alert-2&#34;&gt;&lt;a href=&#34;#Red-Alert-2&#34; class=&#34;headerlink&#34; title=&#34;Red Alert 2&#34;&gt;&lt;/a&gt;Red Alert 2&lt;/h1&gt;&lt;p&gt;2023 年 7 月 7 日，红色警戒2 本体 &lt;a href=&#34;https://m.weibo.cn/status/N8M945xzX&#34;&gt;微博&lt;/a&gt;&lt;br&gt;2023 年 7 月 7 日，尤里的复仇 苏军线 &lt;a href=&#34;https://m.weibo.cn/status/N9yHy2Qn7&#34;&gt;微博&lt;/a&gt;&lt;br&gt;2024 年 8 月 7 日，尤里的复仇 盟军线 &lt;a href=&#34;https://m.weibo.cn/status/OrdHv3p2N&#34;&gt;微博&lt;/a&gt;   &lt;/p&gt;
+&lt;h1 id=&#34;Red-Alert-1&#34;&gt;&lt;a href=&#34;#Red-Alert-1&#34; class=&#34;headerlink&#34; title=&#34;Red Alert 1&#34;&gt;&lt;/a&gt;Red Alert 1&lt;/h1&gt;&lt;p&gt;2024 年 1 月 24 日，红色警戒1 苏军线  &lt;a href=&#34;https://m.weibo.cn/status/NDlcGjaYP&#34;&gt;微博&lt;/a&gt;   &lt;/p&gt;
 &lt;h1 id=&#34;Half-Life-1&#34;&gt;&lt;a href=&#34;#Half-Life-1&#34; class=&#34;headerlink&#34; title=&#34;Half-Life 1&#34;&gt;&lt;/a&gt;Half-Life 1&lt;/h1&gt;&lt;p&gt;2023 年 1 月 25 日。&lt;br&gt;&lt;a href=&#34;https://m.weibo.cn/status/MpXEugiJj&#34;&gt;微博&lt;/a&gt;   &lt;/p&gt;
 &lt;h1 id=&#34;Need-For-Speed&#34;&gt;&lt;a href=&#34;#Need-For-Speed&#34; class=&#34;headerlink&#34; title=&#34;Need For Speed&#34;&gt;&lt;/a&gt;Need For Speed&lt;/h1&gt;&lt;p&gt;2024 年 7 月 11 日，极品飞车 9 最高通缉 NFS Most Wanted。&lt;br&gt;&lt;a href=&#34;https://m.weibo.cn/status/On4zlaVrf&#34;&gt;微博&lt;/a&gt;   &lt;/p&gt;
 &lt;h1 id=&#34;不记得具体时间的&#34;&gt;&lt;a href=&#34;#不记得具体时间的&#34; class=&#34;headerlink&#34; title=&#34;不记得具体时间的&#34;&gt;&lt;/a&gt;不记得具体时间的&lt;/h1&gt;&lt;ul&gt;
@@ -1080,8 +1081,8 @@ Write-Host &amp;quot;输出文件夹 $dir2&amp;quot;
 &lt;p&gt;A: 是朋友还不让你和我语音？是朋友还不让你女装？是朋友还要你上交工资？&lt;br&gt;你做任何事情都是要偷偷摸摸的背着朋友的是吧。   &lt;/p&gt;
 &lt;p&gt;B: 要你管！滚。  &lt;/p&gt;
 </content>
-        <category term="小小说" />
         <category term="家庭" />
+        <category term="小小说" />
         <updated>2024-02-11T01:04:56.000Z</updated>
     </entry>
     <entry>
