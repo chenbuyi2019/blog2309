@@ -15,6 +15,7 @@ tags: [游戏]
 2022 年 10 月 1日，通关了 The Lost and Damned 。   
 2024 年 7 月 4 日，通关了 GTA III - The Definitive Edition [微博](https://m.weibo.cn/status/Om1RkzUwy) 。    
 2024 年 7 月 30 日，通关了 GTA Vice City – The Definitive Edition [微博](https://m.weibo.cn/status/OpYfvxpV0)  。    
+2024 年 8 月 20 日，通关了 GTA San Andreas – The Definitive Edition [微博](https://m.weibo.cn/status/OtcsQqGa6)  。    
 
 # Devil May Cry 5
 2022 年 10月 22日。   
