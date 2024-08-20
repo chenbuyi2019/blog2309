@@ -9,10 +9,10 @@ tags: [游戏]
 纯剧情解密类就不算了，可以看攻略作弊的（   
 
 # Grand Theft Auto 
-2017 年 4 月 7日，通关了 GTA 5 。   
-2022 年 1 月 29日，通关了 GTA 4 本体。   
-2022 年 8 月 17日，通关了 The Ballad of Gay Tony 。   
-2022 年 10 月 1日，通关了 The Lost and Damned 。   
+2017 年 4 月 7 日，通关了 GTA 5 。   
+2022 年 1 月 29 日，通关了 GTA 4 本体。   
+2022 年 8 月 17 日，通关了 The Ballad of Gay Tony 。   
+2022 年 10 月 1 日，通关了 The Lost and Damned 。   
 2024 年 7 月 4 日，通关了 GTA III - The Definitive Edition [微博](https://m.weibo.cn/status/Om1RkzUwy) 。    
 2024 年 7 月 30 日，通关了 GTA Vice City – The Definitive Edition [微博](https://m.weibo.cn/status/OpYfvxpV0)  。    
 2024 年 8 月 20 日，通关了 GTA San Andreas – The Definitive Edition [微博](https://m.weibo.cn/status/OtcsQqGa6)  。    
@@ -31,15 +31,14 @@ tags: [游戏]
 
 # Red Alert 2
 2023 年 7 月 7 日，红色警戒2 本体 [微博](https://m.weibo.cn/status/N8M945xzX)    
-2023 年 7 月 7 日，尤里的复仇 苏军线 [微博](https://m.weibo.cn/status/N9yHy2Qn7)   
+2023 年 7 月 12 日，尤里的复仇 苏军线 [微博](https://m.weibo.cn/status/N9yHy2Qn7)   
 2024 年 8 月 7 日，尤里的复仇 盟军线 [微博](https://m.weibo.cn/status/OrdHv3p2N)   
 
 # Red Alert 1
 2024 年 1 月 24 日，红色警戒1 苏军线  [微博](https://m.weibo.cn/status/NDlcGjaYP)   
 
 # Half-Life 1
-2023 年 1 月 25 日。  
-[微博](https://m.weibo.cn/status/MpXEugiJj)   
+2023 年 1 月 25 日，[微博](https://m.weibo.cn/status/MpXEugiJj)   
 
 # Need For Speed
 2024 年 7 月 11 日，极品飞车 9 最高通缉 NFS Most Wanted。   

@@ -4,18 +4,18 @@
     <title>陈布衣的博客</title>
     <link href="http://buyi.dev" />
     <updated>2024-08-04T16:00:00.000Z</updated>
-    <category term="家庭" />
     <category term="关于" />
     <category term="code" />
-    <category term="cs2" />
-    <category term="gmod" />
-    <category term="lua" />
-    <category term="游戏" />
-    <category term=".net" />
     <category term="小小说" />
     <category term="学校" />
-    <category term="ssh" />
+    <category term="家庭" />
+    <category term="gmod" />
+    <category term="lua" />
     <category term="MYSQL" />
+    <category term=".net" />
+    <category term="ssh" />
+    <category term="cs2" />
+    <category term="游戏" />
     <entry>
         <id>http://buyi.dev/2024/gmod-lua-utf8sub/</id>
         <title>GMod Lua utf8.sub 性能问题</title>
@@ -298,8 +298,8 @@ Write-Host &amp;quot;输出文件夹 $dir2&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 </content>
         <category term="code" />
-        <category term="cs2" />
         <category term=".net" />
+        <category term="cs2" />
         <updated>2024-07-14T13:20:03.000Z</updated>
     </entry>
     <entry>
@@ -307,14 +307,14 @@ Write-Host &amp;quot;输出文件夹 $dir2&amp;quot;
         <title>布衣玩通关且没作弊的游戏</title>
         <link rel="alternate" href="http://buyi.dev/2024/games/"/>
         <content type="html">&lt;p&gt;记录一下我玩到单人剧情通关，并且没有作弊的游戏。&lt;br&gt;不求高难度也不求百分百全成就全解锁，能不作弊通关已经很开心了（&lt;br&gt;纯剧情解密类就不算了，可以看攻略作弊的（   &lt;/p&gt;
-&lt;h1 id=&#34;Grand-Theft-Auto&#34;&gt;&lt;a href=&#34;#Grand-Theft-Auto&#34; class=&#34;headerlink&#34; title=&#34;Grand Theft Auto&#34;&gt;&lt;/a&gt;Grand Theft Auto&lt;/h1&gt;&lt;p&gt;2017 年 4 月 7日，通关了 GTA 5 。&lt;br&gt;2022 年 1 月 29日，通关了 GTA 4 本体。&lt;br&gt;2022 年 8 月 17日，通关了 The Ballad of Gay Tony 。&lt;br&gt;2022 年 10 月 1日，通关了 The Lost and Damned 。&lt;br&gt;2024 年 7 月 4 日，通关了 GTA III - The Definitive Edition &lt;a href=&#34;https://m.weibo.cn/status/Om1RkzUwy&#34;&gt;微博&lt;/a&gt; 。&lt;br&gt;2024 年 7 月 30 日，通关了 GTA Vice City – The Definitive Edition &lt;a href=&#34;https://m.weibo.cn/status/OpYfvxpV0&#34;&gt;微博&lt;/a&gt;  。&lt;br&gt;2024 年 8 月 20 日，通关了 GTA San Andreas – The Definitive Edition &lt;a href=&#34;https://m.weibo.cn/status/OtcsQqGa6&#34;&gt;微博&lt;/a&gt;  。    &lt;/p&gt;
+&lt;h1 id=&#34;Grand-Theft-Auto&#34;&gt;&lt;a href=&#34;#Grand-Theft-Auto&#34; class=&#34;headerlink&#34; title=&#34;Grand Theft Auto&#34;&gt;&lt;/a&gt;Grand Theft Auto&lt;/h1&gt;&lt;p&gt;2017 年 4 月 7 日，通关了 GTA 5 。&lt;br&gt;2022 年 1 月 29 日，通关了 GTA 4 本体。&lt;br&gt;2022 年 8 月 17 日，通关了 The Ballad of Gay Tony 。&lt;br&gt;2022 年 10 月 1 日，通关了 The Lost and Damned 。&lt;br&gt;2024 年 7 月 4 日，通关了 GTA III - The Definitive Edition &lt;a href=&#34;https://m.weibo.cn/status/Om1RkzUwy&#34;&gt;微博&lt;/a&gt; 。&lt;br&gt;2024 年 7 月 30 日，通关了 GTA Vice City – The Definitive Edition &lt;a href=&#34;https://m.weibo.cn/status/OpYfvxpV0&#34;&gt;微博&lt;/a&gt;  。&lt;br&gt;2024 年 8 月 20 日，通关了 GTA San Andreas – The Definitive Edition &lt;a href=&#34;https://m.weibo.cn/status/OtcsQqGa6&#34;&gt;微博&lt;/a&gt;  。    &lt;/p&gt;
 &lt;h1 id=&#34;Devil-May-Cry-5&#34;&gt;&lt;a href=&#34;#Devil-May-Cry-5&#34; class=&#34;headerlink&#34; title=&#34;Devil May Cry 5&#34;&gt;&lt;/a&gt;Devil May Cry 5&lt;/h1&gt;&lt;p&gt;2022 年 10月 22日。   &lt;/p&gt;
 &lt;h1 id=&#34;ICEY&#34;&gt;&lt;a href=&#34;#ICEY&#34; class=&#34;headerlink&#34; title=&#34;ICEY&#34;&gt;&lt;/a&gt;ICEY&lt;/h1&gt;&lt;p&gt;2017 年 8 月 2 日。   &lt;/p&gt;
 &lt;h1 id=&#34;Homefront&#34;&gt;&lt;a href=&#34;#Homefront&#34; class=&#34;headerlink&#34; title=&#34;Homefront&#34;&gt;&lt;/a&gt;Homefront&lt;/h1&gt;&lt;p&gt;2021 年 9 月 20 日。  &lt;/p&gt;
 &lt;h1 id=&#34;Max-Payne-3&#34;&gt;&lt;a href=&#34;#Max-Payne-3&#34; class=&#34;headerlink&#34; title=&#34;Max Payne 3&#34;&gt;&lt;/a&gt;Max Payne 3&lt;/h1&gt;&lt;p&gt;2021 年 10 月 9 日。   &lt;/p&gt;
-&lt;h1 id=&#34;Red-Alert-2&#34;&gt;&lt;a href=&#34;#Red-Alert-2&#34; class=&#34;headerlink&#34; title=&#34;Red Alert 2&#34;&gt;&lt;/a&gt;Red Alert 2&lt;/h1&gt;&lt;p&gt;2023 年 7 月 7 日，红色警戒2 本体 &lt;a href=&#34;https://m.weibo.cn/status/N8M945xzX&#34;&gt;微博&lt;/a&gt;&lt;br&gt;2023 年 7 月 7 日，尤里的复仇 苏军线 &lt;a href=&#34;https://m.weibo.cn/status/N9yHy2Qn7&#34;&gt;微博&lt;/a&gt;&lt;br&gt;2024 年 8 月 7 日，尤里的复仇 盟军线 &lt;a href=&#34;https://m.weibo.cn/status/OrdHv3p2N&#34;&gt;微博&lt;/a&gt;   &lt;/p&gt;
+&lt;h1 id=&#34;Red-Alert-2&#34;&gt;&lt;a href=&#34;#Red-Alert-2&#34; class=&#34;headerlink&#34; title=&#34;Red Alert 2&#34;&gt;&lt;/a&gt;Red Alert 2&lt;/h1&gt;&lt;p&gt;2023 年 7 月 7 日，红色警戒2 本体 &lt;a href=&#34;https://m.weibo.cn/status/N8M945xzX&#34;&gt;微博&lt;/a&gt;&lt;br&gt;2023 年 7 月 12 日，尤里的复仇 苏军线 &lt;a href=&#34;https://m.weibo.cn/status/N9yHy2Qn7&#34;&gt;微博&lt;/a&gt;&lt;br&gt;2024 年 8 月 7 日，尤里的复仇 盟军线 &lt;a href=&#34;https://m.weibo.cn/status/OrdHv3p2N&#34;&gt;微博&lt;/a&gt;   &lt;/p&gt;
 &lt;h1 id=&#34;Red-Alert-1&#34;&gt;&lt;a href=&#34;#Red-Alert-1&#34; class=&#34;headerlink&#34; title=&#34;Red Alert 1&#34;&gt;&lt;/a&gt;Red Alert 1&lt;/h1&gt;&lt;p&gt;2024 年 1 月 24 日，红色警戒1 苏军线  &lt;a href=&#34;https://m.weibo.cn/status/NDlcGjaYP&#34;&gt;微博&lt;/a&gt;   &lt;/p&gt;
-&lt;h1 id=&#34;Half-Life-1&#34;&gt;&lt;a href=&#34;#Half-Life-1&#34; class=&#34;headerlink&#34; title=&#34;Half-Life 1&#34;&gt;&lt;/a&gt;Half-Life 1&lt;/h1&gt;&lt;p&gt;2023 年 1 月 25 日。&lt;br&gt;&lt;a href=&#34;https://m.weibo.cn/status/MpXEugiJj&#34;&gt;微博&lt;/a&gt;   &lt;/p&gt;
+&lt;h1 id=&#34;Half-Life-1&#34;&gt;&lt;a href=&#34;#Half-Life-1&#34; class=&#34;headerlink&#34; title=&#34;Half-Life 1&#34;&gt;&lt;/a&gt;Half-Life 1&lt;/h1&gt;&lt;p&gt;2023 年 1 月 25 日，&lt;a href=&#34;https://m.weibo.cn/status/MpXEugiJj&#34;&gt;微博&lt;/a&gt;   &lt;/p&gt;
 &lt;h1 id=&#34;Need-For-Speed&#34;&gt;&lt;a href=&#34;#Need-For-Speed&#34; class=&#34;headerlink&#34; title=&#34;Need For Speed&#34;&gt;&lt;/a&gt;Need For Speed&lt;/h1&gt;&lt;p&gt;2024 年 7 月 11 日，极品飞车 9 最高通缉 NFS Most Wanted。&lt;br&gt;&lt;a href=&#34;https://m.weibo.cn/status/On4zlaVrf&#34;&gt;微博&lt;/a&gt;   &lt;/p&gt;
 &lt;h1 id=&#34;不记得具体时间的&#34;&gt;&lt;a href=&#34;#不记得具体时间的&#34; class=&#34;headerlink&#34; title=&#34;不记得具体时间的&#34;&gt;&lt;/a&gt;不记得具体时间的&lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;Minecraft: Java Edition  &lt;/li&gt;
@@ -1081,8 +1081,8 @@ Write-Host &amp;quot;输出文件夹 $dir2&amp;quot;
 &lt;p&gt;A: 是朋友还不让你和我语音？是朋友还不让你女装？是朋友还要你上交工资？&lt;br&gt;你做任何事情都是要偷偷摸摸的背着朋友的是吧。   &lt;/p&gt;
 &lt;p&gt;B: 要你管！滚。  &lt;/p&gt;
 </content>
-        <category term="家庭" />
         <category term="小小说" />
+        <category term="家庭" />
         <updated>2024-02-11T01:04:56.000Z</updated>
     </entry>
     <entry>
