@@ -25,3 +25,5 @@ ConEmu64.exe -runlist ^>  cmd /k "D:\a.exe" ^|^|^| cmd /k "D:\b.exe" ^|^|^| cmd 
 ```cmd
 ConEmu64.exe -runlist ^> "D:\a.exe" ^|^|^| "D:\b.exe" ^|^|^| "D:\c.exe"  
 ```
+
+你说为什么不用 Windows Terminal ，答案是服务器的 windows 不方便安装 windows store app  。   

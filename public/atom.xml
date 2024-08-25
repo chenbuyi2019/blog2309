@@ -4,18 +4,18 @@
     <title>陈布衣的博客</title>
     <link href="http://buyi.dev" />
     <updated>2024-08-25T11:15:48.000Z</updated>
+    <category term="code" />
     <category term="家庭" />
     <category term="关于" />
-    <category term="code" />
+    <category term=".net" />
     <category term="小小说" />
+    <category term="MYSQL" />
+    <category term="gmod" />
+    <category term="lua" />
+    <category term="ssh" />
     <category term="学校" />
     <category term="cs2" />
     <category term="游戏" />
-    <category term="gmod" />
-    <category term="lua" />
-    <category term=".net" />
-    <category term="MYSQL" />
-    <category term="ssh" />
     <entry>
         <id>http://buyi.dev/2024/mulit-cmd/</id>
         <title>ConEmu: 一次性启动和托管多个控制台程序</title>
@@ -35,6 +35,7 @@
 &lt;p&gt;或者不套 cmd 来执行   &lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;cmd&#34;&gt;ConEmu64.exe -runlist ^&amp;gt; &amp;quot;D:\a.exe&amp;quot; ^|^|^| &amp;quot;D:\b.exe&amp;quot; ^|^|^| &amp;quot;D:\c.exe&amp;quot;  
 &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;你说为什么不用 Windows Terminal ，答案是服务器的 windows 不方便安装 windows store app  。   &lt;/p&gt;
 </content>
         <category term="code" />
         <updated>2024-08-25T11:15:48.000Z</updated>

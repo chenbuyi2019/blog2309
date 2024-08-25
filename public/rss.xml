@@ -7,18 +7,18 @@
         <language>zh</language>
         <pubDate>Sun, 25 Aug 2024 19:15:48 +0800</pubDate>
         <lastBuildDate>Sun, 25 Aug 2024 19:15:48 +0800</lastBuildDate>
+        <category>code</category>
         <category>家庭</category>
         <category>关于</category>
-        <category>code</category>
+        <category>.net</category>
         <category>小小说</category>
+        <category>MYSQL</category>
+        <category>gmod</category>
+        <category>lua</category>
+        <category>ssh</category>
         <category>学校</category>
         <category>cs2</category>
         <category>游戏</category>
-        <category>gmod</category>
-        <category>lua</category>
-        <category>.net</category>
-        <category>MYSQL</category>
-        <category>ssh</category>
         <item>
             <guid isPermalink="true">http://buyi.dev/2024/mulit-cmd/</guid>
             <title>ConEmu: 一次性启动和托管多个控制台程序</title>
@@ -40,6 +40,7 @@
 &lt;p&gt;或者不套 cmd 来执行   &lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;cmd&#34;&gt;ConEmu64.exe -runlist ^&amp;gt; &amp;quot;D:\a.exe&amp;quot; ^|^|^| &amp;quot;D:\b.exe&amp;quot; ^|^|^| &amp;quot;D:\c.exe&amp;quot;  
 &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;你说为什么不用 Windows Terminal ，答案是服务器的 windows 不方便安装 windows store app  。   &lt;/p&gt;
  ]]></description>
         </item>
         <item>
