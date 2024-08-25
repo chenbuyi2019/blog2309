@@ -3,19 +3,42 @@
     <id>http://buyi.dev</id>
     <title>陈布衣的博客</title>
     <link href="http://buyi.dev" />
-    <updated>2024-08-04T16:00:00.000Z</updated>
+    <updated>2024-08-25T11:15:48.000Z</updated>
+    <category term="家庭" />
     <category term="关于" />
     <category term="code" />
     <category term="小小说" />
     <category term="学校" />
-    <category term="家庭" />
-    <category term="gmod" />
-    <category term="lua" />
-    <category term="MYSQL" />
-    <category term=".net" />
-    <category term="ssh" />
     <category term="cs2" />
     <category term="游戏" />
+    <category term="gmod" />
+    <category term="lua" />
+    <category term=".net" />
+    <category term="MYSQL" />
+    <category term="ssh" />
+    <entry>
+        <id>http://buyi.dev/2024/mulit-cmd/</id>
+        <title>ConEmu: 一次性启动和托管多个控制台程序</title>
+        <link rel="alternate" href="http://buyi.dev/2024/mulit-cmd/"/>
+        <content type="html">&lt;p&gt;我写了好多软件都是控制台程序，让它们在 windows 任务栏里晃来晃去不是个好主意。&lt;br&gt;在实际工作中，我需要一个软件来托管这些控制台程序。   &lt;/p&gt;
+&lt;p&gt;我选择了 &lt;a href=&#34;https://conemu.github.io/&#34;&gt;ConEmu&lt;/a&gt; 来解决这个问题，我用它来实现：   &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;把各个控制台窗口变成标签页&lt;/li&gt;
+&lt;li&gt;一次性打开多个控制台程序&lt;/li&gt;
+&lt;li&gt;防误触关闭窗口，有个关闭前对话框&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;具体就不展开讲了，非常易用的一个控制台 UI 软件。   &lt;/p&gt;
+&lt;p&gt;一次性打开多个控制台程序需要使用以下启动参数：   &lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;cmd&#34;&gt;ConEmu64.exe -runlist ^&amp;gt;  cmd /k &amp;quot;D:\a.exe&amp;quot; ^|^|^| cmd /k &amp;quot;D:\b.exe&amp;quot; ^|^|^| cmd /k &amp;quot;D:\c.exe&amp;quot;  
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;cmd /k &lt;/code&gt; 的好处是支持在标签页里 ctrl+C 然后保留这个标签页。   &lt;/p&gt;
+&lt;p&gt;或者不套 cmd 来执行   &lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;cmd&#34;&gt;ConEmu64.exe -runlist ^&amp;gt; &amp;quot;D:\a.exe&amp;quot; ^|^|^| &amp;quot;D:\b.exe&amp;quot; ^|^|^| &amp;quot;D:\c.exe&amp;quot;  
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+        <category term="code" />
+        <updated>2024-08-25T11:15:48.000Z</updated>
+    </entry>
     <entry>
         <id>http://buyi.dev/2024/gmod-lua-utf8sub/</id>
         <title>GMod Lua utf8.sub 性能问题</title>
@@ -53,6 +76,7 @@
 &lt;p&gt;8358 个字符（11542 字节）的字符串裁掉一半就要花 10 秒。&lt;br&gt;这也 tmd 太慢了吧。   &lt;/p&gt;
 &lt;p&gt;&lt;code&gt;string.sub()&lt;/code&gt; 是像切割 byte[] 一样切割字符串， &lt;code&gt;utf8.sub()&lt;/code&gt; 是先把字符串拆成一个个 utf8 字符，然后再组。&lt;br&gt;非必要不使用，还是老老实实用 &lt;code&gt;string.sub&lt;/code&gt; 吧，开头有两个乱码字符没什么大不了的（   &lt;/p&gt;
 </content>
+        <category term="code" />
         <category term="gmod" />
         <category term="lua" />
         <updated>2024-08-04T16:00:00.000Z</updated>
@@ -298,7 +322,6 @@ Write-Host &amp;quot;输出文件夹 $dir2&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 </content>
         <category term="code" />
-        <category term=".net" />
         <category term="cs2" />
         <updated>2024-07-14T13:20:03.000Z</updated>
     </entry>
@@ -341,6 +364,7 @@ Write-Host &amp;quot;输出文件夹 $dir2&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;（其实更多是因为我要申请 *.abcd.com 这样的证书，而我不好直接操作 abcd.com 主页服务器。   &lt;/p&gt;
 </content>
+        <category term="code" />
         <updated>2024-07-02T12:33:35.000Z</updated>
     </entry>
     <entry>
@@ -1069,6 +1093,7 @@ Write-Host &amp;quot;输出文件夹 $dir2&amp;quot;
 &lt;h1 id=&#34;实体兼容性&#34;&gt;&lt;a href=&#34;#实体兼容性&#34; class=&#34;headerlink&#34; title=&#34;实体兼容性&#34;&gt;&lt;/a&gt;实体兼容性&lt;/h1&gt;&lt;p&gt;&lt;code&gt;snd_event_point&lt;/code&gt; 和 &lt;code&gt;ambient_generic&lt;/code&gt; 都可以正常播放 mega 和 music 。&lt;br&gt;但是在使用 &lt;code&gt;ambient_generic&lt;/code&gt; 的时候一定要注意正确勾选 &lt;code&gt;Is NOT Looped(32)&lt;/code&gt; （貌似绝大多数情况下都要勾上，不然不播放）    &lt;/p&gt;
 &lt;p&gt;&lt;code&gt;ambient_generic&lt;/code&gt; 实体无法干预声音脚本自己的音量和播放范围。   &lt;/p&gt;
 </content>
+        <category term="code" />
         <category term="cs2" />
         <updated>2024-03-13T04:26:06.000Z</updated>
     </entry>
@@ -1081,8 +1106,8 @@ Write-Host &amp;quot;输出文件夹 $dir2&amp;quot;
 &lt;p&gt;A: 是朋友还不让你和我语音？是朋友还不让你女装？是朋友还要你上交工资？&lt;br&gt;你做任何事情都是要偷偷摸摸的背着朋友的是吧。   &lt;/p&gt;
 &lt;p&gt;B: 要你管！滚。  &lt;/p&gt;
 </content>
-        <category term="小小说" />
         <category term="家庭" />
+        <category term="小小说" />
         <updated>2024-02-11T01:04:56.000Z</updated>
     </entry>
     <entry>
@@ -1317,36 +1342,5 @@ t1\t9 - Copy\New Text Document.txt
 </content>
         <category term="小小说" />
         <updated>2023-09-25T13:04:05.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://buyi.dev/2023/gmodswepsound/</id>
-        <title>GMod LUA 武器自动发射子弹的问题</title>
-        <link rel="alternate" href="http://buyi.dev/2023/gmodswepsound/"/>
-        <content type="html">&lt;p&gt;我发现我自己写的 LUA 脚本武器 SWEP 有个通病，就是按下左键或者右键能听到ti的一声（HL2没弹药的音效）。&lt;br&gt;如果写了 &lt;code&gt;AmmoType&lt;/code&gt; 并且我不实际发射弹药，也会看见和听见一颗 AR2 子弹射出去，但是没有任何伤害。   &lt;/p&gt;
-&lt;p&gt;以前我的尝试都没有成功，今天我终于找到了异常的根源。   &lt;/p&gt;
-&lt;p&gt;原因就是我只在 &lt;code&gt;SERVER&lt;/code&gt; 里添置了 &lt;code&gt;SWEP:PrimaryAttack()&lt;/code&gt; ，没有在 &lt;code&gt;CLIENT&lt;/code&gt; 里添置 &lt;code&gt;SWEP:PrimaryAttack()&lt;/code&gt; 。&lt;br&gt;如果不写 &lt;code&gt;SWEP:PrimaryAttack()&lt;/code&gt; ， GMod 就会自动按照默认设计，发射一颗子弹（仅仅是客户端的子弹，服务器根本不知道你射了）。同理还有 &lt;code&gt;SWEP:SecondaryAttack()&lt;/code&gt;。   &lt;/p&gt;
-&lt;p&gt;为什么今天发现了问题呢，是因为我在 &lt;code&gt;SHARED&lt;/code&gt; 加了一个 hook ，然后发现只有我的 &lt;code&gt;CLIENT&lt;/code&gt; 在报告发射。   &lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;lua&#34;&gt;hook.Add(
-    &amp;quot;EntityFireBullets&amp;quot;,
-    &amp;quot;abcdefgh12354895714896&amp;quot;,
-    function(ent, data)
-        if not IsValid(ent) then return end
-        print(ent, &amp;quot;发射了子弹&amp;quot;)
-    end
-)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;为什么以前没有发现，是因为以前我都是 &lt;code&gt;SWEP.Primary.ClipSize = -1&lt;/code&gt;。&lt;br&gt;以前我的子弹数量都是 -1 ，压根没有子弹，就只能听到HL2没弹药的音效。&lt;br&gt;然后我还tm不知道在哪里关这个音效。   &lt;/p&gt;
-&lt;p&gt;为什么别人家的武器都没有这个事情呢。&lt;br&gt;是因为别人都喜欢直接写在 &lt;code&gt;shared.lua&lt;/code&gt; 里面。   &lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;lua&#34;&gt;function SWEP:PrimaryAttack()
-    if CLIENT then return end
-end
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;可不叫离谱吗。   &lt;/p&gt;
-&lt;p&gt;气死我了。&lt;br&gt;所以特此写下本文。    &lt;/p&gt;
-</content>
-        <category term="code" />
-        <category term="gmod" />
-        <category term="lua" />
-        <updated>2023-09-04T03:49:43.000Z</updated>
     </entry>
 </feed>

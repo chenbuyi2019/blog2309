@@ -1,7 +1,7 @@
 ---
 title: 使用 DNS 记录通过 certbot 认证
 date: 2024-07-02 20:33:35
-tags: 
+tags: [code]
 ---
 由于我自己写的一些网站都没法直接兼容 Let's Encrypt [certbot](https://certbot.eff.org/) 的普通的认证方式。   
 我更倾向于使用 DNS TXT 认证来完成域名验证过程。   

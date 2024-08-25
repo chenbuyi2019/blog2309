@@ -3,7 +3,7 @@
   <head>
      
     <meta charset="UTF-8">
-    <title>GMod Lua utf8.sub 性能问题 - 陈布衣的博客</title>
+    <title>ConEmu: 一次性启动和托管多个控制台程序 - 陈布衣的博客</title>
     <link rel="shortcut icon" href="/static/img/icon.png">
     <link rel="icon" href="/static/img/icon.png" sizes="192x192"/>
     
@@ -15,7 +15,7 @@
 
     <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1"/>
     <meta property="og:site_name" content="陈布衣的博客">
-    <meta property="og:title" content="GMod Lua utf8.sub 性能问题"/>
+    <meta property="og:title" content="ConEmu: 一次性启动和托管多个控制台程序"/>
     
     <link rel="alternate" type="application/rss+xml" title="陈布衣的博客" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="陈布衣的博客" href="/atom.xml" />
@@ -54,60 +54,43 @@
     <main>
     <div class="wrap min">
         <section class="post-title">
-            <h2>GMod Lua utf8.sub 性能问题</h2>
+            <h2>ConEmu: 一次性启动和托管多个控制台程序</h2>
             <div class="post-meta">
-                <time class="date">2024 年 08 月 05 日</time>
+                <time class="date">2024 年 08 月 25 日</time>
             
             </div>
         </section>
         <article class="post-content">
-            <p>我本来在做一个简易的日志输出，日志字符串达到一定长度之后，就把字符串裁切只留下后面一半。<br>我不经意间使用了 <code>utf8.sub()</code> 来裁，然后我发现游戏过程中莫名其妙就卡顿几十秒，然后就恢复，也不像是我哪里有逻辑死循环。<br>经过反复 <code>print()</code> 来找卡顿的实际位置，我终于找到了原因，就是这个 log 裁切的问题。  </p>
-<p>Gmod Wiki 里说 <a target="_blank" rel="noopener" href="https://wiki.facepunch.com/gmod/utf8.sub">utf8.sub()</a> 比较吃性能，不要在逐帧运行的部分里使用。<br>可我没想到你这性能问题这么大啊。   </p>
-<p>下面是测试代码和测试结果：   </p>
-<pre><code class="lua">concommand.Add(
-    &quot;test1&quot;,
-    function()
-        local t1 = SysTime()
-        print(&quot;start&quot;)
-        local str1 = &quot;&quot;
-        for i = 1, 199 do
-            str1 = str1 .. &quot;甲甲甲abc abc== 123456123 甲甲甲 abc 123456123甲甲&quot;
-        end
-
-        local t2 = SysTime()
-        print(Format(&quot;拼字符串 用时 %.3f  文本长度: %d %d&quot;, t2 - t1, #str1, utf8.len(str1)))
-        local str2 = string.sub(str1, 9999)
-        local t3 = SysTime()
-        print(Format(&quot;string.sub 用时 %.3f  文本长度: %d&quot;, t3 - t2, #str2))
-        local str3 = utf8.sub(str1, 5000)
-        local t4 = SysTime()
-        print(Format(&quot;utf8.sub 用时 %.3f  文本长度: %d&quot;, t4 - t3, #str3))
-    end
-)
-
--- 本地单人游戏 intel i7-12650H
--- start
--- 拼字符串 用时 0.000  文本长度: 11542 8358
--- string.sub 用时 0.000  文本长度: 1544
--- utf8.sub 用时 10.642  文本长度: 4637
+            <p>我写了好多软件都是控制台程序，让它们在 windows 任务栏里晃来晃去不是个好主意。<br>在实际工作中，我需要一个软件来托管这些控制台程序。   </p>
+<p>我选择了 <a target="_blank" rel="noopener" href="https://conemu.github.io/">ConEmu</a> 来解决这个问题，我用它来实现：   </p>
+<ol>
+<li>把各个控制台窗口变成标签页</li>
+<li>一次性打开多个控制台程序</li>
+<li>防误触关闭窗口，有个关闭前对话框</li>
+</ol>
+<p>具体就不展开讲了，非常易用的一个控制台 UI 软件。   </p>
+<p>一次性打开多个控制台程序需要使用以下启动参数：   </p>
+<pre><code class="cmd">ConEmu64.exe -runlist ^&gt;  cmd /k &quot;D:\a.exe&quot; ^|^|^| cmd /k &quot;D:\b.exe&quot; ^|^|^| cmd /k &quot;D:\c.exe&quot;  
 </code></pre>
-<p>8358 个字符（11542 字节）的字符串裁掉一半就要花 10 秒。<br>这也 tmd 太慢了吧。   </p>
-<p><code>string.sub()</code> 是像切割 byte[] 一样切割字符串， <code>utf8.sub()</code> 是先把字符串拆成一个个 utf8 字符，然后再组。<br>非必要不使用，还是老老实实用 <code>string.sub</code> 吧，开头有两个乱码字符没什么大不了的（   </p>
+<p><code>cmd /k </code> 的好处是支持在标签页里 ctrl+C 然后保留这个标签页。   </p>
+<p>或者不套 cmd 来执行   </p>
+<pre><code class="cmd">ConEmu64.exe -runlist ^&gt; &quot;D:\a.exe&quot; ^|^|^| &quot;D:\b.exe&quot; ^|^|^| &quot;D:\c.exe&quot;  
+</code></pre>
 
         </article>
         <section class="post-near">
             <ul>
                 
-                    <li>上一篇: <a href="/2024/mulit-cmd/">ConEmu: 一次性启动和托管多个控制台程序</a></li>
+                    <li>上一篇: 看完啦 (つд⊂)</li>
                 
                 
-                    <li>下一篇: <a href="/2024/cs2-player-states/">Counter-Strike 2 玩家进服退服时的状态一览</a></li>
+                    <li>下一篇: <a href="/2024/gmod-lua-utf8sub/">GMod Lua utf8.sub 性能问题</a></li>
                 
             </ul>
         </section>
         
             <section class="post-tags">
-            <a class="-none-link" href="/tags/code/" rel="tag">code</a><a class="-none-link" href="/tags/gmod/" rel="tag">gmod</a><a class="-none-link" href="/tags/lua/" rel="tag">lua</a>
+            <a class="-none-link" href="/tags/code/" rel="tag">code</a>
             </section>
         
     

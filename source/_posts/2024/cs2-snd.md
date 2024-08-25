@@ -1,7 +1,7 @@
 ---
 title: Counter-Strike 2 音频自定义编写与编译
 date: 2024-03-13 12:26:06
-tags: [cs2]
+tags: [cs2,code]
 ---
 # 文件结构
 需要安装 cs2 workshop tools ，然后新建一个空白地图项目，比如叫 `xxxx`。   

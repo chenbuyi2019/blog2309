@@ -1,7 +1,7 @@
 ---
 title: "PowerShell 脚本: ffmpeg 批量压缩音频"
 date: 2024-07-14 21:20:03
-tags: [code,cs2,.net]
+tags: [code,cs2]
 ---
 前置需求：   
 - 在环境 PATH 路径里有 [ffmpeg](https://ffmpeg.org/) 程序  

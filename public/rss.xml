@@ -5,24 +5,48 @@
         <link>http://buyi.dev</link>
         <description></description>
         <language>zh</language>
-        <pubDate>Mon, 05 Aug 2024 00:00:00 +0800</pubDate>
-        <lastBuildDate>Mon, 05 Aug 2024 00:00:00 +0800</lastBuildDate>
+        <pubDate>Sun, 25 Aug 2024 19:15:48 +0800</pubDate>
+        <lastBuildDate>Sun, 25 Aug 2024 19:15:48 +0800</lastBuildDate>
+        <category>家庭</category>
         <category>关于</category>
         <category>code</category>
         <category>小小说</category>
         <category>学校</category>
-        <category>家庭</category>
-        <category>gmod</category>
-        <category>lua</category>
-        <category>MYSQL</category>
-        <category>.net</category>
-        <category>ssh</category>
         <category>cs2</category>
         <category>游戏</category>
+        <category>gmod</category>
+        <category>lua</category>
+        <category>.net</category>
+        <category>MYSQL</category>
+        <category>ssh</category>
+        <item>
+            <guid isPermalink="true">http://buyi.dev/2024/mulit-cmd/</guid>
+            <title>ConEmu: 一次性启动和托管多个控制台程序</title>
+            <link>http://buyi.dev/2024/mulit-cmd/</link>
+            <category>code</category>
+            <pubDate>Sun, 25 Aug 2024 19:15:48 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;我写了好多软件都是控制台程序，让它们在 windows 任务栏里晃来晃去不是个好主意。&lt;br&gt;在实际工作中，我需要一个软件来托管这些控制台程序。   &lt;/p&gt;
+&lt;p&gt;我选择了 &lt;a href=&#34;https://conemu.github.io/&#34;&gt;ConEmu&lt;/a&gt; 来解决这个问题，我用它来实现：   &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;把各个控制台窗口变成标签页&lt;/li&gt;
+&lt;li&gt;一次性打开多个控制台程序&lt;/li&gt;
+&lt;li&gt;防误触关闭窗口，有个关闭前对话框&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;具体就不展开讲了，非常易用的一个控制台 UI 软件。   &lt;/p&gt;
+&lt;p&gt;一次性打开多个控制台程序需要使用以下启动参数：   &lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;cmd&#34;&gt;ConEmu64.exe -runlist ^&amp;gt;  cmd /k &amp;quot;D:\a.exe&amp;quot; ^|^|^| cmd /k &amp;quot;D:\b.exe&amp;quot; ^|^|^| cmd /k &amp;quot;D:\c.exe&amp;quot;  
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;cmd /k &lt;/code&gt; 的好处是支持在标签页里 ctrl+C 然后保留这个标签页。   &lt;/p&gt;
+&lt;p&gt;或者不套 cmd 来执行   &lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;cmd&#34;&gt;ConEmu64.exe -runlist ^&amp;gt; &amp;quot;D:\a.exe&amp;quot; ^|^|^| &amp;quot;D:\b.exe&amp;quot; ^|^|^| &amp;quot;D:\c.exe&amp;quot;  
+&lt;/code&gt;&lt;/pre&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://buyi.dev/2024/gmod-lua-utf8sub/</guid>
             <title>GMod Lua utf8.sub 性能问题</title>
             <link>http://buyi.dev/2024/gmod-lua-utf8sub/</link>
+            <category>code</category>
             <category>gmod</category>
             <category>lua</category>
             <pubDate>Mon, 05 Aug 2024 00:00:00 +0800</pubDate>
@@ -245,7 +269,6 @@
             <title>PowerShell 脚本: ffmpeg 批量压缩音频</title>
             <link>http://buyi.dev/2024/ffmpeg-ps1-source/</link>
             <category>code</category>
-            <category>.net</category>
             <category>cs2</category>
             <pubDate>Sun, 14 Jul 2024 21:20:03 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;前置需求：   &lt;/p&gt;
@@ -339,6 +362,7 @@ Write-Host &amp;quot;输出文件夹 $dir2&amp;quot;
             <guid isPermalink="true">http://buyi.dev/2024/lets-encrypt-dns/</guid>
             <title>使用 DNS 记录通过 certbot 认证</title>
             <link>http://buyi.dev/2024/lets-encrypt-dns/</link>
+            <category>code</category>
             <pubDate>Tue, 02 Jul 2024 20:33:35 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;由于我自己写的一些网站都没法直接兼容 Let’s Encrypt &lt;a href=&#34;https://certbot.eff.org/&#34;&gt;certbot&lt;/a&gt; 的普通的认证方式。&lt;br&gt;我更倾向于使用 DNS TXT 认证来完成域名验证过程。&lt;br&gt;好处就是根本不需要一台公网服务器，有台电脑就行。也不用干预正在运行的服务器。&lt;br&gt;坏处就是每次等 DNS 解析有点难等，一旦时机没把握好就得重来。    &lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;certbot certonly --preferred-challenges dns -d &amp;quot;*.abcd.com&amp;quot; -d &amp;quot;abcd.com&amp;quot; --manual
@@ -954,6 +978,7 @@ Write-Host &amp;quot;输出文件夹 $dir2&amp;quot;
             <guid isPermalink="true">http://buyi.dev/2024/cs2-snd/</guid>
             <title>Counter-Strike 2 音频自定义编写与编译</title>
             <link>http://buyi.dev/2024/cs2-snd/</link>
+            <category>code</category>
             <category>cs2</category>
             <pubDate>Wed, 13 Mar 2024 12:26:06 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;文件结构&#34;&gt;&lt;a href=&#34;#文件结构&#34; class=&#34;headerlink&#34; title=&#34;文件结构&#34;&gt;&lt;/a&gt;文件结构&lt;/h1&gt;&lt;p&gt;需要安装 cs2 workshop tools ，然后新建一个空白地图项目，比如叫 &lt;code&gt;xxxx&lt;/code&gt;。&lt;br&gt;源文件放在 &lt;code&gt;common\Counter-Strike Global Offensive\content\csgo_addons\xxxx&lt;/code&gt; 里。&lt;br&gt;其中 &lt;code&gt;soundevents&lt;/code&gt; 文件夹里存放着声音脚本文件 &lt;code&gt;.vsndevts&lt;/code&gt; ，可以用，&lt;br&gt;&lt;code&gt;sounds&lt;/code&gt; 文件夹里放着具体的音频源文件，比如 &lt;code&gt;.mp3 .wav&lt;/code&gt; 。  &lt;/p&gt;
@@ -1079,8 +1104,8 @@ Write-Host &amp;quot;输出文件夹 $dir2&amp;quot;
             <guid isPermalink="true">http://buyi.dev/2024/notfriend/</guid>
             <title>小小说：要你管！</title>
             <link>http://buyi.dev/2024/notfriend/</link>
-            <category>小小说</category>
             <category>家庭</category>
+            <category>小小说</category>
             <pubDate>Sun, 11 Feb 2024 09:04:56 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;A: 你和你父母更像朋友还是敌人？   &lt;/p&gt;
 &lt;p&gt;B: 更像朋友。   &lt;/p&gt;
@@ -1319,37 +1344,6 @@ t1\t9 - Copy\New Text Document.txt
 &lt;p&gt;梁：“校长，那这..”   &lt;/p&gt;
 &lt;p&gt;校长：“梁主任，我们的前程重要还是这个无名氏重要啊？全校的监控你爱删多少删多少，都不是事。”   &lt;/p&gt;
 &lt;p&gt;就这样，A失踪了。A 的家人去寻找过A，但是没有人知道A到底在哪里。    &lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://buyi.dev/2023/gmodswepsound/</guid>
-            <title>GMod LUA 武器自动发射子弹的问题</title>
-            <link>http://buyi.dev/2023/gmodswepsound/</link>
-            <category>code</category>
-            <category>gmod</category>
-            <category>lua</category>
-            <pubDate>Mon, 04 Sep 2023 11:49:43 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;我发现我自己写的 LUA 脚本武器 SWEP 有个通病，就是按下左键或者右键能听到ti的一声（HL2没弹药的音效）。&lt;br&gt;如果写了 &lt;code&gt;AmmoType&lt;/code&gt; 并且我不实际发射弹药，也会看见和听见一颗 AR2 子弹射出去，但是没有任何伤害。   &lt;/p&gt;
-&lt;p&gt;以前我的尝试都没有成功，今天我终于找到了异常的根源。   &lt;/p&gt;
-&lt;p&gt;原因就是我只在 &lt;code&gt;SERVER&lt;/code&gt; 里添置了 &lt;code&gt;SWEP:PrimaryAttack()&lt;/code&gt; ，没有在 &lt;code&gt;CLIENT&lt;/code&gt; 里添置 &lt;code&gt;SWEP:PrimaryAttack()&lt;/code&gt; 。&lt;br&gt;如果不写 &lt;code&gt;SWEP:PrimaryAttack()&lt;/code&gt; ， GMod 就会自动按照默认设计，发射一颗子弹（仅仅是客户端的子弹，服务器根本不知道你射了）。同理还有 &lt;code&gt;SWEP:SecondaryAttack()&lt;/code&gt;。   &lt;/p&gt;
-&lt;p&gt;为什么今天发现了问题呢，是因为我在 &lt;code&gt;SHARED&lt;/code&gt; 加了一个 hook ，然后发现只有我的 &lt;code&gt;CLIENT&lt;/code&gt; 在报告发射。   &lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;lua&#34;&gt;hook.Add(
-    &amp;quot;EntityFireBullets&amp;quot;,
-    &amp;quot;abcdefgh12354895714896&amp;quot;,
-    function(ent, data)
-        if not IsValid(ent) then return end
-        print(ent, &amp;quot;发射了子弹&amp;quot;)
-    end
-)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;为什么以前没有发现，是因为以前我都是 &lt;code&gt;SWEP.Primary.ClipSize = -1&lt;/code&gt;。&lt;br&gt;以前我的子弹数量都是 -1 ，压根没有子弹，就只能听到HL2没弹药的音效。&lt;br&gt;然后我还tm不知道在哪里关这个音效。   &lt;/p&gt;
-&lt;p&gt;为什么别人家的武器都没有这个事情呢。&lt;br&gt;是因为别人都喜欢直接写在 &lt;code&gt;shared.lua&lt;/code&gt; 里面。   &lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;lua&#34;&gt;function SWEP:PrimaryAttack()
-    if CLIENT then return end
-end
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;可不叫离谱吗。   &lt;/p&gt;
-&lt;p&gt;气死我了。&lt;br&gt;所以特此写下本文。    &lt;/p&gt;
  ]]></description>
         </item>
     </channel>
