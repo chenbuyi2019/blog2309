@@ -27,3 +27,4 @@ ConEmu64.exe -runlist ^> "D:\a.exe" ^|^|^| "D:\b.exe" ^|^|^| "D:\c.exe"
 ```
 
 你说为什么不用 Windows Terminal ，答案是服务器的 windows 不方便安装 windows store app  。   
+而且 ConEmu 还支持把现有的控制台窗口 attach 塞进去。   
