@@ -36,6 +36,7 @@ tags: [游戏]
 
 # Red Alert 1
 2024 年 1 月 24 日，红色警戒1 苏军线  [微博](https://m.weibo.cn/status/NDlcGjaYP)   
+2024 年 8 月 27 日，红色警戒1 盟军线  [微博](https://m.weibo.cn/status/OufZq8Apg)   
 
 # Half-Life 1
 2023 年 1 月 25 日，[微博](https://m.weibo.cn/status/MpXEugiJj)   
