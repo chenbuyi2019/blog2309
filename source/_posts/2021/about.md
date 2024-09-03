@@ -20,6 +20,27 @@ chenbuyi2019艾特outlook.com
 
 现在，是一名光荣的自力更生的昆明市市民。   
 
+# StopWatch
+布衣已经离家出走 <span id="tm1"> </span> 。   
+
+<script>
+
+function set(id, st) {
+    var w = document.getElementById(id);
+    var now = new Date();
+    const day = 86400;
+    var passed = (now.getTime() - st.getTime()) / 1000;
+    var days = Math.floor(passed / day);
+    var sec = Math.floor(passed - days * day);
+    w.innerText = `${days} 天 ${sec} 秒`;
+}
+setInterval(() => {
+    set("tm1", new Date(2021, 1, 27, 0, 0, 0));
+}, 1);
+
+</script>
+
+
 # 我的设备
 布衣现在使用的是神舟笔记本 战神S8 。   
 
