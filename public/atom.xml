@@ -6,16 +6,16 @@
     <updated>2024-08-25T11:15:48.000Z</updated>
     <category term="家庭" />
     <category term="code" />
-    <category term="关于" />
     <category term="小小说" />
+    <category term="关于" />
     <category term="学校" />
-    <category term=".net" />
-    <category term="gmod" />
-    <category term="lua" />
-    <category term="MYSQL" />
-    <category term="ssh" />
     <category term="cs2" />
     <category term="游戏" />
+    <category term="gmod" />
+    <category term="lua" />
+    <category term=".net" />
+    <category term="MYSQL" />
+    <category term="ssh" />
     <entry>
         <id>http://buyi.dev/2024/mulit-cmd/</id>
         <title>ConEmu: 一次性启动和托管多个控制台程序</title>

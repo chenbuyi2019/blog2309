@@ -17,11 +17,13 @@ chenbuyi2019艾特outlook.com
 2013年，注册 Steam 。   
 2019年，本科大一退学，后来确诊抑郁症。   
 2021年，离家出走，拉黑血亲。定居在云南省昆明市。   
+2024年，入籍昆明市。   
 
 现在，是一名光荣的自力更生的昆明市市民。   
 
 # StopWatch
 布衣已经离家出走 <span id="tm1"> </span> 。   
+布衣已经入籍昆明市 <span id="tm2"> </span> 。   
 
 <script>
 
@@ -35,7 +37,8 @@ function set(id, st) {
     w.innerText = `${days} 天 ${sec} 秒`;
 }
 setInterval(() => {
-    set("tm1", new Date(2021, 1, 27, 0, 0, 0));
+    set("tm1", new Date("2024-01-27T00:00:00"));
+    set("tm2", new Date("2024-09-04T09:40:00"));
 }, 1);
 
 </script>
