@@ -3,19 +3,45 @@
     <id>http://buyi.dev</id>
     <title>陈布衣的博客</title>
     <link href="http://buyi.dev" />
-    <updated>2024-08-25T11:15:48.000Z</updated>
+    <updated>2024-09-16T09:38:58.000Z</updated>
+    <category term="小小说" />
     <category term="家庭" />
     <category term="code" />
-    <category term="关于" />
-    <category term="小小说" />
+    <category term="学校" />
     <category term=".net" />
+    <category term="关于" />
     <category term="gmod" />
     <category term="lua" />
-    <category term="MYSQL" />
     <category term="ssh" />
-    <category term="学校" />
     <category term="cs2" />
+    <category term="MYSQL" />
     <category term="游戏" />
+    <entry>
+        <id>http://buyi.dev/2024/cs2-client-log-parse/</id>
+        <title>反恐精英2：我是怎么掉线的</title>
+        <link rel="alternate" href="http://buyi.dev/2024/cs2-client-log-parse/"/>
+        <content type="html">&lt;p&gt;司马 Valve 给 Counter-Strike 2 更新了个啥玩意之后，玩家从服务器掉线就不知道理由了。&lt;br&gt;本来应该写掉线理由的框变成了个空白框。   &lt;/p&gt;
+&lt;p&gt;特地做此工具，用来解析游戏控制台日志，从而知道掉线给的是啥理由。   &lt;/p&gt;
+&lt;p&gt;请在掉线后，全选复制你的控制台日志，然后粘贴到这里，并点击解析。  &lt;/p&gt;
+&lt;div&gt;
+
+&lt;textarea id=&#34;txtInput&#34;&gt;
+&lt;/textarea&gt;
+
+&lt;p&gt;&lt;button id=&#34;btnParse&#34;&gt;解析&lt;/button&gt;&lt;/p&gt;
+&lt;div id=&#34;divResult&#34;&gt;
+&lt;/div&gt;
+
+&lt;script src=&#34;/script/cs2-client-log-parse.js&#34;&gt;&lt;/script&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;源码&lt;a href=&#34;https://github.com/chenbuyi2019/blog2309/blob/master/script/cs2-client-log-parse/main.ts&#34;&gt;点我&lt;/a&gt;。   &lt;/p&gt;
+</content>
+        <category term="code" />
+        <category term="cs2" />
+        <updated>2024-09-16T09:38:58.000Z</updated>
+    </entry>
     <entry>
         <id>http://buyi.dev/2024/mulit-cmd/</id>
         <title>ConEmu: 一次性启动和托管多个控制台程序</title>
@@ -1107,8 +1133,8 @@ Write-Host &amp;quot;输出文件夹 $dir2&amp;quot;
 &lt;p&gt;A: 是朋友还不让你和我语音？是朋友还不让你女装？是朋友还要你上交工资？&lt;br&gt;你做任何事情都是要偷偷摸摸的背着朋友的是吧。   &lt;/p&gt;
 &lt;p&gt;B: 要你管！滚。  &lt;/p&gt;
 </content>
-        <category term="家庭" />
         <category term="小小说" />
+        <category term="家庭" />
         <updated>2024-02-11T01:04:56.000Z</updated>
     </entry>
     <entry>
@@ -1310,38 +1336,5 @@ t1\t9 - Copy\New Text Document.txt
 </content>
         <category term="code" />
         <updated>2023-10-18T12:22:07.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://buyi.dev/2023/deathinuniversity/</id>
-        <title>小小说：死在大学里</title>
-        <link rel="alternate" href="http://buyi.dev/2023/deathinuniversity/"/>
-        <content type="html">&lt;p&gt;A 已经大学毕业几年了，不知道为什么，今天A醒来发现自己在一个陌生的环境里。&lt;br&gt;这里是一所大学，A知道这所大学在他居住的城市里，A决定离开这里然后回家。   &lt;/p&gt;
-&lt;p&gt;A 沿着大路走到了大学门口，但是保安拦住了他。   &lt;/p&gt;
-&lt;p&gt;保安：“你是老师还是学生？你的身份卡呢？”    &lt;/p&gt;
-&lt;p&gt;A ：“我是社会人士，我没有身份卡。”   &lt;/p&gt;
-&lt;p&gt;保安：“胡说，我们这里每个人都有身份卡或校牌，没有校长邀请也根本不会有任何社会人士，你没有就不准出去，而且现在是上课期间，赶快回到你的教室。”   &lt;/p&gt;
-&lt;p&gt;A ：“大学居然还有这种出门要身份卡的道理？这是什么狗屁大学！”   &lt;/p&gt;
-&lt;p&gt;保安给了A一拳，然后把A拽到了主任室。   &lt;/p&gt;
-&lt;p&gt;学校的一个什么高官来了，对A说：“我是梁主任，你好好交代一下你做了什么。”    &lt;/p&gt;
-&lt;p&gt;A：“我说了我是社会人士，我不知道为什么我来到了大学里面，我也没有身份卡。”    &lt;/p&gt;
-&lt;p&gt;梁：“我们大学严格执行封闭式管理，连外卖和快递都进不来。我认识全校每个教职工，你不是老师，你只能是学生。”   &lt;/p&gt;
-&lt;p&gt;A：“我说了我是学校外面来的，我不是里面的学生。”    &lt;/p&gt;
-&lt;p&gt;梁挥挥手，叫保安把A又打了一顿。   &lt;/p&gt;
-&lt;p&gt;梁：“我再给你一次机会，你不说你是哪个班的学生的话我就打断你的腿。全城的人都知道我们大学的管理不是好惹的。”    &lt;/p&gt;
-&lt;p&gt;A： “你敢不敢报警，叫警察来查查我是不是学生。”   &lt;/p&gt;
-&lt;p&gt;梁：“你还想报警？弄坏了大学的名声你负责的起吗？”    &lt;/p&gt;
-&lt;p&gt;梁把A的照片发到了班主任群里，问这是哪个班的。同时把A锁在了禁闭室里。   &lt;/p&gt;
-&lt;p&gt;第二天梁才回来，没有一个班主任表示认识照片这个人。也没有一个班主任表示有学生走失。   &lt;/p&gt;
-&lt;p&gt;这下梁慌了，赶快打开禁闭室的门，发现A已经昏过去了，可能是冻的也可能是饿的。   &lt;/p&gt;
-&lt;p&gt;梁又赶快把门重新锁上，然后去找校长，说明了情况。   &lt;/p&gt;
-&lt;p&gt;校长：“你干脆就把他彻底杀了，尸体随便分尸或者泡盐酸或者捐了做标本。”   &lt;/p&gt;
-&lt;p&gt;梁：“为什么啊，这么着急就把他杀了？”    &lt;/p&gt;
-&lt;p&gt;校长：“他要是个学生或者学生家长，我们捏着他的毕业证。可他是个社会人士，你有他的软肋吗？他出去把我们做的事情说给电视台怎么办？”   &lt;/p&gt;
-&lt;p&gt;梁：“校长，那这..”   &lt;/p&gt;
-&lt;p&gt;校长：“梁主任，我们的前程重要还是这个无名氏重要啊？全校的监控你爱删多少删多少，都不是事。”   &lt;/p&gt;
-&lt;p&gt;就这样，A失踪了。A 的家人去寻找过A，但是没有人知道A到底在哪里。    &lt;/p&gt;
-</content>
-        <category term="小小说" />
-        <updated>2023-09-25T13:04:05.000Z</updated>
     </entry>
 </feed>
