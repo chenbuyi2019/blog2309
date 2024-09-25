@@ -10,7 +10,7 @@ tags: 关于
 联系我，请发 email 到：   
 chenbuyi2019艾特outlook.com   
 
-头像来自： [心臓弱眞君](https://twitter.com/xinzoruo/status/1767520681732755540)    
+头像来自： [明日方舟](https://ak.hypergryph.com/)    
 
 # 简史
 2001年，在浙江省出生。   
@@ -53,7 +53,3 @@ setInterval(() => {
 - 15.6 英寸 IPS屏幕 1920x1080 144hz
 - NVME SSD 500GB + 1000GB
 - Windows 11 Home
-
-# 女装
-
-![](/image/dress.webp)   
