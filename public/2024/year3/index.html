@@ -3,7 +3,7 @@
   <head>
      
     <meta charset="UTF-8">
-    <title>使用 VSCode+SSH 实现Windows远程写代码 - 陈布衣的博客</title>
+    <title>离家出走3.5年的感慨 - 陈布衣的博客</title>
     <link rel="shortcut icon" href="/static/img/icon.png">
     <link rel="icon" href="/static/img/icon.png" sizes="192x192"/>
     
@@ -15,7 +15,7 @@
 
     <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1"/>
     <meta property="og:site_name" content="陈布衣的博客">
-    <meta property="og:title" content="使用 VSCode+SSH 实现Windows远程写代码"/>
+    <meta property="og:title" content="离家出走3.5年的感慨"/>
     
     <link rel="alternate" type="application/rss+xml" title="陈布衣的博客" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="陈布衣的博客" href="/atom.xml" />
@@ -54,61 +54,53 @@
     <main>
     <div class="wrap min">
         <section class="post-title">
-            <h2>使用 VSCode+SSH 实现Windows远程写代码</h2>
+            <h2>离家出走3.5年的感慨</h2>
             <div class="post-meta">
-                <time class="date">2023 年 08 月 14 日</time>
+                <time class="date">2024 年 10 月 03 日</time>
             
             </div>
         </section>
         <article class="post-content">
-            <p>我的情况：经常要在远程 Windows 上执行修改 LUA 的操作。我自己又没有好的宽带，使用 RDP 经常会和其他人起冲突。   </p>
-<p>解决方案：在服务器上安装 OpenSSH 然后在本地用 vscode 远程进去进行写代码。   </p>
-<h1 id="在服务器安装-OpenSSH"><a href="#在服务器安装-OpenSSH" class="headerlink" title="在服务器安装 OpenSSH"></a>在服务器安装 OpenSSH</h1><p>先下载<a target="_blank" rel="noopener" href="https://github.com/PowerShell/Win32-OpenSSH/releases">Win32-OpenSSH 的 MSI 安装包</a>，然后安装到服务器。<br>（直接下最新版就行，我找不到它的正式版 release）   </p>
-<h2 id="如果服务器是-Administrator-用户"><a href="#如果服务器是-Administrator-用户" class="headerlink" title="如果服务器是 Administrator 用户"></a>如果服务器是 Administrator 用户</h2><p>如果服务器运行的是<strong>真高级管理员</strong> <code>Administrator</code> 用户，<br>就这样操作：    </p>
-<p>在服务端上找到文件夹 <code>C:\ProgramData\ssh\</code><br>建立一个空白文件 <code>administrators_authorized_keys</code> ，在里面填上一行自己的公钥。<br>如果需要多个公钥就一行一个。   </p>
-<h2 id="如果服务器是普通的管理员用户"><a href="#如果服务器是普通的管理员用户" class="headerlink" title="如果服务器是普通的管理员用户"></a>如果服务器是普通的管理员用户</h2><p>还是找到 <code>C:\ProgramData\ssh\sshd_config</code> 配置文件<br>在里面注释掉最后两行：   </p>
-<pre><code>#Match Group administrators
-#       AuthorizedKeysFile __PROGRAMDATA__/ssh/administrators_authorized_keys
-</code></pre>
-<p>其次是去 <code>C:\Users\用户名\.ssh</code> 文件夹，新建一个空白文件叫 <code>authorized_keys</code> ，在里面填上一行自己的公钥。<br>如果需要多个公钥就一行一个。   </p>
-<h2 id="禁用密码登录"><a href="#禁用密码登录" class="headerlink" title="禁用密码登录"></a>禁用密码登录</h2><p>如果需要彻底禁用密码登录 ，需要修改配置文件 <code>C:\ProgramData\ssh\sshd_config</code> 。<br>里面找到并修改设置为 <code>PasswordAuthentication no</code> 。   </p>
-<p>如果没有禁用密码访问，可能每次连接的时候都要输入服务端上对应用户的 Windows 登录密码。    </p>
-<h1 id="重启服务"><a href="#重启服务" class="headerlink" title="重启服务"></a>重启服务</h1><p>接下来用服务端的任务管理器重启 <code>sshd</code> 服务。<br>每次修改配置之后都应该重启一次服务。   </p>
-<h1 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h1><p>在自己的电脑上运行命令行指令： <code>ssh username@ip</code><br>需要加端口就是 <code>ssh username@ip -p1234</code><br>username 指的是目标服务器上的用户，比如 <code>Administrator</code> 或者 <code>abc</code> ，不是本机用户名。   </p>
-<p>如果连接成功，则可以进入下一步。   </p>
-<h1 id="VSCode-Remote"><a href="#VSCode-Remote" class="headerlink" title="VSCode Remote"></a>VSCode Remote</h1><p>安装 vscode 扩展：<code>ms-vscode-remote.remote-ssh</code><br>安装之后点击 vscode 左下角的按钮，就可以 <code>Connect To Host</code> 了。<br>他默认读取的是 <code>C:\Users\用户名\.ssh\config</code> 这个配置文件。<br>可以在里面给你的连接起备注名。   </p>
-<p>连接之后如果需要经常重新打开指定的文件夹，可以 <code>Save Workspace As </code> 然后选择 <code>To Local</code> 。<br>这样从本地就可以直接双击打开 <code>.code-workspace</code> 文件进入远程环境了。   </p>
-<p>连接完成之后， vscode 会在远程服务器安装 code-server 作为一个后台辅助。<br>也就意味着可以安装vscode扩展到服务器上，并且扩展数据还是保存在服务器上的。   </p>
-<h1 id="系统要求"><a href="#系统要求" class="headerlink" title="系统要求"></a>系统要求</h1><p>VSCode Remote 需要 <code>Windows 10 / Server 2016/2019 (1803+) </code> 。<br>老版本上的 windows 无法安装 code server ，但是部分版本依然可以安装 Win32-OpenSSH 。   </p>
-<h1 id="垃圾"><a href="#垃圾" class="headerlink" title="垃圾"></a>垃圾</h1><p>vscode 有时候会抽风，在服务器电脑里留下大量重复的垃圾文件，可能占据C盘十几GB。<br>检测一下C盘的 <code>C:\Users\用户名\.vscode-server\bin</code> 文件夹。<br>code server 会把老版本全部留在里面。   </p>
-<p>以及 <code>C:\Users\用户名\AppData\Local\Temp</code> 文件夹。<br>code server 会把老版本、以及时不时抽风重装的文件全部留在里面，以七八个字母加一个小数点再加三个字母作为文件夹名字。<br>比如 <code>jy4wbtpz.qef</code> ，里面你能找到 <code>node.exe</code> 。   </p>
-<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>如果遇到其他麻烦，请参阅： </p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows-server/administration/openssh/openssh_server_configuration">微软官网说明</a> </li>
-<li><a target="_blank" rel="noopener" href="https://github.com/PowerShell/Win32-OpenSSH/wiki">Github wiki</a>   </li>
-<li><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh">VSCode 扩展说明</a></li>
-</ul>
-<p>或者也可以开启 ssh 的日志。<br>找到 <code>sshd_config</code> 的 <code># Logging</code> 下面两行，改成这样：   </p>
-<pre><code>SyslogFacility LOCAL0
-LogLevel DEBUG3
-</code></pre>
-<p>日志会输出在 <code>C:\ProgramData\ssh\logs</code> 里面。<br>问题解决了之后最好把日志注释掉，不然浪费C盘空间。   
- </p>
+            <p>不知不觉又过了一年。<br>上一篇： <a href="/2023/year2/">离家出走2.5年的感慨</a>    </p>
+<h1 id="啃老是不对的"><a href="#啃老是不对的" class="headerlink" title="啃老是不对的"></a>啃老是不对的</h1><p>如果这个人要求先打游戏过舒服日子，也不去上班，就靠啃老（生活费）。<br>那大家会嫌弃他，觉得他的父母应该教育他，甚至打他。   </p>
+<p>如果这个人要求先考研读研或者出国留学，也不去上班，就靠啃老（上学的开支）。<br>那大家可能会嫌弃他，觉得他的父母太溺爱，应该让子女自己解决成年毕业后的开支。   </p>
+<p>如果这个人要求先变装和做变性手术，也不去上班，就靠啃老（变性手术费）。<br>大家会说是这个父母不支持子女的理想，是父母想控制子女。   </p>
+<p>说实话我觉得这很搞笑。    </p>
+<h1 id="注意权力的来源"><a href="#注意权力的来源" class="headerlink" title="注意权力的来源"></a>注意权力的来源</h1><p>那些“暴力机构”，比如非正规的矫正机构、网瘾治疗学校、不良少年教育夏令营。<br>或者比如正规的精神病医院强制住院。   </p>
+<p>所有这些“暴力机构”，都有一个前提，就是有人付钱。<br>如果你家人不付钱给这些暴力机构，人家才懒得管你呢。   </p>
+<p>看准了，谁才是你真正的敌人。   </p>
+<p>当然了，很可惜，很多受害者，宁可起诉那些机构那些教官，也不起诉自己父母。   </p>
+<p>新闻：<a target="_blank" rel="noopener" href="https://m.weibo.cn/status/Oyub2hgvP">被父母送精神病院接收7次电击治疗，一位跨性别者决定起诉医院</a>   </p>
+<p>我对这个事情的评价是：<br>为什么就不能先养活自己搬出去住，再考虑女装和变性呢？<br>我看见的所有悲伤的例子都是把女装和变性放在前面，养活自己放在后面，<br>住在父母身边还渴望父母供你变性。<br>明知道自己不传统，却又渴求传统的支持。这好吗？   </p>
+<h1 id="通过“和谈”，我拿到了昆明户口"><a href="#通过“和谈”，我拿到了昆明户口" class="headerlink" title="通过“和谈”，我拿到了昆明户口"></a>通过“和谈”，我拿到了昆明户口</h1><p>户口都迁出来了，我和我父母都不是一个户口簿的人了。<br>我现在自己是昆明人，是省会城市的常住人口了，不是乡下来的流动人口了。<br>我有自己一个户口簿，户主就是我自己。<br>以后我就是办身份证、出国、考证甚至结婚都不需要父母同意了。（我不想结婚）   </p>
+<p>我很爱这个城市，<br>在这我有了工作收入，我献过了血，有了积蓄，<br>有了自己的门牌号，有了安全感，<br>还学会了骑自行车和电动车，有了自己的自行车，<br>还参与了政府安排的免费体检。    </p>
+<p>很感谢政府和每个帮助我的人。   </p>
+<p>当然迁户口，是需要拿到老户口簿的，我和我的家人进行了一定程度的“和谈”。<br>在保证了我的绝对安全的情况下，我让他们把户口簿寄过来到代收地址的。<br>我当然不会允许血亲靠近我，他们要是敢来昆明我就做点不一样的。   </p>
+<p>我的安全屋，永不欢迎任何和我算家属或亲戚的人。   </p>
+<p>而且这让我离家出走的状态产生了一定微妙的变化。<br>我现在住在派出所看过的承认的合法住所里，身份证上都写着我现在住的地方，<br>某种意义上就不是离家出走了，我一直在家。    </p>
+<p>当然我依然会说我现在是离家出走，因为没有家人不能叫家。有了家人就有家庭暴力。   </p>
+<h1 id="注意安全"><a href="#注意安全" class="headerlink" title="注意安全"></a>注意安全</h1><p>生命和财产安全是非常重要的。<br>和网友见面的时候要选择有监控的公共场合，比如餐厅、地铁站。   </p>
+<p>不要轻易借给别人钱。如果这个朋友会因为不借钱就嫌弃你，他就不配做你的朋友。<br>反之，如果要找别人借钱，思考一下为什么要给别人添麻烦，这钱是非借不可吗。   </p>
+<p>骗子还是很多的。<br>既然我遇到过，我朋友也遇到过，我们也都损失过。   </p>
+<h1 id="找工作好难"><a href="#找工作好难" class="headerlink" title="找工作好难"></a>找工作好难</h1><p>是啊，好难。如果我突然失业或者辞职，重新开始找工作，也估计很难找到合适的新工作。   </p>
+<p>我有两个好朋友，都是经人介绍去了乡下的地方上班。<br>唉，就是那种只能住宿舍，下班也是只能在厂区及周边的工作。<br>这样，你下班之后可能就会很压抑，你喝个奶茶都可能困难，更别提偶尔想吃顿麦当劳了。    </p>
+<p>虽然说可能是娇生惯养了一点，但是我小时候就住在没有麦当劳，没有大医院，没有方便交通的小县城里。<br>来了大城市我才明白，人不用做那些苦力农活，也是能活得很好的，很幸福的。<br>当你在大城市大医院排队嫌慢的时候，想想那些还有从乡下坐大巴赶上来看病的，你比他们幸福多了。  </p>
+<p>找工作我个人还是觉得，能不跑远就不跑远吧。<br>有的人可能还是更喜欢乡下，那也是可以的，乡村也有乡村的好，比如物价更低房价更低。   </p>
 
         </article>
         <section class="post-near">
             <ul>
                 
-                    <li>上一篇: <a href="/2023/year2/">离家出走2.5年的感慨</a></li>
+                    <li>上一篇: 看完啦 (つд⊂)</li>
                 
                 
-                    <li>下一篇: <a href="/2023/hit/">小小说：是女朋友就分手</a></li>
+                    <li>下一篇: <a href="/2024/cs2-client-log-parse/">反恐精英2：我是怎么掉线的</a></li>
                 
             </ul>
         </section>
         
             <section class="post-tags">
-            <a class="-none-link" href="/tags/code/" rel="tag">code</a><a class="-none-link" href="/tags/ssh/" rel="tag">ssh</a>
+            <a class="-none-link" href="/tags/%E5%AE%B6%E5%BA%AD/" rel="tag">家庭</a>
             </section>
         
     
