@@ -48,7 +48,7 @@ setInterval(() => {
 布衣现在使用的是神舟笔记本 战神S8 。   
 
 - [Intel Core i7 12650H](https://valid.x86.fr/z0j7gi)
-- 光威 DDR4 16GB 3200Mhz 两根
+- 光威 DDR4 3200Mhz 16GB x2
 - [NVIDIA RTX 4060 8GB](https://www.3dmark.com/3dm/99857307?)
 - 15.6 英寸 IPS屏幕 1920x1080 144hz
 - NVME SSD 500GB + 1000GB
