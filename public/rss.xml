@@ -5,11 +5,10 @@
         <link>http://buyi.dev</link>
         <description></description>
         <language>zh</language>
-        <pubDate>Thu, 03 Oct 2024 20:51:36 +0800</pubDate>
-        <lastBuildDate>Thu, 03 Oct 2024 20:51:36 +0800</lastBuildDate>
-        <category>家庭</category>
-        <category>关于</category>
+        <pubDate>Mon, 04 Nov 2024 18:33:15 +0800</pubDate>
+        <lastBuildDate>Mon, 04 Nov 2024 18:33:15 +0800</lastBuildDate>
         <category>小小说</category>
+        <category>家庭</category>
         <category>学校</category>
         <category>code</category>
         <category>.net</category>
@@ -17,8 +16,23 @@
         <category>lua</category>
         <category>MYSQL</category>
         <category>ssh</category>
+        <category>关于</category>
         <category>cs2</category>
         <category>游戏</category>
+        <item>
+            <guid isPermalink="true">http://buyi.dev/2024/cs2-console-fix-pos/</guid>
+            <title>反恐精英2：控制台飘太远了怎么办</title>
+            <link>http://buyi.dev/2024/cs2-console-fix-pos/</link>
+            <category>cs2</category>
+            <pubDate>Mon, 04 Nov 2024 18:33:15 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;该死的 Valve ，如果你在使用 Counter-Strike 2 的控制台的时候，&lt;br&gt;不小心拖拽控制台窗口拖到了游戏界面的外面去。&lt;br&gt;尤其是最顶上或者最下面。&lt;br&gt;你就很可能再也拖拽不回来了。    &lt;/p&gt;
+&lt;p&gt;解决办法：&lt;br&gt;先关闭游戏，&lt;br&gt;找到自己的 steam 好友编码，&lt;br&gt;然后去 &lt;code&gt;steam安装目录/userdata/好友编码/730/local/cfg&lt;/code&gt; 这个文件夹，&lt;br&gt;找到 &lt;code&gt;cs2_machine_convars.vcfg&lt;/code&gt; 这个配置文件，用代码编辑器或记事本打开。  &lt;/p&gt;
+&lt;p&gt;在里面搜索 &lt;code&gt;panorama_console_position_and_size&lt;/code&gt; ，找到后把这一行删掉，保存修改。&lt;br&gt;因为这一行是存储着控制台的位置和大小。   &lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;cfg&#34;&gt;  &amp;quot;panorama_console_position_and_size&amp;quot;		&amp;quot;253.20|-22.80|1052.40|300.00&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;现在重启游戏，就是恢复默认的控制台大小了。   &lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://buyi.dev/2024/year3/</guid>
             <title>离家出走3.5年的感慨</title>
@@ -1165,8 +1179,8 @@ Write-Host &amp;quot;输出文件夹 $dir2&amp;quot;
             <guid isPermalink="true">http://buyi.dev/2024/notfriend/</guid>
             <title>小小说：要你管！</title>
             <link>http://buyi.dev/2024/notfriend/</link>
-            <category>家庭</category>
             <category>小小说</category>
+            <category>家庭</category>
             <pubDate>Sun, 11 Feb 2024 09:04:56 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;A: 你和你父母更像朋友还是敌人？   &lt;/p&gt;
 &lt;p&gt;B: 更像朋友。   &lt;/p&gt;
@@ -1316,45 +1330,6 @@ SELECT `authid`, GetSteamId3FromId32(`authid`) AS `fcode`
 &lt;p&gt;&lt;img src=&#34;/image/mysqlsteam2.png&#34;&gt;   &lt;/p&gt;
 &lt;h1 id=&#34;卸载&#34;&gt;&lt;a href=&#34;#卸载&#34; class=&#34;headerlink&#34; title=&#34;卸载&#34;&gt;&lt;/a&gt;卸载&lt;/h1&gt;&lt;pre&gt;&lt;code class=&#34;sql&#34;&gt;drop function if exists `GetSteamId3FromId32`;
 drop function if exists `GetSteamId3FromId64`;
-&lt;/code&gt;&lt;/pre&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://buyi.dev/2023/copyincmd/</guid>
-            <title>在 CMD 里复制文件夹</title>
-            <link>http://buyi.dev/2023/copyincmd/</link>
-            <category>code</category>
-            <category>.net</category>
-            <pubDate>Sat, 11 Nov 2023 20:05:56 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;要把一个文件夹及里面的子文件、子文件夹、子文件夹里的子文件、子文件夹全部复制到另外一个地方。&lt;br&gt;用 cmd 要怎么实现？    &lt;/p&gt;
-&lt;p&gt;第一反应是 &lt;code&gt;copy&lt;/code&gt; ，然而它只能复制文件夹里的文件，不能复制文件夹里的文件夹。   &lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;cmd&#34;&gt;&amp;gt;copy t1/* t2 /y
-The syntax of the command is incorrect.
-
-&amp;gt;copy t1\* t2&amp;quot; /y
-t1\a.txt
-        1 file(s) copied.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;经过一番搜索，正确的做法是：   &lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;cmd&#34;&gt;&amp;gt;xcopy t1 t2 /y/c/s/e
-t1\a.txt
-t1\t9\New Text Document - Copy (2).txt
-t1\t9\New Text Document - Copy (3).txt
-t1\t9\New Text Document - Copy.txt
-t1\t9\New Text Document.txt
-t1\t9 - Copy\New Text Document - Copy (2).txt
-t1\t9 - Copy\New Text Document - Copy (3).txt
-t1\t9 - Copy\New Text Document - Copy.txt
-t1\t9 - Copy\New Text Document.txt
-9 File(s) copied
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;/s&lt;/code&gt; 参数是复制目录和子目录，除非它们是空的。&lt;br&gt;&lt;code&gt;/e&lt;/code&gt; 复制所有子目录，即使它们是空的。    &lt;/p&gt;
-&lt;p&gt;xcopy 的微软官方文档：&lt;a href=&#34;https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/xcopy&#34;&gt;点我&lt;/a&gt;   &lt;/p&gt;
-&lt;p&gt;而且 cmd 还有一个不一样的地方，就是很多cmd指令只承认 &lt;code&gt;\&lt;/code&gt; 字符作为路径分隔符，它不承认 &lt;code&gt;/&lt;/code&gt; 字符。   &lt;/p&gt;
-&lt;p&gt;为什么我要用 cmd 复制个文件夹呢，因为我发现 .NET C# 的 &lt;code&gt;System.IO&lt;/code&gt; 里没有复制文件夹的功能（但是它居然有 Move 整个文件夹的功能）。&lt;br&gt;官方是给了个&lt;a href=&#34;https://learn.microsoft.com/zh-cn/dotnet/standard/io/how-to-copy-directories&#34;&gt;示例函数&lt;/a&gt;来做这个事情。&lt;br&gt;我以为用 cmd 能简单一些，结果也这么多麻烦事情。   &lt;/p&gt;
-&lt;p&gt;但是 .NET VB 可真就简单多了。&lt;br&gt;&lt;code&gt;Microsoft.VisualBasic.FileIO&lt;/code&gt; 里就有直接复制整个文件夹的功能：&lt;code&gt;FileSystem.CopyDirectory(src,dest)&lt;/code&gt;   &lt;/p&gt;
-&lt;p&gt;Powershell 也简单：   &lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;powershell&#34;&gt;Copy-Item .\t1\* .\t2 -Recurse -Force
 &lt;/code&gt;&lt;/pre&gt;
  ]]></description>
         </item>

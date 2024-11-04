@@ -5,6 +5,16 @@
     "home_page_url": "http://buyi.dev",
     "items": [
         {
+            "id": "http://buyi.dev/2024/cs2-console-fix-pos/",
+            "url": "http://buyi.dev/2024/cs2-console-fix-pos/",
+            "title": "反恐精英2：控制台飘太远了怎么办",
+            "date_published": "2024-11-04T10:33:15.000Z",
+            "content_html": "<p>该死的 Valve ，如果你在使用 Counter-Strike 2 的控制台的时候，<br>不小心拖拽控制台窗口拖到了游戏界面的外面去。<br>尤其是最顶上或者最下面。<br>你就很可能再也拖拽不回来了。    </p>\n<p>解决办法：<br>先关闭游戏，<br>找到自己的 steam 好友编码，<br>然后去 <code>steam安装目录/userdata/好友编码/730/local/cfg</code> 这个文件夹，<br>找到 <code>cs2_machine_convars.vcfg</code> 这个配置文件，用代码编辑器或记事本打开。  </p>\n<p>在里面搜索 <code>panorama_console_position_and_size</code> ，找到后把这一行删掉，保存修改。<br>因为这一行是存储着控制台的位置和大小。   </p>\n<pre><code class=\"cfg\">  &quot;panorama_console_position_and_size&quot;\t\t&quot;253.20|-22.80|1052.40|300.00&quot;\n</code></pre>\n<p>现在重启游戏，就是恢复默认的控制台大小了。   </p>\n",
+            "tags": [
+                "cs2"
+            ]
+        },
+        {
             "id": "http://buyi.dev/2024/year3/",
             "url": "http://buyi.dev/2024/year3/",
             "title": "离家出走3.5年的感慨",
@@ -116,8 +126,8 @@
             "date_published": "2024-02-11T01:04:56.000Z",
             "content_html": "<p>A: 你和你父母更像朋友还是敌人？   </p>\n<p>B: 更像朋友。   </p>\n<p>A: 是朋友还不让你和我语音？是朋友还不让你女装？是朋友还要你上交工资？<br>你做任何事情都是要偷偷摸摸的背着朋友的是吧。   </p>\n<p>B: 要你管！滚。  </p>\n",
             "tags": [
-                "家庭",
-                "小小说"
+                "小小说",
+                "家庭"
             ]
         },
         {
@@ -149,17 +159,6 @@
             "tags": [
                 "code",
                 "MYSQL"
-            ]
-        },
-        {
-            "id": "http://buyi.dev/2023/copyincmd/",
-            "url": "http://buyi.dev/2023/copyincmd/",
-            "title": "在 CMD 里复制文件夹",
-            "date_published": "2023-11-11T12:05:56.000Z",
-            "content_html": "<p>要把一个文件夹及里面的子文件、子文件夹、子文件夹里的子文件、子文件夹全部复制到另外一个地方。<br>用 cmd 要怎么实现？    </p>\n<p>第一反应是 <code>copy</code> ，然而它只能复制文件夹里的文件，不能复制文件夹里的文件夹。   </p>\n<pre><code class=\"cmd\">&gt;copy t1/* t2 /y\nThe syntax of the command is incorrect.\n\n&gt;copy t1\\* t2&quot; /y\nt1\\a.txt\n        1 file(s) copied.\n</code></pre>\n<p>经过一番搜索，正确的做法是：   </p>\n<pre><code class=\"cmd\">&gt;xcopy t1 t2 /y/c/s/e\nt1\\a.txt\nt1\\t9\\New Text Document - Copy (2).txt\nt1\\t9\\New Text Document - Copy (3).txt\nt1\\t9\\New Text Document - Copy.txt\nt1\\t9\\New Text Document.txt\nt1\\t9 - Copy\\New Text Document - Copy (2).txt\nt1\\t9 - Copy\\New Text Document - Copy (3).txt\nt1\\t9 - Copy\\New Text Document - Copy.txt\nt1\\t9 - Copy\\New Text Document.txt\n9 File(s) copied\n</code></pre>\n<p><code>/s</code> 参数是复制目录和子目录，除非它们是空的。<br><code>/e</code> 复制所有子目录，即使它们是空的。    </p>\n<p>xcopy 的微软官方文档：<a href=\"https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/xcopy\">点我</a>   </p>\n<p>而且 cmd 还有一个不一样的地方，就是很多cmd指令只承认 <code>\\</code> 字符作为路径分隔符，它不承认 <code>/</code> 字符。   </p>\n<p>为什么我要用 cmd 复制个文件夹呢，因为我发现 .NET C# 的 <code>System.IO</code> 里没有复制文件夹的功能（但是它居然有 Move 整个文件夹的功能）。<br>官方是给了个<a href=\"https://learn.microsoft.com/zh-cn/dotnet/standard/io/how-to-copy-directories\">示例函数</a>来做这个事情。<br>我以为用 cmd 能简单一些，结果也这么多麻烦事情。   </p>\n<p>但是 .NET VB 可真就简单多了。<br><code>Microsoft.VisualBasic.FileIO</code> 里就有直接复制整个文件夹的功能：<code>FileSystem.CopyDirectory(src,dest)</code>   </p>\n<p>Powershell 也简单：   </p>\n<pre><code class=\"powershell\">Copy-Item .\\t1\\* .\\t2 -Recurse -Force\n</code></pre>\n",
-            "tags": [
-                "code",
-                ".net"
             ]
         }
     ]
