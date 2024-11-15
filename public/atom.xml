@@ -3,19 +3,36 @@
     <id>http://buyi.dev</id>
     <title>陈布衣的博客</title>
     <link href="http://buyi.dev" />
-    <updated>2024-11-04T10:33:15.000Z</updated>
-    <category term="小小说" />
-    <category term="家庭" />
-    <category term="学校" />
-    <category term="code" />
-    <category term=".net" />
-    <category term="gmod" />
-    <category term="lua" />
-    <category term="MYSQL" />
-    <category term="ssh" />
+    <updated>2024-11-15T10:10:56.000Z</updated>
     <category term="关于" />
     <category term="cs2" />
+    <category term="code" />
+    <category term="家庭" />
     <category term="游戏" />
+    <category term="gmod" />
+    <category term="lua" />
+    <category term="小小说" />
+    <category term=".net" />
+    <category term="学校" />
+    <category term="MYSQL" />
+    <category term="ssh" />
+    <entry>
+        <id>http://buyi.dev/2024/toolbar-app/</id>
+        <title>Buyi Toolbar</title>
+        <link rel="alternate" href="http://buyi.dev/2024/toolbar-app/"/>
+        <content type="html">&lt;p&gt;解决 windows 11 砍掉的任务栏-工具栏功能。&lt;br&gt;支持文件夹嵌套。   &lt;/p&gt;
+&lt;p&gt;运行库： .NET Framework 4.8   &lt;/p&gt;
+&lt;p&gt;启动办法： 把指定文件夹作为启动项参数的第一个。如果带空格需要带双引号。   &lt;/p&gt;
+&lt;p&gt;cmd 启动示例：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;cmd&#34;&gt;start &amp;quot;&amp;quot; &amp;quot;BuyiToolbar.exe&amp;quot; &amp;quot;C:\Users\Buyi\Apps&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;源码： &lt;a href=&#34;https://github.com/chenbuyi2019/Buyi-Toolbar&#34;&gt;github&lt;/a&gt;   &lt;/p&gt;
+&lt;p&gt;效果截图：&lt;br&gt;&lt;img src=&#34;/image/buyi_toolbar.jpg&#34;&gt;  &lt;/p&gt;
+</content>
+        <category term="code" />
+        <category term=".net" />
+        <updated>2024-11-15T10:10:56.000Z</updated>
+    </entry>
     <entry>
         <id>http://buyi.dev/2024/cs2-console-fix-pos/</id>
         <title>反恐精英2：控制台飘太远了怎么办</title>
@@ -86,8 +103,8 @@
 
 &lt;p&gt;源码&lt;a href=&#34;https://github.com/chenbuyi2019/blog2309/blob/master/script/cs2-client-log-parse/main.ts&#34;&gt;点我&lt;/a&gt;。   &lt;/p&gt;
 </content>
-        <category term="code" />
         <category term="cs2" />
+        <category term="code" />
         <updated>2024-09-16T09:38:58.000Z</updated>
     </entry>
     <entry>
@@ -396,8 +413,8 @@ Write-Host &amp;quot;输出文件夹 $dir2&amp;quot;
 # 批量修改音量： -filter: &amp;quot;volume = 8dB&amp;quot;  
 &lt;/code&gt;&lt;/pre&gt;
 </content>
-        <category term="code" />
         <category term="cs2" />
+        <category term="code" />
         <updated>2024-07-14T13:20:03.000Z</updated>
     </entry>
     <entry>
@@ -1168,8 +1185,8 @@ Write-Host &amp;quot;输出文件夹 $dir2&amp;quot;
 &lt;h1 id=&#34;实体兼容性&#34;&gt;&lt;a href=&#34;#实体兼容性&#34; class=&#34;headerlink&#34; title=&#34;实体兼容性&#34;&gt;&lt;/a&gt;实体兼容性&lt;/h1&gt;&lt;p&gt;&lt;code&gt;snd_event_point&lt;/code&gt; 和 &lt;code&gt;ambient_generic&lt;/code&gt; 都可以正常播放 mega 和 music 。&lt;br&gt;但是在使用 &lt;code&gt;ambient_generic&lt;/code&gt; 的时候一定要注意正确勾选 &lt;code&gt;Is NOT Looped(32)&lt;/code&gt; （貌似绝大多数情况下都要勾上，不然不播放）    &lt;/p&gt;
 &lt;p&gt;&lt;code&gt;ambient_generic&lt;/code&gt; 实体无法干预声音脚本自己的音量和播放范围。   &lt;/p&gt;
 </content>
-        <category term="code" />
         <category term="cs2" />
+        <category term="code" />
         <updated>2024-03-13T04:26:06.000Z</updated>
     </entry>
     <entry>
@@ -1181,8 +1198,8 @@ Write-Host &amp;quot;输出文件夹 $dir2&amp;quot;
 &lt;p&gt;A: 是朋友还不让你和我语音？是朋友还不让你女装？是朋友还要你上交工资？&lt;br&gt;你做任何事情都是要偷偷摸摸的背着朋友的是吧。   &lt;/p&gt;
 &lt;p&gt;B: 要你管！滚。  &lt;/p&gt;
 </content>
-        <category term="小小说" />
         <category term="家庭" />
+        <category term="小小说" />
         <updated>2024-02-11T01:04:56.000Z</updated>
     </entry>
     <entry>
@@ -1267,67 +1284,5 @@ Write-Host &amp;quot;输出文件夹 $dir2&amp;quot;
 </content>
         <category term="家庭" />
         <updated>2024-01-04T01:12:09.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://buyi.dev/2023/mysqlsteamid/</id>
-        <title>Mysql 函数实现的 Steam id64/id32 转好友编码</title>
-        <link rel="alternate" href="http://buyi.dev/2023/mysqlsteamid/"/>
-        <content type="html">&lt;p&gt;直接上代码：   &lt;/p&gt;
-&lt;h1 id=&#34;定义&#34;&gt;&lt;a href=&#34;#定义&#34; class=&#34;headerlink&#34; title=&#34;定义&#34;&gt;&lt;/a&gt;定义&lt;/h1&gt;&lt;pre&gt;&lt;code class=&#34;sql&#34;&gt;delimiter $$
-CREATE function `GetSteamId3FromId32`(str CHAR(50)) returns bigint DETERMINISTIC
-COMMENT &amp;#39;把 STEAM_0:1:2 的格式转换为好友代码&amp;#39;
-BEGIN
-    declare middleStr CHAR(5);
-    declare rightStr CHAR(20);
-    declare num1 int;
-    declare num2 int;
-    if CHAR_LENGTH(str) &amp;lt; 3 then
-        return 0;
-    end if;
-    set rightStr = SUBSTRING_INDEX(str, &amp;#39;:&amp;#39;, -1);
-    set middleStr = MID(str, CHAR_LENGTH(str) - CHAR_LENGTH(rightStr)- 1, 1);
-    set num1 = CAST(rightStr as SIGNED);
-    set num2 = CAST(middleStr as SIGNED);
-    RETURN num1 * 2 + num2;
-END $$
-delimiter ;
-
-delimiter $$
-CREATE function `GetSteamId3FromId64`(old bigint) returns bigint DETERMINISTIC
-COMMENT &amp;#39;把17位steam id64的数字转换为好友代码&amp;#39;
-BEGIN
-    declare num bigint;
-    if old &amp;lt; 76000000000000000 then
-        return 0;
-    end if;
-    set num = old &amp;lt;&amp;lt; 32;
-    set num = num &amp;gt;&amp;gt; 32;
-    if num &amp;lt; 1 then
-        return 0;
-    end if;
-    return num;
-END $$
-delimiter ;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h1 id=&#34;使用&#34;&gt;&lt;a href=&#34;#使用&#34; class=&#34;headerlink&#34; title=&#34;使用&#34;&gt;&lt;/a&gt;使用&lt;/h1&gt;&lt;pre&gt;&lt;code class=&#34;sql&#34;&gt;-- 第1个例子，我自己的 steam id
-select GetSteamId3FromId32(&amp;#39;STEAM_0:1:69600329&amp;#39;) as `a`,
-  GetSteamId3FromId32(&amp;#39;abcd1:69600329&amp;#39;) as `b`, 
-  GetSteamId3FromId32(&amp;#39;1:69600329&amp;#39;) as `c`,
-  GetSteamId3FromId64(76561198099466387) as `d`,
-  GetSteamId3FromId64(&amp;#39;76561198099466387&amp;#39;) as `e`;
-
--- 第2个例子，批量转换
-SELECT `authid`, GetSteamId3FromId32(`authid`) AS `fcode` 
-  FROM `xxx` LIMIT 10;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/image/mysqlsteam1.png&#34;&gt;   &lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/image/mysqlsteam2.png&#34;&gt;   &lt;/p&gt;
-&lt;h1 id=&#34;卸载&#34;&gt;&lt;a href=&#34;#卸载&#34; class=&#34;headerlink&#34; title=&#34;卸载&#34;&gt;&lt;/a&gt;卸载&lt;/h1&gt;&lt;pre&gt;&lt;code class=&#34;sql&#34;&gt;drop function if exists `GetSteamId3FromId32`;
-drop function if exists `GetSteamId3FromId64`;
-&lt;/code&gt;&lt;/pre&gt;
-</content>
-        <category term="code" />
-        <category term="MYSQL" />
-        <updated>2023-12-17T06:06:23.000Z</updated>
     </entry>
 </feed>

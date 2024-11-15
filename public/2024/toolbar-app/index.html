@@ -3,7 +3,7 @@
   <head>
      
     <meta charset="UTF-8">
-    <title>.net - 陈布衣的博客</title>
+    <title>Buyi Toolbar - 陈布衣的博客</title>
     <link rel="shortcut icon" href="/static/img/icon.png">
     <link rel="icon" href="/static/img/icon.png" sizes="192x192"/>
     
@@ -15,7 +15,7 @@
 
     <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1"/>
     <meta property="og:site_name" content="陈布衣的博客">
-    <meta property="og:title" content=""/>
+    <meta property="og:title" content="Buyi Toolbar"/>
     
     <link rel="alternate" type="application/rss+xml" title="陈布衣的博客" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="陈布衣的博客" href="/atom.xml" />
@@ -53,53 +53,56 @@
 
     <main>
     <div class="wrap min">
-        <section class="home-title">
+        <section class="post-title">
+            <h2>Buyi Toolbar</h2>
+            <div class="post-meta">
+                <time class="date">2024 年 11 月 15 日</time>
             
-            <h1>“.net”</h1>
+            </div>
         </section>
-        <section class="home-posts">
-    
-    <div class="post-item">
-        <h2>
-            <a href="/2024/toolbar-app/">Buyi Toolbar</a>
-        </h2>
-    
-        <p>解决 windows 11 砍掉的任务栏-工具栏功能。支持文件夹嵌套。   
-运行库： .NET Framework 4.8   
-启动办法： 把指定文件夹作为启动项参数的第一个。如果带空格需要...</p>
-    
-        <div class="post-meta">
-            <time class="date">2024.11.15</time>
-            
-            
-                <span class="tags"><a class="-none-link" href="/tags/net/" rel="tag">.net</a>，<a class="-none-link" href="/tags/code/" rel="tag">code</a></span>
-            
-        </div>
-    </div>
-    
-    <div class="post-item">
-        <h2>
-            <a href="/2023/copyincmd/">在 CMD 里复制文件夹</a>
-        </h2>
-    
-        <p>要把一个文件夹及里面的子文件、子文件夹、子文件夹里的子文件、子文件夹全部复制到另外一个地方。用 cmd 要怎么实现？    
-第一反应是 copy ，然而它只能复制文件夹里的文件，不能复制文件夹...</p>
-    
-        <div class="post-meta">
-            <time class="date">2023.11.11</time>
-            
-            
-                <span class="tags"><a class="-none-link" href="/tags/net/" rel="tag">.net</a>，<a class="-none-link" href="/tags/code/" rel="tag">code</a></span>
-            
-        </div>
-    </div>
-    
-</section>
+        <article class="post-content">
+            <p>解决 windows 11 砍掉的任务栏-工具栏功能。<br>支持文件夹嵌套。   </p>
+<p>运行库： .NET Framework 4.8   </p>
+<p>启动办法： 把指定文件夹作为启动项参数的第一个。如果带空格需要带双引号。   </p>
+<p>cmd 启动示例：</p>
+<pre><code class="cmd">start &quot;&quot; &quot;BuyiToolbar.exe&quot; &quot;C:\Users\Buyi\Apps&quot;
+</code></pre>
+<p>源码： <a target="_blank" rel="noopener" href="https://github.com/chenbuyi2019/Buyi-Toolbar">github</a>   </p>
+<p>效果截图：<br><img src="/image/buyi_toolbar.jpg">  </p>
 
-        <section class="page-navigator">
-            <span class="page-number current">1</span>
+        </article>
+        <section class="post-near">
+            <ul>
+                
+                    <li>上一篇: 看完啦 (つд⊂)</li>
+                
+                
+                    <li>下一篇: <a href="/2024/cs2-console-fix-pos/">反恐精英2：控制台飘太远了怎么办</a></li>
+                
+            </ul>
         </section>
+        
+            <section class="post-tags">
+            <a class="-none-link" href="/tags/net/" rel="tag">.net</a><a class="-none-link" href="/tags/code/" rel="tag">code</a>
+            </section>
+        
+    
+        <section class="post-author">
+        
+            <figure class="author-avatar">
+                <img src="/image/20241101.jpg" alt="Chen Buyi" />
+            </figure>
+        
+            <div class="author-info">
+                <h4>Chen Buyi</h4>
+                <p>姓陈，号布衣</p>
+            </div>
+        </section>
+    
     </div>
+    <link href="/lib/vs2015.min.css" rel="stylesheet">
+    <script src="/lib/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
 </main>
 
     <footer>
