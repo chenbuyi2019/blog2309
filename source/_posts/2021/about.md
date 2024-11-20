@@ -45,11 +45,13 @@ setInterval(() => {
 
 
 # 我的设备
-布衣现在使用的是神舟笔记本 战神S8 。   
+布衣现在使用的是自己组装的台式机。   
 
-- [Intel Core i7 12650H](https://valid.x86.fr/z0j7gi)
-- 光威 DDR4 3200Mhz 16GB x2
-- [NVIDIA RTX 4060 8GB](https://www.3dmark.com/3dm/99857307?)
-- 15.6 英寸 IPS屏幕 1920x1080 144hz
-- NVME SSD 500GB + 1000GB
-- Windows 11 Home
+- [AMD Ryzen 5 9600X](https://valid.x86.fr/54qmyp)
+- 七彩虹 CVN B650 GAMING FROZEN
+- 光威 DDR5 6400Mhz 16GB 两根
+- [NVIDIA GeForce RTX 4070 微星](https://www.3dmark.com/spy/51361807)
+- 利民 额定850W TR-TG850 ATX3.0电源 金牌全模组 
+- NVME WD Blue SN580 1TB
+- HKC 27英寸 2K 180Hz FastIPS
+- Windows 11
