@@ -51,7 +51,7 @@ setInterval(() => {
 - 七彩虹 CVN B650 GAMING FROZEN
 - 光威 DDR5 6400Mhz 16GB 两根
 - [NVIDIA GeForce RTX 4070 微星](https://www.3dmark.com/spy/51361807)
-- 利民 额定850W TR-TG850 ATX3.0电源 金牌全模组 
+- 利民 额定850W TR-TG850
 - NVME WD Blue SN580 1TB
 - HKC 27英寸 2K 180Hz FastIPS
 - Windows 11
