@@ -7,15 +7,15 @@
     <category term="家庭" />
     <category term="code" />
     <category term="关于" />
-    <category term="小小说" />
-    <category term="学校" />
-    <category term="cs2" />
-    <category term="游戏" />
     <category term="gmod" />
     <category term="lua" />
-    <category term=".net" />
     <category term="MYSQL" />
+    <category term="小小说" />
+    <category term=".net" />
     <category term="ssh" />
+    <category term="cs2" />
+    <category term="学校" />
+    <category term="游戏" />
     <entry>
         <id>http://buyi.dev/2024/toolbar-app/</id>
         <title>Buyi Toolbar</title>
