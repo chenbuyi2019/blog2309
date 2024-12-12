@@ -40,9 +40,9 @@ gmod 就会以 **文件修改时间** 为基准，决定是否重新建立。
 我们可以用 Powershell 指令快速改时间：   
 ```pwsh
 # 修改为当前电脑时间
-(get-item .\fff.ain).LastWriteTime = (Get-Date) 
+(Get-Item ".\fff.ain").LastWriteTime = (Get-Date) 
 # 修改为任意指定时间。
-(get-item .\fff.ain).LastWriteTime = (Get-Date "2039-12-19") 
+(Get-Item ".\fff.ain").LastWriteTime = (Get-Date "2039-12-19") 
 ```
 
 但是不管怎么做，都意味着，我们需要自己备份 .ain 文件，   

@@ -4,17 +4,17 @@
     <title>陈布衣的博客</title>
     <link href="http://buyi.dev" />
     <updated>2024-12-12T06:51:43.000Z</updated>
-    <category term="家庭" />
-    <category term="关于" />
     <category term="code" />
-    <category term=".net" />
-    <category term="小小说" />
+    <category term="家庭" />
+    <category term="cs2" />
+    <category term="关于" />
+    <category term="游戏" />
     <category term="gmod" />
+    <category term="小小说" />
+    <category term=".net" />
+    <category term="学校" />
     <category term="MYSQL" />
     <category term="ssh" />
-    <category term="cs2" />
-    <category term="游戏" />
-    <category term="学校" />
     <entry>
         <id>http://buyi.dev/2024/gmod-ain/</id>
         <title>GMod 中 NPC AI 路径 ain 文件版本控制问题</title>
@@ -30,9 +30,9 @@
 &lt;p&gt;第一，关闭游戏自动重建，在 &lt;code&gt;server.cfg&lt;/code&gt; 或者 &lt;code&gt;autoexec.cfg&lt;/code&gt; 里加入 &lt;code&gt;ai_norebuildgraph 1&lt;/code&gt; 参数。&lt;br&gt;拆开来读就是  &lt;code&gt;ai no rebuild graph&lt;/code&gt;&lt;br&gt;这样就以后全部的地图都不会主动新建 .ain 文件了。&lt;br&gt;对独立服务器来说也还行，因为我们可以用本地单人游戏做好的 .ain 复制到服务器。不需要服务器自己建立。   &lt;/p&gt;
 &lt;p&gt;第二，修改文件时间。反正时间只是文件系统给文件打的标签而已。&lt;br&gt;只要让 gmod 觉得这个 .ain 的修改时间晚于 .bsp 的修改时间即可。&lt;br&gt;可以把 .bsp 改早，也可以把 .ain 改晚。&lt;br&gt;我们可以用 Powershell 指令快速改时间：   &lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;pwsh&#34;&gt;# 修改为当前电脑时间
-(get-item .\fff.ain).LastWriteTime = (Get-Date) 
+(Get-Item &amp;quot;.\fff.ain&amp;quot;).LastWriteTime = (Get-Date) 
 # 修改为任意指定时间。
-(get-item .\fff.ain).LastWriteTime = (Get-Date &amp;quot;2039-12-19&amp;quot;) 
+(Get-Item &amp;quot;.\fff.ain&amp;quot;).LastWriteTime = (Get-Date &amp;quot;2039-12-19&amp;quot;) 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;但是不管怎么做，都意味着，我们需要自己备份 .ain 文件，&lt;br&gt;指不定这个游戏又觉得 .bsp 更新了或者没有禁用自动生成参数又给我覆盖了。   &lt;/p&gt;
 </content>

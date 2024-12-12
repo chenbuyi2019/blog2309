@@ -72,9 +72,9 @@
 <p>第一，关闭游戏自动重建，在 <code>server.cfg</code> 或者 <code>autoexec.cfg</code> 里加入 <code>ai_norebuildgraph 1</code> 参数。<br>拆开来读就是  <code>ai no rebuild graph</code><br>这样就以后全部的地图都不会主动新建 .ain 文件了。<br>对独立服务器来说也还行，因为我们可以用本地单人游戏做好的 .ain 复制到服务器。不需要服务器自己建立。   </p>
 <p>第二，修改文件时间。反正时间只是文件系统给文件打的标签而已。<br>只要让 gmod 觉得这个 .ain 的修改时间晚于 .bsp 的修改时间即可。<br>可以把 .bsp 改早，也可以把 .ain 改晚。<br>我们可以用 Powershell 指令快速改时间：   </p>
 <pre><code class="pwsh"># 修改为当前电脑时间
-(get-item .\fff.ain).LastWriteTime = (Get-Date) 
+(Get-Item &quot;.\fff.ain&quot;).LastWriteTime = (Get-Date) 
 # 修改为任意指定时间。
-(get-item .\fff.ain).LastWriteTime = (Get-Date &quot;2039-12-19&quot;) 
+(Get-Item &quot;.\fff.ain&quot;).LastWriteTime = (Get-Date &quot;2039-12-19&quot;) 
 </code></pre>
 <p>但是不管怎么做，都意味着，我们需要自己备份 .ain 文件，<br>指不定这个游戏又觉得 .bsp 更新了或者没有禁用自动生成参数又给我覆盖了。   </p>
 
