@@ -3,7 +3,7 @@
   <head>
      
     <meta charset="UTF-8">
-    <title>code - 陈布衣的博客</title>
+    <title>GMod 中 NPC AI 路径 ain 文件版本控制问题 - 陈布衣的博客</title>
     <link rel="shortcut icon" href="/static/img/icon.png">
     <link rel="icon" href="/static/img/icon.png" sizes="192x192"/>
     
@@ -15,7 +15,7 @@
 
     <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1"/>
     <meta property="og:site_name" content="陈布衣的博客">
-    <meta property="og:title" content=""/>
+    <meta property="og:title" content="GMod 中 NPC AI 路径 ain 文件版本控制问题"/>
     
     <link rel="alternate" type="application/rss+xml" title="陈布衣的博客" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="陈布衣的博客" href="/atom.xml" />
@@ -53,73 +53,64 @@
 
     <main>
     <div class="wrap min">
-        <section class="home-title">
+        <section class="post-title">
+            <h2>GMod 中 NPC AI 路径 ain 文件版本控制问题</h2>
+            <div class="post-meta">
+                <time class="date">2024 年 12 月 12 日</time>
             
-            <h1>“code”</h1>
+            </div>
         </section>
-        <section class="home-posts">
-    
-    <div class="post-item">
-        <h2>
-            <a href="/2023/gmodswepsound/">GMod LUA 武器自动发射子弹的问题</a>
-        </h2>
-    
-        <p>我发现我自己写的 LUA 脚本武器 SWEP 有个通病，就是按下左键或者右键能听到ti的一声（HL2没弹药的音效）。如果写了 AmmoType 并且我不实际发射弹药，也会看见和听见一颗 AR2 ...</p>
-    
-        <div class="post-meta">
-            <time class="date">2023.09.04</time>
-            
-            
-                <span class="tags"><a class="-none-link" href="/tags/code/" rel="tag">code</a>，<a class="-none-link" href="/tags/gmod/" rel="tag">gmod</a></span>
-            
-        </div>
-    </div>
-    
-    <div class="post-item">
-        <h2>
-            <a href="/2023/ssh/">使用 VSCode+SSH 实现Windows远程写代码</a>
-        </h2>
-    
-        <p>我的情况：经常要在远程 Windows 上执行修改 LUA 的操作。我自己又没有好的宽带，使用 RDP 经常会和其他人起冲突。   
-解决方案：在服务器上安装 OpenSSH 然后在本地用 vs...</p>
-    
-        <div class="post-meta">
-            <time class="date">2023.08.14</time>
-            
-            
-                <span class="tags"><a class="-none-link" href="/tags/code/" rel="tag">code</a>，<a class="-none-link" href="/tags/ssh/" rel="tag">ssh</a></span>
-            
-        </div>
-    </div>
-    
-    <div class="post-item">
-        <h2>
-            <a href="/2021/rss/">订阅</a>
-        </h2>
-    
-        <p>本博客支持以下订阅：   
+        <article class="post-content">
+            <p>半条命2 和 GMod 中的 NPC AI 路径点使用的是 <a target="_blank" rel="noopener" href="https://developer.valvesoftware.com/wiki/Nodegraph">Nodegraph</a> 技术，<br>对应的文件是 <a target="_blank" rel="noopener" href="https://developer.valvesoftware.com/wiki/AIN">.ain</a> 文件，保存在 <code>maps/graphs</code> 文件夹里。   </p>
+<p>当游戏觉得 .ain 文件版本和 .bsp 地图版本不对应的时候，游戏就会自动根据地图内的 <code>info_node</code> 系列实体生成新的 .ain 文件。<br>就是刚刚进入游戏的时候，会看见 <code>Node graph out of date. Rebuilding...</code> 这句话显示在屏幕上。   </p>
+<p>有一些 mod 作者做的地图没有在地图里放置对应的 node 实体，导致 NPC 无法正常识路。<br>.ain 文件可以脱离于地图内容，直接单独生成。<br>比较好用的 gmod 工具是 <a target="_blank" rel="noopener" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2004023752">Nodegraph Editor Expansion</a> 。    </p>
+<p>如果是 workshop 订阅来的 bsp 地图，最简单，<br>只要 .ain 文件存在，它就认。没有文件版本控制问题。   </p>
+<p>如果是裸的 bsp 文件直接放在 maps 文件夹里，<br>gmod 就会以 <strong>文件修改时间</strong> 为基准，决定是否重新建立。<br>就是这么简单粗暴，我还以为是根据文件内部标注的 hash 决定的，结果只是文件修改时间而已。   </p>
+<p>比如我弄了一个 <code>fff.bsp</code> ，需要放在服务器 maps 里，它的贴图没有打包进去。<br>我们把贴图一并打包进去，然后做成 <code>fff.bsp.bz2</code> 放在 CDN 里给玩家下载。   </p>
+<p>这里打包好贴图的 <code>fff.bsp</code> 的文件修改时间就会是我编辑打包的时间，比如说 12月1日。<br><code>fff.bsp</code> 刚好没有 node 实体， <code>fff.ain</code> 是第三方作者做的，我下载来的文件是 12KB， 3月1日 。<br>我发现一进游戏， gmod 就会自动重建 ain 文件， <code>fff.ain</code> 就被覆盖成了一个空白文件，只有 16 Bytes 。   </p>
+<p>解决办法有两个：   </p>
+<p>第一，关闭游戏自动重建，在 <code>server.cfg</code> 或者 <code>autoexec.cfg</code> 里加入 <code>ai_norebuildgraph 1</code> 参数。<br>拆开来读就是  <code>ai no rebuild graph</code><br>这样就以后全部的地图都不会主动新建 .ain 文件了。<br>对独立服务器来说也还行，因为我们可以用本地单人游戏做好的 .ain 复制到服务器。不需要服务器自己建立。   </p>
+<p>第二，修改文件时间。反正时间只是文件系统给文件打的标签而已。<br>只要让 gmod 觉得这个 .ain 的修改时间晚于 .bsp 的修改时间即可。<br>可以把 .bsp 改早，也可以把 .ain 改晚。<br>我们可以用 Powershell 指令快速改时间：   </p>
+<pre><code class="pwsh"># 修改为当前电脑时间
+(get-item .\fff.ain).LastWriteTime = (Get-Date) 
+# 修改为任意指定时间。
+(get-item .\fff.ain).LastWriteTime = (Get-Date &quot;2039-12-19&quot;) 
+</code></pre>
+<p>但是不管怎么做，都意味着，我们需要自己备份 .ain 文件，<br>指不定这个游戏又觉得 .bsp 更新了或者没有禁用自动生成参数又给我覆盖了。   </p>
 
-RSS
-Atom
-JSON Feed
-
-</p>
-    
-        <div class="post-meta">
-            <time class="date">2021.01.02</time>
-            
-            
-                <span class="tags"><a class="-none-link" href="/tags/code/" rel="tag">code</a></span>
-            
-        </div>
-    </div>
-    
-</section>
-
-        <section class="page-navigator">
-            <a class="extend prev" rel="prev" href="/tags/code/">«</a><a class="page-number" href="/tags/code/">1</a><span class="page-number current">2</span>
+        </article>
+        <section class="post-near">
+            <ul>
+                
+                    <li>上一篇: 看完啦 (つд⊂)</li>
+                
+                
+                    <li>下一篇: <a href="/2024/toolbar-app/">Buyi Toolbar</a></li>
+                
+            </ul>
         </section>
+        
+            <section class="post-tags">
+            <a class="-none-link" href="/tags/gmod/" rel="tag">gmod</a>
+            </section>
+        
+    
+        <section class="post-author">
+        
+            <figure class="author-avatar">
+                <img src="/image/20241101.jpg" alt="Chen Buyi" />
+            </figure>
+        
+            <div class="author-info">
+                <h4>Chen Buyi</h4>
+                <p>姓陈，号布衣</p>
+            </div>
+        </section>
+    
     </div>
+    <link href="/lib/vs2015.min.css" rel="stylesheet">
+    <script src="/lib/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
 </main>
 
     <footer>
