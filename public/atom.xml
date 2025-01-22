@@ -5,16 +5,16 @@
     <link href="http://buyi.dev" />
     <updated>2024-12-12T06:51:43.000Z</updated>
     <category term="家庭" />
+    <category term="关于" />
     <category term="code" />
     <category term="小小说" />
-    <category term="关于" />
     <category term="学校" />
+    <category term=".net" />
+    <category term="gmod" />
+    <category term="ssh" />
+    <category term="MYSQL" />
     <category term="cs2" />
     <category term="游戏" />
-    <category term="gmod" />
-    <category term=".net" />
-    <category term="MYSQL" />
-    <category term="ssh" />
     <entry>
         <id>http://buyi.dev/2024/gmod-ain/</id>
         <title>GMod 中 NPC AI 路径 ain 文件版本控制问题</title>
