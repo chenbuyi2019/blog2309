@@ -116,10 +116,10 @@ input, textarea, pre, hr, blockquote{
 
 /* - 夜间风格 */
 .dark-theme{
-    color: #bbb;
+    color: #e0e0e0;
     background-color: #222;
 
-    --blue: #6e8aad;
+    --blue: #abd1ff;
     --light-blue: #6f9fc7;
 
     --border: #444;
@@ -147,7 +147,7 @@ input, textarea, pre, hr, blockquote{
 .dark-theme iframe, .dark-theme em{ opacity: .6 }
 
 .dark-theme :not(pre) > code{
-    color: #ffa5a5;
+    color: #e4ff29;
     background: rgba(255, 255, 255, .2);
 }
 
