@@ -126,6 +126,8 @@ input, textarea, pre, hr, blockquote{
     --light-border: #333;
 
     --light-background: #333;
+
+    --lighter-gray: #414141;
 }
 
 /* -- 额外适配 */
