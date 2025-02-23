@@ -1,65 +1,281 @@
+
+
 <!DOCTYPE html>
-<html>
-  <head>
-     
-    <meta charset="UTF-8">
-    <title>Counter-Strike 2 音频自定义编写与编译 - 陈布衣的博客</title>
-    
-<link rel="stylesheet" href="/static/kico.css">
-<link rel="stylesheet" href="/static/hingle.css">
+<html lang="zh-CN" data-default-color-scheme=auto>
 
-    
-<link rel="stylesheet" href="/lib/font-awesome.min.css">
 
-    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1"/>
-    <meta property="og:site_name" content="陈布衣的博客">
-    <meta property="og:title" content="Counter-Strike 2 音频自定义编写与编译"/>
-    
-    <link rel="alternate" type="application/rss+xml" title="陈布衣的博客" href="/rss.xml" />
-    <link rel="alternate" type="application/atom+xml" title="陈布衣的博客" href="/atom.xml" />
-    <link rel="alternate" type="application/json" title="陈布衣的博客" href="/feed.json" />
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/image/20250219.jpg">
+  <link rel="icon" href="/image/20250219.jpg">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Chen Buyi">
+  <meta name="keywords" content="blog">
+  
+    <meta name="description" content="文件结构需要安装 cs2 workshop tools ，然后新建一个空白地图项目，比如叫 xxxx。源文件放在 common\Counter-Strike Global Offensive\content\csgo_addons\xxxx 里。其中 soundevents 文件夹里存放着声音脚本文件 .vsndevts ，可以用，sounds 文件夹里放着具体的音频源文件，比如 .mp3 .wa">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Counter-Strike 2 音频自定义编写与编译">
+<meta property="og:url" content="http://buyi.dev/2024/cs2-snd/index.html">
+<meta property="og:site_name" content="陈布衣的博客">
+<meta property="og:description" content="文件结构需要安装 cs2 workshop tools ，然后新建一个空白地图项目，比如叫 xxxx。源文件放在 common\Counter-Strike Global Offensive\content\csgo_addons\xxxx 里。其中 soundevents 文件夹里存放着声音脚本文件 .vsndevts ，可以用，sounds 文件夹里放着具体的音频源文件，比如 .mp3 .wa">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://buyi.dev/image/vsnd1.png">
+<meta property="og:image" content="http://buyi.dev/image/vsnd2.png">
+<meta property="article:published_time" content="2024-03-13T04:26:06.000Z">
+<meta property="article:modified_time" content="2024-11-15T06:24:44.976Z">
+<meta property="article:author" content="Chen Buyi">
+<meta property="article:tag" content="code">
+<meta property="article:tag" content="cs2">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://buyi.dev/image/vsnd1.png">
+  
+  
+  
+  <title>Counter-Strike 2 音频自定义编写与编译 - 陈布衣的博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"buyi.dev","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":30,"cursorChar":"_","loop":false,"scope":["home"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+  
+  <link rel="alternate" type="application/rss+xml" title="陈布衣的博客" href="/rss.xml" />
+  <link rel="alternate" type="application/atom+xml" title="陈布衣的博客" href="/atom.xml" />
+  <link rel="alternate" type="application/json" title="陈布衣的博客" href="/feed.json" />
 <meta name="generator" content="Hexo 6.3.0"></head>
 
-  <body >
-    <header>
-    <div class="head-title">
-        <h4>陈布衣的博客</h4>
-    </div>
-    <div class="head-action">
-        <div class="toggle-btn"></div>
-        <!-- <div class="light-btn"></div> -->
-        <div class="search-btn" style="display: none;"></div>
-    </div>
-    <form class="head-search" method="post">
-        <input type="text" name="s" placeholder="搜索什么？">
-    </form>
-    <nav class="head-menu">
-        <a href="/">首页</a>
-        
-            <a href="/2021/rss/">订阅</a>
-        
-            <a href="/2021/about/">关于</a>
-        
-            <a target="_blank" rel="noopener" href="https://m.weibo.cn/u/5977985000">微博</a>
-        
-            <a target="_blank" rel="noopener" href="https://github.com/chenbuyi2019">Github</a>
-        
-            <a target="_blank" rel="noopener" href="https://space.bilibili.com/4523834/dynamic">B站</a>
-        
-    </nav>
-</header>
 
-    <main>
-    <div class="wrap min">
-        <section class="post-title">
-            <h2>Counter-Strike 2 音频自定义编写与编译</h2>
-            <div class="post-meta">
-                <time class="date">2024 年 03 月 13 日</time>
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 50vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>陈布衣的博客</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://m.weibo.cn/u/5977985000" target="_self">
+                <i class="iconfont icon-weibo-fill"></i>
+                <span>微博</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/2021/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/image/hl2_1.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle">Counter-Strike 2 音频自定义编写与编译</span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-03-13 12:26" pubdate>
+          2024年3月13日 中午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.6k 字
+        
+      </span>
+    
+
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Counter-Strike 2 音频自定义编写与编译</h1>
             
-            </div>
-        </section>
-        <article class="post-content">
-            <h1 id="文件结构"><a href="#文件结构" class="headerlink" title="文件结构"></a>文件结构</h1><p>需要安装 cs2 workshop tools ，然后新建一个空白地图项目，比如叫 <code>xxxx</code>。<br>源文件放在 <code>common\Counter-Strike Global Offensive\content\csgo_addons\xxxx</code> 里。<br>其中 <code>soundevents</code> 文件夹里存放着声音脚本文件 <code>.vsndevts</code> ，可以用，<br><code>sounds</code> 文件夹里放着具体的音频源文件，比如 <code>.mp3 .wav</code> 。  </p>
+            
+              <div class="markdown-body">
+                
+                <h1 id="文件结构"><a href="#文件结构" class="headerlink" title="文件结构"></a>文件结构</h1><p>需要安装 cs2 workshop tools ，然后新建一个空白地图项目，比如叫 <code>xxxx</code>。<br>源文件放在 <code>common\Counter-Strike Global Offensive\content\csgo_addons\xxxx</code> 里。<br>其中 <code>soundevents</code> 文件夹里存放着声音脚本文件 <code>.vsndevts</code> ，可以用，<br><code>sounds</code> 文件夹里放着具体的音频源文件，比如 <code>.mp3 .wav</code> 。  </p>
 <p>看起来起源2引擎依然使用的是和以往一样的 44100 hz 的音频文件。  </p>
 <p>后续编译好的文件会在 <code>common\Counter-Strike Global Offensive\game\csgo_addons\xxxx</code> 里。  </p>
 <h1 id="编写声音脚本-vsndevts"><a href="#编写声音脚本-vsndevts" class="headerlink" title="编写声音脚本 vsndevts"></a>编写声音脚本 vsndevts</h1><p>空白地图项目自带一个叫 <code>soundevents_addon.vsndevts</code> 的声音脚本，里面有飞机音效、鸟叫音效的样例。   </p>
@@ -68,17 +284,8 @@
 <p>起源2 的大部分地方都是使用音频事件 (Sound Event) 来播放的，音频事件里指定了使用什么文件、什么类型、多少音量、什么音效(DSP)。<br>每个音频事件都有一个名字 (Sound Event Name)，由编写者指定，在地图或实体播放的时候按音频事件的名字进行使用。   </p>
 <p>以前还能在地图里使用直接的音频文件名播放，现在就别想了。实体连音量都改不了，只能在脚本里预先写好。   </p>
 <p>一个最简单的音频事件的格式示例：    </p>
-<pre><code class="c++">&quot;exgze.cheer&quot; =  // 音频事件的名字，尽量以 a.b 或者 a.b.c 来编写
-&#123;
-    type = &quot;csgo_music&quot;  // 类型
-    volume = 1.0     // 音量
-    vsnd_files =   // 使用的文件，如果是多个会在播放的时候随机选其中一个。
-    [
-        &quot;sounds/exg/cheer/1.vsnd&quot;,  // 文件必须是 .vsnd 结尾，不管源文件是什么
-        &quot;sounds/exg/cheer/2.vsnd&quot;  // 因为后面我们会编译，把普通格式变成 .vsnd_c
-    ]
-&#125;
-</code></pre>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-string">&quot;exgze.cheer&quot;</span> =  <span class="hljs-comment">// 音频事件的名字，尽量以 a.b 或者 a.b.c 来编写</span><br>&#123;<br>    type = <span class="hljs-string">&quot;csgo_music&quot;</span>  <span class="hljs-comment">// 类型</span><br>    volume = <span class="hljs-number">1.0</span>     <span class="hljs-comment">// 音量</span><br>    vsnd_files =   <span class="hljs-comment">// 使用的文件，如果是多个会在播放的时候随机选其中一个。</span><br>    [<br>        <span class="hljs-string">&quot;sounds/exg/cheer/1.vsnd&quot;</span>,  <span class="hljs-comment">// 文件必须是 .vsnd 结尾，不管源文件是什么</span><br>        <span class="hljs-string">&quot;sounds/exg/cheer/2.vsnd&quot;</span>  <span class="hljs-comment">// 因为后面我们会编译，把普通格式变成 .vsnd_c</span><br>    ]<br>&#125;<br></code></pre></td></tr></table></figure>
+
 <p>声音类型有三种：<br><code>csgo_mega</code> 常规3D范围音效。站的越近声音越大。<br><code>csgo_music</code> 表示对任何人来说播放都是一样的效果。适合播放UI音效、音乐、音乐盒。<br><code>csgo_3d</code> wiki 里说这是环境背景音，然而官方vpk里没有一个脚本是使用了这个。<br>而且我发现使用了 <code>csgo_3d</code> 之后，连 hammer 都不承认它存在了，说明可能是个被放弃的早期版本。   </p>
 <p>需要注意的是， <code>csgo_music</code> 使用 <code>vsnd_files</code> 来表示音频文件列表，<br>而 <code>csgo_mega</code> 使用 <code>vsnd_files_track_01</code> 来表示。<br>这个写反了就当没有音频文件了。   </p>
 <h2 id="音量"><a href="#音量" class="headerlink" title="音量"></a>音量</h2><p><code>csgo_music</code> 类型的音量默认受玩家参数 <code>snd_musicvolume</code> 的控制。<br>这些声音脚本有很多参数的功能是未知的，我也是在摸索，比如我发现我自己写 <code>volume_convar</code> 就不好使。<br>可能是因为我们调用这些音频都是来自实体，所以都被游戏认为是 music ，而不是 ui 或者别的音频通道了。   </p>
@@ -87,182 +294,354 @@
 <p>如果不写这个的话，貌似默认的 <code>csgo_mega</code> 只有 128 距离那么远。   </p>
 <p>甚至可以再加入元素使得声音大小起起伏伏（比如站的最近声音小，站中间声音大）。   </p>
 <p>如果写一个 99999 距离也是 1.0 音量，则表示全图可以听见，但是这个和 music 还是有区别的。<br>玩家听到的声音的左右声道的大小是不一致的，因为他们不一定面向声源。   </p>
-<pre><code class="c++">&quot;exgze.test10mega&quot; = 
-&#123;
-    type = &quot;csgo_mega&quot;
-    volume = 1.0 // 这里会被当做标准值，后面曲线会乘以这个数
-    vsnd_files_track_01 = &quot;sounds/exg/test10s.vsnd&quot;
-    distance_volume_mapping_curve = 
-    [
-        [
-            0.0, 1.0, // 距离声音原点零距离时，音量为1.0
-             -0.00394, -0.00394, // 后面4个数字是照抄的，不知道什么意思
-            2.0, 3.0,
-        ],
-        [
-            900.0, 0.0, // 距离声音原点距离 900 单位时，音量为零
-             -0.002991, -0.002991,
-            2.0, 3.0,
-        ]
-    ]
-&#125;
-</code></pre>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-string">&quot;exgze.test10mega&quot;</span> = <br>&#123;<br>    type = <span class="hljs-string">&quot;csgo_mega&quot;</span><br>    volume = <span class="hljs-number">1.0</span> <span class="hljs-comment">// 这里会被当做标准值，后面曲线会乘以这个数</span><br>    vsnd_files_track_01 = <span class="hljs-string">&quot;sounds/exg/test10s.vsnd&quot;</span><br>    distance_volume_mapping_curve = <br>    [<br>        [<br>            <span class="hljs-number">0.0</span>, <span class="hljs-number">1.0</span>, <span class="hljs-comment">// 距离声音原点零距离时，音量为1.0</span><br>             <span class="hljs-number">-0.00394</span>, <span class="hljs-number">-0.00394</span>, <span class="hljs-comment">// 后面4个数字是照抄的，不知道什么意思</span><br>            <span class="hljs-number">2.0</span>, <span class="hljs-number">3.0</span>,<br>        ],<br>        [<br>            <span class="hljs-number">900.0</span>, <span class="hljs-number">0.0</span>, <span class="hljs-comment">// 距离声音原点距离 900 单位时，音量为零</span><br>             <span class="hljs-number">-0.002991</span>, <span class="hljs-number">-0.002991</span>,<br>            <span class="hljs-number">2.0</span>, <span class="hljs-number">3.0</span>,<br>        ]<br>    ]<br>&#125;<br></code></pre></td></tr></table></figure>
+
 <h2 id="一些官方示例"><a href="#一些官方示例" class="headerlink" title="一些官方示例"></a>一些官方示例</h2><p>一个官方的音乐盒的示例：   </p>
-<pre><code class="c++">Music.MVPPreview.halflife_alyx_01 = 
-&#123;
-    type = &quot;csgo_music&quot;
-    volume = 0.800000
-    volume_convar = &quot;snd_menumusic_volume&quot;  // 这里是说它同时受玩家设置里的音乐音量的控制
-    stop_music = &quot;true&quot;
-    vsnd_files = &quot;sounds/music/halflife_alyx_01/roundmvpanthem_01.vsnd&quot;
-    vsnd_duration = 16.692245  // 音乐长度，我们一般不写，编译的时候会自动进去
-&#125;
-</code></pre>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs c++">Music.MVPPreview.halflife_alyx_01 = <br>&#123;<br>    type = <span class="hljs-string">&quot;csgo_music&quot;</span><br>    volume = <span class="hljs-number">0.800000</span><br>    volume_convar = <span class="hljs-string">&quot;snd_menumusic_volume&quot;</span>  <span class="hljs-comment">// 这里是说它同时受玩家设置里的音乐音量的控制</span><br>    stop_music = <span class="hljs-string">&quot;true&quot;</span><br>    vsnd_files = <span class="hljs-string">&quot;sounds/music/halflife_alyx_01/roundmvpanthem_01.vsnd&quot;</span><br>    vsnd_duration = <span class="hljs-number">16.692245</span>  <span class="hljs-comment">// 音乐长度，我们一般不写，编译的时候会自动进去</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
 <p>一个官方的示例，人质受伤（精简过，原文有点长）：   </p>
-<pre><code class="c++">Hostage.Pain = 
-&#123;
-    type = &quot;csgo_mega&quot;
-    volume = 0.899902
-    pitch = 1.000000
-    mixgroup = &quot;VO&quot;
-    block_duration = 0.300000
-    block_distance = 69.000000
-    use_distance_volume_mapping_curve = true
-    reverb_wet = 0.300000
-    display_broadcast = true
-    occlusion_intensity = 0.500000
-    occlusion_frequency_scale = 0.500000
-    vsnd_files_track_01 =
-    [
-        &quot;sounds/vo/hostage/hpain/hpain1.vsnd&quot;,
-        &quot;sounds/vo/hostage/hpain/hpain2.vsnd&quot;,
-        &quot;sounds/vo/hostage/hpain/hpain3.vsnd&quot;
-    ]
-    distance_volume_mapping_curve = 
-    [
-        [
-            81.028969,
-            1.000000,
-            0.000000,
-            0.000000,
-            2.000000,
-            3.000000,
-        ],
-        [
-            211.771500,
-            0.634147,
-            -0.001725,
-            -0.001725,
-            2.000000,
-            3.000000,
-        ],
-        [
-            1100.000000,
-            0.000000,
-            -0.000557,
-            -0.000557,
-            2.000000,
-            3.000000,
-        ]
-    ]
-    vsnd_duration = 0.586757
-&#125;
-</code></pre>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs c++">Hostage.Pain = <br>&#123;<br>    type = <span class="hljs-string">&quot;csgo_mega&quot;</span><br>    volume = <span class="hljs-number">0.899902</span><br>    pitch = <span class="hljs-number">1.000000</span><br>    mixgroup = <span class="hljs-string">&quot;VO&quot;</span><br>    block_duration = <span class="hljs-number">0.300000</span><br>    block_distance = <span class="hljs-number">69.000000</span><br>    use_distance_volume_mapping_curve = <span class="hljs-literal">true</span><br>    reverb_wet = <span class="hljs-number">0.300000</span><br>    display_broadcast = <span class="hljs-literal">true</span><br>    occlusion_intensity = <span class="hljs-number">0.500000</span><br>    occlusion_frequency_scale = <span class="hljs-number">0.500000</span><br>    vsnd_files_track_01 =<br>    [<br>        <span class="hljs-string">&quot;sounds/vo/hostage/hpain/hpain1.vsnd&quot;</span>,<br>        <span class="hljs-string">&quot;sounds/vo/hostage/hpain/hpain2.vsnd&quot;</span>,<br>        <span class="hljs-string">&quot;sounds/vo/hostage/hpain/hpain3.vsnd&quot;</span><br>    ]<br>    distance_volume_mapping_curve = <br>    [<br>        [<br>            <span class="hljs-number">81.028969</span>,<br>            <span class="hljs-number">1.000000</span>,<br>            <span class="hljs-number">0.000000</span>,<br>            <span class="hljs-number">0.000000</span>,<br>            <span class="hljs-number">2.000000</span>,<br>            <span class="hljs-number">3.000000</span>,<br>        ],<br>        [<br>            <span class="hljs-number">211.771500</span>,<br>            <span class="hljs-number">0.634147</span>,<br>            <span class="hljs-number">-0.001725</span>,<br>            <span class="hljs-number">-0.001725</span>,<br>            <span class="hljs-number">2.000000</span>,<br>            <span class="hljs-number">3.000000</span>,<br>        ],<br>        [<br>            <span class="hljs-number">1100.000000</span>,<br>            <span class="hljs-number">0.000000</span>,<br>            <span class="hljs-number">-0.000557</span>,<br>            <span class="hljs-number">-0.000557</span>,<br>            <span class="hljs-number">2.000000</span>,<br>            <span class="hljs-number">3.000000</span>,<br>        ]<br>    ]<br>    vsnd_duration = <span class="hljs-number">0.586757</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
 <h1 id="编译脚本与声音"><a href="#编译脚本与声音" class="headerlink" title="编译脚本与声音"></a>编译脚本与声音</h1><p>在 <code>Asserts Browser</code> 里搜索你的声音文件和脚本文件。<br>全部选中，按鼠标右键，选择 <code>Full Recompile</code>。   </p>
 <p>这样  <code>.vsndevts</code> 就会变成 <code>.vsndevts_c</code>文件，<br><code>.mp3 .wav</code> 就会变成 <code>.vsnd_c</code> 文件（内嵌进去）了。<br>编译好的文件会在 <code>common\Counter-Strike Global Offensive\game\csgo_addons\xxxx</code> 里。  </p>
 <p>一般来说如果开着 hammer，对 <code>.vsndevts</code> 的编译是全自动的。   </p>
-<p><img src="/image/vsnd1.png">   </p>
+<p><img src="/image/vsnd1.png" srcset="/img/loading.gif" lazyload>   </p>
 <h1 id="试听"><a href="#试听" class="headerlink" title="试听"></a>试听</h1><p>如果要试听，可以把要试听的部分编辑到 <code>soundevents_addon.vsndevts</code> 里面，<br>然后在 hammer 里加个声音实体，打开 <code>Sound Event Picker</code> 试听。<br>如果 Picker 里找不到，试试重新编译一次，应该是会每次打开 Picker 的时候刷新的。<br>如果点击了没有声音预览，说明你写的有问题或者音频文件有问题。   </p>
-<p><img src="/image/vsnd2.png">   </p>
+<p><img src="/image/vsnd2.png" srcset="/img/loading.gif" lazyload>   </p>
 <h1 id="实体兼容性"><a href="#实体兼容性" class="headerlink" title="实体兼容性"></a>实体兼容性</h1><p><code>snd_event_point</code> 和 <code>ambient_generic</code> 都可以正常播放 mega 和 music 。<br>但是在使用 <code>ambient_generic</code> 的时候一定要注意正确勾选 <code>Is NOT Looped(32)</code> （貌似绝大多数情况下都要勾上，不然不播放）    </p>
 <p><code>ambient_generic</code> 实体无法干预声音脚本自己的音量和播放范围。   </p>
 
-        </article>
-        <section class="post-near">
-            <ul>
                 
-                    <li>上一篇: <a href="/2024/cs2-disconnect-reasons/">Counter-Strike 2 玩家离线理由中文对照表</a></li>
-                
-                
-                    <li>下一篇: <a href="/2024/notfriend/">小小说：要你管！</a></li>
-                
-            </ul>
-        </section>
-        
-            <section class="post-tags">
-            <a class="-none-link" href="/tags/code/" rel="tag">code</a><a class="-none-link" href="/tags/cs2/" rel="tag">cs2</a>
-            </section>
-        
-    
-        <section class="post-author">
-        
-            <figure class="author-avatar">
-                <img src="/image/20250121.jpg" alt="Chen Buyi" />
-            </figure>
-        
-            <div class="author-info">
-                <h4>Chen Buyi</h4>
-                <p>姓陈，号布衣</p>
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/code/" class="print-no-link">#code</a>
+      
+        <a href="/tags/cs2/" class="print-no-link">#cs2</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Counter-Strike 2 音频自定义编写与编译</div>
+      <div>http://buyi.dev/2024/cs2-snd/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Chen Buyi</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年3月13日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/cs2-disconnect-reasons/" title="Counter-Strike 2 玩家离线理由中文对照表">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Counter-Strike 2 玩家离线理由中文对照表</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/notfriend/" title="小小说：要你管！">
+                        <span class="hidden-mobile">小小说：要你管！</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
             </div>
-        </section>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
     
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
     </div>
-    <link href="/lib/vs2015.min.css" rel="stylesheet">
-    <script src="/lib/highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
-</main>
+  </div>
+</div>
 
-    <footer>
-    <div class="buttons">
-        <a class="to-top" href="#"></a>
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
     </div>
-    <div class="wrap min">
-        <section class="widget">
-            <div class="row">
-                <div class="col-m-4">
-                    <h3 class="title-recent">友情链接：</h3>
-                    
-                        <a target="_blank" rel="noopener" href="https://blog.acesheep.com/">AceSheep</a>
-                        <br>
-                    
-                        <a target="_blank" rel="noopener" href="https://www.0xaa55.com/">技术宅的结界</a>
-                        <br>
-                    
-                        <a target="_blank" rel="noopener" href="https://www.skyblond.info/">天空 Blond</a>
-                        <br>
-                    
-                        <a target="_blank" rel="noopener" href="https://blog.853lab.com/">Sonic853</a>
-                        <br>
-                    
-                        <a target="_blank" rel="noopener" href="https://feibam.club/">FeiBam</a>
-                        <br>
-                    
-                        <a target="_blank" rel="noopener" href="https://blog.luchs514.org/">紗羽硒璃葉</a>
-                        <br>
-                    
-                </div>
-                <div class="col-m-4">
-                    <h3 class="title-date">时光机：</h3>
-                    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/12/">December 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/11/">November 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/10/">October 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/09/">September 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">October 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">August 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
-                </div>
-                <div class="col-m-4">
-                    <h3 class="title-tags">标签云：</h3>
-                    <a href="/tags/net/" style="font-size: 11.67px;">.net</a> <a href="/tags/MYSQL/" style="font-size: 10px;">MYSQL</a> <a href="/tags/code/" style="font-size: 20px;">code</a> <a href="/tags/cs2/" style="font-size: 15px;">cs2</a> <a href="/tags/gmod/" style="font-size: 13.33px;">gmod</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/%E5%85%B3%E4%BA%8E/" style="font-size: 10px;">关于</a> <a href="/tags/%E5%AD%A6%E6%A0%A1/" style="font-size: 10px;">学校</a> <a href="/tags/%E5%AE%B6%E5%BA%AD/" style="font-size: 18.33px;">家庭</a> <a href="/tags/%E5%B0%8F%E5%B0%8F%E8%AF%B4/" style="font-size: 16.67px;">小小说</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 10px;">游戏</a>
-                </div>
-            </div>
-        </section>
-        <section class="sub-footer">
-            <p>© 2025 <a href="/">陈布衣的博客</a>. All Rights Reserved. Theme By <a href="https://github.com/Dreamer-Paul/Hingle" target="_blank" rel="nofollow">Hingle</a>.</p>
-        </section>
-    </div>
-</footer>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
 
 
-<script src="/static/kico.js"></script>
-<script src="/static/hingle.js"></script>
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
 
 
-<script>var hingle = new Paul_Hingle({"copyright":false,"night":false});</script>
 
-  </body>
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
 </html>

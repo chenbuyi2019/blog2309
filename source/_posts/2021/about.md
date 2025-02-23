@@ -4,13 +4,14 @@ date: 2021-01-01 12:30:37
 tags: 关于
 ---
 我是陈布衣，姓陈，号布衣。   
-（比如：苏轼，号东坡居士）   
 欢迎参观本博客，虽然没有多少有价值的内容。   
 
 联系我，请发 email 到：   
 chenbuyi2019艾特outlook.com   
 
-头像来自： [明日方舟](https://ak.hypergryph.com/)    
+头像： [明日方舟](https://ak.hypergryph.com/)    
+链接： [微博](https://weibo.com/u/5977985000)、 [B站](https://space.bilibili.com/4523834)、 [GitHub](https://github.com/chenbuyi2019)、 [Steam](https://steamcommunity.com/profiles/76561198099466387)、 [RSS订阅](/2021/rss)
+
 
 # 简史
 2001年，在浙江省出生。   
@@ -55,7 +56,7 @@ setInterval(() => {
 
 
 # 我的设备
-布衣现在使用的是自己组装的台式机。   
+布衣现在使用的电脑是自己组装的台式机。   
 
 - [AMD Ryzen 5 9600X](https://valid.x86.fr/54qmyp)
 - 七彩虹 CVN B650 GAMING FROZEN
@@ -65,3 +66,5 @@ setInterval(() => {
 - NVME WD Blue SN580 1TB
 - HKC 27英寸 2K 180Hz FastIPS
 - Windows 11
+
+布衣的手机是 [Redmi Turbo 4](https://m.weibo.cn/status/Pdm46wG2u) 。  

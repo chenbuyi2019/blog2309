@@ -4,20 +4,20 @@
         <title>陈布衣的博客</title>
         <link>http://buyi.dev</link>
         <description></description>
-        <language>zh</language>
+        <language>zh-CN</language>
         <pubDate>Thu, 12 Dec 2024 14:51:43 +0800</pubDate>
         <lastBuildDate>Thu, 12 Dec 2024 14:51:43 +0800</lastBuildDate>
+        <category>家庭</category>
         <category>关于</category>
         <category>code</category>
-        <category>家庭</category>
+        <category>小小说</category>
+        <category>学校</category>
         <category>.net</category>
         <category>gmod</category>
-        <category>小小说</category>
         <category>MYSQL</category>
         <category>ssh</category>
         <category>cs2</category>
         <category>游戏</category>
-        <category>学校</category>
         <item>
             <guid isPermalink="true">http://buyi.dev/2024/gmod-ain/</guid>
             <title>GMod 中 NPC AI 路径 ain 文件版本控制问题</title>
@@ -34,11 +34,8 @@
 &lt;p&gt;解决办法有两个：   &lt;/p&gt;
 &lt;p&gt;第一，关闭游戏自动重建，在 &lt;code&gt;server.cfg&lt;/code&gt; 或者 &lt;code&gt;autoexec.cfg&lt;/code&gt; 里加入 &lt;code&gt;ai_norebuildgraph 1&lt;/code&gt; 参数。&lt;br&gt;拆开来读就是  &lt;code&gt;ai no rebuild graph&lt;/code&gt;&lt;br&gt;这样就以后全部的地图都不会主动新建 .ain 文件了。&lt;br&gt;对独立服务器来说也还行，因为我们可以用本地单人游戏做好的 .ain 复制到服务器。不需要服务器自己建立。   &lt;/p&gt;
 &lt;p&gt;第二，修改文件时间。反正时间只是文件系统给文件打的标签而已。&lt;br&gt;只要让 gmod 觉得这个 .ain 的修改时间晚于 .bsp 的修改时间即可。&lt;br&gt;可以把 .bsp 改早，也可以把 .ain 改晚。&lt;br&gt;我们可以用 Powershell 指令快速改时间：   &lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;pwsh&#34;&gt;# 修改为当前电脑时间
-(Get-Item &amp;quot;.\fff.ain&amp;quot;).LastWriteTime = (Get-Date) 
-# 修改为任意指定时间。
-(Get-Item &amp;quot;.\fff.ain&amp;quot;).LastWriteTime = (Get-Date &amp;quot;2039-12-19&amp;quot;) 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure class=&#34;highlight pwsh&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs pwsh&#34;&gt;&lt;span class=&#34;hljs-comment&#34;&gt;# 修改为当前电脑时间&lt;/span&gt;&lt;br&gt;(&lt;span class=&#34;hljs-built_in&#34;&gt;Get-Item&lt;/span&gt; &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;.\fff.ain&amp;quot;&lt;/span&gt;).LastWriteTime = (&lt;span class=&#34;hljs-built_in&#34;&gt;Get-Date&lt;/span&gt;) &lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;# 修改为任意指定时间。&lt;/span&gt;&lt;br&gt;(&lt;span class=&#34;hljs-built_in&#34;&gt;Get-Item&lt;/span&gt; &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;.\fff.ain&amp;quot;&lt;/span&gt;).LastWriteTime = (&lt;span class=&#34;hljs-built_in&#34;&gt;Get-Date&lt;/span&gt; &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;2039-12-19&amp;quot;&lt;/span&gt;) &lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
 &lt;p&gt;但是不管怎么做，都意味着，我们需要自己备份 .ain 文件，&lt;br&gt;指不定这个游戏又觉得 .bsp 更新了或者没有禁用自动生成参数又给我覆盖了。   &lt;/p&gt;
  ]]></description>
         </item>
@@ -53,8 +50,8 @@
 &lt;p&gt;运行库： .NET Framework 4.8   &lt;/p&gt;
 &lt;p&gt;启动办法： 把指定文件夹作为启动项参数的第一个。如果带空格需要带双引号。   &lt;/p&gt;
 &lt;p&gt;cmd 启动示例：&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;cmd&#34;&gt;start &amp;quot;&amp;quot; &amp;quot;BuyiToolbar.exe&amp;quot; &amp;quot;C:\Users\Buyi\Apps&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure class=&#34;highlight cmd&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs cmd&#34;&gt;&lt;span class=&#34;hljs-built_in&#34;&gt;start&lt;/span&gt; &amp;quot;&amp;quot; &amp;quot;BuyiToolbar.exe&amp;quot; &amp;quot;C:\Users\Buyi\Apps&amp;quot;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
 &lt;p&gt;源码： &lt;a href=&#34;https://github.com/chenbuyi2019/Buyi-Toolbar&#34;&gt;github&lt;/a&gt;   &lt;/p&gt;
 &lt;p&gt;效果截图：&lt;br&gt;&lt;img src=&#34;/image/buyi_toolbar.jpg&#34;&gt;  &lt;/p&gt;
  ]]></description>
@@ -68,8 +65,8 @@
             <description><![CDATA[ &lt;p&gt;该死的 Valve ，如果你在使用 Counter-Strike 2 的控制台的时候，&lt;br&gt;不小心拖拽控制台窗口拖到了游戏界面的外面去。&lt;br&gt;尤其是最顶上或者最下面。&lt;br&gt;你就很可能再也拖拽不回来了。    &lt;/p&gt;
 &lt;p&gt;解决办法：&lt;br&gt;先关闭游戏，&lt;br&gt;找到自己的 steam 好友编码，&lt;br&gt;然后去 &lt;code&gt;steam安装目录/userdata/好友编码/730/local/cfg&lt;/code&gt; 这个文件夹，&lt;br&gt;找到 &lt;code&gt;cs2_machine_convars.vcfg&lt;/code&gt; 这个配置文件，用代码编辑器或记事本打开。  &lt;/p&gt;
 &lt;p&gt;在里面搜索 &lt;code&gt;panorama_console_position_and_size&lt;/code&gt; ，找到后把这一行删掉，保存修改。&lt;br&gt;因为这一行是存储着控制台的位置和大小。   &lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;cfg&#34;&gt;  &amp;quot;panorama_console_position_and_size&amp;quot;		&amp;quot;253.20|-22.80|1052.40|300.00&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs cfg&#34;&gt;&amp;quot;panorama_console_position_and_size&amp;quot;		&amp;quot;253.20|-22.80|1052.40|300.00&amp;quot;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
 &lt;p&gt;现在重启游戏，就是恢复默认的控制台大小了。   &lt;/p&gt;
  ]]></description>
         </item>
@@ -148,12 +145,12 @@
 &lt;/ol&gt;
 &lt;p&gt;具体就不展开讲了，非常易用的一个控制台 UI 软件。   &lt;/p&gt;
 &lt;p&gt;一次性打开多个控制台程序需要使用以下启动参数：   &lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;cmd&#34;&gt;ConEmu64.exe -runlist ^&amp;gt;  cmd /k &amp;quot;D:\a.exe&amp;quot; ^|^|^| cmd /k &amp;quot;D:\b.exe&amp;quot; ^|^|^| cmd /k &amp;quot;D:\c.exe&amp;quot;  
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure class=&#34;highlight cmd&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs cmd&#34;&gt;ConEmu64.exe -runlist ^&amp;gt;  &lt;span class=&#34;hljs-built_in&#34;&gt;cmd&lt;/span&gt; /k &amp;quot;D:\a.exe&amp;quot; ^|^|^| &lt;span class=&#34;hljs-built_in&#34;&gt;cmd&lt;/span&gt; /k &amp;quot;D:\b.exe&amp;quot; ^|^|^| &lt;span class=&#34;hljs-built_in&#34;&gt;cmd&lt;/span&gt; /k &amp;quot;D:\c.exe&amp;quot;  &lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
 &lt;p&gt;&lt;code&gt;cmd /k &lt;/code&gt; 的好处是支持在标签页里 ctrl+C 然后保留这个标签页。   &lt;/p&gt;
 &lt;p&gt;或者不套 cmd 来执行   &lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;cmd&#34;&gt;ConEmu64.exe -runlist ^&amp;gt; &amp;quot;D:\a.exe&amp;quot; ^|^|^| &amp;quot;D:\b.exe&amp;quot; ^|^|^| &amp;quot;D:\c.exe&amp;quot;  
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure class=&#34;highlight cmd&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs cmd&#34;&gt;ConEmu64.exe -runlist ^&amp;gt; &amp;quot;D:\a.exe&amp;quot; ^|^|^| &amp;quot;D:\b.exe&amp;quot; ^|^|^| &amp;quot;D:\c.exe&amp;quot;  &lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
 &lt;p&gt;你说为什么不用 Windows Terminal ，答案是服务器的 windows 不方便安装 windows store app  。&lt;br&gt;而且 ConEmu 还支持把现有的控制台窗口 attach 塞进去。   &lt;/p&gt;
  ]]></description>
         </item>
@@ -167,33 +164,8 @@
             <description><![CDATA[ &lt;p&gt;我本来在做一个简易的日志输出，日志字符串达到一定长度之后，就把字符串裁切只留下后面一半。&lt;br&gt;我不经意间使用了 &lt;code&gt;utf8.sub()&lt;/code&gt; 来裁，然后我发现游戏过程中莫名其妙就卡顿几十秒，然后就恢复，也不像是我哪里有逻辑死循环。&lt;br&gt;经过反复 &lt;code&gt;print()&lt;/code&gt; 来找卡顿的实际位置，我终于找到了原因，就是这个 log 裁切的问题。  &lt;/p&gt;
 &lt;p&gt;Gmod Wiki 里说 &lt;a href=&#34;https://wiki.facepunch.com/gmod/utf8.sub&#34;&gt;utf8.sub()&lt;/a&gt; 比较吃性能，不要在逐帧运行的部分里使用。&lt;br&gt;可我没想到你这性能问题这么大啊。   &lt;/p&gt;
 &lt;p&gt;下面是测试代码和测试结果：   &lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;lua&#34;&gt;concommand.Add(
-    &amp;quot;test1&amp;quot;,
-    function()
-        local t1 = SysTime()
-        print(&amp;quot;start&amp;quot;)
-        local str1 = &amp;quot;&amp;quot;
-        for i = 1, 199 do
-            str1 = str1 .. &amp;quot;甲甲甲abc abc== 123456123 甲甲甲 abc 123456123甲甲&amp;quot;
-        end
+&lt;figure class=&#34;highlight lua&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs lua&#34;&gt;concommand.Add(&lt;br&gt;    &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;test1&amp;quot;&lt;/span&gt;,&lt;br&gt;    &lt;span class=&#34;hljs-function&#34;&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;hljs-params&#34;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;local&lt;/span&gt; t1 = SysTime()&lt;br&gt;        &lt;span class=&#34;hljs-built_in&#34;&gt;print&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;start&amp;quot;&lt;/span&gt;)&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;local&lt;/span&gt; str1 = &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;for&lt;/span&gt; i = &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;199&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;do&lt;/span&gt;&lt;br&gt;            str1 = str1 .. &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;甲甲甲abc abc== 123456123 甲甲甲 abc 123456123甲甲&amp;quot;&lt;/span&gt;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;end&lt;/span&gt;&lt;br&gt;&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;local&lt;/span&gt; t2 = SysTime()&lt;br&gt;        &lt;span class=&#34;hljs-built_in&#34;&gt;print&lt;/span&gt;(Format(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;拼字符串 用时 %.3f  文本长度: %d %d&amp;quot;&lt;/span&gt;, t2 - t1, #str1, utf8.&lt;span class=&#34;hljs-built_in&#34;&gt;len&lt;/span&gt;(str1)))&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;local&lt;/span&gt; str2 = &lt;span class=&#34;hljs-built_in&#34;&gt;string&lt;/span&gt;.&lt;span class=&#34;hljs-built_in&#34;&gt;sub&lt;/span&gt;(str1, &lt;span class=&#34;hljs-number&#34;&gt;9999&lt;/span&gt;)&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;local&lt;/span&gt; t3 = SysTime()&lt;br&gt;        &lt;span class=&#34;hljs-built_in&#34;&gt;print&lt;/span&gt;(Format(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;string.sub 用时 %.3f  文本长度: %d&amp;quot;&lt;/span&gt;, t3 - t2, #str2))&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;local&lt;/span&gt; str3 = utf8.&lt;span class=&#34;hljs-built_in&#34;&gt;sub&lt;/span&gt;(str1, &lt;span class=&#34;hljs-number&#34;&gt;5000&lt;/span&gt;)&lt;br&gt;        &lt;span class=&#34;hljs-keyword&#34;&gt;local&lt;/span&gt; t4 = SysTime()&lt;br&gt;        &lt;span class=&#34;hljs-built_in&#34;&gt;print&lt;/span&gt;(Format(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;utf8.sub 用时 %.3f  文本长度: %d&amp;quot;&lt;/span&gt;, t4 - t3, #str3))&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;end&lt;/span&gt;&lt;br&gt;)&lt;br&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;-- 本地单人游戏 intel i7-12650H&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;-- start&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;-- 拼字符串 用时 0.000  文本长度: 11542 8358&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;-- string.sub 用时 0.000  文本长度: 1544&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;-- utf8.sub 用时 10.642  文本长度: 4637&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-        local t2 = SysTime()
-        print(Format(&amp;quot;拼字符串 用时 %.3f  文本长度: %d %d&amp;quot;, t2 - t1, #str1, utf8.len(str1)))
-        local str2 = string.sub(str1, 9999)
-        local t3 = SysTime()
-        print(Format(&amp;quot;string.sub 用时 %.3f  文本长度: %d&amp;quot;, t3 - t2, #str2))
-        local str3 = utf8.sub(str1, 5000)
-        local t4 = SysTime()
-        print(Format(&amp;quot;utf8.sub 用时 %.3f  文本长度: %d&amp;quot;, t4 - t3, #str3))
-    end
-)
-
--- 本地单人游戏 intel i7-12650H
--- start
--- 拼字符串 用时 0.000  文本长度: 11542 8358
--- string.sub 用时 0.000  文本长度: 1544
--- utf8.sub 用时 10.642  文本长度: 4637
-&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;8358 个字符（11542 字节）的字符串裁掉一半就要花 10 秒。&lt;br&gt;这也 tmd 太慢了吧。   &lt;/p&gt;
 &lt;p&gt;&lt;code&gt;string.sub()&lt;/code&gt; 是像切割 byte[] 一样切割字符串， &lt;code&gt;utf8.sub()&lt;/code&gt; 是先把字符串拆成一个个 utf8 字符，然后再组。&lt;br&gt;非必要不使用，还是老老实实用 &lt;code&gt;string.sub&lt;/code&gt; 吧，开头有两个乱码字符没什么大不了的（   &lt;/p&gt;
  ]]></description>
@@ -361,15 +333,8 @@
 &lt;/table&gt;
 
 &lt;p&gt;&lt;code&gt;PrintToConsole&lt;/code&gt; 的服务端崩溃表现为：   &lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;cmd&#34;&gt;Fatal error. System.AccessViolationException: Attempted to read or write protected memory. This is often an indication that other memory is corrupt.
+&lt;figure class=&#34;highlight cmd&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs cmd&#34;&gt;Fatal error. System.AccessViolationException: Attempted to read or write protected memory. This is often an indication that other memory is corrupt.&lt;br&gt;&lt;br&gt;   &lt;span class=&#34;hljs-built_in&#34;&gt;at&lt;/span&gt; CounterStrikeSharp.API.Core.Helpers.InvokeNative(IntPtr)&lt;br&gt; &lt;br&gt;   &lt;span class=&#34;hljs-built_in&#34;&gt;at&lt;/span&gt; CounterStrikeSharp.API.Core.ScriptContext.InvokeNativeInternal()&lt;br&gt;   &lt;span class=&#34;hljs-built_in&#34;&gt;at&lt;/span&gt; CounterStrikeSharp.API.Core.ScriptContext.Invoke()&lt;br&gt;   &lt;span class=&#34;hljs-built_in&#34;&gt;at&lt;/span&gt; CounterStrikeSharp.API.Core.NativeAPI.PrintToConsole(Int32, System.String)&lt;br&gt;   &lt;span class=&#34;hljs-built_in&#34;&gt;at&lt;/span&gt; CounterStrikeSharp.API.Core.CCSPlayerController.PrintToConsole(System.String)&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
-   at CounterStrikeSharp.API.Core.Helpers.InvokeNative(IntPtr)
- 
-   at CounterStrikeSharp.API.Core.ScriptContext.InvokeNativeInternal()
-   at CounterStrikeSharp.API.Core.ScriptContext.Invoke()
-   at CounterStrikeSharp.API.Core.NativeAPI.PrintToConsole(Int32, System.String)
-   at CounterStrikeSharp.API.Core.CCSPlayerController.PrintToConsole(System.String)
-&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;总结：  &lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;玩家控制器就算是 &lt;code&gt;.IsValid&lt;/code&gt; ，依然不可靠，需要检测 &lt;code&gt;.Connected&lt;/code&gt; 和 &lt;code&gt;.UserId&lt;/code&gt; 。  &lt;/li&gt;
@@ -394,52 +359,7 @@
 &lt;p&gt;我自己经常会遇到打包在不同文件夹结构里的各式音频文件，&lt;br&gt;需要将它们压缩为统一格式的起源、起源2引擎适用的音频格式。&lt;br&gt;所以写了这个脚本。   &lt;/p&gt;
 &lt;p&gt;把需要转换的音频文件放入一个文件夹里，&lt;br&gt;把文件夹路径作为脚本的第一个参数执行。一般就是拖入控制台窗口或者拖到ps1图标上直接执行。&lt;br&gt;压缩好的 MP3 会输出到输入文件夹上层的 compress_xxx 文件夹里。&lt;br&gt;里面的子文件夹结构和文件名会保留下来。   &lt;/p&gt;
 &lt;p&gt;不得不说，这一下 shell 语法，一下 c# 语法感觉就是怪。  &lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;ps1&#34;&gt;$dir = $args[0]
-
-$ErrorActionPreference = &amp;#39;Stop&amp;#39;
-
-if (-not (Test-Path $dir -PathType Container)) &amp;#123;
-    Write-Error &amp;quot;你输入的文件夹不存在 $dir&amp;quot;
-&amp;#125;
-
-$dir = [System.IO.Path]::GetFullPath($dir)
-Write-Host &amp;quot;输入文件夹 $dir&amp;quot;
-$tm = Get-Date -Format &amp;quot;HH-mm-ss&amp;quot;
-$dir2 = [System.IO.Path]::Combine($dir, &amp;quot;../&amp;quot;, &amp;quot;compress_$tm&amp;quot;)
-$dir2 = [System.IO.Path]::GetFullPath($dir2)
-Write-Host &amp;quot;输出文件夹 $dir2&amp;quot;
-if (Test-Path $dir2 -PathType Container) &amp;#123;
-    Write-Error &amp;quot;输出文件夹已经存在了，需要更换 $dir2&amp;quot;
-&amp;#125;
-
-$allowedExt = @(&amp;quot;.wav&amp;quot;, &amp;quot;.mp3&amp;quot;, &amp;quot;.m4a&amp;quot;, &amp;quot;.mp4&amp;quot;, &amp;quot;.ogg&amp;quot;)
-
-$inputs = Get-ChildItem $dir -Filter &amp;quot;*&amp;quot; -Recurse
-$count = 0
-
-foreach ($input in $inputs) &amp;#123;  
-    $ext = $input.Extension.ToLower()
-    if (!$allowedExt.Contains($ext)) &amp;#123; continue &amp;#125;
-    $relPath = [System.IO.Path]::GetRelativePath($dir, $input.FullName)
-    $outputFile = [System.IO.Path]::Combine($dir2, $relPath)
-    $outputFile = [System.IO.Path]::ChangeExtension($outputFile, &amp;quot;.mp3&amp;quot;)
-    $dir3 = [System.IO.Path]::GetDirectoryName($OutputFile)
-    if (-not (Test-Path $dir3 -PathType Container)) &amp;#123;
-        New-Item $dir3 -ItemType Directory
-    &amp;#125;
-    Write-Host $outputFile 
-    ffmpeg -i $input.FullName -y -c:a libmp3lame -ar 44100 -b:a 96k $outputFile 
-    if (-not(Test-Path $outputFile -PathType Leaf)) &amp;#123;
-        Write-Error &amp;quot;找不到压缩的音频文件 $outputFile&amp;quot;
-    &amp;#125;
-    $count += 1
-&amp;#125;
-
-Write-Host &amp;quot;工作完成，一共 $count 个文件 &amp;quot;
-Write-Host &amp;quot;输出文件夹 $dir2&amp;quot;
-
-# 批量修改音量： -filter: &amp;quot;volume = 8dB&amp;quot;  
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure class=&#34;highlight ps1&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;45&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs ps1&#34;&gt;&lt;span class=&#34;hljs-variable&#34;&gt;$dir&lt;/span&gt; = &lt;span class=&#34;hljs-variable&#34;&gt;$args&lt;/span&gt;[&lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;]&lt;br&gt;&lt;br&gt;&lt;span class=&#34;hljs-variable&#34;&gt;$ErrorActionPreference&lt;/span&gt; = &lt;span class=&#34;hljs-string&#34;&gt;&amp;#x27;Stop&amp;#x27;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt; (&lt;span class=&#34;hljs-operator&#34;&gt;-not&lt;/span&gt; (&lt;span class=&#34;hljs-built_in&#34;&gt;Test-Path&lt;/span&gt; &lt;span class=&#34;hljs-variable&#34;&gt;$dir&lt;/span&gt; &lt;span class=&#34;hljs-literal&#34;&gt;-PathType&lt;/span&gt; Container)) &amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-built_in&#34;&gt;Write-Error&lt;/span&gt; &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;你输入的文件夹不存在 &lt;span class=&#34;hljs-variable&#34;&gt;$dir&lt;/span&gt;&amp;quot;&lt;/span&gt;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;hljs-variable&#34;&gt;$dir&lt;/span&gt; = [&lt;span class=&#34;hljs-type&#34;&gt;System.IO.Path&lt;/span&gt;]::GetFullPath(&lt;span class=&#34;hljs-variable&#34;&gt;$dir&lt;/span&gt;)&lt;br&gt;&lt;span class=&#34;hljs-built_in&#34;&gt;Write-Host&lt;/span&gt; &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;输入文件夹 &lt;span class=&#34;hljs-variable&#34;&gt;$dir&lt;/span&gt;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-variable&#34;&gt;$tm&lt;/span&gt; = &lt;span class=&#34;hljs-built_in&#34;&gt;Get-Date&lt;/span&gt; &lt;span class=&#34;hljs-literal&#34;&gt;-Format&lt;/span&gt; &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;HH-mm-ss&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-variable&#34;&gt;$dir2&lt;/span&gt; = [&lt;span class=&#34;hljs-type&#34;&gt;System.IO.Path&lt;/span&gt;]::Combine(&lt;span class=&#34;hljs-variable&#34;&gt;$dir&lt;/span&gt;, &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;../&amp;quot;&lt;/span&gt;, &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;compress_&lt;span class=&#34;hljs-variable&#34;&gt;$tm&lt;/span&gt;&amp;quot;&lt;/span&gt;)&lt;br&gt;&lt;span class=&#34;hljs-variable&#34;&gt;$dir2&lt;/span&gt; = [&lt;span class=&#34;hljs-type&#34;&gt;System.IO.Path&lt;/span&gt;]::GetFullPath(&lt;span class=&#34;hljs-variable&#34;&gt;$dir2&lt;/span&gt;)&lt;br&gt;&lt;span class=&#34;hljs-built_in&#34;&gt;Write-Host&lt;/span&gt; &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;输出文件夹 &lt;span class=&#34;hljs-variable&#34;&gt;$dir2&lt;/span&gt;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt; (&lt;span class=&#34;hljs-built_in&#34;&gt;Test-Path&lt;/span&gt; &lt;span class=&#34;hljs-variable&#34;&gt;$dir2&lt;/span&gt; &lt;span class=&#34;hljs-literal&#34;&gt;-PathType&lt;/span&gt; Container) &amp;#123;&lt;br&gt;    &lt;span class=&#34;hljs-built_in&#34;&gt;Write-Error&lt;/span&gt; &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;输出文件夹已经存在了，需要更换 &lt;span class=&#34;hljs-variable&#34;&gt;$dir2&lt;/span&gt;&amp;quot;&lt;/span&gt;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;hljs-variable&#34;&gt;$allowedExt&lt;/span&gt; = &lt;span class=&#34;hljs-selector-tag&#34;&gt;@&lt;/span&gt;(&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;.wav&amp;quot;&lt;/span&gt;, &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;.mp3&amp;quot;&lt;/span&gt;, &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;.m4a&amp;quot;&lt;/span&gt;, &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;.mp4&amp;quot;&lt;/span&gt;, &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;.ogg&amp;quot;&lt;/span&gt;)&lt;br&gt;&lt;br&gt;&lt;span class=&#34;hljs-variable&#34;&gt;$inputs&lt;/span&gt; = &lt;span class=&#34;hljs-built_in&#34;&gt;Get-ChildItem&lt;/span&gt; &lt;span class=&#34;hljs-variable&#34;&gt;$dir&lt;/span&gt; &lt;span class=&#34;hljs-literal&#34;&gt;-Filter&lt;/span&gt; &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;*&amp;quot;&lt;/span&gt; &lt;span class=&#34;hljs-literal&#34;&gt;-Recurse&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-variable&#34;&gt;$count&lt;/span&gt; = &lt;span class=&#34;hljs-number&#34;&gt;0&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;hljs-keyword&#34;&gt;foreach&lt;/span&gt; (&lt;span class=&#34;hljs-variable&#34;&gt;$input&lt;/span&gt; &lt;span class=&#34;hljs-keyword&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;hljs-variable&#34;&gt;$inputs&lt;/span&gt;) &amp;#123;  &lt;br&gt;    &lt;span class=&#34;hljs-variable&#34;&gt;$ext&lt;/span&gt; = &lt;span class=&#34;hljs-variable&#34;&gt;$input&lt;/span&gt;.Extension.ToLower()&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt; (!&lt;span class=&#34;hljs-variable&#34;&gt;$allowedExt&lt;/span&gt;.Contains(&lt;span class=&#34;hljs-variable&#34;&gt;$ext&lt;/span&gt;)) &amp;#123; &lt;span class=&#34;hljs-keyword&#34;&gt;continue&lt;/span&gt; &amp;#125;&lt;br&gt;    &lt;span class=&#34;hljs-variable&#34;&gt;$relPath&lt;/span&gt; = [&lt;span class=&#34;hljs-type&#34;&gt;System.IO.Path&lt;/span&gt;]::GetRelativePath(&lt;span class=&#34;hljs-variable&#34;&gt;$dir&lt;/span&gt;, &lt;span class=&#34;hljs-variable&#34;&gt;$input&lt;/span&gt;.FullName)&lt;br&gt;    &lt;span class=&#34;hljs-variable&#34;&gt;$outputFile&lt;/span&gt; = [&lt;span class=&#34;hljs-type&#34;&gt;System.IO.Path&lt;/span&gt;]::Combine(&lt;span class=&#34;hljs-variable&#34;&gt;$dir2&lt;/span&gt;, &lt;span class=&#34;hljs-variable&#34;&gt;$relPath&lt;/span&gt;)&lt;br&gt;    &lt;span class=&#34;hljs-variable&#34;&gt;$outputFile&lt;/span&gt; = [&lt;span class=&#34;hljs-type&#34;&gt;System.IO.Path&lt;/span&gt;]::ChangeExtension(&lt;span class=&#34;hljs-variable&#34;&gt;$outputFile&lt;/span&gt;, &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;.mp3&amp;quot;&lt;/span&gt;)&lt;br&gt;    &lt;span class=&#34;hljs-variable&#34;&gt;$dir3&lt;/span&gt; = [&lt;span class=&#34;hljs-type&#34;&gt;System.IO.Path&lt;/span&gt;]::GetDirectoryName(&lt;span class=&#34;hljs-variable&#34;&gt;$OutputFile&lt;/span&gt;)&lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt; (&lt;span class=&#34;hljs-operator&#34;&gt;-not&lt;/span&gt; (&lt;span class=&#34;hljs-built_in&#34;&gt;Test-Path&lt;/span&gt; &lt;span class=&#34;hljs-variable&#34;&gt;$dir3&lt;/span&gt; &lt;span class=&#34;hljs-literal&#34;&gt;-PathType&lt;/span&gt; Container)) &amp;#123;&lt;br&gt;        &lt;span class=&#34;hljs-built_in&#34;&gt;New-Item&lt;/span&gt; &lt;span class=&#34;hljs-variable&#34;&gt;$dir3&lt;/span&gt; &lt;span class=&#34;hljs-literal&#34;&gt;-ItemType&lt;/span&gt; Directory&lt;br&gt;    &amp;#125;&lt;br&gt;    &lt;span class=&#34;hljs-built_in&#34;&gt;Write-Host&lt;/span&gt; &lt;span class=&#34;hljs-variable&#34;&gt;$outputFile&lt;/span&gt; &lt;br&gt;    ffmpeg &lt;span class=&#34;hljs-literal&#34;&gt;-i&lt;/span&gt; &lt;span class=&#34;hljs-variable&#34;&gt;$input&lt;/span&gt;.FullName &lt;span class=&#34;hljs-literal&#34;&gt;-y&lt;/span&gt; &lt;span class=&#34;hljs-literal&#34;&gt;-c&lt;/span&gt;:a libmp3lame &lt;span class=&#34;hljs-literal&#34;&gt;-ar&lt;/span&gt; &lt;span class=&#34;hljs-number&#34;&gt;44100&lt;/span&gt; &lt;span class=&#34;hljs-literal&#34;&gt;-b&lt;/span&gt;:a &lt;span class=&#34;hljs-number&#34;&gt;96&lt;/span&gt;k &lt;span class=&#34;hljs-variable&#34;&gt;$outputFile&lt;/span&gt; &lt;br&gt;    &lt;span class=&#34;hljs-keyword&#34;&gt;if&lt;/span&gt; (&lt;span class=&#34;hljs-operator&#34;&gt;-not&lt;/span&gt;(&lt;span class=&#34;hljs-built_in&#34;&gt;Test-Path&lt;/span&gt; &lt;span class=&#34;hljs-variable&#34;&gt;$outputFile&lt;/span&gt; &lt;span class=&#34;hljs-literal&#34;&gt;-PathType&lt;/span&gt; Leaf)) &amp;#123;&lt;br&gt;        &lt;span class=&#34;hljs-built_in&#34;&gt;Write-Error&lt;/span&gt; &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;找不到压缩的音频文件 &lt;span class=&#34;hljs-variable&#34;&gt;$outputFile&lt;/span&gt;&amp;quot;&lt;/span&gt;&lt;br&gt;    &amp;#125;&lt;br&gt;    &lt;span class=&#34;hljs-variable&#34;&gt;$count&lt;/span&gt; += &lt;span class=&#34;hljs-number&#34;&gt;1&lt;/span&gt;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;hljs-built_in&#34;&gt;Write-Host&lt;/span&gt; &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;工作完成，一共 &lt;span class=&#34;hljs-variable&#34;&gt;$count&lt;/span&gt; 个文件 &amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;hljs-built_in&#34;&gt;Write-Host&lt;/span&gt; &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;输出文件夹 &lt;span class=&#34;hljs-variable&#34;&gt;$dir2&lt;/span&gt;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;hljs-comment&#34;&gt;# 批量修改音量： -filter: &amp;quot;volume = 8dB&amp;quot;  &lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
  ]]></description>
         </item>
         <item>
@@ -479,8 +399,8 @@ Write-Host &amp;quot;输出文件夹 $dir2&amp;quot;
             <category>code</category>
             <pubDate>Tue, 02 Jul 2024 20:33:35 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;由于我自己写的一些网站都没法直接兼容 Let’s Encrypt &lt;a href=&#34;https://certbot.eff.org/&#34;&gt;certbot&lt;/a&gt; 的普通的认证方式。&lt;br&gt;我更倾向于使用 DNS TXT 认证来完成域名验证过程。&lt;br&gt;好处就是根本不需要一台公网服务器，有台电脑就行。也不用干预正在运行的服务器。&lt;br&gt;坏处就是每次等 DNS 解析有点难等，一旦时机没把握好就得重来。    &lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;certbot certonly --preferred-challenges dns -d &amp;quot;*.abcd.com&amp;quot; -d &amp;quot;abcd.com&amp;quot; --manual
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure class=&#34;highlight jboss-cli&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs jboss-cli&#34;&gt;certbot certonly &lt;span class=&#34;hljs-params&#34;&gt;--preferred-challenges&lt;/span&gt; dns -d &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;*.abcd.com&amp;quot;&lt;/span&gt; -d &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;abcd.com&amp;quot;&lt;/span&gt; &lt;span class=&#34;hljs-params&#34;&gt;--manual&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
 &lt;p&gt;（其实更多是因为我要申请 *.abcd.com 这样的证书，而我不好直接操作 abcd.com 主页服务器。   &lt;/p&gt;
  ]]></description>
         </item>
@@ -1104,17 +1024,8 @@ Write-Host &amp;quot;输出文件夹 $dir2&amp;quot;
 &lt;p&gt;起源2 的大部分地方都是使用音频事件 (Sound Event) 来播放的，音频事件里指定了使用什么文件、什么类型、多少音量、什么音效(DSP)。&lt;br&gt;每个音频事件都有一个名字 (Sound Event Name)，由编写者指定，在地图或实体播放的时候按音频事件的名字进行使用。   &lt;/p&gt;
 &lt;p&gt;以前还能在地图里使用直接的音频文件名播放，现在就别想了。实体连音量都改不了，只能在脚本里预先写好。   &lt;/p&gt;
 &lt;p&gt;一个最简单的音频事件的格式示例：    &lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;&amp;quot;exgze.cheer&amp;quot; =  // 音频事件的名字，尽量以 a.b 或者 a.b.c 来编写
-&amp;#123;
-    type = &amp;quot;csgo_music&amp;quot;  // 类型
-    volume = 1.0     // 音量
-    vsnd_files =   // 使用的文件，如果是多个会在播放的时候随机选其中一个。
-    [
-        &amp;quot;sounds/exg/cheer/1.vsnd&amp;quot;,  // 文件必须是 .vsnd 结尾，不管源文件是什么
-        &amp;quot;sounds/exg/cheer/2.vsnd&amp;quot;  // 因为后面我们会编译，把普通格式变成 .vsnd_c
-    ]
-&amp;#125;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;exgze.cheer&amp;quot;&lt;/span&gt; =  &lt;span class=&#34;hljs-comment&#34;&gt;// 音频事件的名字，尽量以 a.b 或者 a.b.c 来编写&lt;/span&gt;&lt;br&gt;&amp;#123;&lt;br&gt;    type = &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;csgo_music&amp;quot;&lt;/span&gt;  &lt;span class=&#34;hljs-comment&#34;&gt;// 类型&lt;/span&gt;&lt;br&gt;    volume = &lt;span class=&#34;hljs-number&#34;&gt;1.0&lt;/span&gt;     &lt;span class=&#34;hljs-comment&#34;&gt;// 音量&lt;/span&gt;&lt;br&gt;    vsnd_files =   &lt;span class=&#34;hljs-comment&#34;&gt;// 使用的文件，如果是多个会在播放的时候随机选其中一个。&lt;/span&gt;&lt;br&gt;    [&lt;br&gt;        &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;sounds/exg/cheer/1.vsnd&amp;quot;&lt;/span&gt;,  &lt;span class=&#34;hljs-comment&#34;&gt;// 文件必须是 .vsnd 结尾，不管源文件是什么&lt;/span&gt;&lt;br&gt;        &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;sounds/exg/cheer/2.vsnd&amp;quot;&lt;/span&gt;  &lt;span class=&#34;hljs-comment&#34;&gt;// 因为后面我们会编译，把普通格式变成 .vsnd_c&lt;/span&gt;&lt;br&gt;    ]&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
 &lt;p&gt;声音类型有三种：&lt;br&gt;&lt;code&gt;csgo_mega&lt;/code&gt; 常规3D范围音效。站的越近声音越大。&lt;br&gt;&lt;code&gt;csgo_music&lt;/code&gt; 表示对任何人来说播放都是一样的效果。适合播放UI音效、音乐、音乐盒。&lt;br&gt;&lt;code&gt;csgo_3d&lt;/code&gt; wiki 里说这是环境背景音，然而官方vpk里没有一个脚本是使用了这个。&lt;br&gt;而且我发现使用了 &lt;code&gt;csgo_3d&lt;/code&gt; 之后，连 hammer 都不承认它存在了，说明可能是个被放弃的早期版本。   &lt;/p&gt;
 &lt;p&gt;需要注意的是， &lt;code&gt;csgo_music&lt;/code&gt; 使用 &lt;code&gt;vsnd_files&lt;/code&gt; 来表示音频文件列表，&lt;br&gt;而 &lt;code&gt;csgo_mega&lt;/code&gt; 使用 &lt;code&gt;vsnd_files_track_01&lt;/code&gt; 来表示。&lt;br&gt;这个写反了就当没有音频文件了。   &lt;/p&gt;
 &lt;h2 id=&#34;音量&#34;&gt;&lt;a href=&#34;#音量&#34; class=&#34;headerlink&#34; title=&#34;音量&#34;&gt;&lt;/a&gt;音量&lt;/h2&gt;&lt;p&gt;&lt;code&gt;csgo_music&lt;/code&gt; 类型的音量默认受玩家参数 &lt;code&gt;snd_musicvolume&lt;/code&gt; 的控制。&lt;br&gt;这些声音脚本有很多参数的功能是未知的，我也是在摸索，比如我发现我自己写 &lt;code&gt;volume_convar&lt;/code&gt; 就不好使。&lt;br&gt;可能是因为我们调用这些音频都是来自实体，所以都被游戏认为是 music ，而不是 ui 或者别的音频通道了。   &lt;/p&gt;
@@ -1123,87 +1034,14 @@ Write-Host &amp;quot;输出文件夹 $dir2&amp;quot;
 &lt;p&gt;如果不写这个的话，貌似默认的 &lt;code&gt;csgo_mega&lt;/code&gt; 只有 128 距离那么远。   &lt;/p&gt;
 &lt;p&gt;甚至可以再加入元素使得声音大小起起伏伏（比如站的最近声音小，站中间声音大）。   &lt;/p&gt;
 &lt;p&gt;如果写一个 99999 距离也是 1.0 音量，则表示全图可以听见，但是这个和 music 还是有区别的。&lt;br&gt;玩家听到的声音的左右声道的大小是不一致的，因为他们不一定面向声源。   &lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;&amp;quot;exgze.test10mega&amp;quot; = 
-&amp;#123;
-    type = &amp;quot;csgo_mega&amp;quot;
-    volume = 1.0 // 这里会被当做标准值，后面曲线会乘以这个数
-    vsnd_files_track_01 = &amp;quot;sounds/exg/test10s.vsnd&amp;quot;
-    distance_volume_mapping_curve = 
-    [
-        [
-            0.0, 1.0, // 距离声音原点零距离时，音量为1.0
-             -0.00394, -0.00394, // 后面4个数字是照抄的，不知道什么意思
-            2.0, 3.0,
-        ],
-        [
-            900.0, 0.0, // 距离声音原点距离 900 单位时，音量为零
-             -0.002991, -0.002991,
-            2.0, 3.0,
-        ]
-    ]
-&amp;#125;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;&lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;exgze.test10mega&amp;quot;&lt;/span&gt; = &lt;br&gt;&amp;#123;&lt;br&gt;    type = &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;csgo_mega&amp;quot;&lt;/span&gt;&lt;br&gt;    volume = &lt;span class=&#34;hljs-number&#34;&gt;1.0&lt;/span&gt; &lt;span class=&#34;hljs-comment&#34;&gt;// 这里会被当做标准值，后面曲线会乘以这个数&lt;/span&gt;&lt;br&gt;    vsnd_files_track_01 = &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;sounds/exg/test10s.vsnd&amp;quot;&lt;/span&gt;&lt;br&gt;    distance_volume_mapping_curve = &lt;br&gt;    [&lt;br&gt;        [&lt;br&gt;            &lt;span class=&#34;hljs-number&#34;&gt;0.0&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;1.0&lt;/span&gt;, &lt;span class=&#34;hljs-comment&#34;&gt;// 距离声音原点零距离时，音量为1.0&lt;/span&gt;&lt;br&gt;             &lt;span class=&#34;hljs-number&#34;&gt;-0.00394&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;-0.00394&lt;/span&gt;, &lt;span class=&#34;hljs-comment&#34;&gt;// 后面4个数字是照抄的，不知道什么意思&lt;/span&gt;&lt;br&gt;            &lt;span class=&#34;hljs-number&#34;&gt;2.0&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;3.0&lt;/span&gt;,&lt;br&gt;        ],&lt;br&gt;        [&lt;br&gt;            &lt;span class=&#34;hljs-number&#34;&gt;900.0&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;0.0&lt;/span&gt;, &lt;span class=&#34;hljs-comment&#34;&gt;// 距离声音原点距离 900 单位时，音量为零&lt;/span&gt;&lt;br&gt;             &lt;span class=&#34;hljs-number&#34;&gt;-0.002991&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;-0.002991&lt;/span&gt;,&lt;br&gt;            &lt;span class=&#34;hljs-number&#34;&gt;2.0&lt;/span&gt;, &lt;span class=&#34;hljs-number&#34;&gt;3.0&lt;/span&gt;,&lt;br&gt;        ]&lt;br&gt;    ]&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
 &lt;h2 id=&#34;一些官方示例&#34;&gt;&lt;a href=&#34;#一些官方示例&#34; class=&#34;headerlink&#34; title=&#34;一些官方示例&#34;&gt;&lt;/a&gt;一些官方示例&lt;/h2&gt;&lt;p&gt;一个官方的音乐盒的示例：   &lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;Music.MVPPreview.halflife_alyx_01 = 
-&amp;#123;
-    type = &amp;quot;csgo_music&amp;quot;
-    volume = 0.800000
-    volume_convar = &amp;quot;snd_menumusic_volume&amp;quot;  // 这里是说它同时受玩家设置里的音乐音量的控制
-    stop_music = &amp;quot;true&amp;quot;
-    vsnd_files = &amp;quot;sounds/music/halflife_alyx_01/roundmvpanthem_01.vsnd&amp;quot;
-    vsnd_duration = 16.692245  // 音乐长度，我们一般不写，编译的时候会自动进去
-&amp;#125;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;Music.MVPPreview.halflife_alyx_01 = &lt;br&gt;&amp;#123;&lt;br&gt;    type = &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;csgo_music&amp;quot;&lt;/span&gt;&lt;br&gt;    volume = &lt;span class=&#34;hljs-number&#34;&gt;0.800000&lt;/span&gt;&lt;br&gt;    volume_convar = &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;snd_menumusic_volume&amp;quot;&lt;/span&gt;  &lt;span class=&#34;hljs-comment&#34;&gt;// 这里是说它同时受玩家设置里的音乐音量的控制&lt;/span&gt;&lt;br&gt;    stop_music = &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;true&amp;quot;&lt;/span&gt;&lt;br&gt;    vsnd_files = &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;sounds/music/halflife_alyx_01/roundmvpanthem_01.vsnd&amp;quot;&lt;/span&gt;&lt;br&gt;    vsnd_duration = &lt;span class=&#34;hljs-number&#34;&gt;16.692245&lt;/span&gt;  &lt;span class=&#34;hljs-comment&#34;&gt;// 音乐长度，我们一般不写，编译的时候会自动进去&lt;/span&gt;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
 &lt;p&gt;一个官方的示例，人质受伤（精简过，原文有点长）：   &lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;c++&#34;&gt;Hostage.Pain = 
-&amp;#123;
-    type = &amp;quot;csgo_mega&amp;quot;
-    volume = 0.899902
-    pitch = 1.000000
-    mixgroup = &amp;quot;VO&amp;quot;
-    block_duration = 0.300000
-    block_distance = 69.000000
-    use_distance_volume_mapping_curve = true
-    reverb_wet = 0.300000
-    display_broadcast = true
-    occlusion_intensity = 0.500000
-    occlusion_frequency_scale = 0.500000
-    vsnd_files_track_01 =
-    [
-        &amp;quot;sounds/vo/hostage/hpain/hpain1.vsnd&amp;quot;,
-        &amp;quot;sounds/vo/hostage/hpain/hpain2.vsnd&amp;quot;,
-        &amp;quot;sounds/vo/hostage/hpain/hpain3.vsnd&amp;quot;
-    ]
-    distance_volume_mapping_curve = 
-    [
-        [
-            81.028969,
-            1.000000,
-            0.000000,
-            0.000000,
-            2.000000,
-            3.000000,
-        ],
-        [
-            211.771500,
-            0.634147,
-            -0.001725,
-            -0.001725,
-            2.000000,
-            3.000000,
-        ],
-        [
-            1100.000000,
-            0.000000,
-            -0.000557,
-            -0.000557,
-            2.000000,
-            3.000000,
-        ]
-    ]
-    vsnd_duration = 0.586757
-&amp;#125;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;48&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs c++&#34;&gt;Hostage.Pain = &lt;br&gt;&amp;#123;&lt;br&gt;    type = &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;csgo_mega&amp;quot;&lt;/span&gt;&lt;br&gt;    volume = &lt;span class=&#34;hljs-number&#34;&gt;0.899902&lt;/span&gt;&lt;br&gt;    pitch = &lt;span class=&#34;hljs-number&#34;&gt;1.000000&lt;/span&gt;&lt;br&gt;    mixgroup = &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;VO&amp;quot;&lt;/span&gt;&lt;br&gt;    block_duration = &lt;span class=&#34;hljs-number&#34;&gt;0.300000&lt;/span&gt;&lt;br&gt;    block_distance = &lt;span class=&#34;hljs-number&#34;&gt;69.000000&lt;/span&gt;&lt;br&gt;    use_distance_volume_mapping_curve = &lt;span class=&#34;hljs-literal&#34;&gt;true&lt;/span&gt;&lt;br&gt;    reverb_wet = &lt;span class=&#34;hljs-number&#34;&gt;0.300000&lt;/span&gt;&lt;br&gt;    display_broadcast = &lt;span class=&#34;hljs-literal&#34;&gt;true&lt;/span&gt;&lt;br&gt;    occlusion_intensity = &lt;span class=&#34;hljs-number&#34;&gt;0.500000&lt;/span&gt;&lt;br&gt;    occlusion_frequency_scale = &lt;span class=&#34;hljs-number&#34;&gt;0.500000&lt;/span&gt;&lt;br&gt;    vsnd_files_track_01 =&lt;br&gt;    [&lt;br&gt;        &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;sounds/vo/hostage/hpain/hpain1.vsnd&amp;quot;&lt;/span&gt;,&lt;br&gt;        &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;sounds/vo/hostage/hpain/hpain2.vsnd&amp;quot;&lt;/span&gt;,&lt;br&gt;        &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;sounds/vo/hostage/hpain/hpain3.vsnd&amp;quot;&lt;/span&gt;&lt;br&gt;    ]&lt;br&gt;    distance_volume_mapping_curve = &lt;br&gt;    [&lt;br&gt;        [&lt;br&gt;            &lt;span class=&#34;hljs-number&#34;&gt;81.028969&lt;/span&gt;,&lt;br&gt;            &lt;span class=&#34;hljs-number&#34;&gt;1.000000&lt;/span&gt;,&lt;br&gt;            &lt;span class=&#34;hljs-number&#34;&gt;0.000000&lt;/span&gt;,&lt;br&gt;            &lt;span class=&#34;hljs-number&#34;&gt;0.000000&lt;/span&gt;,&lt;br&gt;            &lt;span class=&#34;hljs-number&#34;&gt;2.000000&lt;/span&gt;,&lt;br&gt;            &lt;span class=&#34;hljs-number&#34;&gt;3.000000&lt;/span&gt;,&lt;br&gt;        ],&lt;br&gt;        [&lt;br&gt;            &lt;span class=&#34;hljs-number&#34;&gt;211.771500&lt;/span&gt;,&lt;br&gt;            &lt;span class=&#34;hljs-number&#34;&gt;0.634147&lt;/span&gt;,&lt;br&gt;            &lt;span class=&#34;hljs-number&#34;&gt;-0.001725&lt;/span&gt;,&lt;br&gt;            &lt;span class=&#34;hljs-number&#34;&gt;-0.001725&lt;/span&gt;,&lt;br&gt;            &lt;span class=&#34;hljs-number&#34;&gt;2.000000&lt;/span&gt;,&lt;br&gt;            &lt;span class=&#34;hljs-number&#34;&gt;3.000000&lt;/span&gt;,&lt;br&gt;        ],&lt;br&gt;        [&lt;br&gt;            &lt;span class=&#34;hljs-number&#34;&gt;1100.000000&lt;/span&gt;,&lt;br&gt;            &lt;span class=&#34;hljs-number&#34;&gt;0.000000&lt;/span&gt;,&lt;br&gt;            &lt;span class=&#34;hljs-number&#34;&gt;-0.000557&lt;/span&gt;,&lt;br&gt;            &lt;span class=&#34;hljs-number&#34;&gt;-0.000557&lt;/span&gt;,&lt;br&gt;            &lt;span class=&#34;hljs-number&#34;&gt;2.000000&lt;/span&gt;,&lt;br&gt;            &lt;span class=&#34;hljs-number&#34;&gt;3.000000&lt;/span&gt;,&lt;br&gt;        ]&lt;br&gt;    ]&lt;br&gt;    vsnd_duration = &lt;span class=&#34;hljs-number&#34;&gt;0.586757&lt;/span&gt;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
 &lt;h1 id=&#34;编译脚本与声音&#34;&gt;&lt;a href=&#34;#编译脚本与声音&#34; class=&#34;headerlink&#34; title=&#34;编译脚本与声音&#34;&gt;&lt;/a&gt;编译脚本与声音&lt;/h1&gt;&lt;p&gt;在 &lt;code&gt;Asserts Browser&lt;/code&gt; 里搜索你的声音文件和脚本文件。&lt;br&gt;全部选中，按鼠标右键，选择 &lt;code&gt;Full Recompile&lt;/code&gt;。   &lt;/p&gt;
 &lt;p&gt;这样  &lt;code&gt;.vsndevts&lt;/code&gt; 就会变成 &lt;code&gt;.vsndevts_c&lt;/code&gt;文件，&lt;br&gt;&lt;code&gt;.mp3 .wav&lt;/code&gt; 就会变成 &lt;code&gt;.vsnd_c&lt;/code&gt; 文件（内嵌进去）了。&lt;br&gt;编译好的文件会在 &lt;code&gt;common\Counter-Strike Global Offensive\game\csgo_addons\xxxx&lt;/code&gt; 里。  &lt;/p&gt;
 &lt;p&gt;一般来说如果开着 hammer，对 &lt;code&gt;.vsndevts&lt;/code&gt; 的编译是全自动的。   &lt;/p&gt;
