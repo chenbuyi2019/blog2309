@@ -7,16 +7,16 @@
         <language>zh-CN</language>
         <pubDate>Thu, 12 Dec 2024 14:51:43 +0800</pubDate>
         <lastBuildDate>Thu, 12 Dec 2024 14:51:43 +0800</lastBuildDate>
+        <category>小小说</category>
         <category>家庭</category>
         <category>code</category>
-        <category>关于</category>
-        <category>小小说</category>
         <category>学校</category>
+        <category>关于</category>
+        <category>.net</category>
+        <category>gmod</category>
+        <category>ssh</category>
         <category>cs2</category>
         <category>游戏</category>
-        <category>gmod</category>
-        <category>.net</category>
-        <category>ssh</category>
         <category>MYSQL</category>
         <item>
             <guid isPermalink="true">http://buyi.dev/2024/gmod-ain/</guid>
@@ -1056,8 +1056,8 @@
             <guid isPermalink="true">http://buyi.dev/2024/notfriend/</guid>
             <title>小小说：要你管！</title>
             <link>http://buyi.dev/2024/notfriend/</link>
-            <category>家庭</category>
             <category>小小说</category>
+            <category>家庭</category>
             <pubDate>Sun, 11 Feb 2024 09:04:56 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;A: 你和你父母更像朋友还是敌人？   &lt;/p&gt;
 &lt;p&gt;B: 更像朋友。   &lt;/p&gt;
