@@ -3,18 +3,34 @@
     <id>http://buyi.dev</id>
     <title>陈布衣的博客</title>
     <link href="http://buyi.dev" />
-    <updated>2024-12-12T06:51:43.000Z</updated>
+    <updated>2025-02-25T08:58:35.000Z</updated>
     <category term="小小说" />
+    <category term="学校" />
     <category term="家庭" />
     <category term="code" />
-    <category term="学校" />
     <category term="关于" />
     <category term=".net" />
     <category term="gmod" />
+    <category term="MYSQL" />
     <category term="ssh" />
     <category term="cs2" />
     <category term="游戏" />
-    <category term="MYSQL" />
+    <entry>
+        <id>http://buyi.dev/2025/if-with-family-again/</id>
+        <title>打油诗：假如再和父母住在一起</title>
+        <link rel="alternate" href="http://buyi.dev/2025/if-with-family-again/"/>
+        <content type="html">&lt;p&gt;假如再和父母住在一起，我要剁掉我的双手。&lt;br&gt;因为这是一双会挣钱的手。&lt;br&gt;因为父母说这是一双写字难看，只会打游戏的手。&lt;br&gt;因为父母说这是一双不会种菜，也不会做饭的笨手。&lt;br&gt;（父母没教会我怎么挣钱）&lt;/p&gt;
+&lt;p&gt;假如再和父母住在一起，我要砍去我的双脚。&lt;br&gt;因为这是一双学会了骑车的脚。&lt;br&gt;因为这是一双走过南闯过北的脚，是一双体验过自由的脚。&lt;br&gt;因为父母说这是一双只会宅在家里的脚。&lt;br&gt;（父母没教会我骑车，要求我只在老家不去外地）&lt;/p&gt;
+&lt;p&gt;假如再和父母住在一起，我要挖去我的双眼。&lt;br&gt;因为这是一双看清父母真相的眼。&lt;br&gt;因为父母说这是一双只会看电子屏幕的眼。&lt;/p&gt;
+&lt;p&gt;假如再和父母住在一起，我要砍下我的双耳。&lt;br&gt;因为这是一对听过不同意见的耳。&lt;br&gt;因为父母说这是一对不听话的没用的耳。&lt;/p&gt;
+&lt;p&gt;假如再和父母住在一起，我要拔掉我的舌头。&lt;br&gt;因为这是一张说出父母真相的嘴。&lt;br&gt;因为父母说这是一张挑食的嘴。&lt;br&gt;因为父母说这是一张说不出好听的话，只会顶撞长辈的狗嘴。&lt;br&gt;（父母说我狗嘴里吐不出象牙）&lt;/p&gt;
+&lt;p&gt;假如再和父母住在一起，我要拔光我的牙齿。&lt;br&gt;因为这是一口没有蛀牙的牙齿。&lt;br&gt;因为这是我努力挣钱之后，一口我投入了几万元，戴了牙套的牙齿。&lt;br&gt;（父母忽视我成年后的牙齿健康。牙套的钱是我自己出的，小时候父母不给我戴牙套）&lt;/p&gt;
+&lt;p&gt;假如再和父母住在一起，我要切除我的前脑叶白质。&lt;br&gt;这样就可以成为一个令父母满意的，只会呵呵笑的，不会反抗的，忠实孝顺的奴仆。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV1jsPeebESc&#34;&gt;b站视频&lt;/a&gt;&lt;/p&gt;
+</content>
+        <category term="家庭" />
+        <updated>2025-02-25T08:58:35.000Z</updated>
+    </entry>
     <entry>
         <id>http://buyi.dev/2024/gmod-ain/</id>
         <title>GMod 中 NPC AI 路径 ain 文件版本控制问题</title>
@@ -1061,21 +1077,5 @@
         <category term="小小说" />
         <category term="家庭" />
         <updated>2024-02-11T01:04:56.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://buyi.dev/2024/no-home/</id>
-        <title>我为什么讨厌老家</title>
-        <link rel="alternate" href="http://buyi.dev/2024/no-home/"/>
-        <content type="html">&lt;p&gt;自我2021年1月26日离开浙江，1月27日抵达昆明以来，我就再没离开昆明市。&lt;br&gt;浙江已经完全没有什么值得我去的了。&lt;br&gt;我非常的喜欢昆明，喜欢这个省城、大城市。   &lt;/p&gt;
-&lt;p&gt;为什么说讨厌老家，说白了就是穷，落后，加上父母的压迫。&lt;br&gt;我这里说的老家，包括老家县城和老家乡下。   &lt;/p&gt;
-&lt;p&gt;县城里有什么，麦当劳都没有，想吃麦当劳和汉堡王得坐火车去城市里。&lt;br&gt;随便生点什么大病，就也是往城里去。&lt;br&gt;过年就要去老家乡下，去看老人，住十几天，这就是最要命的事情。&lt;br&gt;小时候经常看别人参加漫展，我们这从来没有参加过，为什么，谁tm漫展开县里面啊？&lt;br&gt;小时候教科书里有动物园、科技馆、博物馆这些，我们都不知道那是什么的，都是猜个大概里面是什么样。我都是长这么大到昆明了才第一次参观博物馆和科技馆。   &lt;/p&gt;
-&lt;p&gt;你本来县城里就够落后的，去到乡下更是不得了。&lt;br&gt;快递没有，可能有中国邮政。&lt;br&gt;家里电脑、洗衣机、空调，都没有。&lt;br&gt;网约车没有，只有乡镇公交车。&lt;br&gt;大银行也没有，只有村镇的。&lt;br&gt;外卖没有，饭店过年也不开，或者开着就非常贵。&lt;br&gt;有什么，有蜘蛛，有鸡鸭的粪便，还有丑陋的自建房，还有大人的打牌声、麻将声和二手烟。&lt;br&gt;在这种环境下，你有什么可以做的。&lt;br&gt;一天到晚就是叫你做家务或者看一台分辨率很低的电视。&lt;br&gt;我小的时候没的选，只能在这样的环境里，非常容易闹矛盾闹情绪，可是又不能回县城。&lt;br&gt;想走都不方便，那时候连网约车都没有。等乡镇公交车是一件费时费力的事情。&lt;br&gt;这就是一个陷阱，把你地理上困在这，然后再用父母的强权去折磨你。   &lt;/p&gt;
-&lt;p&gt;我不是说去到乡村过年是坏事，我意思是没有选择，被逼着去乡村过年是坏事。&lt;br&gt;你主动去乡村看看山水，吃喝玩乐，那可以叫旅游和放松。&lt;br&gt;你被逼着去乡村干活和吃苦和忍受寂寞，那是让你去“上山下乡”。&lt;br&gt;而现在我离家出走了，我一定要坚持到底，斗争到底，坚决不能让这种事情再次发生在我身上。   &lt;/p&gt;
-&lt;p&gt;对老家的盲目崇拜，我把它叫做：&lt;br&gt;把原始当根，把落后当本，&lt;br&gt;把奴性当孝，把盲从当顺。   &lt;/p&gt;
-&lt;p&gt;也许我的父母会说：“现在老家已经有快递了、有网约车了、有洗衣机了”&lt;br&gt;你现在说有用吗？你是想割地赔款还是想下跪认罪？    &lt;/p&gt;
-&lt;p&gt;截止本文编写的时候，我已经离开了浙江省3年加十天。&lt;br&gt;我也就在昆明待了3年加十天，本本分分地做着工作养活自己，快乐自己。   &lt;/p&gt;
-</content>
-        <category term="家庭" />
-        <updated>2024-02-07T12:33:01.000Z</updated>
     </entry>
 </feed>
