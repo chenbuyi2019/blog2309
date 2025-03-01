@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>反恐精英2 mdmp 文件里内嵌日志的解读</title>
+    <link href="/2025/cs2-mdmp-view/"/>
+    <url>/2025/cs2-mdmp-view/</url>
+    
+    <content type="html"><![CDATA[<p>cs2.exe 崩溃之后，有概率生成 mdmp 文件，之前我只用 Visual Studio 和 windbg 去打开 mdmp 文件。<br>都没有发挥出 mdmp 文件的真实价值。   </p><p>与其打开 Visual Studio 或 windbg 在那瞎猜，不如直接用代码编辑器打开（甚至记事本）。<br>然后搜索文本 <code>Console History (reversed)</code> ，这样就可以看到一大段明文日志。<br>这个日志是新的在前面，老的在后面进行排布的。 </p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs log">Console History (reversed)<br><br>2852(200.822541):  FATAL ERROR: attempting to render with error material for &#x27;materials/error.vmat&#x27;<br>2851(200.822512):  FATAL ERROR: attempting to render with error material for &#x27;materials/error.vmat&#x27;<br>2850(200.822495):  FATAL ERROR: attempting to render with error material for &#x27;materials/error.vmat&#x27;<br>2849(200.822487):  FATAL ERROR: attempting to render with error material for &#x27;materials/error.vmat&#x27;<br>2848(200.822467):  FATAL ERROR: attempting to render with error material for &#x27;materials/error.vmat&#x27;<br>2847(200.822231):  Sending Steam API content notification<br>2846(200.822209):  C:\buildworker\csgo_rel_win64\build\src\filesystem\basefilesystem.cpp (7062) : AssertMsg Failed in function CBaseFileSystem::MarkContentCorrupt():<br>Content being marked corrupt.  bMissingFilesOnly = false, pFile specified as &#x27;NULL&#x27;, reason: &#x27;FATAL ERROR: attempting to render with error material for &#x27;materials/error.vmat&#x27;&#x27;<br>2845(200.822203):  Sending Steam API content notification<br></code></pre></td></tr></table></figure><p>如上文我们遇到的是 <code>materials/error.vmat</code><br>这是个非常司马的难题，因为 cs2 遇到丢失的 vmat 贴图它不会忽略、也不会在 UI 里告诉你丢失了什么，<br>它只会弹出这个该死的弹窗。<br>然后强制启动 steam 的验证游戏完整性，逼你等上几分钟才能重启游戏。<br>在这里有个比较快的定位丢失文件的办法，就是从 mdmp 提供的日志里查看。<br>从日志的文本里搜索正则 <code>Failed loading resource .+\.vmat_c</code> 就可以直接看见到底哪个 <code>.vmat_c</code> 丢失了。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs log">2252(194.518007):   [ExG积分商城] 你得到了 4 积分：僵尸通关<br>2251(193.816209):  Failed loading resource &quot;knif/kukri_beast.vmat_c&quot; (ERROR_FILEOPEN: File not found)<br></code></pre></td></tr></table></figure><p>在实战中，这个办法的用途也没有想象中的大，针对 error.vmat 难题是够用了。<br>可以快速从玩家闪退提供的文件里找到问题来源。以及一些可能的地图 IO 类导致的服务器崩溃。<br>使用插件特地实现的一些崩溃， mdmp 日志能提供的帮助反而较少。</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>cs2</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>打油诗：假如再和父母住在一起</title>
     <link href="/2025/if-with-family-again/"/>
     <url>/2025/if-with-family-again/</url>

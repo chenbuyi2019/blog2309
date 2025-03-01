@@ -3,18 +3,34 @@
     <id>http://buyi.dev</id>
     <title>陈布衣的博客</title>
     <link href="http://buyi.dev" />
-    <updated>2025-02-25T08:58:35.000Z</updated>
+    <updated>2025-03-01T11:39:04.000Z</updated>
+    <category term="关于" />
+    <category term="code" />
     <category term="小小说" />
     <category term="学校" />
     <category term="家庭" />
-    <category term="code" />
-    <category term="关于" />
     <category term=".net" />
     <category term="gmod" />
-    <category term="MYSQL" />
     <category term="ssh" />
+    <category term="MYSQL" />
     <category term="cs2" />
     <category term="游戏" />
+    <entry>
+        <id>http://buyi.dev/2025/cs2-mdmp-view/</id>
+        <title>反恐精英2 mdmp 文件里内嵌日志的解读</title>
+        <link rel="alternate" href="http://buyi.dev/2025/cs2-mdmp-view/"/>
+        <content type="html">&lt;p&gt;cs2.exe 崩溃之后，有概率生成 mdmp 文件，之前我只用 Visual Studio 和 windbg 去打开 mdmp 文件。&lt;br&gt;都没有发挥出 mdmp 文件的真实价值。   &lt;/p&gt;
+&lt;p&gt;与其打开 Visual Studio 或 windbg 在那瞎猜，不如直接用代码编辑器打开（甚至记事本）。&lt;br&gt;然后搜索文本 &lt;code&gt;Console History (reversed)&lt;/code&gt; ，这样就可以看到一大段明文日志。&lt;br&gt;这个日志是新的在前面，老的在后面进行排布的。 &lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs log&#34;&gt;Console History (reversed)&lt;br&gt;&lt;br&gt;2852(200.822541):  FATAL ERROR: attempting to render with error material for &amp;#x27;materials/error.vmat&amp;#x27;&lt;br&gt;2851(200.822512):  FATAL ERROR: attempting to render with error material for &amp;#x27;materials/error.vmat&amp;#x27;&lt;br&gt;2850(200.822495):  FATAL ERROR: attempting to render with error material for &amp;#x27;materials/error.vmat&amp;#x27;&lt;br&gt;2849(200.822487):  FATAL ERROR: attempting to render with error material for &amp;#x27;materials/error.vmat&amp;#x27;&lt;br&gt;2848(200.822467):  FATAL ERROR: attempting to render with error material for &amp;#x27;materials/error.vmat&amp;#x27;&lt;br&gt;2847(200.822231):  Sending Steam API content notification&lt;br&gt;2846(200.822209):  C:\buildworker\csgo_rel_win64\build\src\filesystem\basefilesystem.cpp (7062) : AssertMsg Failed in function CBaseFileSystem::MarkContentCorrupt():&lt;br&gt;Content being marked corrupt.  bMissingFilesOnly = false, pFile specified as &amp;#x27;NULL&amp;#x27;, reason: &amp;#x27;FATAL ERROR: attempting to render with error material for &amp;#x27;materials/error.vmat&amp;#x27;&amp;#x27;&lt;br&gt;2845(200.822203):  Sending Steam API content notification&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;如上文我们遇到的是 &lt;code&gt;materials/error.vmat&lt;/code&gt;&lt;br&gt;这是个非常司马的难题，因为 cs2 遇到丢失的 vmat 贴图它不会忽略、也不会在 UI 里告诉你丢失了什么，&lt;br&gt;它只会弹出这个该死的弹窗。&lt;br&gt;然后强制启动 steam 的验证游戏完整性，逼你等上几分钟才能重启游戏。&lt;br&gt;在这里有个比较快的定位丢失文件的办法，就是从 mdmp 提供的日志里查看。&lt;br&gt;从日志的文本里搜索正则 &lt;code&gt;Failed loading resource .+\.vmat_c&lt;/code&gt; 就可以直接看见到底哪个 &lt;code&gt;.vmat_c&lt;/code&gt; 丢失了。&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs log&#34;&gt;2252(194.518007):   [ExG积分商城] 你得到了 4 积分：僵尸通关&lt;br&gt;2251(193.816209):  Failed loading resource &amp;quot;knif/kukri_beast.vmat_c&amp;quot; (ERROR_FILEOPEN: File not found)&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;在实战中，这个办法的用途也没有想象中的大，针对 error.vmat 难题是够用了。&lt;br&gt;可以快速从玩家闪退提供的文件里找到问题来源。以及一些可能的地图 IO 类导致的服务器崩溃。&lt;br&gt;使用插件特地实现的一些崩溃， mdmp 日志能提供的帮助反而较少。&lt;/p&gt;
+</content>
+        <category term="cs2" />
+        <updated>2025-03-01T11:39:04.000Z</updated>
+    </entry>
     <entry>
         <id>http://buyi.dev/2025/if-with-family-again/</id>
         <title>打油诗：假如再和父母住在一起</title>
@@ -1064,18 +1080,5 @@
         <category term="code" />
         <category term="cs2" />
         <updated>2024-03-13T04:26:06.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://buyi.dev/2024/notfriend/</id>
-        <title>小小说：要你管！</title>
-        <link rel="alternate" href="http://buyi.dev/2024/notfriend/"/>
-        <content type="html">&lt;p&gt;A: 你和你父母更像朋友还是敌人？   &lt;/p&gt;
-&lt;p&gt;B: 更像朋友。   &lt;/p&gt;
-&lt;p&gt;A: 是朋友还不让你和我语音？是朋友还不让你女装？是朋友还要你上交工资？&lt;br&gt;你做任何事情都是要偷偷摸摸的背着朋友的是吧。   &lt;/p&gt;
-&lt;p&gt;B: 要你管！滚。  &lt;/p&gt;
-</content>
-        <category term="小小说" />
-        <category term="家庭" />
-        <updated>2024-02-11T01:04:56.000Z</updated>
     </entry>
 </feed>
