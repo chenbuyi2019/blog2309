@@ -7,17 +7,17 @@
         <language>zh-CN</language>
         <pubDate>Wed, 12 Mar 2025 16:03:34 +0800</pubDate>
         <lastBuildDate>Wed, 12 Mar 2025 16:03:34 +0800</lastBuildDate>
-        <category>关于</category>
+        <category>cs2</category>
         <category>code</category>
-        <category>小小说</category>
-        <category>学校</category>
-        <category>家庭</category>
-        <category>.net</category>
+        <category>游戏</category>
         <category>gmod</category>
+        <category>家庭</category>
+        <category>小小说</category>
+        <category>.net</category>
+        <category>关于</category>
         <category>MYSQL</category>
         <category>ssh</category>
-        <category>cs2</category>
-        <category>游戏</category>
+        <category>学校</category>
         <item>
             <guid isPermalink="true">http://buyi.dev/2025/yzgz/</guid>
             <title>制作遗嘱公证的经历</title>
@@ -187,8 +187,8 @@
             <guid isPermalink="true">http://buyi.dev/2024/cs2-client-log-parse/</guid>
             <title>反恐精英2：我是怎么掉线的</title>
             <link>http://buyi.dev/2024/cs2-client-log-parse/</link>
-            <category>code</category>
             <category>cs2</category>
+            <category>code</category>
             <pubDate>Mon, 16 Sep 2024 17:38:58 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;司马 Valve 给 Counter-Strike 2 更新了个啥玩意之后，玩家从服务器掉线就不知道理由了。&lt;br&gt;本来应该写掉线理由的框变成了个空白框。   &lt;/p&gt;
 &lt;p&gt;特地做此工具，用来解析游戏控制台日志，从而知道掉线给的是啥理由。   &lt;/p&gt;
@@ -426,8 +426,8 @@
             <guid isPermalink="true">http://buyi.dev/2024/ffmpeg-ps1-source/</guid>
             <title>PowerShell 脚本: ffmpeg 批量压缩音频</title>
             <link>http://buyi.dev/2024/ffmpeg-ps1-source/</link>
-            <category>code</category>
             <category>cs2</category>
+            <category>code</category>
             <pubDate>Sun, 14 Jul 2024 21:20:03 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;前置需求：   &lt;/p&gt;
 &lt;ul&gt;

@@ -10,7 +10,8 @@ tags: 关于
 但是，有概率进垃圾邮箱我还看不见。  
 所以你发B站私信也可以哦。  
 
-头像： [明日方舟](https://ak.hypergryph.com/)    
+头像来自： [心臓弱眞君](https://x.com/xinzoruo/status/1767520681732755540)    
+ 
 链接： [微博](https://weibo.com/u/5977985000)、 [B站](https://space.bilibili.com/4523834)、 [GitHub](https://github.com/chenbuyi2019)、 [Steam](https://steamcommunity.com/profiles/76561198099466387)、 [RSS订阅](/2021/rss)
 
 
