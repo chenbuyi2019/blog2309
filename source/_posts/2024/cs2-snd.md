@@ -187,3 +187,41 @@ Hostage.Pain =
 但是在使用 `ambient_generic` 的时候一定要注意正确勾选 `Is NOT Looped(32)` （貌似绝大多数情况下都要勾上，不然不播放）    
 
 `ambient_generic` 实体无法干预声音脚本自己的音量和播放范围。   
+
+# 模板的使用
+如果我们加了七八个甚至几十个音频事件，他们的播放距离或者某些特殊参数都是一样的，  
+每个音频事件都批量复制 `distance_volume_mapping_curve` 以及一堆参数，如果后续要批量改动，会很麻烦，  
+这时候就可以使用 `base` 来制作模板。 比如下面，两个音频事件都引用了同一个模板叫 t1base  
+
+如果是服务器加载了多个不同的 .vsndevts_c ，里面的 base 名字重复了，**会有影响**，可能会互相串参数
+
+```
+"t1base" = 
+{
+    type = "csgo_mega"
+    volume = 1.00
+    distance_volume_mapping_curve = 
+    [
+        [
+            0.0, 1.0, 0, 0,
+            2.0, 3.0,
+        ],
+        [
+            1300, 0, 0, 0,
+            2.0, 3.0,
+        ]
+    ]
+}
+
+"vvv.a1"=
+{
+	base = "t1base"
+	vsnd_files_track_01 = "sounds/exg_hero/amstl/b1.vsnd"
+}
+
+"vvv.a2"=
+{
+	base = "t1base"
+	vsnd_files_track_01 = "sounds/exg_hero/amstl/b2.vsnd"
+}
+```
