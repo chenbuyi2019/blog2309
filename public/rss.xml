@@ -7,17 +7,17 @@
         <language>zh-CN</language>
         <pubDate>Thu, 25 Sep 2025 14:34:09 +0800</pubDate>
         <lastBuildDate>Thu, 25 Sep 2025 14:34:09 +0800</lastBuildDate>
-        <category>小小说</category>
         <category>家庭</category>
-        <category>cs2</category>
         <category>code</category>
-        <category>学校</category>
-        <category>游戏</category>
-        <category>gmod</category>
+        <category>关于</category>
+        <category>小小说</category>
         <category>.net</category>
+        <category>gmod</category>
+        <category>学校</category>
         <category>MYSQL</category>
         <category>ssh</category>
-        <category>关于</category>
+        <category>cs2</category>
+        <category>游戏</category>
         <item>
             <guid isPermalink="true">http://buyi.dev/2025/ffmpegui/</guid>
             <title>我的 FFMPEG UI</title>
@@ -27,10 +27,10 @@
             <pubDate>Thu, 25 Sep 2025 14:34:09 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;我试用了几个 FFMPEG 的 gui 软件，发现他们都不能做到套着文件夹结构进行转码工作。&lt;br&gt;比如我有一些图片文件，结构化的分布在多个层级的文件夹里，他们就做不到什么结构进去，什么结构出来。&lt;br&gt;对这些一般般的 GUI 来说，他们只能统一输出到另外一个地方。&lt;br&gt;就算可以输出到原文件夹，也会给文件名加上奇奇怪怪的后缀。&lt;br&gt;而且这些 GUI 的操作手感都不好。   &lt;/p&gt;
 &lt;p&gt;最初我还可以用 ps1 写脚本糊弄一下，后面用的越来越频繁。我就自己做了一个简易轮子。&lt;br&gt;支持什么文件夹结构进，什么文件夹结构出。&lt;br&gt;参数全靠自己写。然后保存成模板。&lt;br&gt;也没有转码进度显示，就是个纯粹的 .bat 生成和呼叫工具。   &lt;/p&gt;
+&lt;p&gt;我记得我用了某某软件，他就死脑筋的单线程转码一堆图片，&lt;br&gt;然后比如说我要转码到 webp 。但是有 1.jpg 和 1.png 同时存在，&lt;br&gt;他会转码到半路上，才会报错 1.webp 已经存在，然后也进行不下去了，半途而废了。&lt;br&gt;我的 UI 会只转码修改时间最新的那个，并且开始工作的时候就已经会提出警报了。   &lt;/p&gt;
+&lt;p&gt;我还试用过另外一个开源 GUI ，他那个多任务同时管理有 BUG ，&lt;br&gt;我同时多开一点就报错到死掉。太笨了，我也懒得给他发 issue 。&lt;br&gt;而我这个简简单单，多少个任务同时进行，就生成多少个 .bat 文件，然后同时把他们运行起来就完事了。&lt;br&gt;如果有安装 windows Terminal 可嵌入到一个窗口里的多个标签页。&lt;br&gt;cmd 窗口的标题会显示一个简易的进度。   &lt;/p&gt;
 &lt;p&gt;源码：&lt;br&gt;&lt;a href=&#34;https://github.com/chenbuyi2019/BuyiFFmpegUI&#34;&gt;https://github.com/chenbuyi2019/BuyiFFmpegUI&lt;/a&gt;   &lt;/p&gt;
 &lt;p&gt;截图：&lt;br&gt;&lt;img src=&#34;/image/ffmpegui.webp&#34;&gt;   &lt;/p&gt;
-&lt;p&gt;我记得我用了某某软件，他就死脑筋的单线程转码一堆图片，&lt;br&gt;然后比如说我要转码到 webp 。但是有 1.jpg 和 1.png 同时存在，&lt;br&gt;他会转码到半路上，才会报错 1.webp 已经存在，然后也进行不下去了，半途而废了。&lt;br&gt;我的 UI 会只转码修改时间最新的那个，并且开始工作的时候就已经会提出警报了。   &lt;/p&gt;
-&lt;p&gt;我还试用过另外一个开源 GUI ，他那个多任务同时管理有 BUG ，我同时多开一点就报错到死掉。太笨了，我也懒得给他发 issue 。&lt;br&gt;而我这个简简单单，多少个任务同时进行，就生成多少个 .bat 文件，然后同时把他们运行起来就完事了。&lt;br&gt;如果有安装 windows Terminal 可嵌入到一个窗口里的多个标签页。&lt;br&gt;cmd 窗口的标题会显示一个简易的进度。   &lt;/p&gt;
  ]]></description>
         </item>
         <item>
@@ -211,8 +211,8 @@
             <guid isPermalink="true">http://buyi.dev/2024/cs2-client-log-parse/</guid>
             <title>反恐精英2：我是怎么掉线的</title>
             <link>http://buyi.dev/2024/cs2-client-log-parse/</link>
-            <category>cs2</category>
             <category>code</category>
+            <category>cs2</category>
             <pubDate>Mon, 16 Sep 2024 17:38:58 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;司马 Valve 给 Counter-Strike 2 更新了个啥玩意之后，玩家从服务器掉线就不知道理由了。&lt;br&gt;本来应该写掉线理由的框变成了个空白框。   &lt;/p&gt;
 &lt;p&gt;特地做此工具，用来解析游戏控制台日志，从而知道掉线给的是啥理由。   &lt;/p&gt;
@@ -450,8 +450,8 @@
             <guid isPermalink="true">http://buyi.dev/2024/ffmpeg-ps1-source/</guid>
             <title>PowerShell 脚本: ffmpeg 批量压缩音频</title>
             <link>http://buyi.dev/2024/ffmpeg-ps1-source/</link>
-            <category>cs2</category>
             <category>code</category>
+            <category>cs2</category>
             <pubDate>Sun, 14 Jul 2024 21:20:03 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;前置需求：   &lt;/p&gt;
 &lt;ul&gt;
