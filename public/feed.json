@@ -5,6 +5,17 @@
     "home_page_url": "http://buyi.dev",
     "items": [
         {
+            "id": "http://buyi.dev/2025/ffmpegui/",
+            "url": "http://buyi.dev/2025/ffmpegui/",
+            "title": "我的 FFMPEG UI",
+            "date_published": "2025-09-25T06:34:09.000Z",
+            "content_html": "<p>我试用了几个 FFMPEG 的 gui 软件，发现他们都不能做到套着文件夹结构进行转码工作。<br>比如我有一些图片文件，结构化的分布在多个层级的文件夹里，他们就做不到什么结构进去，什么结构出来。<br>对这些一般般的 GUI 来说，他们只能统一输出到另外一个地方。<br>就算可以输出到原文件夹，也会给文件名加上奇奇怪怪的后缀。<br>而且这些 GUI 的操作手感都不好。   </p>\n<p>我就自己做了一个简易轮子。<br>支持什么文件夹结构进，什么文件夹结构出。<br>参数全靠自己写。然后保存成模板。<br>也没有转码进度显示，就是个纯粹的 BAT 生成和呼叫工具。   </p>\n<p>源码：<br><a href=\"https://github.com/chenbuyi2019/BuyiFFmpegUI\">https://github.com/chenbuyi2019/BuyiFFmpegUI</a>   </p>\n<p>截图：<br><img src=\"/image/ffmpegui.webp\">   </p>\n",
+            "tags": [
+                "code",
+                ".net"
+            ]
+        },
+        {
             "id": "http://buyi.dev/2025/postmarks-km/",
             "url": "http://buyi.dev/2025/postmarks-km/",
             "title": "集齐了昆明14个区县的邮戳",
@@ -57,7 +68,7 @@
             "url": "http://buyi.dev/2024/toolbar-app/",
             "title": "Buyi Toolbar",
             "date_published": "2024-11-15T10:10:56.000Z",
-            "content_html": "<p>解决 windows 11 砍掉的任务栏-工具栏功能。<br>支持文件夹嵌套。   </p>\n<p>运行库： .NET Framework 4.8   </p>\n<p>启动办法： 把指定文件夹作为启动项参数的第一个。如果带空格需要带双引号。   </p>\n<p>cmd 启动示例：</p>\n<figure class=\"highlight cmd\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br></pre></td><td class=\"code\"><pre><code class=\"hljs cmd\"><span class=\"hljs-built_in\">start</span> &quot;&quot; &quot;BuyiToolbar.exe&quot; &quot;C:\\Users\\Buyi\\Apps&quot;<br></code></pre></td></tr></table></figure>\n\n<p>源码： <a href=\"https://github.com/chenbuyi2019/Buyi-Toolbar\">github</a>   </p>\n<p>效果截图：<br><img src=\"/image/buyi_toolbar.jpg\">  </p>\n",
+            "content_html": "<p>解决 windows 11 砍掉的任务栏-工具栏功能。<br>支持文件夹嵌套。   </p>\n<p>运行库： .NET Framework 4.8   </p>\n<p>启动办法： 把指定文件夹作为启动项参数的第一个。如果带空格需要带双引号。   </p>\n<p>cmd 启动示例：</p>\n<figure class=\"highlight cmd\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br></pre></td><td class=\"code\"><pre><code class=\"hljs cmd\"><span class=\"hljs-built_in\">start</span> &quot;&quot; &quot;BuyiToolbar.exe&quot; &quot;C:\\Users\\Buyi\\Apps&quot;<br></code></pre></td></tr></table></figure>\n\n<p>源码： <a href=\"https://github.com/chenbuyi2019/Buyi-Toolbar\">github</a>   </p>\n<p>效果截图：<br><img src=\"/image/buyi_toolbar.webp\">  </p>\n",
             "tags": [
                 "code",
                 ".net"
@@ -144,16 +155,6 @@
             "content_html": "<p>记录一下我玩到单人剧情通关，并且没有作弊的游戏。<br>不求高难度也不求百分百全成就全解锁，能不作弊通关已经很开心了（<br>纯剧情解密类就不算了，可以看攻略作弊的（   </p>\n<h1 id=\"Grand-Theft-Auto\"><a href=\"#Grand-Theft-Auto\" class=\"headerlink\" title=\"Grand Theft Auto\"></a>Grand Theft Auto</h1><p>2017 年 4 月 7 日，通关了 GTA 5 。<br>2022 年 1 月 29 日，通关了 GTA 4 本体。<br>2022 年 8 月 17 日，通关了 The Ballad of Gay Tony 。<br>2022 年 10 月 1 日，通关了 The Lost and Damned 。<br>2024 年 7 月 4 日，通关了 GTA III - The Definitive Edition <a href=\"https://m.weibo.cn/status/Om1RkzUwy\">微博</a> 。<br>2024 年 7 月 30 日，通关了 GTA Vice City – The Definitive Edition <a href=\"https://m.weibo.cn/status/OpYfvxpV0\">微博</a>  。<br>2024 年 8 月 20 日，通关了 GTA San Andreas – The Definitive Edition <a href=\"https://m.weibo.cn/status/OtcsQqGa6\">微博</a>  。    </p>\n<h1 id=\"Devil-May-Cry-5\"><a href=\"#Devil-May-Cry-5\" class=\"headerlink\" title=\"Devil May Cry 5\"></a>Devil May Cry 5</h1><p>2022 年 10月 22日。   </p>\n<h1 id=\"ICEY\"><a href=\"#ICEY\" class=\"headerlink\" title=\"ICEY\"></a>ICEY</h1><p>2017 年 8 月 2 日。   </p>\n<h1 id=\"Homefront\"><a href=\"#Homefront\" class=\"headerlink\" title=\"Homefront\"></a>Homefront</h1><p>2021 年 9 月 20 日。  </p>\n<h1 id=\"Max-Payne-3\"><a href=\"#Max-Payne-3\" class=\"headerlink\" title=\"Max Payne 3\"></a>Max Payne 3</h1><p>2021 年 10 月 9 日。   </p>\n<h1 id=\"Red-Alert-2\"><a href=\"#Red-Alert-2\" class=\"headerlink\" title=\"Red Alert 2\"></a>Red Alert 2</h1><p>2023 年 7 月 7 日，红色警戒2 本体 <a href=\"https://m.weibo.cn/status/N8M945xzX\">微博</a><br>2023 年 7 月 12 日，尤里的复仇 苏军线 <a href=\"https://m.weibo.cn/status/N9yHy2Qn7\">微博</a><br>2024 年 8 月 7 日，尤里的复仇 盟军线 <a href=\"https://m.weibo.cn/status/OrdHv3p2N\">微博</a>   </p>\n<h1 id=\"Red-Alert-1\"><a href=\"#Red-Alert-1\" class=\"headerlink\" title=\"Red Alert 1\"></a>Red Alert 1</h1><p>2024 年 1 月 24 日，红色警戒1 苏军线  <a href=\"https://m.weibo.cn/status/NDlcGjaYP\">微博</a><br>2024 年 8 月 27 日，红色警戒1 盟军线  <a href=\"https://m.weibo.cn/status/OufZq8Apg\">微博</a>   </p>\n<h1 id=\"Half-Life-1\"><a href=\"#Half-Life-1\" class=\"headerlink\" title=\"Half-Life 1\"></a>Half-Life 1</h1><p>2023 年 1 月 25 日，<a href=\"https://m.weibo.cn/status/MpXEugiJj\">微博</a>   </p>\n<h1 id=\"Need-For-Speed\"><a href=\"#Need-For-Speed\" class=\"headerlink\" title=\"Need For Speed\"></a>Need For Speed</h1><p>2024 年 7 月 11 日，极品飞车 9 最高通缉 NFS Most Wanted。<br><a href=\"https://m.weibo.cn/status/On4zlaVrf\">微博</a>   </p>\n<h1 id=\"不记得具体时间的\"><a href=\"#不记得具体时间的\" class=\"headerlink\" title=\"不记得具体时间的\"></a>不记得具体时间的</h1><ul>\n<li>Minecraft: Java Edition  </li>\n<li>Devil May Cry 4   </li>\n<li>Hitman: Absolution</li>\n<li>Half-Life 2 </li>\n<li>Half-Life 2: Episode One   </li>\n<li>Half-Life 2: Episode Two  </li>\n<li>Counter-Strike: Condition Zero Deleted Scenes</li>\n<li>Sleeping Dogs: Definitive Edition</li>\n<li>Battlefield 1 </li>\n<li>Battlefield 4</li>\n</ul>\n",
             "tags": [
                 "游戏"
-            ]
-        },
-        {
-            "id": "http://buyi.dev/2024/lets-encrypt-dns/",
-            "url": "http://buyi.dev/2024/lets-encrypt-dns/",
-            "title": "使用 DNS 记录通过 certbot 认证",
-            "date_published": "2024-07-02T12:33:35.000Z",
-            "content_html": "<p>由于我自己写的一些网站都没法直接兼容 Let’s Encrypt <a href=\"https://certbot.eff.org/\">certbot</a> 的普通的认证方式。<br>我更倾向于使用 DNS TXT 认证来完成域名验证过程。<br>好处就是根本不需要一台公网服务器，有台电脑就行。也不用干预正在运行的服务器。<br>坏处就是每次等 DNS 解析有点难等，一旦时机没把握好就得重来。    </p>\n<figure class=\"highlight jboss-cli\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br></pre></td><td class=\"code\"><pre><code class=\"hljs jboss-cli\">certbot certonly <span class=\"hljs-params\">--preferred-challenges</span> dns -d <span class=\"hljs-string\">&quot;*.abcd.com&quot;</span> -d <span class=\"hljs-string\">&quot;abcd.com&quot;</span> <span class=\"hljs-params\">--manual</span><br></code></pre></td></tr></table></figure>\n\n<p>（其实更多是因为我要申请 *.abcd.com 这样的证书，而我不好直接操作 abcd.com 主页服务器。   </p>\n",
-            "tags": [
-                "code"
             ]
         }
     ]

@@ -171,7 +171,7 @@ Hostage.Pain =
 
 一般来说如果开着 hammer，对 `.vsndevts` 的编译是全自动的。   
 
-![](/image/vsnd1.png)   
+![](/image/vsnd1.webp)   
 
 # 试听
 如果要试听，可以把要试听的部分编辑到 `soundevents_addon.vsndevts` 里面，   
@@ -179,7 +179,7 @@ Hostage.Pain =
 如果 Picker 里找不到，试试重新编译一次，应该是会每次打开 Picker 的时候刷新的。   
 如果点击了没有声音预览，说明你写的有问题或者音频文件有问题。   
 
-![](/image/vsnd2.png)   
+![](/image/vsnd2.webp)   
 
 
 # 实体兼容性

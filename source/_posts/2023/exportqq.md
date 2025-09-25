@@ -6,7 +6,7 @@ tags: [code]
 以前我都是用QQ邮箱网页版来导出QQ好友列表做备份的。（把全部的好友添加到邮箱通讯录，然后导出邮箱通讯录即可）   
 然而我今天发现这个不好使了。他们断开了QQ邮箱网页版和QQ好友列表的关联。下面这个窗口不断弹出。  
 
-![](/image/qqexport1.png)  
+![](/image/qqexport1.webp)  
 
 我想到了另外一个老古董，QQ空间。经过一番鼓捣，找到了具体的XHR请求网址。  
 首先到网页版登录[QQ空间](https://i.qq.com/)，  
@@ -14,12 +14,12 @@ tags: [code]
 你甚至可以不开通空间的情况下自己发说说，就是别人看不见。  
 登录进来之后按F12进入开发者工具，找到 Network 区域准备抓包。  
 
-![](/image/qqexport2.png)   
+![](/image/qqexport2.webp)   
 
 接下来点击好友动态，准备发一条说说。点一下 @ 符号，好友列表就从下面冒出来了。  
 在 Network 里搜索一条请求，文件名叫 `friend_show_qqfriends.cgi`    
 
-![](/image/qqexport3.png)   
+![](/image/qqexport3.webp)   
 
 把它的返回内容保存为 .json 文件，就是你的QQ好友列表了。（虽然不是完美的 json ，需要麻烦手动去掉头尾的 callback js 语句）  
 里面的 items 的 uin 数字就是QQ号了。  

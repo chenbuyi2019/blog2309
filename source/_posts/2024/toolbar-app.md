@@ -19,5 +19,5 @@ start "" "BuyiToolbar.exe" "C:\Users\Buyi\Apps"
 源码： [github](https://github.com/chenbuyi2019/Buyi-Toolbar)   
 
 效果截图：   
-![](/image/buyi_toolbar.jpg)  
+![](/image/buyi_toolbar.webp)  
 

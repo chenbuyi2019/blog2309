@@ -57,9 +57,9 @@ select GetSteamId3FromId32('STEAM_0:1:69600329') as `a`,
 SELECT `authid`, GetSteamId3FromId32(`authid`) AS `fcode` 
   FROM `xxx` LIMIT 10;
 ```
-![](/image/mysqlsteam1.png)   
+![](/image/mysqlsteam1.webp)   
 
-![](/image/mysqlsteam2.png)   
+![](/image/mysqlsteam2.webp)   
 
 # 卸载
 ```sql

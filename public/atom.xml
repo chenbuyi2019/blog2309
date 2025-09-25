@@ -3,18 +3,31 @@
     <id>http://buyi.dev</id>
     <title>陈布衣的博客</title>
     <link href="http://buyi.dev" />
-    <updated>2025-07-02T05:28:22.000Z</updated>
+    <updated>2025-09-25T06:34:09.000Z</updated>
     <category term="家庭" />
-    <category term="关于" />
     <category term="code" />
+    <category term="关于" />
     <category term="小小说" />
     <category term="学校" />
-    <category term=".net" />
-    <category term="gmod" />
-    <category term="MYSQL" />
-    <category term="ssh" />
     <category term="cs2" />
     <category term="游戏" />
+    <category term="gmod" />
+    <category term=".net" />
+    <category term="MYSQL" />
+    <category term="ssh" />
+    <entry>
+        <id>http://buyi.dev/2025/ffmpegui/</id>
+        <title>我的 FFMPEG UI</title>
+        <link rel="alternate" href="http://buyi.dev/2025/ffmpegui/"/>
+        <content type="html">&lt;p&gt;我试用了几个 FFMPEG 的 gui 软件，发现他们都不能做到套着文件夹结构进行转码工作。&lt;br&gt;比如我有一些图片文件，结构化的分布在多个层级的文件夹里，他们就做不到什么结构进去，什么结构出来。&lt;br&gt;对这些一般般的 GUI 来说，他们只能统一输出到另外一个地方。&lt;br&gt;就算可以输出到原文件夹，也会给文件名加上奇奇怪怪的后缀。&lt;br&gt;而且这些 GUI 的操作手感都不好。   &lt;/p&gt;
+&lt;p&gt;我就自己做了一个简易轮子。&lt;br&gt;支持什么文件夹结构进，什么文件夹结构出。&lt;br&gt;参数全靠自己写。然后保存成模板。&lt;br&gt;也没有转码进度显示，就是个纯粹的 BAT 生成和呼叫工具。   &lt;/p&gt;
+&lt;p&gt;源码：&lt;br&gt;&lt;a href=&#34;https://github.com/chenbuyi2019/BuyiFFmpegUI&#34;&gt;https://github.com/chenbuyi2019/BuyiFFmpegUI&lt;/a&gt;   &lt;/p&gt;
+&lt;p&gt;截图：&lt;br&gt;&lt;img src=&#34;/image/ffmpegui.webp&#34;&gt;   &lt;/p&gt;
+</content>
+        <category term="code" />
+        <category term=".net" />
+        <updated>2025-09-25T06:34:09.000Z</updated>
+    </entry>
     <entry>
         <id>http://buyi.dev/2025/postmarks-km/</id>
         <title>集齐了昆明14个区县的邮戳</title>
@@ -135,7 +148,7 @@
 &lt;figure class=&#34;highlight cmd&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs cmd&#34;&gt;&lt;span class=&#34;hljs-built_in&#34;&gt;start&lt;/span&gt; &amp;quot;&amp;quot; &amp;quot;BuyiToolbar.exe&amp;quot; &amp;quot;C:\Users\Buyi\Apps&amp;quot;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;源码： &lt;a href=&#34;https://github.com/chenbuyi2019/Buyi-Toolbar&#34;&gt;github&lt;/a&gt;   &lt;/p&gt;
-&lt;p&gt;效果截图：&lt;br&gt;&lt;img src=&#34;/image/buyi_toolbar.jpg&#34;&gt;  &lt;/p&gt;
+&lt;p&gt;效果截图：&lt;br&gt;&lt;img src=&#34;/image/buyi_toolbar.webp&#34;&gt;  &lt;/p&gt;
 </content>
         <category term="code" />
         <category term=".net" />
@@ -476,17 +489,5 @@
 </content>
         <category term="游戏" />
         <updated>2024-07-04T12:07:22.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://buyi.dev/2024/lets-encrypt-dns/</id>
-        <title>使用 DNS 记录通过 certbot 认证</title>
-        <link rel="alternate" href="http://buyi.dev/2024/lets-encrypt-dns/"/>
-        <content type="html">&lt;p&gt;由于我自己写的一些网站都没法直接兼容 Let’s Encrypt &lt;a href=&#34;https://certbot.eff.org/&#34;&gt;certbot&lt;/a&gt; 的普通的认证方式。&lt;br&gt;我更倾向于使用 DNS TXT 认证来完成域名验证过程。&lt;br&gt;好处就是根本不需要一台公网服务器，有台电脑就行。也不用干预正在运行的服务器。&lt;br&gt;坏处就是每次等 DNS 解析有点难等，一旦时机没把握好就得重来。    &lt;/p&gt;
-&lt;figure class=&#34;highlight jboss-cli&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs jboss-cli&#34;&gt;certbot certonly &lt;span class=&#34;hljs-params&#34;&gt;--preferred-challenges&lt;/span&gt; dns -d &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;*.abcd.com&amp;quot;&lt;/span&gt; -d &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;abcd.com&amp;quot;&lt;/span&gt; &lt;span class=&#34;hljs-params&#34;&gt;--manual&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;（其实更多是因为我要申请 *.abcd.com 这样的证书，而我不好直接操作 abcd.com 主页服务器。   &lt;/p&gt;
-</content>
-        <category term="code" />
-        <updated>2024-07-02T12:33:35.000Z</updated>
     </entry>
 </feed>
