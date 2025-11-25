@@ -12,6 +12,7 @@ tags: 关于
 
 链接： [微博](https://weibo.com/u/5977985000)、 [B站](https://space.bilibili.com/4523834)、 [GitHub](https://github.com/chenbuyi2019)、 [Steam](https://steamcommunity.com/profiles/76561198099466387)、 [RSS订阅](/2021/rss)
 
+![](/image/avatar.webp)
 
 # 简史
 2001年，在浙江省出生。   
