@@ -28,7 +28,7 @@ Metamod 版本：  2.0.0-dev+1374
 虽然在更新却没有一个 issue ，也没有 star，不知道他们的用户在哪里。  
 
 # ModSharp
-[github](github.com/Kxnrl/modsharp-public)   
+[github](https://github.com/Kxnrl/modsharp-public)   
 版本： 2.1.88 （2025-11-22）   
 ```cs
 // tt
