@@ -30,7 +30,6 @@ Metamod 版本：  2.0.0-dev+1374
 # ModSharp
 [github](github.com/Kxnrl/modsharp-public)   
 版本： 2.1.88 （2025-11-22）   
-不知道我哪里做错了，我服务器输入 sv_cheats 等 cvar 连回馈都没有，都不知道参数是多少。   
 ```cs
 // tt
 // time: 628 ms. entityCount: 766. infoEntityCount: 44.
