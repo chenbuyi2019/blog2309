@@ -71,4 +71,4 @@ updateTimes();
 - HKC 27英寸 2K 180Hz FastIPS
 - Windows 11
 
-布衣的手机是 [Redmi Turbo 4](https://m.weibo.cn/status/Pdm46wG2u) 。  
+布衣的手机是 [Xiaomi 17 Ultra](https://m.weibo.cn/status/Qlr2quPe0) 。  
