@@ -10,11 +10,11 @@
     <category term="小小说" />
     <category term="学校" />
     <category term="cs2" />
-    <category term=".net" />
     <category term="游戏" />
     <category term="gmod" />
-    <category term="MYSQL" />
+    <category term=".net" />
     <category term="ssh" />
+    <category term="MYSQL" />
     <entry>
         <id>http://buyi.dev/2025/cs2-plugin-framework-tests/</id>
         <title>反恐精英2 各插件平台性能简易测试对比</title>

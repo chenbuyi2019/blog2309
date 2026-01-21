@@ -39,20 +39,23 @@ tags: 关于
 
 <script>
 
-function set(id, st) {
+function setA(id, st) {
     var w = document.getElementById(id);
     var now = new Date();
-    const day = 86400;
+    const year = 86400 * 365;
     var passed = (now.getTime() - st.getTime()) / 1000;
-    var days = Math.floor(passed / day);
-    var sec = Math.floor(passed - days * day);
-    w.innerText = `${days} 天 ${sec} 秒`;
+    var years = passed / year
+    const nt = 100000000;
+    years = Math.floor(years * nt) / nt
+    w.innerText = `${years} 年`;
 }
-setInterval(() => {
-    set("tm1", new Date("2021-01-27T00:00:00"));
-    set("tm2", new Date("2024-09-04T09:40:00"));
-}, 1);
+function updateTimes() {
+    setA("tm1", new Date("2021-01-27T00:00:00"));
+    setA("tm2", new Date("2024-09-04T09:40:00"));
+}
 
+setInterval(updateTimes, 1000);
+updateTimes();
 </script>
 
 
