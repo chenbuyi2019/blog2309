@@ -17,17 +17,10 @@ tags: [游戏]
 2024 年 7 月 30 日，通关了 GTA Vice City – The Definitive Edition [微博](https://m.weibo.cn/status/OpYfvxpV0)  。    
 2024 年 8 月 20 日，通关了 GTA San Andreas – The Definitive Edition [微博](https://m.weibo.cn/status/OtcsQqGa6)  。    
 
+2025 年 11 月 22 日， Grand Theft Auto V Enhanced 达成 100% 完成度。[微博](https://m.weibo.cn/status/QeL3a9NCn)   
+
 # Devil May Cry 5
 2022 年 10月 22日。   
-
-# ICEY
-2017 年 8 月 2 日。   
-
-# Homefront
-2021 年 9 月 20 日。  
-
-# Max Payne 3
-2021 年 10 月 9 日。   
 
 # Red Alert 2
 2023 年 7 月 7 日，红色警戒2 本体 [微博](https://m.weibo.cn/status/N8M945xzX)    
@@ -44,6 +37,20 @@ tags: [游戏]
 # Need For Speed
 2024 年 7 月 11 日，极品飞车 9 最高通缉 NFS Most Wanted。   
 [微博](https://m.weibo.cn/status/On4zlaVrf)   
+
+# Cyberpunk 2077
+2025 年 12 月 30 日， [主线](https://m.weibo.cn/status/QkQ4vlFDp)   
+2026 年 1 月 22 日， DLC [往日之影](https://m.weibo.cn/status/QoiaBb69M)  
+
+
+# ICEY
+2017 年 8 月 2 日。   
+
+# Homefront
+2021 年 9 月 20 日。  
+
+# Max Payne 3
+2021 年 10 月 9 日。   
 
 # 不记得具体时间的
 - Minecraft: Java Edition  
