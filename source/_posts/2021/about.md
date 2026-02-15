@@ -10,7 +10,7 @@ tags: 关于
 但是，有概率进垃圾邮箱我还看不见。  
 所以你发B站私信也可以哦。  
 
-链接： [微博](https://weibo.com/u/5977985000)、 [B站](https://space.bilibili.com/4523834)、 [GitHub](https://github.com/chenbuyi2019)、 [Steam](https://steamcommunity.com/profiles/76561198099466387)、 [RSS订阅](/2021/rss)
+链接： [微博](https://weibo.com/u/5977985000)、 [B站](https://space.bilibili.com/4523834)、 [GitHub](https://github.com/chenbuyi2019)、  [RSS订阅](/2021/rss)
 
 ![](/image/avatar.webp)
 
@@ -22,19 +22,9 @@ tags: 关于
 2023年，学会了骑自行车。  
 2024年，户口迁入昆明市。   
 
-现在，是一名光荣的自力更生的昆明市市民。   
-
-# 理想
-这辈子  
-再不吃父母一口饭，再不花父母一分钱，  
-再不穿父母一件衣，再不回老家一次。  
-
-不求长命百岁，不求做大官发大财，我只想再也不看父母的脸色过日子。   
-
-[写于2024年11月28日](https://m.weibo.cn/status/P2qnOsz6s)   
+现在，是一名光荣的自力更生的昆明市市民。昆明就是我的家。   
 
 # StopWatch
-布衣已经离家出走 <span id="tm1"> </span> 。   
 布衣已经入籍昆明市 <span id="tm2"> </span> 。   
 
 <script>
@@ -50,7 +40,6 @@ function setA(id, st) {
     w.innerText = `${years} 年`;
 }
 function updateTimes() {
-    setA("tm1", new Date("2021-01-27T00:00:00"));
     setA("tm2", new Date("2024-09-04T09:40:00"));
 }
 

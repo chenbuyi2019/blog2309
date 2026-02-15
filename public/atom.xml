@@ -4,17 +4,15 @@
     <title>陈布衣的博客</title>
     <link href="http://buyi.dev" />
     <updated>2025-12-13T03:28:51.000Z</updated>
+    <category term="小小说" />
     <category term="关于" />
-    <category term="家庭" />
     <category term="code" />
+    <category term=".net" />
+    <category term="gmod" />
+    <category term="ssh" />
+    <category term="MYSQL" />
     <category term="cs2" />
     <category term="游戏" />
-    <category term="gmod" />
-    <category term="小小说" />
-    <category term=".net" />
-    <category term="学校" />
-    <category term="MYSQL" />
-    <category term="ssh" />
     <entry>
         <id>http://buyi.dev/2025/cs2-plugin-framework-tests/</id>
         <title>反恐精英2 各插件平台性能简易测试对比</title>
@@ -66,54 +64,6 @@
         <updated>2025-07-02T05:28:22.000Z</updated>
     </entry>
     <entry>
-        <id>http://buyi.dev/2025/yzgz/</id>
-        <title>制作遗嘱公证的经历</title>
-        <link rel="alternate" href="http://buyi.dev/2025/yzgz/"/>
-        <content type="html">&lt;p&gt;布衣在几个月之前制作了一份遗嘱公证，公证费花了一千多。&lt;br&gt;下面在此分享一下我制作遗嘱公证的经历。&lt;/p&gt;
-&lt;p&gt;布衣制作公证遗嘱的主要目的，是为了不让血亲拿到我的财富。&lt;br&gt;把我的财富留给我信任的人，而不是打了我骂了我十几年的人。&lt;/p&gt;
-&lt;p&gt;我故意拖了几个月才写这篇文章，免得你们以为我想不开了。&lt;/p&gt;
-&lt;p&gt;注意，本文不适用于结婚过的人，公证处的人和我说了，&lt;br&gt;理论上，一旦你结婚了，你原来的钱还是你的，结婚后获得的钱都算是“夫妻共同财产”。&lt;br&gt;夫妻共同财产办理遗嘱，可就不是你一个人的事情啦。&lt;br&gt;如果你是离婚了，就带上离婚证吧。希望你没有未结清的财产分割官司。&lt;/p&gt;
-&lt;h1 id=&#34;寻找公证处&#34;&gt;&lt;a href=&#34;#寻找公证处&#34; class=&#34;headerlink&#34; title=&#34;寻找公证处&#34;&gt;&lt;/a&gt;寻找公证处&lt;/h1&gt;&lt;p&gt;正规的公证处是在司法机关那边有备案的，&lt;br&gt;所有公证处做了的公证，法院、司法部门可以直接内部查到。&lt;/p&gt;
-&lt;p&gt;要明白，公证不等于一劳永逸，&lt;br&gt;公证的内容可能有错、有假、有疏忽，但是法院好查好认，就是方便了你以后打官司。&lt;/p&gt;
-&lt;p&gt;找公证处可以直接去 &lt;a href=&#34;https://www.12348.gov.cn/#/publicies/notarization/notarization&#34;&gt;12348&lt;/a&gt; 。&lt;br&gt;然后先打电话问问，办个遗嘱公证要多少钱，几点开门接待之类的。 &lt;/p&gt;
-&lt;h1 id=&#34;钱留给谁的问题&#34;&gt;&lt;a href=&#34;#钱留给谁的问题&#34; class=&#34;headerlink&#34; title=&#34;钱留给谁的问题&#34;&gt;&lt;/a&gt;钱留给谁的问题&lt;/h1&gt;&lt;p&gt;分清楚，&lt;br&gt;法定继承人以内的，一律叫继承人。比如父母配偶儿女。&lt;br&gt;法定继承人以外的，一律叫受遗赠人。&lt;br&gt;我就是把财富全部留给受遗赠人。&lt;/p&gt;
-&lt;p&gt;有个很大的区别，一旦你死了，有&lt;strong&gt;60天的时间&lt;/strong&gt;，&lt;br&gt;继承人如果60日内不主动声明放弃遗产，他自动视为接受遗产。&lt;br&gt;遗赠人如果60日内不主动声明接受，他自动视为放弃。&lt;/p&gt;
-&lt;p&gt;也就是说，如果我死了，&lt;br&gt;我父母没主动放弃，我信任的人也没主动来接受，那就等于我白立遗嘱了，钱可以合法给父母了。&lt;/p&gt;
-&lt;p&gt;钱怎么分配是个问题，&lt;br&gt;你是要几个人按什么比例分配呢，&lt;br&gt;还是要指定第一人第二人，第一人活着就全给第一人，他死了就全给第二人。&lt;/p&gt;
-&lt;p&gt;然后可以指定或不指定一个&lt;strong&gt;遗嘱执行人&lt;/strong&gt;，执行人负责执行、监督你遗产的分配。&lt;br&gt;他可以不参与钱的分配。&lt;br&gt;比如你指定朋友A，他负责把钱平分给 B 和 C 。&lt;/p&gt;
-&lt;p&gt;你也可以选择把遗产全部给慈善基金。&lt;br&gt;这种情况就一定需要一个执行人，不然谁来把你的钱打给慈善基金呢。&lt;br&gt;如果就烂在银行里面了，遗产最终收归国家所有。&lt;/p&gt;
-&lt;p&gt;还有个问题是 &lt;strong&gt;必留份制度&lt;/strong&gt;。这是《民法典》里明文要求的。&lt;br&gt;如果你死的时候，你的法定继承人里，比如父母配偶儿女里有人是没有经济来源的，&lt;br&gt;比如你先死了，你父母还活着，还没有收入，也没有养老金。&lt;br&gt;你父母可以提起诉讼，要求“分他一份”。&lt;br&gt;但是基本上我们不考虑这个问题，因为大部分情况下还是他们先死。我也不结婚生子。&lt;/p&gt;
-&lt;h1 id=&#34;准备&#34;&gt;&lt;a href=&#34;#准备&#34; class=&#34;headerlink&#34; title=&#34;准备&#34;&gt;&lt;/a&gt;准备&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;身份证、户口簿原件&lt;/strong&gt;，&lt;br&gt;如果你拿不出户口簿，可以和公证处争取一下能不能直接给你办。&lt;br&gt;我辛辛苦苦从父母手里迁出户口，就是为了爽这一下。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;财富证明&lt;/strong&gt;&lt;br&gt;找银行盖章写下定期存款、活期存款、理财基金等（不用冻结的证明）&lt;br&gt;这个盖章证明最好要写姓名、身份证、你的卡号，有发卡行名字更好。&lt;br&gt;银行以外的财富我不知道怎么做，我也没有车或房。&lt;/p&gt;
-&lt;p&gt;你最好有足够多的钱可以继承，钱越少办遗嘱的意义越小。&lt;/p&gt;
-&lt;p&gt;微信支付宝的余额，我不知道怎么办证明。&lt;br&gt;其他虚拟的，比如QQ号微信号、穿越火线库存，你最好就别写了，&lt;br&gt;你想证明这号是属于你的，还真不容易。&lt;br&gt;总不能跑去腾讯公司给你盖章吧。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;信心&lt;/strong&gt;&lt;br&gt;你不能看起来像被人逼着受胁迫的，&lt;br&gt;你也不能看起来精神不正常。&lt;br&gt;去公证处的时候穿好一点，要录音录像的。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;充足的时间&lt;/strong&gt;&lt;br&gt;建议第一次去公证处问清楚，加个电话或微信，&lt;br&gt;然后预约，办个公证要花几个小时的。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;遗赠人的身份证复印件&lt;/strong&gt;&lt;br&gt;需要提供继承人、受遗赠人的身份证的复印件，我去的公证处说用照片也可以。&lt;br&gt;因为到时候公证要写谁、身份证号码多少，可以拿这个财产。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;遗体骨灰怎么办&lt;/strong&gt;&lt;br&gt;我就写了个 &lt;em&gt;丧事简办，不准把我的遗体带到浙江&lt;/em&gt; 。&lt;br&gt;白纸黑字的写了，死也不会回老家。&lt;/p&gt;
-&lt;h1 id=&#34;办理过程&#34;&gt;&lt;a href=&#34;#办理过程&#34; class=&#34;headerlink&#34; title=&#34;办理过程&#34;&gt;&lt;/a&gt;办理过程&lt;/h1&gt;&lt;p&gt;带上这些材料到了公证处，准备办事，告诉工作人员，所有你要说明的情况。&lt;br&gt;工作人员会引导你，问你钱给谁，遗体怎么办。&lt;br&gt;然后为你草拟一份遗嘱，打出来给你看，问你要不要修改。&lt;/p&gt;
-&lt;p&gt;一定要仔细看，校对一下每个身份证号码。&lt;br&gt;修改完成之后，这就是你的正式遗嘱了。&lt;/p&gt;
-&lt;p&gt;大概就是&lt;/p&gt;
-&lt;figure class=&#34;highlight txt&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs txt&#34;&gt;我，谁谁谁，身份证多少，&lt;br&gt;今天来订立遗嘱分配的我合法财产。&lt;br&gt;我订立遗嘱时，清醒，没有受欺骗或胁迫。&lt;br&gt;我现在 x 岁，至今未婚。&lt;br&gt;&lt;br&gt;我现在有财产多少多少，皆为我合法所得。&lt;br&gt;具体财产有 xx银行，卡号11111， xxxx 元。&lt;br&gt;还有 xx银行，卡号2222， xxxx 元。&lt;br&gt;还有 xx银行，卡号3333， xxxx 元。&lt;br&gt;以最终卡内实际余额为准&lt;br&gt;&lt;br&gt;我指定甲，身份证aaaaaa，在我死后接受我的遗产。&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;然后你同意之后，要做&lt;strong&gt;笔录&lt;/strong&gt; ，&lt;br&gt;工作人员会问你，今天为什么来立遗嘱，有人陪同吗，他和你什么关系。&lt;br&gt;你的家庭情况怎么样，是否有无经济来源的家人。&lt;br&gt;为什么选择把钱遗赠给你的朋友而不是家人。&lt;br&gt;之类的问题。&lt;br&gt;笔录会打字记录下来，然后给你看过，也要仔细看，然后有觉得不喜欢的，就要求改。&lt;br&gt;对你自己不利的，就不说或不写，可以没关系。&lt;/p&gt;
-&lt;p&gt;接下来是&lt;strong&gt;录音录像&lt;/strong&gt;环节。&lt;br&gt;你和两个公证员进入一个房间，房间里有多个摄像头、录音机，&lt;br&gt;刚刚的笔录会重新口头问你一次，你重新说一遍就可以了。&lt;br&gt;所以说，为什么要有自信。&lt;br&gt;因为假如我死后，家里人要来争遗产，&lt;br&gt;到了法院，公证处出示了录音录像，完全可以证明我活着立遗嘱的时候是自信清醒坚决的。&lt;/p&gt;
-&lt;p&gt;然后要把遗嘱从头到尾一个字一个字地念一遍，念清楚。包括身份证数字、卡号等。&lt;br&gt;让公证员以及未来看录像的人知道，你是完全清醒知晓的。&lt;/p&gt;
-&lt;p&gt;接下来要签字、按手印，也是在录像和公证员面前操作。&lt;br&gt;要按十指的全部手印。&lt;br&gt;如果未来有人拿出遗嘱说你写的提出异议，方便司法鉴定这张纸是不是你写的。&lt;/p&gt;
-&lt;p&gt;最后会问你有没有什么话，想对未来的人说，&lt;br&gt;我说：“我来立遗嘱，是因为我受了家暴，我不会你们容忍打了我还拿了我的钱的。”&lt;/p&gt;
-&lt;p&gt;遗嘱内容、录音录像在你去世前是保密的，公证处不会向任何人透露遗嘱内容，&lt;br&gt;除非有你的授权或司法部门要求。&lt;br&gt;当时接待我的工作人员说，有一些人立遗嘱就是不和家里人说的，生怕家里人知道。&lt;/p&gt;
-&lt;h1 id=&#34;未来钱变动了怎么办&#34;&gt;&lt;a href=&#34;#未来钱变动了怎么办&#34; class=&#34;headerlink&#34; title=&#34;未来钱变动了怎么办&#34;&gt;&lt;/a&gt;未来钱变动了怎么办&lt;/h1&gt;&lt;p&gt;公证遗嘱有个情况就是&lt;strong&gt;金额确定&lt;/strong&gt;，&lt;br&gt;比如你立遗嘱的时候财富是50万元，那么你死的时候是150万元。&lt;br&gt;就算你写了“以最终卡里实际余额为准”，可能依然会有问题。&lt;br&gt;因为法院可能觉得 “你的遗嘱只分配了这50万，后面新出来的100万，你没分配”。&lt;/p&gt;
-&lt;p&gt;所以当财富有大幅度变动的时候，可以去公证处重新立一份遗嘱。&lt;br&gt;但是一旦立一份遗嘱，就得同时写上声明，老遗嘱作废，&lt;br&gt;而且花的手续费是一模一样多甚至更多，流程是一模一样麻烦。&lt;/p&gt;
-&lt;p&gt;我觉得可以采用自书遗嘱和公证遗嘱搭配的方式，&lt;br&gt;比如我还年轻，每5年立一份新的公证的，当中的每1年写次自书遗嘱说明下情况。&lt;br&gt;自书的遗嘱直接模仿格式，写上我现在钱多少，最后写上“按之前xxx号公证遗嘱所述分配给甲乙丙”。&lt;br&gt;但是千万不能写出前后冲突的内容。且一定要注意格式。&lt;br&gt;而且每次写了新自书遗嘱，老的自书要销毁掉。&lt;/p&gt;
-&lt;p&gt;假如你改变想法了，觉得要换继承人，该去公证处立新的就立新的，老的也务必带上声明作废。&lt;br&gt;最好保持一贯性，找过一家公证处办事了，以后就都去这个公证处。&lt;/p&gt;
-&lt;h1 id=&#34;人死后怎么做&#34;&gt;&lt;a href=&#34;#人死后怎么做&#34; class=&#34;headerlink&#34; title=&#34;人死后怎么做&#34;&gt;&lt;/a&gt;人死后怎么做&lt;/h1&gt;&lt;p&gt;叫你的继承人、受赠人，到公证处，带上身份证和你的死亡证明，声明接受遗产，报上你的遗嘱公证编号。&lt;br&gt;这就相当于又要开一个“接受遗赠”公证了，就是“我接受了你的遗产”的意思。&lt;/p&gt;
-&lt;p&gt;公证处的人和我说的就是这么个意思。&lt;br&gt;这个具体怎么做，真得我死了才知道了。&lt;/p&gt;
-&lt;p&gt;至于能不能顺利把钱从银行里转出来，银行是否一看公证书就承认，就看未来人的本事了。&lt;br&gt;如果银行直接承认，钱直接取走。&lt;br&gt;不承认，就得起诉银行，法院判了给钱，银行就得给钱。&lt;/p&gt;
-</content>
-        <category term="家庭" />
-        <updated>2025-03-12T08:03:34.000Z</updated>
-    </entry>
-    <entry>
         <id>http://buyi.dev/2025/cs2-mdmp-view/</id>
         <title>反恐精英2 mdmp 文件里内嵌日志的解读</title>
         <link rel="alternate" href="http://buyi.dev/2025/cs2-mdmp-view/"/>
@@ -128,21 +78,6 @@
 </content>
         <category term="cs2" />
         <updated>2025-03-01T11:39:04.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://buyi.dev/2025/if-with-family-again/</id>
-        <title>打油诗：假如再和父母住在一起</title>
-        <link rel="alternate" href="http://buyi.dev/2025/if-with-family-again/"/>
-        <content type="html">&lt;p&gt;假如再和父母住在一起，我要剁掉我的双手。&lt;br&gt;因为这是一双会挣钱的手。&lt;br&gt;因为父母说这是一双写字难看，只会打游戏的手。&lt;br&gt;因为父母说这是一双不会种菜，也不会做饭的笨手。&lt;br&gt;（父母没教会我怎么挣钱）&lt;/p&gt;
-&lt;p&gt;假如再和父母住在一起，我要砍去我的双脚。&lt;br&gt;因为这是一双学会了骑车的脚。&lt;br&gt;因为这是一双走过南闯过北的脚，是一双体验过自由的脚。&lt;br&gt;因为父母说这是一双只会宅在家里的脚。&lt;br&gt;（父母没教会我骑车，要求我只在老家不去外地）&lt;/p&gt;
-&lt;p&gt;假如再和父母住在一起，我要挖去我的双眼。&lt;br&gt;因为这是一双看清父母真相的眼。&lt;br&gt;因为父母说这是一双只会看电子屏幕的眼。&lt;/p&gt;
-&lt;p&gt;假如再和父母住在一起，我要砍下我的双耳。&lt;br&gt;因为这是一对听过不同意见的耳。&lt;br&gt;因为父母说这是一对不听话的没用的耳。&lt;/p&gt;
-&lt;p&gt;假如再和父母住在一起，我要拔掉我的舌头。&lt;br&gt;因为这是一张说出父母真相的嘴。&lt;br&gt;因为父母说这是一张挑食的嘴。&lt;br&gt;因为父母说这是一张说不出好听的话，只会顶撞长辈的狗嘴。&lt;br&gt;（父母说我狗嘴里吐不出象牙）&lt;/p&gt;
-&lt;p&gt;假如再和父母住在一起，我要拔光我的牙齿。&lt;br&gt;因为这是一口没有蛀牙的牙齿。&lt;br&gt;因为这是我努力挣钱之后，一口我投入了几万元，戴了牙套的牙齿。&lt;br&gt;（父母忽视我成年后的牙齿健康。牙套的钱是我自己出的，小时候父母不给我戴牙套）&lt;/p&gt;
-&lt;p&gt;假如再和父母住在一起，我要切除我的前脑叶白质。&lt;br&gt;这样就可以成为一个令父母满意的，只会呵呵笑的，不会反抗的，忠实孝顺的奴仆。&lt;/p&gt;
-</content>
-        <category term="家庭" />
-        <updated>2025-02-25T08:58:35.000Z</updated>
     </entry>
     <entry>
         <id>http://buyi.dev/2024/gmod-ain/</id>
@@ -195,40 +130,6 @@
 </content>
         <category term="cs2" />
         <updated>2024-11-04T10:33:15.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://buyi.dev/2024/year3/</id>
-        <title>离家出走3.5年的感慨</title>
-        <link rel="alternate" href="http://buyi.dev/2024/year3/"/>
-        <content type="html">&lt;p&gt;不知不觉又过了一年。&lt;br&gt;上一篇： &lt;a href=&#34;/2023/year2/&#34;&gt;离家出走2.5年的感慨&lt;/a&gt;    &lt;/p&gt;
-&lt;h1 id=&#34;啃老是不对的&#34;&gt;&lt;a href=&#34;#啃老是不对的&#34; class=&#34;headerlink&#34; title=&#34;啃老是不对的&#34;&gt;&lt;/a&gt;啃老是不对的&lt;/h1&gt;&lt;p&gt;如果这个人要求先打游戏过舒服日子，也不去上班，就靠啃老（生活费）。&lt;br&gt;那大家会嫌弃他，觉得他的父母应该教育他，甚至打他。   &lt;/p&gt;
-&lt;p&gt;如果这个人要求先考研读研或者出国留学，也不去上班，就靠啃老（上学的开支）。&lt;br&gt;那大家可能会嫌弃他，觉得他的父母太溺爱，应该让子女自己解决成年毕业后的开支。   &lt;/p&gt;
-&lt;p&gt;如果这个人要求先变装和做变性手术，也不去上班，就靠啃老（变性手术费）。&lt;br&gt;大家会说是这个父母不支持子女的理想，是父母想控制子女。   &lt;/p&gt;
-&lt;p&gt;说实话我觉得这很搞笑。    &lt;/p&gt;
-&lt;h1 id=&#34;注意权力的来源&#34;&gt;&lt;a href=&#34;#注意权力的来源&#34; class=&#34;headerlink&#34; title=&#34;注意权力的来源&#34;&gt;&lt;/a&gt;注意权力的来源&lt;/h1&gt;&lt;p&gt;那些“暴力机构”，比如非正规的矫正机构、网瘾治疗学校、不良少年教育夏令营。&lt;br&gt;或者比如正规的精神病医院强制住院。   &lt;/p&gt;
-&lt;p&gt;所有这些“暴力机构”，都有一个前提，就是有人付钱。&lt;br&gt;如果你家人不付钱给这些暴力机构，人家才懒得管你呢。   &lt;/p&gt;
-&lt;p&gt;看准了，谁才是你真正的敌人。   &lt;/p&gt;
-&lt;p&gt;当然了，很可惜，很多受害者，宁可起诉那些机构那些教官，也不起诉自己父母。   &lt;/p&gt;
-&lt;p&gt;新闻：&lt;a href=&#34;https://m.weibo.cn/status/Oyub2hgvP&#34;&gt;被父母送精神病院接收7次电击治疗，一位跨性别者决定起诉医院&lt;/a&gt;   &lt;/p&gt;
-&lt;p&gt;我对这个事情的评价是：&lt;br&gt;为什么就不能先养活自己搬出去住，再考虑女装和变性呢？&lt;br&gt;我看见的所有悲伤的例子都是把女装和变性放在前面，养活自己放在后面，&lt;br&gt;住在父母身边还渴望父母供你变性。&lt;br&gt;明知道自己不传统，却又渴求传统的支持。这好吗？   &lt;/p&gt;
-&lt;h1 id=&#34;通过“和谈”，我拿到了省会户口&#34;&gt;&lt;a href=&#34;#通过“和谈”，我拿到了省会户口&#34; class=&#34;headerlink&#34; title=&#34;通过“和谈”，我拿到了省会户口&#34;&gt;&lt;/a&gt;通过“和谈”，我拿到了省会户口&lt;/h1&gt;&lt;p&gt;户口都迁出来了，我和我父母都不是一个户口簿的人了。&lt;br&gt;我现在是省会城市的常住人口了，不是乡下来的流动人口了。&lt;br&gt;我有自己一个户口簿，户主就是我自己。&lt;br&gt;以后我就是办身份证、出国、考证甚至结婚都不需要父母同意了。（我不想结婚）   &lt;/p&gt;
-&lt;p&gt;我很爱这个城市，&lt;br&gt;在这我有了工作收入，我献过了血，有了积蓄，&lt;br&gt;有了自己的门牌号，有了安全感，&lt;br&gt;还学会了骑自行车和电动车，有了自己的自行车，&lt;br&gt;还参与了政府安排的免费体检。    &lt;/p&gt;
-&lt;p&gt;很感谢政府和每个帮助我的人。   &lt;/p&gt;
-&lt;p&gt;当然迁户口，是需要拿到老户口簿的，我和我的家人进行了一定程度的“和谈”。&lt;br&gt;在保证了我的绝对安全的情况下，我让他们把户口簿寄过来到代收地址的。&lt;br&gt;我当然不会允许血亲靠近我，他们要是敢来，我就做点不一样的。   &lt;/p&gt;
-&lt;p&gt;我的安全屋，永不欢迎任何和我算家属或亲戚的人。   &lt;/p&gt;
-&lt;p&gt;而且这让我离家出走的状态产生了一定微妙的变化。&lt;br&gt;我现在住在派出所看过的承认的合法住所里，身份证上都写着我现在住的地方，&lt;br&gt;某种意义上就不是离家出走了，我一直在家。    &lt;/p&gt;
-&lt;p&gt;当然我依然会说我现在是离家出走，因为没有家人不能叫家。有了家人就有家庭暴力。   &lt;/p&gt;
-&lt;p&gt;我要继续做一个好市民，做好自己应该做的。   &lt;/p&gt;
-&lt;h1 id=&#34;注意安全&#34;&gt;&lt;a href=&#34;#注意安全&#34; class=&#34;headerlink&#34; title=&#34;注意安全&#34;&gt;&lt;/a&gt;注意安全&lt;/h1&gt;&lt;p&gt;生命和财产安全是非常重要的。&lt;br&gt;和网友见面的时候要选择有监控的公共场合，比如餐厅、地铁站。   &lt;/p&gt;
-&lt;p&gt;不要轻易借给别人钱。如果这个朋友会因为不借钱就嫌弃你，他就不配做你的朋友。&lt;br&gt;反之，如果要找别人借钱，思考一下为什么要给别人添麻烦，这钱是非借不可吗。   &lt;/p&gt;
-&lt;p&gt;骗子还是很多的。&lt;br&gt;既然我遇到过，我朋友也遇到过，我们也都损失过。   &lt;/p&gt;
-&lt;h1 id=&#34;找工作好难&#34;&gt;&lt;a href=&#34;#找工作好难&#34; class=&#34;headerlink&#34; title=&#34;找工作好难&#34;&gt;&lt;/a&gt;找工作好难&lt;/h1&gt;&lt;p&gt;是啊，好难。如果我突然失业或者辞职，重新开始找工作，也估计很难找到合适的新工作。   &lt;/p&gt;
-&lt;p&gt;我有两个好朋友，都是经人介绍去了乡下的地方上班。&lt;br&gt;唉，就是那种只能住宿舍，下班也是只能在厂区及周边的工作。&lt;br&gt;这样，你下班之后可能就会很压抑，你喝个奶茶都可能困难，更别提偶尔想吃顿麦当劳了。    &lt;/p&gt;
-&lt;p&gt;虽然说可能是娇生惯养了一点，但是我小时候就住在没有麦当劳，没有大医院，没有方便交通的小县城里。&lt;br&gt;来了大城市我才明白，人不用做那些苦力农活，也是能活得很好的，很幸福的。&lt;br&gt;当你在大城市大医院排队嫌慢的时候，想想那些还有从乡下坐大巴赶上来看病的，你比他们幸福多了。  &lt;/p&gt;
-&lt;p&gt;找工作我个人还是觉得，能不跑远就不跑远吧。&lt;br&gt;有的人可能还是更喜欢乡下，那也是可以的，乡村也有乡村的好，比如物价更低房价更低。   &lt;/p&gt;
-</content>
-        <category term="家庭" />
-        <updated>2024-10-03T12:51:36.000Z</updated>
     </entry>
     <entry>
         <id>http://buyi.dev/2024/cs2-client-log-parse/</id>
@@ -487,5 +388,655 @@
         <category term="code" />
         <category term="cs2" />
         <updated>2024-07-14T13:20:03.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://buyi.dev/2024/games/</id>
+        <title>布衣玩通关且没作弊的游戏</title>
+        <link rel="alternate" href="http://buyi.dev/2024/games/"/>
+        <content type="html">&lt;p&gt;记录一下我玩到单人剧情通关，并且没有作弊的游戏。&lt;br&gt;不求高难度也不求百分百全成就全解锁，能不作弊通关已经很开心了（&lt;br&gt;纯剧情解密类就不算了，可以看攻略作弊的（   &lt;/p&gt;
+&lt;h1 id=&#34;Grand-Theft-Auto&#34;&gt;&lt;a href=&#34;#Grand-Theft-Auto&#34; class=&#34;headerlink&#34; title=&#34;Grand Theft Auto&#34;&gt;&lt;/a&gt;Grand Theft Auto&lt;/h1&gt;&lt;p&gt;2017 年 4 月 7 日，通关了 GTA 5 。&lt;br&gt;2022 年 1 月 29 日，通关了 GTA 4 本体。&lt;br&gt;2022 年 8 月 17 日，通关了 The Ballad of Gay Tony 。&lt;br&gt;2022 年 10 月 1 日，通关了 The Lost and Damned 。&lt;br&gt;2024 年 7 月 4 日，通关了 GTA III - The Definitive Edition &lt;a href=&#34;https://m.weibo.cn/status/Om1RkzUwy&#34;&gt;微博&lt;/a&gt; 。&lt;br&gt;2024 年 7 月 30 日，通关了 GTA Vice City – The Definitive Edition &lt;a href=&#34;https://m.weibo.cn/status/OpYfvxpV0&#34;&gt;微博&lt;/a&gt;  。&lt;br&gt;2024 年 8 月 20 日，通关了 GTA San Andreas – The Definitive Edition &lt;a href=&#34;https://m.weibo.cn/status/OtcsQqGa6&#34;&gt;微博&lt;/a&gt;  。    &lt;/p&gt;
+&lt;p&gt;2025 年 11 月 22 日， Grand Theft Auto V Enhanced 达成 100% 完成度。&lt;a href=&#34;https://m.weibo.cn/status/QeL3a9NCn&#34;&gt;微博&lt;/a&gt;   &lt;/p&gt;
+&lt;h1 id=&#34;Devil-May-Cry-5&#34;&gt;&lt;a href=&#34;#Devil-May-Cry-5&#34; class=&#34;headerlink&#34; title=&#34;Devil May Cry 5&#34;&gt;&lt;/a&gt;Devil May Cry 5&lt;/h1&gt;&lt;p&gt;2022 年 10月 22日。   &lt;/p&gt;
+&lt;h1 id=&#34;Red-Alert-2&#34;&gt;&lt;a href=&#34;#Red-Alert-2&#34; class=&#34;headerlink&#34; title=&#34;Red Alert 2&#34;&gt;&lt;/a&gt;Red Alert 2&lt;/h1&gt;&lt;p&gt;2023 年 7 月 7 日，红色警戒2 本体 &lt;a href=&#34;https://m.weibo.cn/status/N8M945xzX&#34;&gt;微博&lt;/a&gt;&lt;br&gt;2023 年 7 月 12 日，尤里的复仇 苏军线 &lt;a href=&#34;https://m.weibo.cn/status/N9yHy2Qn7&#34;&gt;微博&lt;/a&gt;&lt;br&gt;2024 年 8 月 7 日，尤里的复仇 盟军线 &lt;a href=&#34;https://m.weibo.cn/status/OrdHv3p2N&#34;&gt;微博&lt;/a&gt;   &lt;/p&gt;
+&lt;h1 id=&#34;Red-Alert-1&#34;&gt;&lt;a href=&#34;#Red-Alert-1&#34; class=&#34;headerlink&#34; title=&#34;Red Alert 1&#34;&gt;&lt;/a&gt;Red Alert 1&lt;/h1&gt;&lt;p&gt;2024 年 1 月 24 日，红色警戒1 苏军线  &lt;a href=&#34;https://m.weibo.cn/status/NDlcGjaYP&#34;&gt;微博&lt;/a&gt;&lt;br&gt;2024 年 8 月 27 日，红色警戒1 盟军线  &lt;a href=&#34;https://m.weibo.cn/status/OufZq8Apg&#34;&gt;微博&lt;/a&gt;   &lt;/p&gt;
+&lt;h1 id=&#34;Half-Life-1&#34;&gt;&lt;a href=&#34;#Half-Life-1&#34; class=&#34;headerlink&#34; title=&#34;Half-Life 1&#34;&gt;&lt;/a&gt;Half-Life 1&lt;/h1&gt;&lt;p&gt;2023 年 1 月 25 日，&lt;a href=&#34;https://m.weibo.cn/status/MpXEugiJj&#34;&gt;微博&lt;/a&gt;   &lt;/p&gt;
+&lt;h1 id=&#34;Need-For-Speed&#34;&gt;&lt;a href=&#34;#Need-For-Speed&#34; class=&#34;headerlink&#34; title=&#34;Need For Speed&#34;&gt;&lt;/a&gt;Need For Speed&lt;/h1&gt;&lt;p&gt;2024 年 7 月 11 日，极品飞车 9 最高通缉 NFS Most Wanted。&lt;br&gt;&lt;a href=&#34;https://m.weibo.cn/status/On4zlaVrf&#34;&gt;微博&lt;/a&gt;   &lt;/p&gt;
+&lt;h1 id=&#34;Cyberpunk-2077&#34;&gt;&lt;a href=&#34;#Cyberpunk-2077&#34; class=&#34;headerlink&#34; title=&#34;Cyberpunk 2077&#34;&gt;&lt;/a&gt;Cyberpunk 2077&lt;/h1&gt;&lt;p&gt;2025 年 12 月 30 日， &lt;a href=&#34;https://m.weibo.cn/status/QkQ4vlFDp&#34;&gt;主线&lt;/a&gt;&lt;br&gt;2026 年 1 月 22 日， DLC &lt;a href=&#34;https://m.weibo.cn/status/QoiaBb69M&#34;&gt;往日之影&lt;/a&gt;  &lt;/p&gt;
+&lt;h1 id=&#34;Call-Of-Duty&#34;&gt;&lt;a href=&#34;#Call-Of-Duty&#34; class=&#34;headerlink&#34; title=&#34;Call Of Duty&#34;&gt;&lt;/a&gt;Call Of Duty&lt;/h1&gt;&lt;p&gt;2026 年 2 月 12 日， Modern Warfare® Remastered (2017) （4的重制版） &lt;a href=&#34;https://m.weibo.cn/status/QrwrEqzH4&#34;&gt;微博&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;Mafia-四海兄弟&#34;&gt;&lt;a href=&#34;#Mafia-四海兄弟&#34; class=&#34;headerlink&#34; title=&#34;Mafia 四海兄弟&#34;&gt;&lt;/a&gt;Mafia 四海兄弟&lt;/h1&gt;&lt;p&gt;2026 年 2 月 15 日， &lt;a href=&#34;https://m.weibo.cn/status/QrYHFeAw7&#34;&gt;四海兄弟: 最终版&lt;/a&gt;  &lt;/p&gt;
+&lt;h1 id=&#34;ICEY&#34;&gt;&lt;a href=&#34;#ICEY&#34; class=&#34;headerlink&#34; title=&#34;ICEY&#34;&gt;&lt;/a&gt;ICEY&lt;/h1&gt;&lt;p&gt;2017 年 8 月 2 日。   &lt;/p&gt;
+&lt;h1 id=&#34;Homefront&#34;&gt;&lt;a href=&#34;#Homefront&#34; class=&#34;headerlink&#34; title=&#34;Homefront&#34;&gt;&lt;/a&gt;Homefront&lt;/h1&gt;&lt;p&gt;2021 年 9 月 20 日。  &lt;/p&gt;
+&lt;h1 id=&#34;Max-Payne-3&#34;&gt;&lt;a href=&#34;#Max-Payne-3&#34; class=&#34;headerlink&#34; title=&#34;Max Payne 3&#34;&gt;&lt;/a&gt;Max Payne 3&lt;/h1&gt;&lt;p&gt;2021 年 10 月 9 日。   &lt;/p&gt;
+&lt;h1 id=&#34;不记得具体时间的&#34;&gt;&lt;a href=&#34;#不记得具体时间的&#34; class=&#34;headerlink&#34; title=&#34;不记得具体时间的&#34;&gt;&lt;/a&gt;不记得具体时间的&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;Minecraft: Java Edition  &lt;/li&gt;
+&lt;li&gt;Devil May Cry 4   &lt;/li&gt;
+&lt;li&gt;Hitman: Absolution&lt;/li&gt;
+&lt;li&gt;Half-Life 2 &lt;/li&gt;
+&lt;li&gt;Half-Life 2: Episode One   &lt;/li&gt;
+&lt;li&gt;Half-Life 2: Episode Two  &lt;/li&gt;
+&lt;li&gt;Counter-Strike: Condition Zero Deleted Scenes&lt;/li&gt;
+&lt;li&gt;Sleeping Dogs: Definitive Edition&lt;/li&gt;
+&lt;li&gt;Battlefield 1 &lt;/li&gt;
+&lt;li&gt;Battlefield 4&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="游戏" />
+        <updated>2024-07-04T12:07:22.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://buyi.dev/2024/lets-encrypt-dns/</id>
+        <title>使用 DNS 记录通过 certbot 认证</title>
+        <link rel="alternate" href="http://buyi.dev/2024/lets-encrypt-dns/"/>
+        <content type="html">&lt;p&gt;由于我自己写的一些网站都没法直接兼容 Let’s Encrypt &lt;a href=&#34;https://certbot.eff.org/&#34;&gt;certbot&lt;/a&gt; 的普通的认证方式。&lt;br&gt;我更倾向于使用 DNS TXT 认证来完成域名验证过程。&lt;br&gt;好处就是根本不需要一台公网服务器，有台电脑就行。也不用干预正在运行的服务器。&lt;br&gt;坏处就是每次等 DNS 解析有点难等，一旦时机没把握好就得重来。    &lt;/p&gt;
+&lt;figure class=&#34;highlight jboss-cli&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;code class=&#34;hljs jboss-cli&#34;&gt;certbot certonly &lt;span class=&#34;hljs-params&#34;&gt;--preferred-challenges&lt;/span&gt; dns -d &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;*.abcd.com&amp;quot;&lt;/span&gt; -d &lt;span class=&#34;hljs-string&#34;&gt;&amp;quot;abcd.com&amp;quot;&lt;/span&gt; &lt;span class=&#34;hljs-params&#34;&gt;--manual&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;（其实更多是因为我要申请 *.abcd.com 这样的证书，而我不好直接操作 abcd.com 主页服务器。   &lt;/p&gt;
+</content>
+        <category term="code" />
+        <updated>2024-07-02T12:33:35.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://buyi.dev/2024/cs2-disconnect-reasons/</id>
+        <title>Counter-Strike 2 玩家离线理由中文对照表</title>
+        <link rel="alternate" href="http://buyi.dev/2024/cs2-disconnect-reasons/"/>
+        <content type="html">&lt;p&gt;注释里的文本大部分来自 &lt;code&gt;csgo/pak01_dir.vpk&lt;/code&gt; 里的 &lt;code&gt;resource/csgo_schinese.txt&lt;/code&gt;&lt;br&gt;参考原文： &lt;a href=&#34;https://github.com/alliedmodders/hl2sdk/blob/cs2/common/network_connection.proto&#34;&gt;hl2sdk-cs2&lt;/a&gt;   &lt;/p&gt;
+&lt;div&gt;
+&lt;table&gt;
+&lt;tr&gt;
+    &lt;td&gt;0&lt;/td&gt;
+    &lt;td&gt;INVALID&lt;/td&gt;
+    &lt;td&gt;（无弹窗）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;1&lt;/td&gt;
+    &lt;td&gt;SHUTDOWN&lt;/td&gt;
+    &lt;td&gt;（无弹窗）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;2&lt;/td&gt;
+    &lt;td&gt;DISCONNECT_BY_USER&lt;/td&gt;
+    &lt;td&gt;（无弹窗，玩家主动离开）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;3&lt;/td&gt;
+    &lt;td&gt;DISCONNECT_BY_SERVER&lt;/td&gt;
+    &lt;td&gt;服务器断开连接。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;4&lt;/td&gt;
+    &lt;td&gt;LOST&lt;/td&gt;
+    &lt;td&gt;连接丢失。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;5&lt;/td&gt;
+    &lt;td&gt;OVERFLOW&lt;/td&gt;
+    &lt;td&gt;溢出错误&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;6&lt;/td&gt;
+    &lt;td&gt;STEAM_BANNED&lt;/td&gt;
+    &lt;td&gt;STEAM用户ID被封禁&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;7&lt;/td&gt;
+    &lt;td&gt;STEAM_INUSE&lt;/td&gt;
+    &lt;td&gt;STEAM用户ID已在此服务器上使用&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;8&lt;/td&gt;
+    &lt;td&gt;STEAM_TICKET&lt;/td&gt;
+    &lt;td&gt;来自STEAM用户ID的工单无效&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;9&lt;/td&gt;
+    &lt;td&gt;STEAM_LOGON&lt;/td&gt;
+    &lt;td&gt;需要Steam以加入游戏。请检查您到Steam的连接并重试。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;10&lt;/td&gt;
+    &lt;td&gt;STEAM_AUTHCANCELLED&lt;/td&gt;
+    &lt;td&gt;没有Steam登录&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;11&lt;/td&gt;
+    &lt;td&gt;STEAM_AUTHALREADYUSED&lt;/td&gt;
+    &lt;td&gt;没有Steam登录&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;12&lt;/td&gt;
+    &lt;td&gt;STEAM_AUTHINVALID&lt;/td&gt;
+    &lt;td&gt;没有Steam登录&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;13&lt;/td&gt;
+    &lt;td&gt;STEAM_VACBANSTATE&lt;/td&gt;
+    &lt;td&gt;VAC已被安全服务器封禁&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;14&lt;/td&gt;
+    &lt;td&gt;STEAM_LOGGED_IN_ELSEWHERE&lt;/td&gt;
+    &lt;td&gt;此帐户当前正在另一台机器上登录到Steam。\n请稍后再试。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;15&lt;/td&gt;
+    &lt;td&gt;STEAM_VAC_CHECK_TIMEDOUT&lt;/td&gt;
+    &lt;td&gt;您不能在安全服务器上玩游戏的可能原因如下：•您的电脑出现问题，阻止了VAC系统。•您无法与VAC系统保持稳定连接。•您运行的软件在修改游戏或与VAC不兼容。更多信息&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;16&lt;/td&gt;
+    &lt;td&gt;STEAM_DROPPED&lt;/td&gt;
+    &lt;td&gt;Steam认证失败。您必须连接到Steam才能初始化到游戏服务器。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;17&lt;/td&gt;
+    &lt;td&gt;STEAM_OWNERSHIP&lt;/td&gt;
+    &lt;td&gt;这个Steam帐户并未拥有该游戏。请用正确的Steam帐户登录。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;18&lt;/td&gt;
+    &lt;td&gt;SERVERINFO_OVERFLOW&lt;/td&gt;
+    &lt;td&gt;信息数据溢出&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;19&lt;/td&gt;
+    &lt;td&gt;TICKMSG_OVERFLOW&lt;/td&gt;
+    &lt;td&gt;?&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;20&lt;/td&gt;
+    &lt;td&gt;STRINGTABLEMSG_OVERFLOW&lt;/td&gt;
+    &lt;td&gt;?&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;21&lt;/td&gt;
+    &lt;td&gt;DELTAENTMSG_OVERFLOW&lt;/td&gt;
+    &lt;td&gt;?&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;22&lt;/td&gt;
+    &lt;td&gt;TEMPENTMSG_OVERFLOW&lt;/td&gt;
+    &lt;td&gt;?&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;23&lt;/td&gt;
+    &lt;td&gt;SOUNDSMSG_OVERFLOW&lt;/td&gt;
+    &lt;td&gt;?&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;24&lt;/td&gt;
+    &lt;td&gt;SNAPSHOTOVERFLOW&lt;/td&gt;
+    &lt;td&gt;可靠的快照溢出错误&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;25&lt;/td&gt;
+    &lt;td&gt;SNAPSHOTERROR&lt;/td&gt;
+    &lt;td&gt;发送快照时出错&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;26&lt;/td&gt;
+    &lt;td&gt;RELIABLEOVERFLOW&lt;/td&gt;
+    &lt;td&gt;可靠的缓冲溢出错误&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;27&lt;/td&gt;
+    &lt;td&gt;BADDELTATICK&lt;/td&gt;
+    &lt;td&gt;客户端增量标记故障&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;28&lt;/td&gt;
+    &lt;td&gt;NOMORESPLITS&lt;/td&gt;
+    &lt;td&gt;没有更多的扩散槽位&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;29&lt;/td&gt;
+    &lt;td&gt;TIMEDOUT&lt;/td&gt;
+    &lt;td&gt;无法与游戏服务器建立连接。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;30&lt;/td&gt;
+    &lt;td&gt;DISCONNECTED&lt;/td&gt;
+    &lt;td&gt;远程主机关闭了连接。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;31&lt;/td&gt;
+    &lt;td&gt;LEAVINGSPLIT&lt;/td&gt;
+    &lt;td&gt;扩散槽位已断开&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;32&lt;/td&gt;
+    &lt;td&gt;DIFFERENTCLASSTABLES&lt;/td&gt;
+    &lt;td&gt;服务器端使用不同的类表。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;33&lt;/td&gt;
+    &lt;td&gt;BADRELAYPASSWORD&lt;/td&gt;
+    &lt;td&gt;中继密码错误&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;34&lt;/td&gt;
+    &lt;td&gt;BADSPECTATORPASSWORD&lt;/td&gt;
+    &lt;td&gt;观察者密码错误&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;35&lt;/td&gt;
+    &lt;td&gt;HLTVRESTRICTED&lt;/td&gt;
+    &lt;td&gt;SourceTV服务器仅限本地观察者（C类）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;36&lt;/td&gt;
+    &lt;td&gt;NOSPECTATORS&lt;/td&gt;
+    &lt;td&gt;比赛不允许观战。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;37&lt;/td&gt;
+    &lt;td&gt;HLTVUNAVAILABLE&lt;/td&gt;
+    &lt;td&gt;没有可用的SourceTV中继站&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;38&lt;/td&gt;
+    &lt;td&gt;HLTVSTOP&lt;/td&gt;
+    &lt;td&gt;SourceTV停止&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;39&lt;/td&gt;
+    &lt;td&gt;KICKED&lt;/td&gt;
+    &lt;td&gt;被服务器踢出。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;40&lt;/td&gt;
+    &lt;td&gt;BANADDED&lt;/td&gt;
+    &lt;td&gt;已加入封禁名单&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;41&lt;/td&gt;
+    &lt;td&gt;KICKBANADDED&lt;/td&gt;
+    &lt;td&gt;已被踢出并封禁&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;42&lt;/td&gt;
+    &lt;td&gt;HLTVDIRECT&lt;/td&gt;
+    &lt;td&gt;SourceTV无法直接连接至游戏。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;43&lt;/td&gt;
+    &lt;td&gt;PURESERVER_CLIENTEXTRA&lt;/td&gt;
+    &lt;td&gt;纯服务器：客户端加载了额外文件。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;44&lt;/td&gt;
+    &lt;td&gt;PURESERVER_MISMATCH&lt;/td&gt;
+    &lt;td&gt;纯服务器：客户端文件与服务器不匹配。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;45&lt;/td&gt;
+    &lt;td&gt;USERCMD&lt;/td&gt;
+    &lt;td&gt;解析用户指令错误。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;46&lt;/td&gt;
+    &lt;td&gt;REJECTED_BY_GAME&lt;/td&gt;
+    &lt;td&gt;连接被游戏拒绝。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;47&lt;/td&gt;
+    &lt;td&gt;MESSAGE_PARSE_ERROR&lt;/td&gt;
+    &lt;td&gt;解析消息失败。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;48&lt;/td&gt;
+    &lt;td&gt;INVALID_MESSAGE_ERROR&lt;/td&gt;
+    &lt;td&gt;消息无效。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;49&lt;/td&gt;
+    &lt;td&gt;BAD_SERVER_PASSWORD&lt;/td&gt;
+    &lt;td&gt;服务器密码错误&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;50&lt;/td&gt;
+    &lt;td&gt;DIRECT_CONNECT_RESERVATION&lt;/td&gt;
+    &lt;td&gt;（这会在客户端留下一个空白的确认窗口）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;51&lt;/td&gt;
+    &lt;td&gt;CONNECTION_FAILURE&lt;/td&gt;
+    &lt;td&gt;连接失败&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;52&lt;/td&gt;
+    &lt;td&gt;NO_PEER_GROUP_HANDLERS&lt;/td&gt;
+    &lt;td&gt;缺少连接对等组&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;53&lt;/td&gt;
+    &lt;td&gt;RECONNECTION&lt;/td&gt;
+    &lt;td&gt;（这会在客户端留下一个空白的确认窗口）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;54&lt;/td&gt;
+    &lt;td&gt;LOOPSHUTDOWN&lt;/td&gt;
+    &lt;td&gt;循环关闭。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;55&lt;/td&gt;
+    &lt;td&gt;LOOPDEACTIVATE&lt;/td&gt;
+    &lt;td&gt;循环已失效。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;56&lt;/td&gt;
+    &lt;td&gt;HOST_ENDGAME&lt;/td&gt;
+    &lt;td&gt;游戏由主机结束。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;57&lt;/td&gt;
+    &lt;td&gt;LOOP_LEVELLOAD_ACTIVATE&lt;/td&gt;
+    &lt;td&gt;循环等级加载已生效。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;58&lt;/td&gt;
+    &lt;td&gt;CREATE_SERVER_FAILED&lt;/td&gt;
+    &lt;td&gt;创建服务器失败。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;59&lt;/td&gt;
+    &lt;td&gt;EXITING&lt;/td&gt;
+    &lt;td&gt;关闭游戏。（玩家quit指令会触发）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;60&lt;/td&gt;
+    &lt;td&gt;REQUEST_HOSTSTATE_IDLE&lt;/td&gt;
+    &lt;td&gt;主机空闲中。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;61&lt;/td&gt;
+    &lt;td&gt;REQUEST_HOSTSTATE_HLTVRELAY&lt;/td&gt;
+    &lt;td&gt;主机是中继站。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;62&lt;/td&gt;
+    &lt;td&gt;CLIENT_CONSISTENCY_FAIL&lt;/td&gt;
+    &lt;td&gt;客户端一致性检查失败。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;63&lt;/td&gt;
+    &lt;td&gt;CLIENT_UNABLE_TO_CRC_MAP&lt;/td&gt;
+    &lt;td&gt;客户端地图验证失败。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;64&lt;/td&gt;
+    &lt;td&gt;CLIENT_NO_MAP&lt;/td&gt;
+    &lt;td&gt;您的客户端上缺少所需的地图。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;65&lt;/td&gt;
+    &lt;td&gt;CLIENT_DIFFERENT_MAP&lt;/td&gt;
+    &lt;td&gt;您的地图版本与服务器不同。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;66&lt;/td&gt;
+    &lt;td&gt;SERVER_REQUIRES_STEAM&lt;/td&gt;
+    &lt;td&gt;客户端和服务器必须连接到Steam。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;67&lt;/td&gt;
+    &lt;td&gt;STEAM_DENY_MISC&lt;/td&gt;
+    &lt;td&gt;服务器连接被Steam拒绝。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;68&lt;/td&gt;
+    &lt;td&gt;STEAM_DENY_BAD_ANTI_CHEAT&lt;/td&gt;
+    &lt;td&gt;服务器连接被VAC拒绝。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;69&lt;/td&gt;
+    &lt;td&gt;SERVER_SHUTDOWN&lt;/td&gt;
+    &lt;td&gt;从游戏服务器断开。游戏服务器正在关机。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;71&lt;/td&gt;
+    &lt;td&gt;REPLAY_INCOMPATIBLE&lt;/td&gt;
+    &lt;td&gt;不兼容回放。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;72&lt;/td&gt;
+    &lt;td&gt;CONNECT_REQUEST_TIMEDOUT&lt;/td&gt;
+    &lt;td&gt;无法与游戏服务器建立连接。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;73&lt;/td&gt;
+    &lt;td&gt;SERVER_INCOMPATIBLE&lt;/td&gt;
+    &lt;td&gt;服务器版本不兼容。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;74&lt;/td&gt;
+    &lt;td&gt;LOCALPROBLEM_MANYRELAYS&lt;/td&gt;
+    &lt;td&gt;连接断开，此前已尝试连接不同地区的多个中继服务器，您的网络连接很可能出现问题。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;75&lt;/td&gt;
+    &lt;td&gt;LOCALPROBLEM_HOSTEDSERVERPRIMARYRELAY&lt;/td&gt;
+    &lt;td&gt;游戏服务器与客户端使用的主中继服务器失去连接。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;76&lt;/td&gt;
+    &lt;td&gt;LOCALPROBLEM_NETWORKCONFIG&lt;/td&gt;
+    &lt;td&gt;请检查网络连接。无法从CDN下载网络配置文件。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;77&lt;/td&gt;
+    &lt;td&gt;LOCALPROBLEM_OTHER&lt;/td&gt;
+    &lt;td&gt;已断开连接。可能是本地的网络连接出现问题。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;79&lt;/td&gt;
+    &lt;td&gt;REMOTE_TIMEOUT&lt;/td&gt;
+    &lt;td&gt;游戏已停止从远程主机接收通讯。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;80&lt;/td&gt;
+    &lt;td&gt;REMOTE_TIMEOUT_CONNECTING&lt;/td&gt;
+    &lt;td&gt;已数次尝试连接，但服务器没有响应。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;81&lt;/td&gt;
+    &lt;td&gt;REMOTE_OTHER&lt;/td&gt;
+    &lt;td&gt;已数次尝试连接，但服务器没有响应。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;82&lt;/td&gt;
+    &lt;td&gt;REMOTE_BADCRYPT&lt;/td&gt;
+    &lt;td&gt;远程主机的证书不正确或配置错误。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;83&lt;/td&gt;
+    &lt;td&gt;REMOTE_CERTNOTTRUSTED&lt;/td&gt;
+    &lt;td&gt;远程主机的证书不能用于验证。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;84&lt;/td&gt;
+    &lt;td&gt;UNUSUAL&lt;/td&gt;
+    &lt;td&gt;已断开连接。出现特殊情况。控制台可能会有更多详情。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;85&lt;/td&gt;
+    &lt;td&gt;INTERNAL_ERROR&lt;/td&gt;
+    &lt;td&gt;由于内部错误，已断开连接。控制台可能会有更多详情。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;128&lt;/td&gt;
+    &lt;td&gt;REJECT_BADCHALLENGE&lt;/td&gt;
+    &lt;td&gt;服务器拒绝了错误的挑战数据包。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;129&lt;/td&gt;
+    &lt;td&gt;REJECT_NOLOBBY&lt;/td&gt;
+    &lt;td&gt;服务器没有托管游戏大厅。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;130&lt;/td&gt;
+    &lt;td&gt;REJECT_BACKGROUND_MAP&lt;/td&gt;
+    &lt;td&gt;服务器正在运行背景图。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;131&lt;/td&gt;
+    &lt;td&gt;REJECT_SINGLE_PLAYER&lt;/td&gt;
+    &lt;td&gt;服务器正在运行单人游戏。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;132&lt;/td&gt;
+    &lt;td&gt;REJECT_HIDDEN_GAME&lt;/td&gt;
+    &lt;td&gt;服务器正在运行隐藏游戏。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;133&lt;/td&gt;
+    &lt;td&gt;REJECT_LANRESTRICT&lt;/td&gt;
+    &lt;td&gt;服务器仅限局域网游戏。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;134&lt;/td&gt;
+    &lt;td&gt;REJECT_BADPASSWORD&lt;/td&gt;
+    &lt;td&gt;密码错误被服务器拒绝。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;135&lt;/td&gt;
+    &lt;td&gt;REJECT_SERVERFULL&lt;/td&gt;
+    &lt;td&gt;服务器已满。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;136&lt;/td&gt;
+    &lt;td&gt;REJECT_INVALIDRESERVATION&lt;/td&gt;
+    &lt;td&gt;服务器预留无效。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;137&lt;/td&gt;
+    &lt;td&gt;REJECT_FAILEDCHANNEL&lt;/td&gt;
+    &lt;td&gt;网络信道不良被服务器拒绝。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;138&lt;/td&gt;
+    &lt;td&gt;REJECT_CONNECT_FROM_LOBBY&lt;/td&gt;
+    &lt;td&gt;服务器需要客户端从游戏大厅连接。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;139&lt;/td&gt;
+    &lt;td&gt;REJECT_RESERVED_FOR_LOBBY&lt;/td&gt;
+    &lt;td&gt;服务器已预留给游戏大厅。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;140&lt;/td&gt;
+    &lt;td&gt;REJECT_INVALIDKEYLENGTH&lt;/td&gt;
+    &lt;td&gt;无效游戏序列号被服务器拒绝。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;141&lt;/td&gt;
+    &lt;td&gt;REJECT_OLDPROTOCOL&lt;/td&gt;
+    &lt;td&gt;您的客户端已过期。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;142&lt;/td&gt;
+    &lt;td&gt;REJECT_NEWPROTOCOL&lt;/td&gt;
+    &lt;td&gt;服务器已过期。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;143&lt;/td&gt;
+    &lt;td&gt;REJECT_INVALIDCONNECTION&lt;/td&gt;
+    &lt;td&gt;无效连接被服务器拒绝。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;144&lt;/td&gt;
+    &lt;td&gt;REJECT_INVALIDCERTLEN&lt;/td&gt;
+    &lt;td&gt;无效的客户端证书被服务器拒绝。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;145&lt;/td&gt;
+    &lt;td&gt;REJECT_INVALIDSTEAMCERTLEN&lt;/td&gt;
+    &lt;td&gt;无效的Steam证书被服务器拒绝。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;146&lt;/td&gt;
+    &lt;td&gt;REJECT_STEAM&lt;/td&gt;
+    &lt;td&gt;Steam拒绝了您与服务器的连接。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;147&lt;/td&gt;
+    &lt;td&gt;REJECT_SERVERAUTHDISABLED&lt;/td&gt;
+    &lt;td&gt;服务器认证已禁用。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;148&lt;/td&gt;
+    &lt;td&gt;REJECT_SERVERCDKEYAUTHINVALID&lt;/td&gt;
+    &lt;td&gt;游戏序列号验证被服务器拒绝。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;149&lt;/td&gt;
+    &lt;td&gt;REJECT_BANNED&lt;/td&gt;
+    &lt;td&gt;您的客户端不允许加入此服务器。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;150&lt;/td&gt;
+    &lt;td&gt;KICKED_TEAMKILLING&lt;/td&gt;
+    &lt;td&gt;因杀害了过多队友&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;151&lt;/td&gt;
+    &lt;td&gt;KICKED_TK_START&lt;/td&gt;
+    &lt;td&gt;因在开局时击杀了一名队友&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;152&lt;/td&gt;
+    &lt;td&gt;KICKED_UNTRUSTEDACCOUNT&lt;/td&gt;
+    &lt;td&gt;帐户处于“不可信”状态&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;153&lt;/td&gt;
+    &lt;td&gt;KICKED_CONVICTEDACCOUNT&lt;/td&gt;
+    &lt;td&gt;帐户被定罪&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;154&lt;/td&gt;
+    &lt;td&gt;KICKED_COMPETITIVECOOLDOWN&lt;/td&gt;
+    &lt;td&gt;玩家处于竞技匹配冷却状态&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;155&lt;/td&gt;
+    &lt;td&gt;KICKED_TEAMHURTING&lt;/td&gt;
+    &lt;td&gt;因过度攻击队友&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;156&lt;/td&gt;
+    &lt;td&gt;KICKED_HOSTAGEKILLING&lt;/td&gt;
+    &lt;td&gt;因杀害了过多人质&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;157&lt;/td&gt;
+    &lt;td&gt;KICKED_VOTEDOFF&lt;/td&gt;
+    &lt;td&gt;已被投票踢出&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;158&lt;/td&gt;
+    &lt;td&gt;KICKED_IDLE&lt;/td&gt;
+    &lt;td&gt;玩家处于空闲状态&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;159&lt;/td&gt;
+    &lt;td&gt;KICKED_SUICIDE&lt;/td&gt;
+    &lt;td&gt;因自杀次数过多&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;160&lt;/td&gt;
+    &lt;td&gt;KICKED_NOSTEAMLOGIN&lt;/td&gt;
+    &lt;td&gt;无效的用户登录&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;161&lt;/td&gt;
+    &lt;td&gt;KICKED_NOSTEAMTICKET&lt;/td&gt;
+    &lt;td&gt;游戏验证失败&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+</content>
+        <category term="cs2" />
+        <updated>2024-04-10T00:56:22.000Z</updated>
     </entry>
 </feed>

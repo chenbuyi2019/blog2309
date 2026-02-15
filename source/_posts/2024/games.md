@@ -42,6 +42,11 @@ tags: [游戏]
 2025 年 12 月 30 日， [主线](https://m.weibo.cn/status/QkQ4vlFDp)   
 2026 年 1 月 22 日， DLC [往日之影](https://m.weibo.cn/status/QoiaBb69M)  
 
+# Call Of Duty
+2026 年 2 月 12 日， Modern Warfare® Remastered (2017) （4的重制版） [微博](https://m.weibo.cn/status/QrwrEqzH4)
+
+# Mafia 四海兄弟
+2026 年 2 月 15 日， [四海兄弟: 最终版](https://m.weibo.cn/status/QrYHFeAw7)  
 
 # ICEY
 2017 年 8 月 2 日。   
