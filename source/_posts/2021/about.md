@@ -36,7 +36,13 @@ tags: 关于
 
 不求长命百岁，不求做大官发大财，我只想再也不看父母的脸色过日子。   
 
-[写于2024年11月28日](https://m.weibo.cn/status/P2qnOsz6s)   
+[写于2024年11月](https://m.weibo.cn/status/P2qnOsz6s)   
+
+# 感悟
+好日子是自己奋斗出来的，  
+不是从家暴里忍出来的。   
+
+[写于2025年12月](https://m.weibo.cn/status/QjaT78or1)
 
 # StopWatch
 布衣已经入籍昆明市 <span id="tm2"> </span> 。   
