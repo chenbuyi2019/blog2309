@@ -48,6 +48,7 @@ tags: [游戏]
 
 # Mafia 四海兄弟
 2026 年 2 月 15 日， [四海兄弟: 最终版](https://m.weibo.cn/status/QrYHFeAw7)  
+2026 年 2 月 27 日， [四海兄弟2: 最终版](https://m.weibo.cn/status/QtOpYgc9S)  
 
 # ICEY
 2017 年 8 月 2 日。   
