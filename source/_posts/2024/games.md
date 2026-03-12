@@ -20,7 +20,8 @@ tags: [游戏]
 2025 年 11 月 22 日， Grand Theft Auto V Enhanced 达成 100% 完成度。[微博](https://m.weibo.cn/status/QeL3a9NCn)   
 
 # Devil May Cry 5
-2022 年 10月 22日。   
+2022 年 10月 22日，通关第一次。  
+2025 年 8 月 2日， [拿 Vergil 通关一次](https://m.weibo.cn/status/PDXZVCvPe)  
 
 # Red Alert 2
 2023 年 7 月 7 日，红色警戒2 本体 [微博](https://m.weibo.cn/status/N8M945xzX)    
@@ -30,9 +31,6 @@ tags: [游戏]
 # Red Alert 1
 2024 年 1 月 24 日，红色警戒1 苏军线  [微博](https://m.weibo.cn/status/NDlcGjaYP)   
 2024 年 8 月 27 日，红色警戒1 盟军线  [微博](https://m.weibo.cn/status/OufZq8Apg)   
-
-# Half-Life 1
-2023 年 1 月 25 日，[微博](https://m.weibo.cn/status/MpXEugiJj)   
 
 # Need For Speed
 2024 年 7 月 11 日，极品飞车 9 最高通缉 NFS Most Wanted。   
@@ -51,6 +49,9 @@ tags: [游戏]
 2026 年 2 月 15 日， [四海兄弟: 最终版](https://m.weibo.cn/status/QrYHFeAw7)  
 2026 年 2 月 27 日， [四海兄弟2: 最终版](https://m.weibo.cn/status/QtOpYgc9S)  
 2026 年 3 月 12 日， [2 的 DLC :  Joe's Adventures 乔胖历险记](https://m.weibo.cn/status/QvKHdDFdT)  
+
+# Half-Life 1
+2023 年 1 月 25 日，[微博](https://m.weibo.cn/status/MpXEugiJj)   
 
 # ICEY
 2017 年 8 月 2 日。   
