@@ -50,7 +50,7 @@ tags: [游戏]
 # Mafia 四海兄弟
 2026 年 2 月 15 日， [四海兄弟: 最终版](https://m.weibo.cn/status/QrYHFeAw7)  
 2026 年 2 月 27 日， [四海兄弟2: 最终版](https://m.weibo.cn/status/QtOpYgc9S)  
-2026 年 2 月 27 日， [2 的 DLC :  Joe's Adventures 乔胖历险记](https://m.weibo.cn/status/QvKHdDFdT)  
+2026 年 3 月 12 日， [2 的 DLC :  Joe's Adventures 乔胖历险记](https://m.weibo.cn/status/QvKHdDFdT)  
 
 # ICEY
 2017 年 8 月 2 日。   
