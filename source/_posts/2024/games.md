@@ -49,6 +49,7 @@ tags: [游戏]
 2026 年 2 月 15 日， [四海兄弟: 最终版](https://m.weibo.cn/status/QrYHFeAw7)  
 2026 年 2 月 27 日， [四海兄弟2: 最终版](https://m.weibo.cn/status/QtOpYgc9S)  
 2026 年 3 月 12 日， [2 的 DLC :  Joe's Adventures 乔胖历险记](https://m.weibo.cn/status/QvKHdDFdT)  
+2026 年 3 月 31 日， [四海兄弟3: 最终版](https://m.weibo.cn/status/QyCKAhwYZ)  
 
 # Half-Life 1
 2023 年 1 月 25 日，[微博](https://m.weibo.cn/status/MpXEugiJj)   
