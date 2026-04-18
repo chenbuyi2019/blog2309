@@ -20,7 +20,8 @@ tags: [游戏]
 2025 年 11 月 22 日， Grand Theft Auto V Enhanced 达成 100% 完成度。[微博](https://m.weibo.cn/status/QeL3a9NCn)   
 
 # Resident Evil 4
-2026 年 4 月12日， [通关 RE](https://m.weibo.cn/status/QAuFOvCDY) 。  
+2026 年 4 月 12 日， [通关 RE](https://m.weibo.cn/status/QAuFOvCDY) 。  
+2026 年 4 月 18 日， [通关 殊命归途](https://m.weibo.cn/status/QBoJ18kxC) 。  
 
 # Devil May Cry 5
 2022 年 10月 22日，通关第一次。  
