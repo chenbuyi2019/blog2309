@@ -1044,11 +1044,7 @@ links:
       intro: "",
       link: "https://www.skyblond.info/"
     }
-    - {
-      title: "FeiBam",
-      intro: "",
-      link: "https://feibam.club/"
-    }
+
 
   # 当成员头像加载失败时，替换为指定图片
   # When the member avatar fails to load, replace the specified image
