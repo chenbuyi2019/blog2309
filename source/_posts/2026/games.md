@@ -55,6 +55,9 @@ tags: [游戏]
 2026 年 3 月 12 日， [2 的 DLC :  Joe's Adventures 乔胖历险记](https://m.weibo.cn/status/QvKHdDFdT)  
 2026 年 3 月 31 日， [四海兄弟3: 最终版](https://m.weibo.cn/status/QyCKAhwYZ)  
 
+# Black Mesa 
+2026 年 5 月 2 日，[微博](https://m.weibo.cn/status/QDuorn27O)   
+
 # Half-Life 1
 2023 年 1 月 25 日，[微博](https://m.weibo.cn/status/MpXEugiJj)   
 
