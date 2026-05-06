@@ -14,6 +14,8 @@ tags: 关于
 
 ![](/image/avatar.webp)
 
+头像来自 [Doppel  绘制的弑君者](https://www.pixiv.net/artworks/135700748)
+
 # 简史
 2001年，在浙江省出生。   
 2013年，注册 Steam 。   
