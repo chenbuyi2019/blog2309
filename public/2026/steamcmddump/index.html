@@ -1,0 +1,1617 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/image/avatar.jpg">
+  <link rel="icon" href="/image/avatar.jpg">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="浊心陈布衣">
+  <meta name="keywords" content="blog">
+  
+    <meta name="description" content="实现源码： github我写了一个 C# 程序来导出全部然后整理起来。    Commands  api_loggingapi_logging &lt;enabled&gt; &lt;verbose&gt; : enable&#x2F;disable verbose API logging in steamcmd  app_backup&lt;appid&gt; &lt;target folder&gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SteamCMD 全部的 Commands ConVars">
+<meta property="og:url" content="http://buyi.dev/2026/steamcmddump/index.html">
+<meta property="og:site_name" content="浊心陈布衣的博客">
+<meta property="og:description" content="实现源码： github我写了一个 C# 程序来导出全部然后整理起来。    Commands  api_loggingapi_logging &lt;enabled&gt; &lt;verbose&gt; : enable&#x2F;disable verbose API logging in steamcmd  app_backup&lt;appid&gt; &lt;target folder&gt;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-06-06T07:03:32.000Z">
+<meta property="article:modified_time" content="2026-06-06T07:08:51.837Z">
+<meta property="article:author" content="浊心陈布衣">
+<meta property="article:tag" content="code">
+<meta property="article:tag" content=".net">
+<meta property="article:tag" content="steam">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>SteamCMD 全部的 Commands ConVars - 浊心陈布衣的博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"buyi.dev","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":30,"cursorChar":"_","loop":false,"scope":["home"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+  
+  <link rel="alternate" type="application/rss+xml" title="浊心陈布衣的博客" href="/rss.xml" />
+  <link rel="alternate" type="application/atom+xml" title="浊心陈布衣的博客" href="/atom.xml" />
+  <link rel="alternate" type="application/json" title="浊心陈布衣的博客" href="/feed.json" />
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 50vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>浊心陈布衣的博客</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://m.weibo.cn/u/5977985000" target="_self">
+                <i class="iconfont icon-weibo-fill"></i>
+                <span>微博</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/2021/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/image/bg_blackmesa.webp') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle">SteamCMD 全部的 Commands ConVars</span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2026-06-06 15:03" pubdate>
+          2026年6月6日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.2k 字
+        
+      </span>
+    
+
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">SteamCMD 全部的 Commands ConVars</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>实现源码： <a target="_blank" rel="noopener" href="https://github.com/chenbuyi2019/SteamCmdDump/">github</a><br>我写了一个 C# 程序来导出全部然后整理起来。   </p>
+<h1 id="Commands"><a href="#Commands" class="headerlink" title="Commands"></a>Commands</h1><table style="font-family:Consolas,monospace;font-size: small;">
+<tr>
+<td>api_logging</td><td>api_logging &lt;enabled&gt; &lt;verbose&gt; : enable/disable verbose API logging in steamcmd</td></tr>
+<tr>
+<td>app_backup</td><td>&lt;appid&gt; &lt;target folder&gt; [max folder size MB]</td></tr>
+<tr>
+<td>app_build_all_depots</td><td>app_build_all_depots [-desc &lt;text&gt;] -depotconfigpath &lt;folder&gt; -contentroot &lt;folder&gt; -buildoutput &lt;folder&gt; &lt;appid&gt;  : Build all depots for one app</td></tr>
+<tr>
+<td>app_debug_install</td><td>&lt;appId&gt; [&lt;path&gt;] - app debug install</td></tr>
+<tr>
+<td>app_delay_update</td><td>&lt;appid&gt; &lt;seconds&gt; force delay update</td></tr>
+<tr>
+<td>app_dlc_status</td><td>app_status &lt;appId&gt; &lt;dlcId&gt;</td></tr>
+<tr>
+<td>app_info_find</td><td>Find apps with a certain appinfo value set, eg &#39;common/type media&#39;. * is any.</td></tr>
+<tr>
+<td>app_info_print</td><td>app_info_print &lt;appid&gt; [section] : print app info for appID</td></tr>
+<tr>
+<td>app_info_request</td><td>&lt;AppID&gt; - Issue an appinfo request for the given appid. Does not wait for results from the server.</td></tr>
+<tr>
+<td>app_info_update</td><td>[0|1] : trigger app info update, optionally for update all</td></tr>
+<tr>
+<td>app_install_script</td><td>&lt;AppID&gt; [uninstall:0|1]- Runs app install script.</td></tr>
+<tr>
+<td>app_installed_files</td><td>&lt;AppID&gt;</td></tr>
+<tr>
+<td>app_launch</td><td>&lt;appId&gt; [LaunchOptionIndex] [Arguments]</td></tr>
+<tr>
+<td>app_license_request</td><td>&lt;AppID&gt; - Requests a free licenses for this app if not already owned.</td></tr>
+<tr>
+<td>app_run</td><td>&lt;appId&gt; [LaunchOptionIndex] [Arguments]</td></tr>
+<tr>
+<td>app_set_config</td><td>&lt;AppID&gt; &lt;key&gt; &lt;value&gt; - sets a config value for given app.</td></tr>
+<tr>
+<td>app_status</td><td>app_status &lt;appId&gt;</td></tr>
+<tr>
+<td>app_stop</td><td>&lt;appid&gt; [force:0|1] stop this running app</td></tr>
+<tr>
+<td>app_uninstall</td><td>&lt;appId&gt;</td></tr>
+<tr>
+<td>app_update</td><td>app_update &lt;appid&gt; [-validate] [-language &lt;lang&gt;] [-beta &lt;betaname&gt;] [-betapassword &lt;pwd&gt;] make sure a Steam application is up-to-date</td></tr>
+<tr>
+<td>app_update_cancel</td><td>&lt;EAppUpdateError&gt;</td></tr>
+<tr>
+<td>app_update_status</td><td>app_update_status [appId]</td></tr>
+<tr>
+<td>apps_installed</td><td></td></tr>
+<tr>
+<td>apps_running</td><td>displays information about running games tracked by Steam</td></tr>
+<tr>
+<td>async_disconnect</td><td>async disconnect</td></tr>
+<tr>
+<td>build_installer</td><td>&lt;project file&gt; &lt;target folder&gt; [beta key] [beta pwd]</td></tr>
+<tr>
+<td>ceg_wrap</td><td>ceg_wrap &lt;appid&gt; &lt;orig filename&gt; &lt;stripped filename&gt; &lt;strips filename&gt; : upload executable to back end for CEG wrapping</td></tr>
+<tr>
+<td>clear_credentials</td><td>Clear cached credentials for current user. The next login will require authentication including an email or mobile confirmation.</td></tr>
+<tr>
+<td>cm_force_change</td><td>Change CM List</td></tr>
+<tr>
+<td>Commands</td><td></td></tr>
+<tr>
+<td>ConVars</td><td></td></tr>
+<tr>
+<td>download_chunk</td><td>download_chunk &lt;appid&gt; &lt;depotid&gt; &lt;sha&gt;: download a single chunk from a depot</td></tr>
+<tr>
+<td>download_depot</td><td>download_depot &lt;appid&gt; &lt;depotid&gt; [&lt;target manifestid&gt;] [&lt;delta manifestid&gt;] [&lt;destination folder&gt;]: download a single depot</td></tr>
+<tr>
+<td>download_item</td><td>download_item &lt;appid&gt; &lt;PublishedFileId&gt; : download a workshop item directly</td></tr>
+<tr>
+<td>download_sources</td><td>Dumps list of download sources</td></tr>
+<tr>
+<td>drm_wrap</td><td>drm_wrap &lt;appid&gt; &lt;input filename&gt; &lt;output filename&gt; &lt;toolname&gt; &lt;flags&gt; [&lt;destination&gt;]: upload executable to back end for DRM wrapping</td></tr>
+<tr>
+<td>dump_box_ips</td><td>dump the list of detected local box IP addresses</td></tr>
+<tr>
+<td>dump_offline_playtime</td><td>Dumps recorded playtime sessions</td></tr>
+<tr>
+<td>dump_scheduled_functions</td><td>usage: &quot;dump_scheduled_functions&quot; Displays internal Steam function callback timers</td></tr>
+<tr>
+<td>exit</td><td>Stops Steam client console</td></tr>
+<tr>
+<td>find</td><td>find substrings in console commands</td></tr>
+<tr>
+<td>firewall_info</td><td>Shows firewall settings</td></tr>
+<tr>
+<td>force_install_dir</td><td>force_install_dir &lt;directory&gt;</td></tr>
+<tr>
+<td>get_download_throttle</td><td></td></tr>
+<tr>
+<td>help</td><td>Show help information</td></tr>
+<tr>
+<td>http_cache_clearall</td><td>Delete all data from internal HTTP client and CEF browser</td></tr>
+<tr>
+<td>http_test</td><td>&lt;optional_url&gt; test HTTP connectivity via specified URL</td></tr>
+<tr>
+<td>info</td><td>Dump various Steam info</td></tr>
+<tr>
+<td>library_folder_list</td><td>list all mounted Steam volumes</td></tr>
+<tr>
+<td>licenses_for_app</td><td>&lt;appid&gt; : shows active licenses for appid</td></tr>
+<tr>
+<td>licenses_print</td><td>display users&#39;s Steam3 licenses</td></tr>
+<tr>
+<td>log_callbacks</td><td>usage: &quot;log_callbacks &lt;first callbackID&gt; [last callbackID]</td></tr>
+<tr>
+<td>log_ipc</td><td>usage: &quot;log_ipc [counts|verbose|#maxcount] &lt;filter&gt;&quot; Enables IPC logging. Specifying &quot;counts&quot; or &quot;verbose&quot; is optional, defaulting to counts.</td></tr>
+<tr>
+<td>login</td><td>&lt;username&gt; [&lt;password&gt;] [&lt;Steam guard code&gt;] - login to Steam</td></tr>
+<tr>
+<td>login_offline</td><td>&lt;username&gt; - login to Steam in offline mode</td></tr>
+<tr>
+<td>logoff</td><td>Disconnect from Steam and revoke saved login information</td></tr>
+<tr>
+<td>logon</td><td>see &#39;login&#39;</td></tr>
+<tr>
+<td>logout</td><td>Disconnect from Steam and revoke saved login information</td></tr>
+<tr>
+<td>manifest_dump</td><td>&lt;filename&gt; [0|1: include chunks]</td></tr>
+<tr>
+<td>mem_stats</td><td>Dump memory stats</td></tr>
+<tr>
+<td>mem_validate</td><td>&lt;dump|leaks&gt; &lt;threshold&gt; : validates memory</td></tr>
+<tr>
+<td>net_fake_state</td><td>{normal|NoLAN|CaptivePortal_Redirected|CaptivePortal_InPlace|NoInternet|NoSteam} Simulate network conditions</td></tr>
+<tr>
+<td>net_msgdump</td><td>Dumps list of sent net messages</td></tr>
+<tr>
+<td>net_msgspew</td><td>Spews sent and recv net messages</td></tr>
+<tr>
+<td>p2p_info</td><td>usage: &quot;p2p_info&quot; Displays the current state of the P2P networking subsystem.</td></tr>
+<tr>
+<td>package_info_print</td><td>Dumps package info for packageID</td></tr>
+<tr>
+<td>patch_dump</td><td>&lt;filename&gt; &lt;depotid&gt;</td></tr>
+<tr>
+<td>peer_content_server_status</td><td>Dumps status of peer content server</td></tr>
+<tr>
+<td>print_sdr_ping</td><td>print current sdr ping location string</td></tr>
+<tr>
+<td>profile</td><td>&lt;seconds&gt; profile for N seconds</td></tr>
+<tr>
+<td>quit</td><td>Stops Steam client console</td></tr>
+<tr>
+<td>remote_client_dongle</td><td>remote_client_dongle [[connect] clientid ssid password]|disconnect|status|disable|enable|leddebug|lednodebug</td></tr>
+<tr>
+<td>remote_client_softapcmd</td><td>remote_client_softapcmd &lt;softapcmd args&gt;</td></tr>
+<tr>
+<td>remote_clients</td><td>dump remote client info</td></tr>
+<tr>
+<td>render_ipc_connections</td><td>usage: &quot;render_ipc_connections</td></tr>
+<tr>
+<td>run_app_build</td><td>run_app_build [-preview] [-desc &lt;text&gt;] &lt;appbuildfile&gt; : run app depot build as specified in appbuildfile</td></tr>
+<tr>
+<td>run_app_build_http</td><td>run_app_build_http : alias for run_app_build</td></tr>
+<tr>
+<td>runscript</td><td>&lt;scriptfile&gt; - runs a console command script</td></tr>
+<tr>
+<td>set_app_beta_password</td><td>set_app_beta_password &lt;appid&gt; -beta &lt;name&gt; -betapassword &lt;pwd&gt;  -- opt-in to the app beta with the given password</td></tr>
+<tr>
+<td>set_download_throttle</td><td>set_download_throttle &lt;kbps&gt; &lt;bPersistent = false&gt;</td></tr>
+<tr>
+<td>set_spew</td><td>&lt;group&gt; &lt;level&gt; &lt;loglevel&gt; set spew levels for the given group</td></tr>
+<tr>
+<td>set_spew_level</td><td>&lt;SpewLevel LogLevel&gt; Sets spew and log level for all groups</td></tr>
+<tr>
+<td>set_steam_guard_code</td><td>&lt;code&gt; - authorize this computer by adding the Steam Guard email code</td></tr>
+<tr>
+<td>set_var</td><td>&lt;name&gt; &lt;value&gt;- Set the value of a Cvar</td></tr>
+<tr>
+<td>shader_process</td><td>shader_process &lt;appId&gt; &lt;bucketID&gt; &lt;optionalOverrideBasePath&gt;</td></tr>
+<tr>
+<td>sign_install_script</td><td>sign_install_script &lt;appid&gt; &lt;input filename&gt; &lt;output filename&gt; : upload install script to back end for signing</td></tr>
+<tr>
+<td>stats_dump</td><td>stats_dump [filter] : dumps matching debug stats</td></tr>
+<tr>
+<td>stats_monitor</td><td>stats_monitor &lt;stat name&gt; : monitor a debug stat value</td></tr>
+<tr>
+<td>stats_reset</td><td>stats_reset [filter] : set matching stats back to 0</td></tr>
+<tr>
+<td>swarm_get_bucket_manifest</td><td>&lt;appid&gt; &lt;bucket_hw_id&gt; &lt;bucket_sw_id&gt; - query Swarm bucket depot manifest, if depot built</td></tr>
+<tr>
+<td>swarm_shader_compile</td><td>&lt;work_dir&gt; &lt;threadCount&gt;</td></tr>
+<tr>
+<td>swarm_shader_download</td><td>&lt;work_dir&gt;</td></tr>
+<tr>
+<td>swarm_shader_prepopulate</td><td>&lt;work_dir&gt;</td></tr>
+<tr>
+<td>swarm_shader_upload</td><td>&lt;work_dir&gt;</td></tr>
+<tr>
+<td>swarm_tc_download</td><td>swarm_tc_download &lt;src_bucket_hw_id&gt; &lt;src_bucketsw_id&gt; &lt;work_dir&gt;</td></tr>
+<tr>
+<td>swarm_tc_upload</td><td>&lt;src_bucket_hw_id&gt; &lt;src_bucketsw_id&gt; &lt;dst_bucket_hw_id&gt; &lt;dst_bucket_sw_id&gt; &lt;work_dir&gt; &lt;appid&gt; &lt;bucketid&gt;</td></tr>
+<tr>
+<td>test_concurrent_textfilter_change</td><td>Queue up multiple text filter changes to the UI</td></tr>
+<tr>
+<td>test_dropcon</td><td>Tests dropping a connection</td></tr>
+<tr>
+<td>test_failnextconnect</td><td>Tests failing the next connection</td></tr>
+<tr>
+<td>test_opus_voice_encode</td><td>test an opus voice encode</td></tr>
+<tr>
+<td>test_reconnect</td><td>Reconnect after using test_failnextconnect&amp;test_dropcon</td></tr>
+<tr>
+<td>test_voice_encode</td><td>test a voice encode</td></tr>
+<tr>
+<td>timed_trial_add_playtime</td><td>timed_trial_add_playtime &lt;appId&gt; &lt;seconds&gt;: add trial app playtime (developer only)</td></tr>
+<tr>
+<td>timed_trial_reset_playtime</td><td>timed_trial_reset_playtime &lt;appId&gt; : reset trial app playtime (developer only)</td></tr>
+<tr>
+<td>timed_trial_status</td><td>timed_trial_status &lt;appId&gt; : show time trial app status</td></tr>
+<tr>
+<td>user_friends</td><td>Dumps list of friends</td></tr>
+<tr>
+<td>verify_chunk_store</td><td>verify_chunk_store &lt;appid&gt; &lt;depotid&gt; &lt;datafile&gt; : run app depot build as specified in appbuildfile</td></tr>
+<tr>
+<td>verify_vpk</td><td>verify_vpk &lt;datafile&gt; : verifies content of given VPK</td></tr>
+<tr>
+<td>voice_game_usage</td><td>displays information about the game&#39;s use of Steam voice</td></tr>
+<tr>
+<td>workshop_build_item</td><td>workshop_build_item &lt;build config filename&gt; : build a workshop item</td></tr>
+<tr>
+<td>workshop_create_legacy_item</td><td>workshop_create_legacy_item &lt;appid&gt; &lt;workshop file&gt; : build a legacy workshop item</td></tr>
+<tr>
+<td>workshop_download_item</td><td>workshop_download_item &lt;appid&gt; &lt;PublishedFileId&gt; : download an item using the workshop system</td></tr>
+<tr>
+<td>workshop_status</td><td>workshop_status &lt;appId&gt;</td></tr>
+</table>
+
+ 
+<h1 id="Convars"><a href="#Convars" class="headerlink" title="Convars"></a>Convars</h1><table style="font-family:Consolas,monospace;font-size: small;">
+<tr>
+<td>@bCallerDeadlineAbortJobDisableWhenHTTPReqStart</td><td>1</td><td></td></tr>
+<tr>
+<td>@bClientDownloadUseHTTPS</td><td>0</td><td> Set this to use HTTPS on supported download servers</td></tr>
+<tr>
+<td>@bClientOpenCacheStickyRedirects</td><td>1</td><td></td></tr>
+<tr>
+<td>@bClientTryRequestManifestWithoutCode</td><td>0</td><td> If set, client will try to get a manifest even without a manifest request code</td></tr>
+<tr>
+<td>@bCloudSyncFailDownloadIfGameOutOfDate</td><td>0</td><td></td></tr>
+<tr>
+<td>@bCSForceNoCache</td><td>0</td><td></td></tr>
+<tr>
+<td>@bDepotBuilderReadBufferSizeKB</td><td>8192</td><td></td></tr>
+<tr>
+<td>@bDepotBuilderUnbufferedReads</td><td>1</td><td></td></tr>
+<tr>
+<td>@bDisableDualStackDownloads</td><td>0</td><td></td></tr>
+<tr>
+<td>@bDownloadThrottleDuringCloudSync</td><td>0</td><td></td></tr>
+<tr>
+<td>@bEnableFrameFuncOverageWarnings</td><td>0</td><td> This turns on the spew in SPEW_MISC at level 4, still need to adjust spew levels to see it.</td></tr>
+<tr>
+<td>@bEnableHTTP2OnAllCHTTPClients</td><td>0</td><td> Enable HTTP/2 on all CHTTPClients automatically for SSL connections</td></tr>
+<tr>
+<td>@bEnableLogTearOff</td><td>1</td><td></td></tr>
+<tr>
+<td>@bEnableNetworkJobsOwnStartList</td><td>1</td><td></td></tr>
+<tr>
+<td>@bEnableOfflineLogonTicket</td><td>1</td><td> If true, an offline logon ticket will be requested during logon if none is cached</td></tr>
+<tr>
+<td>@bEnableSiteLicenseConnect</td><td>1</td><td></td></tr>
+<tr>
+<td>@bEnableSiteLicenseConsoleLogging</td><td>0</td><td></td></tr>
+<tr>
+<td>@bEnableSpewThrottle</td><td>1</td><td></td></tr>
+<tr>
+<td>@bEnforceValidEmailDomains</td><td>1</td><td> Enable valid email domains in BIsValidEmailAddress</td></tr>
+<tr>
+<td>@bForceStreamUnsupportedApp</td><td>0</td><td></td></tr>
+<tr>
+<td>@bHttpClientRecordHostnameDimension</td><td>0</td><td> Group HTTP metrics by hostname.  Careful, the cardinality of your in-memory map might be large.</td></tr>
+<tr>
+<td>@bLANPeerConnectionTimeoutSec</td><td>5</td><td></td></tr>
+<tr>
+<td>@bLogMessageToProtobufClass</td><td>1</td><td> We we first discover the protobuf class used for a particular EMsg, log it</td></tr>
+<tr>
+<td>@bMetricsEnabled</td><td>1</td><td> Enabling allows jobs to collect and report metrics through IMetricsReporters.</td></tr>
+<tr>
+<td>@bMsgErrorDump</td><td>0</td><td></td></tr>
+<tr>
+<td>@bProfileYieldsInTestSuiteJobs</td><td>0</td><td></td></tr>
+<tr>
+<td>@bRefreshDownloadSourcesFrequently</td><td>0</td><td></td></tr>
+<tr>
+<td>@bRequireOfflineLogonTicket</td><td>1</td><td> If true, a valid offline logon ticket is required when logging in in offline or no connection mode</td></tr>
+<tr>
+<td>@bScreenshotsLegacyCloudUpload</td><td>0</td><td> If set, use the legacy Steam Cloud upload path for screenshot uploads</td></tr>
+<tr>
+<td>@bShaderClientGetBucketManifestUseWebAPI</td><td>1</td><td></td></tr>
+<tr>
+<td>@bSiteLicenseAllowCachedClientCredentials</td><td>0</td><td> Allow Steam clients that associate to this site to save username and auth credentials locally</td></tr>
+<tr>
+<td>@bSiteLicenseProxyCacheIsExternalProcess</td><td>0</td><td> If set, the caching content proxy will be handled by some process other than steamcmd. You probably also should set @sSiteLicenseProxyExplicitIP.</td></tr>
+<tr>
+<td>@bSiteLicenseProxyEnableIPv6</td><td>0</td><td> If set, we will enable ipv6 communications to the Steam servers</td></tr>
+<tr>
+<td>@bSiteLicenseServer</td><td>0</td><td></td></tr>
+<tr>
+<td>@bSiteLicenseServerGUI</td><td>0</td><td></td></tr>
+<tr>
+<td>@cbPartnerUploadChunkSize</td><td>1000000</td><td> Chunk size to use for POSTing partner uploads</td></tr>
+<tr>
+<td>@cCSClientMaxNumSocketsPerHost</td><td>4</td><td></td></tr>
+<tr>
+<td>@cCSClientMaxNumSocketsPerHostForCachingProxy</td><td>32</td><td></td></tr>
+<tr>
+<td>@cDefaultInitialDownloadSources</td><td>4</td><td></td></tr>
+<tr>
+<td>@cDepotBuilderFileChunkingThreads</td><td>0</td><td></td></tr>
+<tr>
+<td>@cFileChunkingCRCFalseAlarmBytesToSkip</td><td>128</td><td></td></tr>
+<tr>
+<td>@cFileChunkingCRCFalseAlarmThreshold</td><td>0</td><td></td></tr>
+<tr>
+<td>@cFileChunkingSupersectionSizeMB</td><td>1024</td><td></td></tr>
+<tr>
+<td>@cloud_testdynamicsyncapp</td><td>0</td><td></td></tr>
+<tr>
+<td>@cMaxContentServersToRequest</td><td>20</td><td></td></tr>
+<tr>
+<td>@cMaxInitialDownloadSources</td><td>-1</td><td></td></tr>
+<tr>
+<td>@cMinimumJobTimeoutsToCheckPerFrame</td><td>100</td><td></td></tr>
+<tr>
+<td>@cNetEncryptionHandshakeWorkMax_HighPri</td><td>8000</td><td></td></tr>
+<tr>
+<td>@cNetEncryptionHandshakeWorkMax_LowPri</td><td>2000</td><td></td></tr>
+<tr>
+<td>@cNetEncryptionHandshakeWorkMax_MedPri</td><td>4000</td><td></td></tr>
+<tr>
+<td>@csecCSJobSuccessfulRequestTimeWindow</td><td>60</td><td></td></tr>
+<tr>
+<td>@csecCSRequestProcessorTimeOut</td><td>300</td><td></td></tr>
+<tr>
+<td>@csecDurationControlPeriod</td><td></td><td> Override default duration-control / anti-indulgence time period. If nonzero, initial playtime threshold is this value in seconds</td></tr>
+<tr>
+<td>@csecDurationControlPeriodToday</td><td></td><td> Override default duration-control / anti-indulgence time period. If nonzero, per-day playtime threshold is this value in seconds</td></tr>
+<tr>
+<td>@csecDurationControlSimulated</td><td></td><td> Simulate having already played this many seconds of playtime.</td></tr>
+<tr>
+<td>@csecDurationControlSimulatedNonRecent</td><td></td><td> Simulate having already played this many seconds of playtime today, but not recently.</td></tr>
+<tr>
+<td>@csecFavoriteGameAccountCacheTime</td><td>86400</td><td> Control how often we refresh the account IDs in the game server favorites list</td></tr>
+<tr>
+<td>@csecIncomingDataRatePeriod</td><td>1</td><td></td></tr>
+<tr>
+<td>@csecSiteLicenseProxyStatsLog</td><td>60</td><td> Log proxy stats this often</td></tr>
+<tr>
+<td>@csecSiteLicenseProxyStatsUpdate</td><td>1</td><td> update proxy stats internally this often</td></tr>
+<tr>
+<td>@csecUpdateTargetNumConnectionsEpoch</td><td>10</td><td></td></tr>
+<tr>
+<td>@cSecUploadDownloadRates</td><td>300</td><td></td></tr>
+<tr>
+<td>@CSInterfaceProxyPassword</td><td></td><td></td></tr>
+<tr>
+<td>@CSInterfaceProxyUsername</td><td></td><td></td></tr>
+<tr>
+<td>@cUDPSendRetries</td><td>8</td><td></td></tr>
+<tr>
+<td>@CustomBinaryRequestRetryTimes</td><td>20</td><td></td></tr>
+<tr>
+<td>@DepotBuilderConfigRoot</td><td>./depotscripts</td><td></td></tr>
+<tr>
+<td>@DepotBuilderContentRoot</td><td></td><td></td></tr>
+<tr>
+<td>@DepotBuilderDeltaMaxChunks</td><td>20000</td><td></td></tr>
+<tr>
+<td>@DepotBuilderEnableVZd</td><td>1</td><td></td></tr>
+<tr>
+<td>@DepotBuilderMaxParallelUploadChunks</td><td>24</td><td></td></tr>
+<tr>
+<td>@DepotBuilderNoReslist</td><td>0</td><td></td></tr>
+<tr>
+<td>@DepotBuilderNumHTTPSocketsToMDS</td><td>12</td><td></td></tr>
+<tr>
+<td>@DepotBuilderOutputRoot</td><td></td><td></td></tr>
+<tr>
+<td>@DepotBuilderParallelUploadChunks</td><td>6</td><td></td></tr>
+<tr>
+<td>@DepotBuilderProgressTimeout</td><td>1000</td><td></td></tr>
+<tr>
+<td>@DepotBuilderVZdMinRatio</td><td>0.4</td><td></td></tr>
+<tr>
+<td>@DepotBuilderXORMatchPercent</td><td>95</td><td></td></tr>
+<tr>
+<td>@durationControlNightCheck</td><td>1</td><td> Time of day check for duration-control feature. 1 = normal. 2 = force night-time. 0 = disable checks, only enabled for age verified accounts</td></tr>
+<tr>
+<td>@EnableUDPHistory</td><td>0</td><td></td></tr>
+<tr>
+<td>@fDownloadRateImprovementToAddAnotherConnection</td><td>1.2</td><td></td></tr>
+<tr>
+<td>@fMinDataRateToAttemptTwoConnectionsMbps</td><td>1.5</td><td></td></tr>
+<tr>
+<td>@ForceContentServer</td><td></td><td></td></tr>
+<tr>
+<td>@ForceContentServerHTTPS</td><td>0</td><td></td></tr>
+<tr>
+<td>@ForceContentServerType</td><td></td><td></td></tr>
+<tr>
+<td>@GCNameOverride</td><td></td><td></td></tr>
+<tr>
+<td>@LocalContentServer</td><td></td><td></td></tr>
+<tr>
+<td>@LogFileFolderName</td><td></td><td> Use something other than &#39;logs&#39; as the folder for log files</td></tr>
+<tr>
+<td>@MatchmakingCreatePingWaitTime</td><td>0</td><td></td></tr>
+<tr>
+<td>@MatchmakingJoinPingWaitTime</td><td>0</td><td></td></tr>
+<tr>
+<td>@MatchmakingSearchPingWaitTime</td><td>0</td><td></td></tr>
+<tr>
+<td>@MatchmakingTotalPingWaitTime</td><td>0</td><td></td></tr>
+<tr>
+<td>@MaxOutstandingSendThreadItemFatalAssert</td><td>30000</td><td></td></tr>
+<tr>
+<td>@MaxOutstandingSendThreadItemFatalAssertSecondsAtLimit</td><td>30</td><td></td></tr>
+<tr>
+<td>@MaxOutstandingSendThreadItemSleep</td><td>10000</td><td></td></tr>
+<tr>
+<td>@metricsDisabledCatalogs</td><td></td><td> Comma separated list of metrics catalogs to disable.  This is the last check.</td></tr>
+<tr>
+<td>@metricsDisabledOperations</td><td></td><td> Comma separated list of metrics operations that are disabled.  This setting has highest priority</td></tr>
+<tr>
+<td>@metricsEnabledOperations</td><td></td><td> Comma separated list of metrics operations.  Overrides disabled catalogs</td></tr>
+<tr>
+<td>@nBootReserveRetryPeriodSec</td><td>30</td><td> Number of seconds to wait before retrying after failing to create a boot reserve file. Should be a multiple of 10.</td></tr>
+<tr>
+<td>@nCallerDeadlineHopLatencyMS</td><td>10</td><td> When we send a message expecting a reply from a job with a deadline, set the timeout on the message to [current time remaining in this job] - N ms.  A negative value prevents propagating caller deadlines down the chain</td></tr>
+<tr>
+<td>@nClientCloudMaxMBParallelDownloads</td><td>64</td><td></td></tr>
+<tr>
+<td>@nClientCloudMaxMBParallelUploads</td><td>64</td><td></td></tr>
+<tr>
+<td>@nClientCloudMaxNumParallelDeletes</td><td>10</td><td></td></tr>
+<tr>
+<td>@nClientCloudMaxNumParallelDownloads</td><td>10</td><td></td></tr>
+<tr>
+<td>@nClientCloudMaxNumParallelUploads</td><td>10</td><td></td></tr>
+<tr>
+<td>@nClientCloudMaxNumUploadsPerBatch</td><td>100</td><td></td></tr>
+<tr>
+<td>@nClientCMDirectoryResultLoadPercentDither</td><td>10</td><td> Dither to apply to CM server loads received by CMDirectory query</td></tr>
+<tr>
+<td>@nClientCMUDPPingTimeGoodEnoughThresholdMS</td><td>50</td><td></td></tr>
+<tr>
+<td>@nClientCMUDPPingTimeoutUseGoodEnoughMS</td><td>250</td><td></td></tr>
+<tr>
+<td>@nClientDownloadEnableHTTP2PlatformLinux</td><td>1</td><td> Enable HTTP/2 connections on Linux clients</td></tr>
+<tr>
+<td>@nClientDownloadEnableHTTP2PlatformWindows</td><td>1</td><td> Enable HTTP/2 connections on Windows clients</td></tr>
+<tr>
+<td>@nClientDownloadEnableHTTP2RelBranch</td><td>0</td><td> Only enable HTTP/2 on enabled platforms on rel branch client if this is set</td></tr>
+<tr>
+<td>@nClientDownloadInitWindowSizeHTTP2Connection</td><td>10000000</td><td> Init per-connection window size for HTTP/2.</td></tr>
+<tr>
+<td>@nClientDownloadInitWindowSizeHTTP2Stream</td><td>2000000</td><td> Init per-stream window size for HTTP/2.</td></tr>
+<tr>
+<td>@nClientDownloadProbUseHTTP2IfAvailable</td><td>50</td><td> If http/2 is available for a given download source, use it w/ this probability [0,100]</td></tr>
+<tr>
+<td>@nClientEnableHTTP2PlatformLinux</td><td>1</td><td> Enable HTTP/2 connections on Linux clients</td></tr>
+<tr>
+<td>@nClientEnableHTTP2PlatformWindows</td><td>1</td><td> Enable HTTP/2 connections on Windows clients</td></tr>
+<tr>
+<td>@nClientEnableIPv6ForHTTPPlatformLinux</td><td>0</td><td> Enable IPv6 HTTP connections by default on Linux clients</td></tr>
+<tr>
+<td>@nClientEnableIPv6ForHTTPPlatformWindows</td><td>0</td><td> Enable IPv6 HTTP connections by default on Windows clients</td></tr>
+<tr>
+<td>@nClientFrameRateReportBatchSize</td><td>60</td><td> Number of frame rate reports to collect locally before sending to the server</td></tr>
+<tr>
+<td>@nClientFrameRateReportSecs</td><td>60</td><td> Number of seconds between individual frame rate reports</td></tr>
+<tr>
+<td>@nClientInitWindowSizeHTTP2Connection</td><td>10000000</td><td> Init per-connection window size for HTTP/2.</td></tr>
+<tr>
+<td>@nClientInitWindowSizeHTTP2Stream</td><td>2000000</td><td> Init per-stream window size for HTTP/2.</td></tr>
+<tr>
+<td>@nClientQueryCMDirectoryBeforeConnect</td><td>1</td><td> Use CMDirectory webapi to get fresh CM list on connect - 0=disabled, 1=enabled, 2=main/dev/beta clients only</td></tr>
+<tr>
+<td>@nClientServiceMethodForDownloadListPercent</td><td>100</td><td></td></tr>
+<tr>
+<td>@nContentDeltaChunkAppendChunksAfterProtobufSizeThresholdMB</td><td>33</td><td></td></tr>
+<tr>
+<td>@nContentUpdateAutoVerifyCleanBytesThresholdMB</td><td>2048</td><td> How many clean MB must we verify before backing off on auto-verifies</td></tr>
+<tr>
+<td>@nContentUpdateAutoVerifyEnable</td><td>1</td><td> 0 = disabled; 1 = enabled all clients</td></tr>
+<tr>
+<td>@nContentUpdateAutoVerifyIntervalDays</td><td>15</td><td> Auto-verify game updates ever N days</td></tr>
+<tr>
+<td>@nCSClientRateLimitKbps</td><td>0</td><td></td></tr>
+<tr>
+<td>@nCSJob404ResponseLimit</td><td>25</td><td></td></tr>
+<tr>
+<td>@nCSJob5xyResponseLimit</td><td>10</td><td></td></tr>
+<tr>
+<td>@nDownloadLANChunkCacheSizeMB</td><td>128</td><td></td></tr>
+<tr>
+<td>@nDownloadLANPeerGroup</td><td>0</td><td></td></tr>
+<tr>
+<td>@net_backlog_bytes_allowed</td><td>60000000</td><td></td></tr>
+<tr>
+<td>@net_backlog_time_allowed_sec</td><td>8</td><td></td></tr>
+<tr>
+<td>@net_loopback</td><td>1</td><td></td></tr>
+<tr>
+<td>@NetConnectionBufferMsgLimit</td><td>1000</td><td> Max # of message that will be buffered into a single zipped packet</td></tr>
+<tr>
+<td>@NetConnectionBufferThreaded</td><td>1</td><td></td></tr>
+<tr>
+<td>@nHTTPServerLogLevelAccessLine200</td><td>3</td><td> Log level to use for one-line access-log-style for each http server request returning 200</td></tr>
+<tr>
+<td>@nHTTPServerLogLevelAccessLineNon200</td><td>2</td><td> Log level to use for one-line access-log-style for each http server request that returns != 200</td></tr>
+<tr>
+<td>@nHTTPServerLogLevelDetails200</td><td>4</td><td> Log level to use for full details of any http server request returning 200.  This will probably fill up the log if you leave it on.</td></tr>
+<tr>
+<td>@nHTTPServerLogLevelDetailsNon200</td><td>4</td><td> Log level to use for full details of any http server request returning != 200</td></tr>
+<tr>
+<td>@nHTTPServerMaxPipelinedReqsPerConnection</td><td>8</td><td> Max outstanding pipelined reqs per connection</td></tr>
+<tr>
+<td>@nHTTPServerYieldOn100ContinueSendSecs</td><td>300</td><td> Seconds to yield when sending a 100 continue for purposes of telling client to send body of request</td></tr>
+<tr>
+<td>@nIOCPThreadCount</td><td>1</td><td></td></tr>
+<tr>
+<td>@nJobInteryieldMillisecondsAlertThreshold</td><td>120</td><td></td></tr>
+<tr>
+<td>@nJobInteryieldMillisecondsLogThreshold</td><td>80</td><td></td></tr>
+<tr>
+<td>@nJobInteryieldMillisecondsSpewThreshold</td><td>500</td><td></td></tr>
+<tr>
+<td>@nJobNetSendsInsaneThreshold</td><td>15000</td><td></td></tr>
+<tr>
+<td>@nLANPeerGroupRateLimitKbps</td><td>0</td><td></td></tr>
+<tr>
+<td>@nLANPeerMaxConnections</td><td>24</td><td></td></tr>
+<tr>
+<td>@nLANPeerRateLimitKbps</td><td>0</td><td></td></tr>
+<tr>
+<td>@nLegalDictionaryUpdateRateInSeconds</td><td>600</td><td></td></tr>
+<tr>
+<td>@nNetConnectionBufferZipLevel</td><td>1</td><td></td></tr>
+<tr>
+<td>@NoPromptForPassword</td><td>0</td><td></td></tr>
+<tr>
+<td>@nParentalSettingsLogLevel</td><td>4</td><td> Control the amount of spew written to the parental log file</td></tr>
+<tr>
+<td>@nProtobufArenaInitialBlockSize</td><td>65536</td><td> Default initial allocation size for PB arena</td></tr>
+<tr>
+<td>@nProtobufArenaMaxBlockSize</td><td>524288</td><td> Max block allocation size for PB arena</td></tr>
+<tr>
+<td>@nProtobufArenaNumberOfHeadersToShare</td><td>128</td><td> Number of Jobs to give a single protobuf Arena before we create a new one</td></tr>
+<tr>
+<td>@nProtobufArenaNumberOfJobsToShare</td><td>128</td><td> Number of Jobs to give a single protobuf Arena before we create a new one</td></tr>
+<tr>
+<td>@nRoamingConfigReconnectCloudSyncWindowSec</td><td>7200</td><td></td></tr>
+<tr>
+<td>@nScreenshotSaveMaxWidth</td><td>9999</td><td></td></tr>
+<tr>
+<td>@nServerRefreshRateLimitAdditional</td><td>1</td><td> Limits the burst number of calls per appid to refresh GMS game server lists</td></tr>
+<tr>
+<td>@nServerRefreshRateLimitBurst</td><td>100</td><td> Limits the burst number of calls per appid to refresh GMS game server lists</td></tr>
+<tr>
+<td>@nServerRefreshRateLimitInterval</td><td>20</td><td> Limits the burst number of calls per appid to refresh GMS game server lists</td></tr>
+<tr>
+<td>@nSiteLicenseProxyCacheMaxGB</td><td>100</td><td> If local content cache is enabled, use up to this much disk space</td></tr>
+<tr>
+<td>@nSiteLicenseProxyEnableP2P</td><td>0</td><td> If set, will have all connected clients join the same P2P download group</td></tr>
+<tr>
+<td>@nSiteLicenseProxyPort</td><td>0</td><td> Local content cache: set &gt; 0 to enable, will listen on this port</td></tr>
+<tr>
+<td>@nSpewThrottleNagFrequencyMs</td><td>5000</td><td></td></tr>
+<tr>
+<td>@nSpewThrottlePeriodMs</td><td>1000</td><td></td></tr>
+<tr>
+<td>@nSpewThrottleResumeThreshold</td><td>3</td><td></td></tr>
+<tr>
+<td>@nSpewThrottleTriggerThreshold</td><td>10</td><td></td></tr>
+<tr>
+<td>@nSpewThrottleUnconditionalResumeMs</td><td>5000</td><td></td></tr>
+<tr>
+<td>@nSpewThrottleUnconditionalTriggerCount</td><td>50</td><td></td></tr>
+<tr>
+<td>@PeerContentClientMaxJobs</td><td>1</td><td> number of peer sources used at the same time</td></tr>
+<tr>
+<td>@PeerContentServerMaxClients</td><td>8</td><td> limit number of peers connected</td></tr>
+<tr>
+<td>@PeerContentServerPort</td><td>27040</td><td> If peer content server, will listen on this port for TCP connections from peers</td></tr>
+<tr>
+<td>@PeerContentServerRetryDelay</td><td>60</td><td> seconds before retrying peer content server</td></tr>
+<tr>
+<td>@RunAdminInstallScriptsFromService</td><td>0</td><td></td></tr>
+<tr>
+<td>@sCSDSVirtualHostHeader</td><td></td><td></td></tr>
+<tr>
+<td>@sForceLocalContentCache</td><td></td><td></td></tr>
+<tr>
+<td>@ShutdownOnFailedCommand</td><td>1</td><td> Exit steamcmd immediately upon any failed console command</td></tr>
+<tr>
+<td>@sSiteLicenseProxyCacheDirectory</td><td>appcache/slscache</td><td> If local content cache is enabled, use this path for disk cache</td></tr>
+<tr>
+<td>@sSiteLicenseProxyExplicitIP</td><td></td><td> Local content cache: if not blank, will instruct clients to go to this IP for the content cache.</td></tr>
+<tr>
+<td>@sStartupScript</td><td></td><td> Exec contents of this convar as a script at startup</td></tr>
+<tr>
+<td>@sSteamCmdForcePlatformBitness</td><td></td><td> Must be one of: [32 | 64]</td></tr>
+<tr>
+<td>@sSteamCmdForcePlatformType</td><td></td><td> Must be one of: [windows | macos | linux | android]</td></tr>
+<tr>
+<td>@strCSNoCacheHeader</td><td>no-cache</td><td></td></tr>
+<tr>
+<td>@StreamClientArgs</td><td></td><td></td></tr>
+<tr>
+<td>@sTrustedLocalContentCacheName</td><td></td><td> Set this to the machine name where a trusted local Steam download cache is hosted, and we&#39;ll use it if available.</td></tr>
+<tr>
+<td>@test_bCloudForceSyncConflict</td><td>0</td><td> If @test_nCloudForceSyncFailureAppID is set, then set this so that the failure case is &#39;file conflict&#39; instead of generic failure</td></tr>
+<tr>
+<td>@test_nCloudForceSyncFailureAppID</td><td>0</td><td> Set this to a non-zero App ID to test cloud sync failure. The next sync request will fail.</td></tr>
+<tr>
+<td>@uDownloadLANPeerPort</td><td>27038</td><td> If LAN p2p download enabled, will listen on this port for TCP connections from peers. Must be set consistently across all members of the group!</td></tr>
+<tr>
+<td>@unMinimumShaderDownloadSizeInUI</td><td>33554432</td><td></td></tr>
+<tr>
+<td>@unUserStatsTest</td><td>0</td><td></td></tr>
+<tr>
+<td>@uRemoteDiscoveryPortOverride</td><td>0</td><td> If non-zero, will listen on this port for broadcasts instead of k_nBroadcastPort</td></tr>
+<tr>
+<td>@uRemoteDiscoveryPortTransmit</td><td>0</td><td> If non-zero, will transmit outgoing broadcasts on this port instead of on the listen port</td></tr>
+<tr>
+<td>@voice_minabs</td><td>0.15</td><td></td></tr>
+<tr>
+<td>@voice_minavg</td><td>1.0</td><td></td></tr>
+<tr>
+<td>@voice_spew_activity_check</td><td>0</td><td></td></tr>
+<tr>
+<td>@WatchdogThreadPercentReport</td><td>5</td><td></td></tr>
+<tr>
+<td>AlwaysCustomizeOnBadExit</td><td>0</td><td></td></tr>
+<tr>
+<td>app_force_preload</td><td>0</td><td> force this app into preload mode</td></tr>
+<tr>
+<td>app_info_http_min</td><td>0</td><td></td></tr>
+<tr>
+<td>app_info_http_num_sockets</td><td>8</td><td></td></tr>
+<tr>
+<td>appcloudsessions</td><td>all</td><td></td></tr>
+<tr>
+<td>AsyncFileIOAlternateReadWrite</td><td>1</td><td></td></tr>
+<tr>
+<td>AsyncFileIODisableWrite</td><td>0</td><td></td></tr>
+<tr>
+<td>AsyncFileIOExpectOutstandingIO</td><td>6</td><td></td></tr>
+<tr>
+<td>AsyncFileIOForceGenericIO</td><td>0</td><td></td></tr>
+<tr>
+<td>AsyncFileIOMaxPendingWin32</td><td>256</td><td></td></tr>
+<tr>
+<td>AsyncFileIOReadHandleCache</td><td>64</td><td></td></tr>
+<tr>
+<td>AsyncFileIOWriteHandleCache</td><td>64</td><td></td></tr>
+<tr>
+<td>batterycharging</td><td>0</td><td></td></tr>
+<tr>
+<td>batterypercent</td><td>-1</td><td></td></tr>
+<tr>
+<td>batterytime</td><td>-1</td><td></td></tr>
+<tr>
+<td>bBroadcastAlwaysUploadThumbnails</td><td>1</td><td></td></tr>
+<tr>
+<td>bCheckUGCIntegrity</td><td>1</td><td></td></tr>
+<tr>
+<td>bClientConvar601DEACE</td><td>1</td><td></td></tr>
+<tr>
+<td>bClientPingCSesForCellID</td><td>0</td><td></td></tr>
+<tr>
+<td>bCloudAcceptUnexpectedAutoCloudFileChanges</td><td>1</td><td></td></tr>
+<tr>
+<td>bDelayGameUpdatesOnBeta</td><td>0</td><td> Should we do scheduling of updates on Steam Beta? If not, they&#39;ll all be ASAP</td></tr>
+<tr>
+<td>bDepotDeltaPatchUseAPI</td><td>1</td><td></td></tr>
+<tr>
+<td>bDepotUseSparseFiles</td><td>1</td><td></td></tr>
+<tr>
+<td>bDisableTenFootOverlay</td><td>0</td><td></td></tr>
+<tr>
+<td>bEnableMHRCAsyncFileReadLog</td><td>0</td><td></td></tr>
+<tr>
+<td>bEnableSubscribedFileListCache</td><td>1</td><td></td></tr>
+<tr>
+<td>bFinishStagedDepotVersions</td><td>1</td><td></td></tr>
+<tr>
+<td>bInstallscriptReports</td><td>1</td><td> send reports about broken install scripts</td></tr>
+<tr>
+<td>bPrefetchDownloadDetails</td><td>1</td><td> Prefetch download size before actual update happens</td></tr>
+<tr>
+<td>broadcast_upload_drop_sec</td><td>6</td><td></td></tr>
+<tr>
+<td>broadcast_upload_update_sec</td><td>3</td><td></td></tr>
+<tr>
+<td>bShaderAllowReplay</td><td>1</td><td></td></tr>
+<tr>
+<td>bShaderAllowReplayOnNVIDIA</td><td>1</td><td></td></tr>
+<tr>
+<td>bShaderAlwaysProcessWhenRunningGame</td><td>0</td><td></td></tr>
+<tr>
+<td>bShaderCacheDownloads</td><td>1</td><td> Allow to download shader cache depots</td></tr>
+<tr>
+<td>bShaderDepotNative</td><td>1</td><td></td></tr>
+<tr>
+<td>bShaderEnableCacheManagement</td><td>1</td><td></td></tr>
+<tr>
+<td>bShaderEnableFossilizeLayer</td><td>1</td><td></td></tr>
+<tr>
+<td>bShaderEnableUpload</td><td>1</td><td></td></tr>
+<tr>
+<td>bShaderFossilizeFastMerge</td><td>1</td><td></td></tr>
+<tr>
+<td>bShaderPrecompiledCache</td><td>1</td><td></td></tr>
+<tr>
+<td>bShaderVerboseLogs</td><td>0</td><td></td></tr>
+<tr>
+<td>bSingleFileUpdateMode</td><td>1</td><td></td></tr>
+<tr>
+<td>bSteam3LimitedUserEnable</td><td>1</td><td></td></tr>
+<tr>
+<td>bSteamLoaderEnable</td><td>1</td><td></td></tr>
+<tr>
+<td>bSubscribedFilesDecompressOnClient</td><td>1</td><td></td></tr>
+<tr>
+<td>bSubscribedFilesPollForUpdates</td><td>0</td><td></td></tr>
+<tr>
+<td>bSubscribedFilesUseRangeRequests</td><td>1</td><td></td></tr>
+<tr>
+<td>bVerifyAllDownloads</td><td>0</td><td> Verify all files after downloading an update</td></tr>
+<tr>
+<td>bVerifyAllInstalled</td><td>0</td><td> Verify all installed files before installing an update</td></tr>
+<tr>
+<td>cAppUpdateWorkingSetMB</td><td>256</td><td></td></tr>
+<tr>
+<td>cChunkValidationMaxLog</td><td>100</td><td></td></tr>
+<tr>
+<td>cFileValidationMaxLog</td><td>100</td><td></td></tr>
+<tr>
+<td>ClientConnectTokenBucketEnable</td><td>1</td><td></td></tr>
+<tr>
+<td>cMaxDecryptThreadsOverride</td><td>0</td><td></td></tr>
+<tr>
+<td>controller_base_rotation_angle</td><td>0</td><td></td></tr>
+<tr>
+<td>controller_edge_cutoff</td><td>0</td><td></td></tr>
+<tr>
+<td>controller_gyro_x_scale</td><td>16000</td><td></td></tr>
+<tr>
+<td>controller_idle_poll_interval</td><td>50000</td><td> SteamInput Idle Polling interval in microseconds. Default 50,000us = 20hz</td></tr>
+<tr>
+<td>controller_jerk_low_pass_filter_rate</td><td>4</td><td> How quickly the low pass filter chases the raw gyro jerk value.</td></tr>
+<tr>
+<td>controller_jerk_threshold</td><td>500</td><td> The amount of Gyro Jerk (gyro change per second) required to create a Controller Jerk count. Note, only available on SteamDeck/Neptune/Galileo</td></tr>
+<tr>
+<td>controller_jerk_threshold_debug</td><td>0</td><td> Debug spew to tell us the current &quot;Jerk&quot; value coming from the accelerometer</td></tr>
+<tr>
+<td>controller_jerk_throttle</td><td>2</td><td> (Hz) The maximum callback rate for Controller Jerk Events.</td></tr>
+<tr>
+<td>controller_min_activation_time</td><td>0.0333</td><td></td></tr>
+<tr>
+<td>controller_momentum_min_vel</td><td>0</td><td></td></tr>
+<tr>
+<td>controller_momentum_num_excluded_samples</td><td>1</td><td></td></tr>
+<tr>
+<td>controller_momentum_num_included_samples</td><td>5</td><td></td></tr>
+<tr>
+<td>controller_poll_state</td><td>-1</td><td></td></tr>
+<tr>
+<td>controller_rate</td><td>2000</td><td> SteamInput Active Polling interval in microseconds. Default 2000us = 500hz</td></tr>
+<tr>
+<td>controller_simulate_trackpad</td><td>0</td><td> Simulate a trackpad swipe on the right trackpad when the left pad is touched</td></tr>
+<tr>
+<td>controller_spew_level</td><td>3</td><td></td></tr>
+<tr>
+<td>countrycode</td><td></td><td></td></tr>
+<tr>
+<td>cPreallocateMinimumSizeKB</td><td>256</td><td></td></tr>
+<tr>
+<td>csecManifestDownloadTimeout</td><td>120</td><td></td></tr>
+<tr>
+<td>deck_mouse_haptic_tick_dist</td><td>9000</td><td></td></tr>
+<tr>
+<td>deck_mouse_leftside_filter</td><td>30500</td><td></td></tr>
+<tr>
+<td>DepotDeltaPatches</td><td>1</td><td></td></tr>
+<tr>
+<td>DepotDownloadProgressTimeout</td><td>120</td><td></td></tr>
+<tr>
+<td>DepotMinWriteGapSizeMB</td><td>64</td><td></td></tr>
+<tr>
+<td>DepotReconstructionBadChunk</td><td>0</td><td></td></tr>
+<tr>
+<td>DepotReconstructionLowPrio</td><td>1</td><td></td></tr>
+<tr>
+<td>DepotReconstructionNumIOThreads</td><td>32</td><td></td></tr>
+<tr>
+<td>DepotUseAlternatingReadWrite</td><td>1</td><td></td></tr>
+<tr>
+<td>developer</td><td>0</td><td></td></tr>
+<tr>
+<td>force_software_gyro_drift_correction</td><td>0</td><td> 0: Only use software drift calibration based on controller capabilities. 1: Any controllers with IMUs will be forced to use the standard software drift calibration.</td></tr>
+<tr>
+<td>g_RumbleRepeatAfterDelaySeconds</td><td>0.050</td><td></td></tr>
+<tr>
+<td>g_RumbleSustainTimeSeconds</td><td>10</td><td></td></tr>
+<tr>
+<td>grip_sense_haptic_test</td><td>0</td><td></td></tr>
+<tr>
+<td>grip_sense_haptic_test_repeats</td><td>1</td><td></td></tr>
+<tr>
+<td>grip_sense_haptic_test_strength</td><td>125</td><td></td></tr>
+<tr>
+<td>gyro_auto_detect_polling_rate</td><td>1</td><td> Wired Connections only. 0: Legacy Mode. Known to be buggy with Blitz 2 and other controllers set to 1000hz+. 1: If SDL3 sensor delta time is zero, or unexpected sensor timings are detected, fall back on packet-rate based estimation of polling rate (if outside a margin of error: gyro_sensor_margin_of_error_pct). 2: Exclusively use packet-rate based estimation of polling rate.</td></tr>
+<tr>
+<td>gyro_calibration_duration_automatic</td><td>5.0</td><td> Duration in seconds required to calibrate gyro drift outside of manual calibration. Warning: Short calibration times are more likely to result in false positive anti-drift solutions.</td></tr>
+<tr>
+<td>gyro_calibration_duration_manual</td><td>5.0</td><td> Duration in second of manual gyro drift calibration. Longer durations make for more accurate drift corrections.</td></tr>
+<tr>
+<td>gyro_calibration_duration_manual_timeout</td><td>30.0</td><td> Duration before manual gyro drift calibration times out, and returns to calibrating the noise tolerance.</td></tr>
+<tr>
+<td>gyro_calibration_duration_stationary</td><td>5.0</td><td> Duration in second of gyro noise tolerance calibration.</td></tr>
+<tr>
+<td>gyro_debug_gyro_speed_vs_quaternion_speed</td><td>0</td><td> 0: Off. 1: Spew the gyro speed and the extracted quaternion rotation speed</td></tr>
+<tr>
+<td>gyro_debug_hardware_vs_mode_time</td><td>0</td><td> 0: Off. 1: Spew the hardware delta time vs. the platform delta time.</td></tr>
+<tr>
+<td>gyro_debug_sensor_timings</td><td>0</td><td></td></tr>
+<tr>
+<td>gyro_drift_calibration_debug</td><td>0</td><td> Display which sensor readings (accelerometer or gyroscope) are restarting the drift calibration due to their noise being bigger than noise tolerance.</td></tr>
+<tr>
+<td>gyro_drift_correction_enabled</td><td>1</td><td> Turn on/off software gyro anti-drift correction.</td></tr>
+<tr>
+<td>gyro_drift_detection_debug</td><td>0</td><td> Spew information about how far the gyro has deflected over time.</td></tr>
+<tr>
+<td>gyro_drift_detection_duration</td><td>30.0</td><td> How long we sample for before triggering a calibration warning. Seconds.</td></tr>
+<tr>
+<td>gyro_drift_detection_min_deflection</td><td>270.0</td><td> The minimum degrees of deflection we must have turned through to detect a drift event. This intentionally higher than rotations we&#39;d expect from regular use.</td></tr>
+<tr>
+<td>gyro_drift_detection_min_drift_rate</td><td>0.1</td><td> The minimum degrees per second we consider to be gyro drift. i.e. if we notice the gyroscope has drifted at higher than this rate, it could be drifting noticeably.</td></tr>
+<tr>
+<td>gyro_filter_enabled</td><td>1</td><td> Enable (Pseudo) One Euro Filter to internal gyro quaternion. This reduces low level sensor noise and hand shake.</td></tr>
+<tr>
+<td>gyro_filter_max_speed</td><td>16.0</td><td> Above this gyro rotation speed (degrees/second) we apply min (zero) smoothing.</td></tr>
+<tr>
+<td>gyro_filter_min_speed</td><td>2</td><td> Below this gyro rotation speed (degrees/second) we apply max smoothing (low pass filter).</td></tr>
+<tr>
+<td>gyro_filter_smoothness</td><td>75</td><td> Smoothing amount for low pass filter. 1 is TOO smoothed (barely responding). 100 is barely smoothed.</td></tr>
+<tr>
+<td>gyro_force_handheld_orientation</td><td>0</td><td> 0: Auto. 1: Force Controller to be &quot;HandHeld&quot; orientation, like SteamDeck (tilt in pitch by 90 degrees so that &quot;Yaw&quot; is &quot;Through the Screen&quot;. 2: Force Controller to be &quot;Standalone&quot; controller like Steam Controller, where &quot;Yaw&quot; is &quot;Through Sticks&quot;.</td></tr>
+<tr>
+<td>gyro_force_sensor_rate</td><td>0</td><td> If zero, cull suspected bad sensor data (can result in a loss of natural sensitivity). If not zero, ignore IMU sensor timing and use fixed rate instead. Measured in HZ. Common values: 250hz (PS5), 250hz (PS4), 200hz (Nintendo Switch)</td></tr>
+<tr>
+<td>gyro_handheld_pitch_offset</td><td>90</td><td> When in handheld mode, how far we tilt the gyro quaternion before processing. This affects only the &quot;Gyro to Mouse&quot; and &quot;Gyro to JoystickCamera&quot; modes. And only affects Yaw, Roll, Yaw + Roll, and Laser Pointer 3DOF to 2D conversion styles within those modes. Player Space and World Space are controller affordance agnostic.</td></tr>
+<tr>
+<td>gyro_precision_speed</td><td>0.75</td><td></td></tr>
+<tr>
+<td>gyro_precision_speed_enabled</td><td>1</td><td> Enable linear response multiplier to speeds below the value set in the &quot;Gyro To...&quot; modes. This applies itself to the remaining speed after the gyro speed deadzone has been applied.</td></tr>
+<tr>
+<td>gyro_prediction_correction_speed_max</td><td>180.0</td><td> Above this speed (degrees per second) there is full correction of the predicted quaternion toward the  &quot;ground truth&quot; quaternion. Note this will still be gradual correction, and only in the shared direction of user rotation and the correction required.</td></tr>
+<tr>
+<td>gyro_prediction_correction_speed_min</td><td>30.0</td><td> Below this speed (degrees per second) there is no correction of the predicted quaternion toward the  &quot;ground truth&quot; quaternion.</td></tr>
+<tr>
+<td>gyro_prediction_enabled</td><td>1</td><td> Enable extrapolation of rotation using the last known gyro speed. This is important to avoid staggered signals over blue tooth, but generally upgrades gyros that run lower than 500hz. The extrapolated quaternion will correct back toward the &quot;ground truth&quot; quaternion when the speed exceeds.</td></tr>
+<tr>
+<td>gyro_raw_deadzone</td><td>6.0</td><td> Legacy deadzoning for gyro signal. Only affects &quot;As Mouse&quot; and its derivative modes.</td></tr>
+<tr>
+<td>gyro_sensor_margin_of_error_pct</td><td>25</td><td> If gyro_auto_detect_polling_rate is set to mode 2, use this +/- X% value as the acceptable margin of error before falling back on packet-rate based estimation of polling rate.</td></tr>
+<tr>
+<td>gyro_speed_deadzone</td><td>0.5</td><td></td></tr>
+<tr>
+<td>gyro_speed_deadzone_enabled</td><td>1</td><td> Enable the minimum speed required to update the gyroscope response.</td></tr>
+<tr>
+<td>gyro_stationary_calibration_debug</td><td>0</td><td> Display which sensor readings (accelerometer or gyroscope) are restarting the tolerance calibration due to their noise being too large.</td></tr>
+<tr>
+<td>gyro_to_joystick_camera_raw</td><td>1</td><td> Used to test old Gyro to joystick Camera processing pipeline (1) against old (0).</td></tr>
+<tr>
+<td>gyro_to_joystick_camera_relax</td><td>0</td><td> Low pass filter on the output to help lower FPS games. Needs more thought.</td></tr>
+<tr>
+<td>gyro_use_polling_time_for_prediction</td><td>1</td><td> Use the main loop&#39;s cached time as opposed to a fresh sample. Just for A/B testing.</td></tr>
+<tr>
+<td>haptic_click_gain_modifier</td><td>0</td><td></td></tr>
+<tr>
+<td>haptic_intensity</td><td>8000</td><td></td></tr>
+<tr>
+<td>haptic_intensity_old</td><td>2500</td><td></td></tr>
+<tr>
+<td>haptic_new</td><td>0</td><td></td></tr>
+<tr>
+<td>haptic_off_divisor</td><td>5.0f</td><td></td></tr>
+<tr>
+<td>haptic_tick_gain_modifier</td><td>0</td><td></td></tr>
+<tr>
+<td>ibex_mouse_leftside_filter</td><td>32500</td><td></td></tr>
+<tr>
+<td>lenovo_hook_filter</td><td>31500</td><td></td></tr>
+<tr>
+<td>log_files_always_flush</td><td>0</td><td></td></tr>
+<tr>
+<td>log_matchmaking_callbacks</td><td>0</td><td></td></tr>
+<tr>
+<td>MergeCapReprocess_minutes</td><td>480</td><td></td></tr>
+<tr>
+<td>mic_autogain</td><td>16000</td><td> automatic gain control level for microphone input</td></tr>
+<tr>
+<td>mic_inputfile</td><td></td><td> causes voice data to be read from the specified file instead of from the microphone</td></tr>
+<tr>
+<td>mic_outputfile</td><td></td><td> causes microphone data to be written out to the specified file</td></tr>
+<tr>
+<td>musiclogging</td><td>0</td><td></td></tr>
+<tr>
+<td>nBroadcastSessionMaxDropFrames</td><td>100</td><td></td></tr>
+<tr>
+<td>nClientBackgroundAutoUpdateLessRecentlyPlayedThresholdHours</td><td>168</td><td> If you&#39;ve played the game more recently than this, we&#39;ll schedule the background update sooner.</td></tr>
+<tr>
+<td>nClientBackgroundAutoUpdateNotPlayedTimeSpreadDays</td><td>14</td><td> If the user hasn&#39;t played this game in a while, pick a morning up to this many days out to update.</td></tr>
+<tr>
+<td>nClientBackgroundAutoUpdateRecentlyPlayedThresholdHours</td><td>72</td><td> If you&#39;ve played the game more recently than this, we&#39;ll schedule the background update sooner.</td></tr>
+<tr>
+<td>nClientBackgroundAutoUpdateTargetHour</td><td>6</td><td> Target hour, in local time, for auto-scheduled app updates. Will be spread around this point via the convar below.</td></tr>
+<tr>
+<td>nClientBackgroundAutoUpdateTimeSpreadMinutes</td><td>360</td><td> Spread of time around the above target hour - this is the +/- 2-sigma window, so half this on either side.</td></tr>
+<tr>
+<td>nCloudFileCompressionMinFileSizeKB</td><td>16</td><td></td></tr>
+<tr>
+<td>nCloudFileCompressionMinFileSizeKBSharedFile</td><td>128</td><td></td></tr>
+<tr>
+<td>nCloudFileCompressionPercentageMin</td><td>10</td><td></td></tr>
+<tr>
+<td>nCloudFileCompressionPercentageMinSharedFile</td><td>50</td><td></td></tr>
+<tr>
+<td>nCloudUploadMinIntervalSec</td><td>1800</td><td></td></tr>
+<tr>
+<td>nCloudUploadNetworkTimeoutSeconds</td><td>400</td><td></td></tr>
+<tr>
+<td>nContentDownloadsToOtherDrive</td><td>1</td><td> Allow to download updates to other drives then install folder is on</td></tr>
+<tr>
+<td>nContentStatsReportInterval</td><td>72</td><td> In Hours</td></tr>
+<tr>
+<td>nDepotSaveCorruptChunks</td><td>0</td><td></td></tr>
+<tr>
+<td>net_incomingcheck</td><td>1</td><td></td></tr>
+<tr>
+<td>net_maxresendsperframe</td><td>32</td><td></td></tr>
+<tr>
+<td>nPeerContentDefaultMode</td><td>1</td><td> 0 = off, 1 = only me, 2 = only friends, 3 = anyone</td></tr>
+<tr>
+<td>nProductInfoUpdateInterval</td><td>900</td><td></td></tr>
+<tr>
+<td>nRichPresenceUploadThrottleSecs</td><td>5</td><td></td></tr>
+<tr>
+<td>nSubscribedAutoDownloadMaxSimultaneous</td><td>8</td><td></td></tr>
+<tr>
+<td>p2p_connecttimeout</td><td>15</td><td></td></tr>
+<tr>
+<td>p2p_unusedtimeout</td><td>120</td><td></td></tr>
+<tr>
+<td>rtime32EarliestSubscribedFileToDownload</td><td>1348857570</td><td></td></tr>
+<tr>
+<td>sc_kalman_a_vel</td><td>1.0</td><td></td></tr>
+<tr>
+<td>sc_kalman_fastq</td><td>0</td><td></td></tr>
+<tr>
+<td>sc_kalman_h_vel</td><td>1.0</td><td></td></tr>
+<tr>
+<td>sc_kalman_q_vel</td><td>2.0</td><td></td></tr>
+<tr>
+<td>sc_kalman_r_vel</td><td>2.0</td><td></td></tr>
+<tr>
+<td>sc_kalman_repeated_sample</td><td>0</td><td></td></tr>
+<tr>
+<td>sc_kalman_slowq</td><td>0</td><td></td></tr>
+<tr>
+<td>sDepotDownloadFileFilter</td><td></td><td> only download matching files, eg *.exe;*.dll</td></tr>
+<tr>
+<td>spew_controller_loss</td><td>0</td><td></td></tr>
+<tr>
+<td>steam_controller_force_oobe</td><td>0</td><td></td></tr>
+<tr>
+<td>testappcloudpaths</td><td>0</td><td></td></tr>
+<tr>
+<td>ugc_query_default_cache_time</td><td>600</td><td></td></tr>
+<tr>
+<td>ugc_query_max_get_details</td><td>2000</td><td></td></tr>
+<tr>
+<td>UGCCDNReportPct</td><td>100</td><td></td></tr>
+<tr>
+<td>unShaderBackgroundProcessingThreads</td><td>0</td><td></td></tr>
+<tr>
+<td>unShaderHighPriorityProcessingThreads</td><td>0</td><td></td></tr>
+<tr>
+<td>unShaderHitCacheGeneration</td><td>0</td><td></td></tr>
+<tr>
+<td>unShaderMaxHeadersPerMessage</td><td>1024</td><td></td></tr>
+<tr>
+<td>unShaderMaxUploadMessageSizeKb</td><td>256</td><td></td></tr>
+<tr>
+<td>voice_api_optimalrate</td><td>24000</td><td></td></tr>
+<tr>
+<td>voice_autogain</td><td>0</td><td></td></tr>
+<tr>
+<td>voice_fakeloss</td><td>0</td><td></td></tr>
+<tr>
+<td>voice_outputdevice</td><td>0</td><td> 0=&gt;Miles 1=&gt;XAudio2</td></tr>
+<tr>
+<td>voice_outputfile</td><td></td><td> causes output from voice system to be written out to the specified file</td></tr>
+<tr>
+<td>voice_preprocess</td><td>0</td><td> enables voice cleanup on incoming microphone data</td></tr>
+<tr>
+<td>voice_quality</td><td>4</td><td></td></tr>
+<tr>
+<td>voice_resample_quality</td><td>1</td><td></td></tr>
+<tr>
+<td>voice_silk_bitrate</td><td>30000</td><td></td></tr>
+<tr>
+<td>workshop_items_cache_days</td><td>14</td><td></td></tr>
+<tr>
+<td>workshop_items_update_interval</td><td>2700</td><td></td></tr>
+</table>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/code/" class="print-no-link">#code</a>
+      
+        <a href="/tags/net/" class="print-no-link">#.net</a>
+      
+        <a href="/tags/steam/" class="print-no-link">#steam</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>SteamCMD 全部的 Commands ConVars</div>
+      <div>http://buyi.dev/2026/steamcmddump/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>浊心陈布衣</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2026年6月6日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2026/games/" title="布衣玩通关且没作弊的游戏">
+                        <span class="hidden-mobile">布衣玩通关且没作弊的游戏</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
