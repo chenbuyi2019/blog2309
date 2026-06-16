@@ -7,16 +7,16 @@
         <language>zh-CN</language>
         <pubDate>Sat, 06 Jun 2026 15:03:32 +0800</pubDate>
         <lastBuildDate>Sat, 06 Jun 2026 15:03:32 +0800</lastBuildDate>
-        <category>cs2</category>
-        <category>gmod</category>
+        <category>小小说</category>
+        <category>关于</category>
         <category>code</category>
         <category>.net</category>
-        <category>小小说</category>
-        <category>ssh</category>
-        <category>游戏</category>
-        <category>关于</category>
-        <category>MYSQL</category>
+        <category>gmod</category>
         <category>steam</category>
+        <category>游戏</category>
+        <category>MYSQL</category>
+        <category>cs2</category>
+        <category>ssh</category>
         <item>
             <guid isPermalink="true">http://buyi.dev/2026/steamcmddump/</guid>
             <title>SteamCMD 全部的 Commands ConVars</title>
@@ -1059,6 +1059,7 @@
             <description><![CDATA[ &lt;p&gt;记录一下我玩到单人剧情通关，并且没有作弊的游戏。&lt;br&gt;不求高难度也不求百分百全成就全解锁，能不作弊通关已经很开心了（&lt;br&gt;纯剧情解密类就不算了，可以看攻略作弊的（   &lt;/p&gt;
 &lt;h1 id=&#34;Grand-Theft-Auto&#34;&gt;&lt;a href=&#34;#Grand-Theft-Auto&#34; class=&#34;headerlink&#34; title=&#34;Grand Theft Auto&#34;&gt;&lt;/a&gt;Grand Theft Auto&lt;/h1&gt;&lt;p&gt;2017 年 4 月 7 日，通关了 GTA 5 。&lt;br&gt;2022 年 1 月 29 日，通关了 GTA 4 本体。&lt;br&gt;2022 年 8 月 17 日，通关了 The Ballad of Gay Tony 。&lt;br&gt;2022 年 10 月 1 日，通关了 The Lost and Damned 。&lt;br&gt;2024 年 7 月 4 日，通关了 GTA III - The Definitive Edition &lt;a href=&#34;https://m.weibo.cn/status/Om1RkzUwy&#34;&gt;微博&lt;/a&gt; 。&lt;br&gt;2024 年 7 月 30 日，通关了 GTA Vice City – The Definitive Edition &lt;a href=&#34;https://m.weibo.cn/status/OpYfvxpV0&#34;&gt;微博&lt;/a&gt;  。&lt;br&gt;2024 年 8 月 20 日，通关了 GTA San Andreas – The Definitive Edition &lt;a href=&#34;https://m.weibo.cn/status/OtcsQqGa6&#34;&gt;微博&lt;/a&gt;  。    &lt;/p&gt;
 &lt;p&gt;2025 年 11 月 22 日， Grand Theft Auto V Enhanced 达成 100% 完成度。&lt;a href=&#34;https://m.weibo.cn/status/QeL3a9NCn&#34;&gt;微博&lt;/a&gt;   &lt;/p&gt;
+&lt;h1 id=&#34;Red-Dead-Redemption&#34;&gt;&lt;a href=&#34;#Red-Dead-Redemption&#34; class=&#34;headerlink&#34; title=&#34;Red Dead Redemption&#34;&gt;&lt;/a&gt;Red Dead Redemption&lt;/h1&gt;&lt;p&gt;2026 年 6 月 16 日，通关了 &lt;a href=&#34;https://m.weibo.cn/status/R4qgCrthf&#34;&gt;2&lt;/a&gt;。  &lt;/p&gt;
 &lt;h1 id=&#34;Resident-Evil-4&#34;&gt;&lt;a href=&#34;#Resident-Evil-4&#34; class=&#34;headerlink&#34; title=&#34;Resident Evil 4&#34;&gt;&lt;/a&gt;Resident Evil 4&lt;/h1&gt;&lt;p&gt;2026 年 4 月 12 日， &lt;a href=&#34;https://m.weibo.cn/status/QAuFOvCDY&#34;&gt;通关 RE&lt;/a&gt; 。&lt;br&gt;2026 年 4 月 18 日， &lt;a href=&#34;https://m.weibo.cn/status/QBoJ18kxC&#34;&gt;通关 殊命归途&lt;/a&gt; 。  &lt;/p&gt;
 &lt;h1 id=&#34;Devil-May-Cry-5&#34;&gt;&lt;a href=&#34;#Devil-May-Cry-5&#34; class=&#34;headerlink&#34; title=&#34;Devil May Cry 5&#34;&gt;&lt;/a&gt;Devil May Cry 5&lt;/h1&gt;&lt;p&gt;2022 年 10月 22日，通关第一次。&lt;br&gt;2025 年 8 月 2日， &lt;a href=&#34;https://m.weibo.cn/status/PDXZVCvPe&#34;&gt;拿 Vergil 通关一次&lt;/a&gt;  &lt;/p&gt;
 &lt;h1 id=&#34;Red-Alert-2&#34;&gt;&lt;a href=&#34;#Red-Alert-2&#34; class=&#34;headerlink&#34; title=&#34;Red Alert 2&#34;&gt;&lt;/a&gt;Red Alert 2&lt;/h1&gt;&lt;p&gt;2023 年 7 月 7 日，红色警戒2 本体 &lt;a href=&#34;https://m.weibo.cn/status/N8M945xzX&#34;&gt;微博&lt;/a&gt;&lt;br&gt;2023 年 7 月 12 日，尤里的复仇 苏军线 &lt;a href=&#34;https://m.weibo.cn/status/N9yHy2Qn7&#34;&gt;微博&lt;/a&gt;&lt;br&gt;2024 年 8 月 7 日，尤里的复仇 盟军线 &lt;a href=&#34;https://m.weibo.cn/status/OrdHv3p2N&#34;&gt;微博&lt;/a&gt;   &lt;/p&gt;
@@ -1206,8 +1207,8 @@
             <guid isPermalink="true">http://buyi.dev/2024/gmod-lua-utf8sub/</guid>
             <title>GMod Lua utf8.sub 性能问题</title>
             <link>http://buyi.dev/2024/gmod-lua-utf8sub/</link>
-            <category>gmod</category>
             <category>code</category>
+            <category>gmod</category>
             <pubDate>Mon, 05 Aug 2024 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;我本来在做一个简易的日志输出，日志字符串达到一定长度之后，就把字符串裁切只留下后面一半。&lt;br&gt;我不经意间使用了 &lt;code&gt;utf8.sub()&lt;/code&gt; 来裁，然后我发现游戏过程中莫名其妙就卡顿几十秒，然后就恢复，也不像是我哪里有逻辑死循环。&lt;br&gt;经过反复 &lt;code&gt;print()&lt;/code&gt; 来找卡顿的实际位置，我终于找到了原因，就是这个 log 裁切的问题。  &lt;/p&gt;
 &lt;p&gt;Gmod Wiki 里说 &lt;a href=&#34;https://wiki.facepunch.com/gmod/utf8.sub&#34;&gt;utf8.sub()&lt;/a&gt; 比较吃性能，不要在逐帧运行的部分里使用。&lt;br&gt;可我没想到你这性能问题这么大啊。   &lt;/p&gt;
@@ -1395,8 +1396,8 @@
             <guid isPermalink="true">http://buyi.dev/2024/ffmpeg-ps1-source/</guid>
             <title>PowerShell 脚本: ffmpeg 批量压缩音频</title>
             <link>http://buyi.dev/2024/ffmpeg-ps1-source/</link>
-            <category>cs2</category>
             <category>code</category>
+            <category>cs2</category>
             <pubDate>Sun, 14 Jul 2024 21:20:03 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;前置需求：   &lt;/p&gt;
 &lt;ul&gt;
@@ -2030,8 +2031,8 @@
             <guid isPermalink="true">http://buyi.dev/2024/cs2-snd/</guid>
             <title>Counter-Strike 2 音频自定义编写与编译</title>
             <link>http://buyi.dev/2024/cs2-snd/</link>
-            <category>cs2</category>
             <category>code</category>
+            <category>cs2</category>
             <pubDate>Wed, 13 Mar 2024 12:26:06 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;文件结构&#34;&gt;&lt;a href=&#34;#文件结构&#34; class=&#34;headerlink&#34; title=&#34;文件结构&#34;&gt;&lt;/a&gt;文件结构&lt;/h1&gt;&lt;p&gt;需要安装 cs2 workshop tools ，然后新建一个空白地图项目，比如叫 &lt;code&gt;xxxx&lt;/code&gt;。&lt;br&gt;源文件放在 &lt;code&gt;common\Counter-Strike Global Offensive\content\csgo_addons\xxxx&lt;/code&gt; 里。&lt;br&gt;其中 &lt;code&gt;soundevents&lt;/code&gt; 文件夹里存放着声音脚本文件 &lt;code&gt;.vsndevts&lt;/code&gt; ，可以用，&lt;br&gt;&lt;code&gt;sounds&lt;/code&gt; 文件夹里放着具体的音频源文件，比如 &lt;code&gt;.mp3 .wav&lt;/code&gt; 。  &lt;/p&gt;
 &lt;p&gt;看起来起源2引擎依然使用的是和以往一样的 44100 hz 的音频文件。  &lt;/p&gt;
