@@ -20,7 +20,8 @@ tags: [游戏]
 2025 年 11 月 22 日， Grand Theft Auto V Enhanced 达成 100% 完成度。[微博](https://m.weibo.cn/status/QeL3a9NCn)   
 
 # Red Dead Redemption 
-2026 年 6 月 16 日，通关了 [2](https://m.weibo.cn/status/R4qgCrthf)。  
+2026 年 6 月 16 日，通关了 [2代](https://m.weibo.cn/status/R4qgCrthf)。  
+2026 年 6 月 29 日，通关了 [1代](https://m.weibo.cn/status/R6lNHlXeu)。  
 
 # Resident Evil 4
 2026 年 4 月 12 日， [通关 RE](https://m.weibo.cn/status/QAuFOvCDY) 。  
