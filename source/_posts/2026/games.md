@@ -8,6 +8,36 @@ tags: [游戏]
 不求高难度也不求百分百全成就全解锁，能不作弊通关已经很开心了（    
 纯剧情解密类就不算了，可以看攻略作弊的（   
 
+# Red Dead Redemption 
+2026 年 6 月 16 日，通关了 [2代](https://m.weibo.cn/status/R4qgCrthf)。  
+2026 年 6 月 29 日，通关了 [1代](https://m.weibo.cn/status/R6lNHlXeu)。  
+
+# Resident Evil 4
+2026 年 4 月 12 日， [通关 RE](https://m.weibo.cn/status/QAuFOvCDY) 。  
+2026 年 4 月 18 日， [通关 殊命归途](https://m.weibo.cn/status/QBoJ18kxC) 。  
+
+# Call Of Duty
+2026 年 2 月 12 日， Modern Warfare® Remastered (2017) （4的重制版） [微博](https://m.weibo.cn/status/QrwrEqzH4)  
+2026 年 2 月 18 日， Modern Warfare 2 （也就是6） [微博](https://m.weibo.cn/status/QsqI1DF0H)  
+2026 年 3 月 5 日， Modern Warfare 3 （也就是8） [微博](https://m.weibo.cn/status/QuErl2oc8)  
+
+# Black Mesa 
+2026 年 5 月 2 日，[微博](https://m.weibo.cn/status/QDuorn27O)   
+
+# Mafia 四海兄弟
+2026 年 2 月 15 日， [四海兄弟: 最终版](https://m.weibo.cn/status/QrYHFeAw7)  
+2026 年 2 月 27 日， [四海兄弟2: 最终版](https://m.weibo.cn/status/QtOpYgc9S)  
+2026 年 3 月 12 日， [2 的 DLC :  Joe's Adventures 乔胖历险记](https://m.weibo.cn/status/QvKHdDFdT)  
+2026 年 3 月 31 日， [四海兄弟3: 最终版](https://m.weibo.cn/status/QyCKAhwYZ)  
+
+# Cyberpunk 2077
+2025 年 12 月 30 日， [主线](https://m.weibo.cn/status/QkQ4vlFDp)   
+2026 年 1 月 22 日， DLC [往日之影](https://m.weibo.cn/status/QoiaBb69M)  
+
+# Devil May Cry 5
+2022 年 10月 22日，通关第一次。  
+2025 年 8 月 2日， [拿 Vergil 通关一次](https://m.weibo.cn/status/PDXZVCvPe)  
+
 # Grand Theft Auto 
 2017 年 4 月 7 日，通关了 GTA 5 。   
 2022 年 1 月 29 日，通关了 GTA 4 本体。   
@@ -19,24 +49,11 @@ tags: [游戏]
 
 2025 年 11 月 22 日， Grand Theft Auto V Enhanced 达成 100% 完成度。[微博](https://m.weibo.cn/status/QeL3a9NCn)   
 
-# Red Dead Redemption 
-2026 年 6 月 16 日，通关了 [2代](https://m.weibo.cn/status/R4qgCrthf)。  
-2026 年 6 月 29 日，通关了 [1代](https://m.weibo.cn/status/R6lNHlXeu)。  
-
-# Resident Evil 4
-2026 年 4 月 12 日， [通关 RE](https://m.weibo.cn/status/QAuFOvCDY) 。  
-2026 年 4 月 18 日， [通关 殊命归途](https://m.weibo.cn/status/QBoJ18kxC) 。  
-
-# Devil May Cry 5
-2022 年 10月 22日，通关第一次。  
-2025 年 8 月 2日， [拿 Vergil 通关一次](https://m.weibo.cn/status/PDXZVCvPe)  
-
-# Red Alert 2
+# Red Alert 
 2023 年 7 月 7 日，红色警戒2 本体 [微博](https://m.weibo.cn/status/N8M945xzX)    
 2023 年 7 月 12 日，尤里的复仇 苏军线 [微博](https://m.weibo.cn/status/N9yHy2Qn7)   
 2024 年 8 月 7 日，尤里的复仇 盟军线 [微博](https://m.weibo.cn/status/OrdHv3p2N)   
 
-# Red Alert 1
 2024 年 1 月 24 日，红色警戒1 苏军线  [微博](https://m.weibo.cn/status/NDlcGjaYP)   
 2024 年 8 月 27 日，红色警戒1 盟军线  [微博](https://m.weibo.cn/status/OufZq8Apg)   
 
@@ -44,35 +61,17 @@ tags: [游戏]
 2024 年 7 月 11 日，极品飞车 9 最高通缉 NFS Most Wanted。   
 [微博](https://m.weibo.cn/status/On4zlaVrf)   
 
-# Cyberpunk 2077
-2025 年 12 月 30 日， [主线](https://m.weibo.cn/status/QkQ4vlFDp)   
-2026 年 1 月 22 日， DLC [往日之影](https://m.weibo.cn/status/QoiaBb69M)  
-
-# Call Of Duty
-2026 年 2 月 12 日， Modern Warfare® Remastered (2017) （4的重制版） [微博](https://m.weibo.cn/status/QrwrEqzH4)  
-2026 年 2 月 18 日， Modern Warfare 2 （也就是6） [微博](https://m.weibo.cn/status/QsqI1DF0H)  
-2026 年 3 月 5 日， Modern Warfare 3 （也就是8） [微博](https://m.weibo.cn/status/QuErl2oc8)  
-
-# Mafia 四海兄弟
-2026 年 2 月 15 日， [四海兄弟: 最终版](https://m.weibo.cn/status/QrYHFeAw7)  
-2026 年 2 月 27 日， [四海兄弟2: 最终版](https://m.weibo.cn/status/QtOpYgc9S)  
-2026 年 3 月 12 日， [2 的 DLC :  Joe's Adventures 乔胖历险记](https://m.weibo.cn/status/QvKHdDFdT)  
-2026 年 3 月 31 日， [四海兄弟3: 最终版](https://m.weibo.cn/status/QyCKAhwYZ)  
-
-# Black Mesa 
-2026 年 5 月 2 日，[微博](https://m.weibo.cn/status/QDuorn27O)   
-
 # Half-Life 1
 2023 年 1 月 25 日，[微博](https://m.weibo.cn/status/MpXEugiJj)   
-
-# ICEY
-2017 年 8 月 2 日。   
 
 # Homefront
 2021 年 9 月 20 日。  
 
 # Max Payne 3
 2021 年 10 月 9 日。   
+
+# ICEY
+2017 年 8 月 2 日。   
 
 # 不记得具体时间的
 - Minecraft: Java Edition  
