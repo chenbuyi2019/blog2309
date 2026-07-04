@@ -8,6 +8,9 @@ tags: [游戏]
 不求高难度也不求百分百全成就全解锁，能不作弊通关已经很开心了（    
 纯剧情解密类就不算了，可以看攻略作弊的（   
 
+# Hitman
+2026 年 7 月 4 日，通关了 [HITMAN World of Assassination 战役](https://m.weibo.cn/status/R77Pkqhnk)   
+
 # Red Dead Redemption 
 2026 年 6 月 16 日，通关了 [2代](https://m.weibo.cn/status/R4qgCrthf)。  
 2026 年 6 月 29 日，通关了 [1代](https://m.weibo.cn/status/R6lNHlXeu)。  
