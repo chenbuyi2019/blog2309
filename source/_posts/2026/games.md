@@ -14,6 +14,7 @@ tags: [游戏]
 # Red Dead Redemption 
 2026 年 6 月 16 日，通关了 [2代](https://m.weibo.cn/status/R4qgCrthf)。  
 2026 年 6 月 29 日，通关了 [1代](https://m.weibo.cn/status/R6lNHlXeu)。  
+2026 年 7 月 17 日，通关了 [1代 DLC: 不死梦魇](https://m.weibo.cn/status/R971JpN69)。  
 
 # Resident Evil 4
 2026 年 4 月 12 日， [通关 RE](https://m.weibo.cn/status/QAuFOvCDY) 。  
