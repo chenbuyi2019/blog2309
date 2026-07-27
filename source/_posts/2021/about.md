@@ -14,7 +14,7 @@ tags: 关于
 
 ![](/image/avatar.webp)
 
-头像来自 [Doppel  绘制的弑君者](https://www.pixiv.net/artworks/135700748)
+头像来自 [盐水啵咯  绘制的水月](https://m.weibo.cn/status/R9Pc0qTng)
 
 # 简史
 2001年，在浙江省出生。   
