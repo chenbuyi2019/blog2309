@@ -28,8 +28,9 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://buyi.dev/image/vsnd1.webp">
 <meta property="og:image" content="http://buyi.dev/image/vsnd2.webp">
+<meta property="og:image" content="http://buyi.dev/image/vsnd5.webp">
 <meta property="article:published_time" content="2024-03-13T04:26:06.000Z">
-<meta property="article:modified_time" content="2025-09-25T06:33:21.552Z">
+<meta property="article:modified_time" content="2026-09-14T09:22:23.904Z">
 <meta property="article:author" content="浊心陈布衣">
 <meta property="article:tag" content="code">
 <meta property="article:tag" content="cs2">
@@ -219,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.8k 字
+          1.9k 字
         
       </span>
     
@@ -294,8 +295,10 @@
 <p>这样  <code>.vsndevts</code> 就会变成 <code>.vsndevts_c</code>文件，<br><code>.mp3 .wav</code> 就会变成 <code>.vsnd_c</code> 文件（内嵌进去）了。<br>编译好的文件会在 <code>common\Counter-Strike Global Offensive\game\csgo_addons\xxxx</code> 里。  </p>
 <p>一般来说如果开着 hammer，对 <code>.vsndevts</code> 的编译是全自动的。   </p>
 <p><img src="/image/vsnd1.webp" srcset="/img/loading.gif" lazyload>   </p>
-<h1 id="试听"><a href="#试听" class="headerlink" title="试听"></a>试听</h1><p>如果要试听，可以把要试听的部分编辑到 <code>soundevents_addon.vsndevts</code> 里面，<br>然后在 hammer 里加个声音实体，打开 <code>Sound Event Picker</code> 试听。<br>如果 Picker 里找不到，试试重新编译一次，应该是会每次打开 Picker 的时候刷新的。<br>如果点击了没有声音预览，说明你写的有问题或者音频文件有问题。   </p>
+<h1 id="试听"><a href="#试听" class="headerlink" title="试听"></a>试听</h1><p>如果要试听，可以把要试听的部分编辑到 <code>soundevents_addon.vsndevts</code> 里面，<br>然后在 hammer 里加个声音实体，打开 <code>Sound Event Picker</code> 试听。<br>我们加入的音频事件的 mod 会显示为绿色。<br>如果 Picker 里找不到，试试重新编译一次，应该是会每次打开 Picker 的时候刷新的。<br>如果点击了没有声音预览，说明你写的有问题或者音频文件有问题。   </p>
 <p><img src="/image/vsnd2.webp" srcset="/img/loading.gif" lazyload>   </p>
+<h1 id="Hammer-Bug"><a href="#Hammer-Bug" class="headerlink" title="Hammer Bug"></a>Hammer Bug</h1><p>不知道什么时候开始， hammer 不会主动读取  <code>soundevents_addon.vsndevts</code> 文件了。<br>在 <code>Sound Event Picker</code> 里不会主动显示你新增的音频事件，<br>解决办法就是在 Asset Brower 里打开 Hammer 打开地图之后，手动对文件进行 Reload ，如图。   </p>
+<p><img src="/image/vsnd5.webp" srcset="/img/loading.gif" lazyload>   </p>
 <h1 id="实体兼容性"><a href="#实体兼容性" class="headerlink" title="实体兼容性"></a>实体兼容性</h1><p><code>snd_event_point</code> 和 <code>ambient_generic</code> 都可以正常播放 mega 和 music 。<br>但是在使用 <code>ambient_generic</code> 的时候一定要注意正确勾选 <code>Is NOT Looped(32)</code> （貌似绝大多数情况下都要勾上，不然不播放）    </p>
 <p><code>ambient_generic</code> 实体无法干预声音脚本自己的音量和播放范围。   </p>
 <h1 id="模板的使用"><a href="#模板的使用" class="headerlink" title="模板的使用"></a>模板的使用</h1><p>如果我们加了七八个甚至几十个音频事件，他们的播放距离或者某些特殊参数都是一样的，<br>每个音频事件都批量复制 <code>distance_volume_mapping_curve</code> 以及一堆参数，如果后续要批量改动，会很麻烦，<br>这时候就可以使用 <code>base</code> 来制作模板。 比如下面，两个音频事件都引用了同一个模板叫 t1base  </p>

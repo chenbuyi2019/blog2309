@@ -4,14 +4,14 @@
     <title>浊心陈布衣的博客</title>
     <link href="http://buyi.dev" />
     <updated>2026-06-06T07:03:32.000Z</updated>
+    <category term="小小说" />
     <category term="关于" />
     <category term="code" />
-    <category term="小小说" />
     <category term=".net" />
     <category term="gmod" />
     <category term="cs2" />
-    <category term="ssh" />
     <category term="MYSQL" />
+    <category term="ssh" />
     <category term="游戏" />
     <category term="steam" />
     <entry>
@@ -2060,8 +2060,10 @@
 &lt;p&gt;这样  &lt;code&gt;.vsndevts&lt;/code&gt; 就会变成 &lt;code&gt;.vsndevts_c&lt;/code&gt;文件，&lt;br&gt;&lt;code&gt;.mp3 .wav&lt;/code&gt; 就会变成 &lt;code&gt;.vsnd_c&lt;/code&gt; 文件（内嵌进去）了。&lt;br&gt;编译好的文件会在 &lt;code&gt;common\Counter-Strike Global Offensive\game\csgo_addons\xxxx&lt;/code&gt; 里。  &lt;/p&gt;
 &lt;p&gt;一般来说如果开着 hammer，对 &lt;code&gt;.vsndevts&lt;/code&gt; 的编译是全自动的。   &lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/image/vsnd1.webp&#34;&gt;   &lt;/p&gt;
-&lt;h1 id=&#34;试听&#34;&gt;&lt;a href=&#34;#试听&#34; class=&#34;headerlink&#34; title=&#34;试听&#34;&gt;&lt;/a&gt;试听&lt;/h1&gt;&lt;p&gt;如果要试听，可以把要试听的部分编辑到 &lt;code&gt;soundevents_addon.vsndevts&lt;/code&gt; 里面，&lt;br&gt;然后在 hammer 里加个声音实体，打开 &lt;code&gt;Sound Event Picker&lt;/code&gt; 试听。&lt;br&gt;如果 Picker 里找不到，试试重新编译一次，应该是会每次打开 Picker 的时候刷新的。&lt;br&gt;如果点击了没有声音预览，说明你写的有问题或者音频文件有问题。   &lt;/p&gt;
+&lt;h1 id=&#34;试听&#34;&gt;&lt;a href=&#34;#试听&#34; class=&#34;headerlink&#34; title=&#34;试听&#34;&gt;&lt;/a&gt;试听&lt;/h1&gt;&lt;p&gt;如果要试听，可以把要试听的部分编辑到 &lt;code&gt;soundevents_addon.vsndevts&lt;/code&gt; 里面，&lt;br&gt;然后在 hammer 里加个声音实体，打开 &lt;code&gt;Sound Event Picker&lt;/code&gt; 试听。&lt;br&gt;我们加入的音频事件的 mod 会显示为绿色。&lt;br&gt;如果 Picker 里找不到，试试重新编译一次，应该是会每次打开 Picker 的时候刷新的。&lt;br&gt;如果点击了没有声音预览，说明你写的有问题或者音频文件有问题。   &lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/image/vsnd2.webp&#34;&gt;   &lt;/p&gt;
+&lt;h1 id=&#34;Hammer-Bug&#34;&gt;&lt;a href=&#34;#Hammer-Bug&#34; class=&#34;headerlink&#34; title=&#34;Hammer Bug&#34;&gt;&lt;/a&gt;Hammer Bug&lt;/h1&gt;&lt;p&gt;不知道什么时候开始， hammer 不会主动读取  &lt;code&gt;soundevents_addon.vsndevts&lt;/code&gt; 文件了。&lt;br&gt;在 &lt;code&gt;Sound Event Picker&lt;/code&gt; 里不会主动显示你新增的音频事件，&lt;br&gt;解决办法就是在 Asset Brower 里打开 Hammer 打开地图之后，手动对文件进行 Reload ，如图。   &lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/image/vsnd5.webp&#34;&gt;   &lt;/p&gt;
 &lt;h1 id=&#34;实体兼容性&#34;&gt;&lt;a href=&#34;#实体兼容性&#34; class=&#34;headerlink&#34; title=&#34;实体兼容性&#34;&gt;&lt;/a&gt;实体兼容性&lt;/h1&gt;&lt;p&gt;&lt;code&gt;snd_event_point&lt;/code&gt; 和 &lt;code&gt;ambient_generic&lt;/code&gt; 都可以正常播放 mega 和 music 。&lt;br&gt;但是在使用 &lt;code&gt;ambient_generic&lt;/code&gt; 的时候一定要注意正确勾选 &lt;code&gt;Is NOT Looped(32)&lt;/code&gt; （貌似绝大多数情况下都要勾上，不然不播放）    &lt;/p&gt;
 &lt;p&gt;&lt;code&gt;ambient_generic&lt;/code&gt; 实体无法干预声音脚本自己的音量和播放范围。   &lt;/p&gt;
 &lt;h1 id=&#34;模板的使用&#34;&gt;&lt;a href=&#34;#模板的使用&#34; class=&#34;headerlink&#34; title=&#34;模板的使用&#34;&gt;&lt;/a&gt;模板的使用&lt;/h1&gt;&lt;p&gt;如果我们加了七八个甚至几十个音频事件，他们的播放距离或者某些特殊参数都是一样的，&lt;br&gt;每个音频事件都批量复制 &lt;code&gt;distance_volume_mapping_curve&lt;/code&gt; 以及一堆参数，如果后续要批量改动，会很麻烦，&lt;br&gt;这时候就可以使用 &lt;code&gt;base&lt;/code&gt; 来制作模板。 比如下面，两个音频事件都引用了同一个模板叫 t1base  &lt;/p&gt;

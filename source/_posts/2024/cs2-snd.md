@@ -176,10 +176,18 @@ Hostage.Pain =
 # 试听
 如果要试听，可以把要试听的部分编辑到 `soundevents_addon.vsndevts` 里面，   
 然后在 hammer 里加个声音实体，打开 `Sound Event Picker` 试听。   
+我们加入的音频事件的 mod 会显示为绿色。  
 如果 Picker 里找不到，试试重新编译一次，应该是会每次打开 Picker 的时候刷新的。   
 如果点击了没有声音预览，说明你写的有问题或者音频文件有问题。   
 
 ![](/image/vsnd2.webp)   
+
+# Hammer Bug
+不知道什么时候开始， hammer 不会主动读取  `soundevents_addon.vsndevts` 文件了。   
+在 `Sound Event Picker` 里不会主动显示你新增的音频事件，   
+解决办法就是在 Asset Brower 里打开 Hammer 打开地图之后，手动对文件进行 Reload ，如图。   
+
+![](/image/vsnd5.webp)   
 
 
 # 实体兼容性
