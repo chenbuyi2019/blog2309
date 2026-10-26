@@ -7,16 +7,16 @@
         <language>zh-CN</language>
         <pubDate>Sat, 06 Jun 2026 15:03:32 +0800</pubDate>
         <lastBuildDate>Sat, 06 Jun 2026 15:03:32 +0800</lastBuildDate>
-        <category>code</category>
-        <category>.net</category>
-        <category>关于</category>
         <category>小小说</category>
-        <category>ssh</category>
+        <category>code</category>
+        <category>关于</category>
+        <category>.net</category>
         <category>gmod</category>
         <category>MYSQL</category>
+        <category>ssh</category>
         <category>cs2</category>
-        <category>游戏</category>
         <category>steam</category>
+        <category>游戏</category>
         <item>
             <guid isPermalink="true">http://buyi.dev/2026/steamcmddump/</guid>
             <title>SteamCMD 全部的 Commands ConVars</title>
